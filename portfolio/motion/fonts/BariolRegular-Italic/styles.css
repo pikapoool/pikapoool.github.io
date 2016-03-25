@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'BariolRegular-Italic';
+  src: url('BariolRegular-Italic.eot?#iefix') format('embedded-opentype'),  url('BariolRegular-Italic.otf')  format('opentype'),
+	     url('BariolRegular-Italic.woff') format('woff'), url('BariolRegular-Italic.ttf')  format('truetype'), url('BariolRegular-Italic.svg#BariolRegular-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
