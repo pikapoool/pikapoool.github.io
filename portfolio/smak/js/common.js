@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+	$.stellar({
+		horizontalScrolling: false,
+    responsive: true,
+    positionProperty: 'transform',
+	});
 	//open toggle menu
 	$(".toggle-mnu").click(function(){
 		$(this).toggleClass("on");
@@ -66,9 +71,9 @@ $(document).ready(function() {
 	$(".card").click(function(){
 		$(this).toggleClass("card-active").siblings().removeClass("card-active");
 	//	$(".team-descr").addClass(".team-descr-on");
-		//$(".card").each(function(i){
-		//	if($(this).is(".card-active")) {
-		//		$(".team-descr").removeClass("team-descr-on fadeInDown");
+		//$(".card").each(function(i){										TRY!!!
+		//	if($(.card).hasClass(".card-active")) {
+		//		$(".team-descr").removeClass("team-descr-on");
 		//	} else {
 		//		$(".team-descr").addClass("team-descr-on");
 		//	}
