@@ -23,4 +23,4 @@
 	<li><a href="http://formspree.io" target="_blank">formspree.io</a> - Отправка заявок с сайта</li>
 </ul>
 
-(https://raw.githubusercontent.com/donkixot/donkixot.github.io/master/portfolio/smak/Smak-preview.jpg)
+![Создание Landing Page на WordPress](https://raw.githubusercontent.com/donkixot/donkixot.github.io/master/portfolio/smak/Smak-preview.jpg)
