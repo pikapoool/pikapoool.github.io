@@ -10,7 +10,7 @@
 	<li><a href="http://www.graphberry.com/item/smak-one-page-web-template" target="_blank">graphberry.com/</a> - Много бесплатных шаблонов. Спасибо за Smak :)</li>
 	<li><a href="http://fortawesome.github.io/Font-Awesome" target="_blank">fortawesome.github.io</a> - Векторные иконки. Использовали для соц. сетей</li>
 	<li><a href="http://codepen.io/CreativeJuiz/pen/oCBxz" target="_blank">codepen.io</a> - Много интересного кода. Спасибо за Toggle Menu :)</li>
-	<li><a href="http://codepen.io/donkixoton/pen/ZWyoLv" target="_blank">codepen.io</a> - Поочередно поварачивающиеся карточки</li>
+	<li><a href="http://codepen.io/donkixoton/pen/ZWyoLv" target="_blank">codepen.io/donkixoton/pen/ZWyoLv</a> - Поочередно поварачивающиеся карточки</li>
 	<li><a href="http://markdalgleish.com/projects/stellar.js/" target="_blank">markdalgleish.com/projects/stellar.js/</a> - Параллакс эффект</li>
 	<li><a href="http://dimsemenov.com/plugins/magnific-popup" target="_blank">dimsemenov.com/plugins/magnific-popup</a> - Респонсив попап менеджер</li>
 	<li><a href="http://github.com/malihu/page-scroll-to-id" target="_blank">github.com/malihu/page-scroll-to-id</a> - Плагин навигации по Landing Page</li>
@@ -23,4 +23,4 @@
 	<li><a href="http://formspree.io" target="_blank">formspree.io</a> - Отправка заявок с сайта</li>
 </ul>
 
-![Создание Landing Page на WordPress](https://raw.githubusercontent.com/donkixot/donkixot.github.io/master/portfolio/smak/Smak-preview.jpg)
+![создан на базе бесплатного шаблона](https://raw.githubusercontent.com/donkixot/donkixot.github.io/master/portfolio/smak/Smak-preview.jpg)
