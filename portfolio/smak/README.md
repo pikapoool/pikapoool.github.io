@@ -2,7 +2,6 @@
 <h3>Что использовали:</h3>
 
 <ul>
-http://webdesign-master.ru/
 	<li><a href="http://webdesign-master.ru/" target="_blank">webdesign-master.ru/</a> - Полезные видеоуроки по верстке и дизайну сайтов</li>
 	<li><a href="http://getbootstrap.com" target="_blank">getbootstrap.com</a> - Адаптивная сетка</li>
 	<li><a href="http://jquery.com" target="_blank">jquery.com</a> - Популярнейший javaScript Framework</li>
