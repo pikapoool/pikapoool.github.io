@@ -5,6 +5,16 @@ $(document).ready(function() {
     responsive: true,
     positionProperty: 'transform',
 	});
+
+	//scroll fixed menu
+	$(window).scroll(function(){
+		var dst = $(document).scrollTop();
+		if (dst > 100) {
+			$(".top-line").addClass("navbarFixed");
+		}else {
+			$(".top-line").removeClass("navbarFixed");
+		}
+	});
 	//open toggle menu
 	$(".toggle-mnu").click(function(){
 		$(this).toggleClass("on");
@@ -197,23 +207,6 @@ $(document).ready(function() {
 		});
 	};
 
-	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
 
 	//Chrome Smooth Scroll
 	try {
