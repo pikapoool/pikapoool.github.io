@@ -1,0 +1,118 @@
+-webkit-appearance
+	none
+
+*::-webkit-input-placeholder
+	color: #fff
+	opacity: 1
+*:-moz-placeholder
+	color: #fff
+	opacity: 1
+*::-moz-placeholder
+	color: #fff
+	opacity: 1
+*:-ms-input-placeholder
+	color: #fff
+	opacity: 1
+
+textarea::-webkit-input-placeholder
+	color:#5c5c5c
+textarea::-moz-placeholder
+	color:#5c5c5c
+textarea:-moz-placeholder
+	color:#5c5c5c
+textarea:-ms-input-placeholder
+	color:#5c5c5c
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+// default color for numbers in iOS
+a[href^=tel]
+	color: #000
+	text-decoration: none
+
+a,
+input,
+select
+	&:focus
+		outline: none
+
+
+.hidden
+	display: none
+
+.ulli
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		cursor: default
+		li
+			margin: 0
+			padding: 0
+
+.pagemiddle
+	top: 50%
+	transform: translate(0, -50%)
+
+.pagecenter
+	left: 50%
+	transform: translate(-50%, 0)
+
+h1,
+.h1
+h2,
+.h2
+h3,
+.h3
+h4,
+.h4
+h5,
+.h5
+h6,
+.h6
+
+
+.btn_wrap
+	text-align: center
+	margin: 5px 0
+	a
+		padding: 5px
+		text-decoration: none
+
+.menu-item-has-children
+	.sub-menu
+		.menu-item
+			a
+			.sub-menu
+				.menu-item
+					a
+
+
+// input[type=radio]
+// 	display: none
+// input[type=radio]:not(checked) + label:before
+// 	content: ''
+// 	position: absolute
+// 	width: 16px
+// 	height: 16px
+// 	left: 0
+// 	top: -2px
+// 	border: 1px solid #e3e3e3
+// 	border-radius: 50%
+// input[type=radio]:checked + label:before
+// 	background-color: #000
+// 	border: none
+// input[type=radio]:checked + label:after
+// 	content: ''
+// 	position: absolute
+// 	width: 6px
+// 	height: 6px
+// 	left: 5px
+// 	top: 3px
+// 	background-color: #fff
+// 	border-radius: 50%
