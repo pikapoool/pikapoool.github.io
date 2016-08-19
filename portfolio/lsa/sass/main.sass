@@ -1,0 +1,770 @@
+@import "fonts.sass"
+@import "default.sass"
+@import "mainHeader.sass"
+@import "footer.sass"
+@import "popup.sass"
+@import "animate.sass"
+@import "owl.carousel.sass"
+
+//////////////////////////////
+//start fistScreen
+//////////////////////////////
+.carousel
+	background-image: linear-gradient(top, #f4e8ce 0%, #f4e8ce 0%, #fdf3e8 60%, #fee9d9 65%, #ffe4d2 70%, #fff 100%)
+	.item
+		height: 600px
+		// background-color: #777
+		background-repeat: no-repeat
+		background-size: cover
+		img
+			display: none
+.carousel-caption
+	padding-bottom: 0
+.carousel-indicators li
+	border-color: #1a468e
+.carousel-indicators .active
+	background-color: #1a468e
+.firstScreen
+	&_carousel
+		&_descr
+			text-align: right
+			&_top,
+			&_bottom
+				font-family: "Lato-Regular"
+				font-size: 24px
+				color: #fff
+				line-height: 1
+				background-color: #1a468e
+				padding: 12px 38px 15px 24px
+				margin: 0 -10px 0 0
+				display: inline-block
+				text-shadow: none
+				opacity: 0
+			&_bottom
+				background-color: #f3860d
+				padding: 11px 57px 16px 36px
+				margin: 0 -35px 7px 0
+	&_bottom
+		background-color: #1a468e
+		min-height: 122px
+		&_txt
+			color: #fff
+			margin: 0
+			padding: 33px 0
+	.item.active
+		.firstScreen_carousel_descr_top
+			opacity: 1
+			animation-name: fadeInDown
+			animation-duration: 1s
+			animation-fill-mode: both
+		.firstScreen_carousel_descr_bottom
+			opacity: 1
+			animation-name: fadeInUp
+			animation-duration: 1s
+			animation-fill-mode: both
+.btn_wrap
+	text-align: right
+	margin: 31px 0 0
+	a
+		font-family: "Lato-Regular"
+		font-size: 14px
+		color: #fff
+		text-transform: uppercase
+		text-decoration: none
+		padding: 14px 25px
+		border: 2px solid #fff
+		transition: .3s all ease
+		display: inline-block
+		&:hover
+			background-color: #fff
+			color: #1a468e
+
+
+//////////////////////////////
+//end fistScreen
+//////////////////////////////
+
+//////////////////////////////
+//start welcome
+//////////////////////////////
+.welcome
+	&_title
+		text-align: center
+		padding: 37px 0 40px
+		position: relative
+		&:before
+			content: ''
+			width: 93px
+			height: 2px
+			position: absolute
+			bottom: 23px
+			background-color: #f4870e
+			@extend %pgct
+		h1
+			color: #00116a
+		&_descr
+			color: #3c3c3c
+			font-size: 18.27px
+			font-family: "Lato-Light"
+			margin: 0
+			padding: 0
+	&_item
+		text-align: center
+		transform: translate(-100px, 0)
+		opacity: 0
+		&.on
+			opacity: 1
+			transition: 0.6s all ease
+			transform: translate(0, 0)
+		&_circle
+			height: 181px
+			width: 181px
+			border-radius: 50%
+			display: inline-block
+			background-repeat: no-repeat
+			background-position: 50% 50%
+		&:nth-child(1)
+			.welcome_item_circle
+				background-image: url(../images/welcome_item1.png)
+		&:nth-child(2)
+			.welcome_item_circle
+				background-image: url(../images/welcome_item2.png)
+		&:nth-child(3)
+			.welcome_item_circle
+				background-image: url(../images/welcome_item3.png)
+		&:nth-child(4)
+			.welcome_item_circle
+				background-image: url(../images/welcome_item4.png)
+		&:nth-child(2n+1)
+			.welcome_item_circle
+				background-color: #f4870e
+		&:nth-child(2n+2)
+			.welcome_item_circle
+				background-color: #1a468e
+		&_title
+			font-size: 24px
+			font-family: "Lato-Regular"
+			color: #1a468e
+			margin: 13px 0
+		&_descr
+			font-size: 18px
+			font-family: "Lato-Regular"
+			color: #6b6b6b
+			margin: 0 0 15px 0
+			padding: 0 20px
+	&_item_wrap
+		padding: 22px 0 0
+//////////////////////////////
+//end welcome
+//////////////////////////////
+
+
+//////////////////////////////
+//start philosophy
+//////////////////////////////
+.philosophy
+	margin: 0 0 100px
+	&_title
+		text-align: center
+		padding: 50px 0 60px
+		position: relative
+		&:before
+			content: ''
+			width: 93px
+			height: 2px
+			position: absolute
+			bottom: 43px
+			background-color: #f4870e
+			@extend %pgct
+		h1
+			color: #00116a
+		&_descr
+			color: #3c3c3c
+			font-size: 18.27px
+			font-family: "Lato-Light"
+			margin: 0
+			padding: 0
+	&_descr
+		margin: 12px 0 50px
+		line-height: 1.2
+	&_btn
+		text-align: center
+		a
+			font-family: "Lato-Regular"
+			font-size: 18px
+			color: #f58d1a
+			text-transform: uppercase
+			text-decoration: none
+			padding: 10px 35px
+			border: 2px solid #f58d1a
+			transition: .3s all ease
+			display: inline-block
+			&:hover
+				background-color: #f58d1a
+				color: #fff
+	&_video
+		text-align: right
+		iframe
+			width: 510px
+			height: 280px
+			border: none
+
+//////////////////////////////
+//end philosophy
+//////////////////////////////
+
+//////////////////////////////
+//end homeGallery
+//////////////////////////////
+.homeGallery
+	&_slider
+		position: relative
+		max-width: 1920px
+		margin: auto
+		.owl-wrapper
+			&:after
+				display: table
+				content: ''
+				clear: both
+		.owl-nav
+			position: absolute
+			width: 100%
+			top: 50%
+			transform: translate(0, -50%)
+		.owl-prev,
+		.owl-next
+			width: 28px
+			height: 58px
+			cursor: pointer
+			position: absolute
+			transform: translate(0, -50%)
+			&:before
+				width: 40px
+				height: 40px
+				content: ''
+				position: absolute
+				border-top: 2px solid #fff
+				border-right: 2px solid #fff
+				transform: rotate(45deg)
+				top: 9px
+				right: 8px
+				transition: .2s all ease
+			&:hover
+				&:before
+					border-color: #000
+		.owl-prev
+			left: 15px
+			&:before
+				transform: rotate(-135deg)
+				right: auto
+				left: 8px
+		.owl-next
+			right: 15px
+		&_item
+			position: relative
+			img
+				width: 100%
+				max-height: 346px
+			&:hover
+				span
+					opacity: 1
+			span
+				opacity: 0
+				transition: .3s all ease
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				display: block
+				width: 110px
+				height: 110px
+				border-radius: 50%
+				background-color: rgba(#00116a,.4)
+				&:before
+					content: ''
+					font-size: 40px
+					width: 100%
+					height: 100%
+					position: absolute
+					text-align: center
+					left: 0
+					top: 0
+					border-radius: 50%
+					background-color: rgba(#00116a,.4)
+					background-image: url(../images/image_overlay.png)
+					background-repeat: no-repeat
+					background-position: 50% 50%
+	&_bottom
+		background-color: #1a468e
+		min-height: 134px
+		&_txt
+			color: #fff
+			margin: 0
+			padding: 44px 0
+		.btn_wrap
+			margin-top: 42px
+//////////////////////////////
+//end homeGallery
+//////////////////////////////
+
+
+//////////////////////////////
+//start classes
+//////////////////////////////
+.classes
+	padding-bottom: 45px
+	&_title
+		text-align: center
+		padding: 35px 0 68px
+		position: relative
+		&:before
+			content: ''
+			width: 93px
+			height: 2px
+			position: absolute
+			bottom: 50px
+			background-color: #f4870e
+			@extend %pgct
+		h1
+			color: #00116a
+		&_descr
+			color: #3c3c3c
+			font-size: 18.27px
+			font-family: "Lato-Light"
+			margin: 0
+			padding: 0
+	&_item
+		transition: .3s all ease
+		margin-bottom: 32px
+		position: relative
+		&:hover
+			box-shadow: inset 0 0 0 3px #f4870e
+			// border: 3px solid #f4870e
+			.classes_item_title,
+			.classes_item_age
+				text-decoration: underline
+		&:after
+			display: table
+			clear: both
+			content: ''
+		&_left
+			float: left
+			width: 50%
+			height: 189px
+			padding: 15px 27px
+			background-color: #1a468e
+			position: relative
+			z-index: -1
+		&_title
+			font-family: "Lato-Regular"
+			font-size: 22px
+			display: block
+			color: #fff
+			text-transform: uppercase
+		&_age
+			font-family: "Lato-Light"
+			font-size: 18px
+			display: block
+			color: #fff
+		&_name
+			text-align: center
+			padding: 22px 0 0
+			p,
+			span
+				display: inline-block
+				font-family: "Lato-Light"
+				font-size: 24px
+				color: rgba(#fff,.4)
+				text-transform: uppercase
+				margin: 0
+				padding: 0
+		&_btn
+			position: absolute
+			bottom: 0px
+			left: 50%
+			transform: translate(-100%, 0)
+			a
+				font-family: "Lato-Regular"
+				font-size: 14px
+				color: #fff
+				text-transform: uppercase
+				text-decoration: none
+				padding: 6px 20px
+				transition: .3s all ease
+				display: inline-block
+				background-color: #f58d1a
+				// border: 3px solid #f58d1a
+				&:hover
+					background-color: #fff
+					color: #f58d1a
+		&_right
+			float: right
+			width: 50%
+			text-align: right
+		&_img
+			width: 100%
+			max-height: 189px
+			position: relative
+			z-index: -1
+
+//////////////////////////////
+//end classes
+//////////////////////////////
+
+
+//////////////////////////////
+//start testimonials
+//////////////////////////////
+.testimonials
+	background-color: #f5f5f5
+	&_title
+		text-align: center
+		padding: 20px 0 50px
+		position: relative
+		&:before
+			content: ''
+			width: 93px
+			height: 2px
+			position: absolute
+			bottom: 33px
+			background-color: #f4870e
+			@extend %pgct
+		h1
+			color: #00116a
+		&_descr
+			color: #3c3c3c
+			font-size: 18.27px
+			font-family: "Lato-Light"
+			margin: 0
+			padding: 0
+	&_item
+		min-height: 140px
+		&_title
+			color: #1a468e
+			font-size: 18px
+			padding: 0 0 0 30px
+			font-family: "Lato-Regular"
+			background-image: url(../images/testimonials_item_bg.png)
+			background-repeat: no-repeat
+			background-position: 0 50%
+			transition: .2s all ease
+			&:hover
+				color: #f38720
+				background-image: url(../images/testimonials_item_bg_h.png)
+				text-decoration: underline
+		&_descr
+			color: #6b6b6b
+			font-size: 18px
+			font-family: "Lato-Regular"
+			margin: 0
+			width: 480px
+			&:hover
+				color: #6b6b6b
+				text-decoration: underline
+	&_btn
+		text-align: center
+		padding-bottom: 30px
+		a
+			font-family: "Lato-Light"
+			font-size: 18px
+			color: #fff
+			text-transform: uppercase
+			text-decoration: none
+			padding: 9px 11px
+			transition: .3s all ease
+			display: inline-block
+			background-color: #f58d1a
+			border: 2px solid #f58d1a
+			&:hover
+				background-color: #fff
+				color: #f58d1a
+//////////////////////////////
+//end testimonials
+//////////////////////////////
+
+
+//////////////////////////////
+//start testimonials
+//////////////////////////////
+.whatNew
+	&_title
+		text-align: center
+		padding: 26px 0 60px
+		position: relative
+		&:before
+			content: ''
+			width: 93px
+			height: 2px
+			position: absolute
+			bottom: 43px
+			background-color: #f4870e
+			@extend %pgct
+		h1
+			color: #00116a
+		&_descr
+			color: #3c3c3c
+			font-size: 18.27px
+			font-family: "Lato-Light"
+			margin: 0
+			padding: 0
+	&_item
+		min-height: 475px
+		transform: translate(-200px, 0)
+		opacity: 0
+		&:hover
+			.whatNew_item_title
+				text-decoration: underline
+				&:hover
+					text-decoration: none
+			.whatNew_item_descr
+				text-decoration: underline
+			.whatNew_item_img
+				box-shadow: inset 0 0 0 3px #f4870e
+		&.on
+			transform: translate(0, 0)
+			opacity: 1
+			transition: .8s all ease
+		&_date
+			display: block
+			color: #757575
+			font-family: "Lato-Regular"
+			font-size: 16px
+			margin: 0 0 11px 0
+		&_img
+			margin-bottom: 17px
+			transition: .3s all ease
+			a
+				display: block
+			img
+				width: 100%
+				height: 194px
+				position: relative
+				z-index: -1
+		&_title
+			font-family: "Lato-Regular"
+			font-size: 22px
+			color: #00116a
+			&:hover
+				color: #00116a
+		&_descr
+			font-family: "Lato-Regular"
+			font-size: 18px
+			color: #6b6b6b
+			margin: 14px 0 19px
+		&_authorName
+			font-family: "Lato-Regular"
+			font-size: 16px
+			color: #6b6b6b
+			line-height: 1.9
+			display: block
+			padding: 0 0 0 35px
+			background-image: url(../images/whatnew_author.png)
+			background-repeat: no-repeat
+			background-position: 0 50%
+	&_btn
+		text-align: center
+		padding-bottom: 66px
+		a
+			font-family: "Lato-Light"
+			font-size: 18px
+			color: #fff
+			text-transform: uppercase
+			text-decoration: none
+			padding: 9px 23px
+			transition: .3s all ease
+			display: inline-block
+			background-color: #f58d1a
+			border: 2px solid #f58d1a
+			&:hover
+				background-color: #fff
+				color: #f58d1a
+//////////////////////////////
+// end whatNew
+//////////////////////////////
+
+
+.map_wrap
+	height: 395px
+	background-color: #d4d4d4
+.map
+	height: 395px
+
+
+
+//////////////////////////////
+//start contact
+//////////////////////////////
+.contact
+	&_title
+		text-align: center
+		padding: 36px 0 52px
+		position: relative
+		&:before
+			content: ''
+			width: 93px
+			height: 2px
+			position: absolute
+			bottom: 35px
+			background-color: #f4870e
+			@extend %pgct
+		h1
+			color: #00116a
+		&_descr
+			color: #3c3c3c
+			font-size: 18.27px
+			font-family: "Lato-Light"
+			margin: 0
+			padding: 0
+	&_item
+		text-align: center
+		min-height: 180px
+		transform: translate(0, 100px)
+		opacity: 0
+		&.on
+			transform: translate(0, 0)
+			opacity: 1
+			transition: .8s all ease
+		&_img
+			height: 33px
+		&_title
+			color: #00116a
+			font-size: 22px
+			font-family: "Lato-Regular"
+			display: inline-block
+			margin: 10px 0
+		&_descr,
+		p
+			margin: 0
+			font-size: 18.27px
+			font-family: "Lato-Light"
+			color: #3c3c3c
+	&_form
+		input
+			border: 2px solid #f3f3f3
+			border-radius: 3px
+			display: block
+			width: 100%
+			height: 48px
+			margin-bottom: 28px
+			padding: 0 10px
+			box-shadow: none
+			text-shadow: none
+			-webkit-appearance: none
+		textarea
+			border: 2px solid #f3f3f3
+			border-radius: 3px
+			display: block
+			width: 100%
+			height: 200px
+			padding: 10px 20px
+			resize: none
+			box-shadow: none
+			text-shadow: none
+			-webkit-appearance: none
+	&_btn
+		text-align: center
+		margin: 0 0 60px
+		input
+			width: auto
+			display: inline-block
+			height: 46px
+			font-size: 18px
+			color: #fff
+			border: none
+			border-radius: 0
+			line-height: 1
+			font-family: "Lato-Light"
+			text-transform: uppercase
+			text-decoration: none
+			padding: 0 15px
+			transition: .3s all ease
+			background-color: #f4870e
+			border: 2px solid #f4870e
+			margin: 0
+			box-shadow: none
+			text-shadow: none
+			-webkit-appearance: none
+			&:hover
+				background-color: #fff
+				color: #f4870e
+//////////////////////////////
+// end contact
+//////////////////////////////
+
+
+
+//////////////////////////////
+// start subscribe
+//////////////////////////////
+.subscribe
+	background-color: #3f64a0
+	min-height: 100px
+	&_title
+		color: #fff
+		margin-top: 27px
+	input
+		width: 320px
+		height: 46px
+		border: none
+		margin: 30px 0 0
+		font-size: 14px
+		background-color: #6f8bb8
+		padding: 0 18px
+		box-shadow: none
+		text-shadow: none
+		-webkit-appearance: none
+		&::-webkit-input-placeholder
+			color: #fff
+			opacity: 1
+			font-family: Arial
+			font-size: 14px
+		&::-moz-placeholder
+			color: #fff
+			opacity: 1
+			font-family: Arial
+			font-size: 14px
+		&:-moz-placeholder
+			color: #fff
+			opacity: 1
+			font-family: Arial
+			font-size: 14px
+		&:-ms-input-placeholder
+			color: #fff
+			opacity: 1
+			font-family: Arial
+			font-size: 14px
+	input[type=submit]
+		width: auto
+		font-family: "Lato-Regular"
+		font-size: 14px
+		color: #fff
+		background-color: transparent
+		border: 2px solid #fff
+		text-transform: uppercase
+		transition: .3s all ease
+		&:hover
+			background-color: #fff
+			color: #1a468e
+//////////////////////////////
+// end subscribe
+//////////////////////////////
+
+#btn_top
+	opacity: 0
+	z-index: 50
+	right: 30px
+	width: 46px
+	height: 46px
+	bottom: 30px
+	display: block
+	position: fixed
+	background-repeat: no-repeat
+	background-position: center center
+	background-image: url(../images/go_to_top.png)
+	background-color: rgba(0,0,0,0.5)
+	transition: .3s all ease
+	&:hover
+		background-color: #FE6500
+
+//ALWAYS END
+@import "media"
