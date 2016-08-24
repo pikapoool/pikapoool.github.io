@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Exo2-LightCondensed';
+  src: url('Exo2-LightCondensed.eot?#iefix') format('embedded-opentype'),  url('Exo2-LightCondensed.otf')  format('opentype'),
+	     url('Exo2-LightCondensed.woff') format('woff'), url('Exo2-LightCondensed.ttf')  format('truetype'), url('Exo2-LightCondensed.svg#Exo2-LightCondensed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

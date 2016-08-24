@@ -1,0 +1,157 @@
+@import "defaultWP.sass"
+@import "animation.sass"
+
+-webkit-appearance
+	none
+
+*::-webkit-input-placeholder
+	color: #efb58b
+	opacity: 1
+	font-family: "Exo2-LightCondensed"
+	font-size: 16px
+*:-moz-placeholder
+	color: #efb58b
+	opacity: 1
+	font-family: "Exo2-LightCondensed"
+	font-size: 16px
+*::-moz-placeholder
+	color: #efb58b
+	opacity: 1
+	font-family: "Exo2-LightCondensed"
+	font-size: 16px
+*:-ms-input-placeholder
+	color: #efb58b
+	opacity: 1
+	font-family: "Exo2-LightCondensed"
+	font-size: 16px
+
+textarea,
+input
+	&::-webkit-input-placeholder
+		color: #efb58b
+		opacity: 1
+		font-family: "Exo2-LightCondensed"
+		font-size: 16px
+	&::-moz-placeholder
+		color: #efb58b
+		opacity: 1
+		font-family: "Exo2-LightCondensed"
+		font-size: 16px
+	&:-moz-placeholder
+		color: #efb58b
+		opacity: 1
+		font-family: "Exo2-LightCondensed"
+		font-size: 16px
+	&:-ms-input-placeholder
+		color: #efb58b
+		opacity: 1
+		font-family: "Exo2-LightCondensed"
+		font-size: 16px
+
+textarea:focus,
+input:focus
+	outline: none
+	&::-webkit-input-placeholder
+		opacity: 0 !important
+	&:-moz-placeholder
+		opacity: 0 !important
+	&::-moz-placeholder
+		opacity: 0 !important
+	&:-ms-input-placeholder
+		opacity: 0 !important
+
+input
+	border-radius: 0
+
+// body input:required:invalid,
+// body textarea:required:invalid
+// 	background-color: #666
+// body input:required:valid,
+// body textarea:required:valid
+// 	background-color: #fff
+
+
+//// // default color for numbers in iOS
+//// a[href^=tel]
+//// 	color: #515151
+//// 	text-decoration: none
+
+a:focus
+	outline: none
+
+
+body
+	font-size: 15px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "Exo2-Light", sans-serif
+	overflow-x: hidden
+	color: #444
+	// background-color: #ececec
+
+
+.hidden
+	display: none
+
+
+
+h1
+	font-family: "Exo2-Italic"
+	font-size: 40px
+	color: #e68946
+h2
+	font-family: "Exo2-SemiBold"
+	font-size: 30px
+	color: #e68946
+h3
+	font-family: "Exo2-SemiBold"
+	font-size: 22px
+	color: #e68946
+h4
+	font-size: 20px
+	color: #444
+h5
+	font-size: 18px
+	color: #444
+h6
+	font-size: 16px
+	color: #444
+
+
+a
+	color: #e68946
+	text-decoration: none
+	&:hover
+		color: #e68946
+		text-decoration: underline
+
+%ulli
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		li
+			margin: 0
+			padding: 0
+			&:before,
+			&:after
+				display: none
+
+.btn_wrap
+	text-align: center
+	margin: 5px 0
+	a
+		padding: 5px
+		text-decoration: none
+
+%pgmd
+	top: 50%
+	transform: translate(0, -50%)
+
+%pgct
+	left: 50%
+	transform: translate(-50%, 0)
+
+p
+	margin: 0 0 18px

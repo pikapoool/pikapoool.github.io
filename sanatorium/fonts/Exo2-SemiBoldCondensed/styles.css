@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Exo2-SemiBoldCondensed';
+  src: url('Exo2-SemiBoldCondensed.eot?#iefix') format('embedded-opentype'),  url('Exo2-SemiBoldCondensed.otf')  format('opentype'),
+	     url('Exo2-SemiBoldCondensed.woff') format('woff'), url('Exo2-SemiBoldCondensed.ttf')  format('truetype'), url('Exo2-SemiBoldCondensed.svg#Exo2-SemiBoldCondensed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
