@@ -2,12 +2,20 @@
 	min-height: 180px
 	position: absolute
 	width: 100%
-	z-index: 10
-	background-image: url(../images/header_bg.png)
-	background-repeat: no-repeat
-	background-position: 50% 0
+	&_bg
+		display: none
+		position: absolute
+		height: 180px
+		width: 100%
+		z-index: 10
+		background-image: url(../images/header_bg.png)
+		background-repeat: no-repeat
+		background-position: 50% -35px
+	.container
+		position: relative
+		z-index: 20
 	&Logo
-		padding-top: 11px
+		padding: 11px 0 0 15px
 		a
 			&:hover
 				text-decoration: none
@@ -54,7 +62,7 @@
 			font-family: "Exo2-LightCondensed"
 			line-height: 1.1
 		&_link
-			font-size: 15px
+			font-size: 16px
 			display: block
 			color: #4d5665
 			text-transform: uppercase
@@ -92,13 +100,13 @@
 				clear: both
 			li
 				float: left
-				margin: 0 17px
+				margin: 0 16px
 				&:first-child
 					margin-left: 0
 				&:last-child
 					margin-right: 0
 				a
-					font-size: 15px
+					font-size: 16px
 					line-height: 1
 					letter-spacing: 1px
 					color: #708098
@@ -111,7 +119,7 @@
 						width: 100%
 						height: 0
 						position: absolute
-						top: -19px
+						top: -17px
 						background-color: #e68946
 						opacity: 0
 						transition: .3s all ease
@@ -121,4 +129,95 @@
 						&:before
 							opacity: 1
 							height: 3px
+			.current-menu-item
+				a
+					text-decoration: none
+					color: #e68946
+					&:before
+						opacity: 1
+						height: 3px
+		&_toggle
+			background-color: #e68946
+			font-family: "Exo2-SemiBoldCondensed"
+			font-size: 15px
+			text-transform: uppercase
+			line-height: 1
+			color: #fff
+			padding: 5px 32px
+			border-radius: 3px
+			width: 100%
+			display: none
+			transition: .3s all ease
+			span
+				display: inline-block
+				vertical-align: middle
+				transition: .3s all ease
+			i
+				font-family: "Exo2-SemiBold"
+				font-style: normal
+				font-weight: bold
+				font-size: 18px
+				display: inline-block
+				vertical-align: middle
+				transition: .3s all ease
+			&.active
+				background-color: #f3f5f4
+				span,
+				i
+					color: #47566c
 
+.headerMenu_mob
+	@extend %ulli
+	text-align: left
+	background-color: #f3f5f4
+	border-radius: 4px
+	position: absolute
+	right: 0
+	top: 110px
+	min-width: 204px
+	display: none
+	&:before
+		content: ''
+		width: 95%
+		height: 93%
+		border-radius: 4px
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		border: 1px dashed #e68946
+		opacity: 0.5
+		z-index: 1
+	&:after
+		content: ''
+		width: 0
+		height: 0
+		border-left: 10px solid transparent
+		border-right: 10px solid transparent
+		border-bottom: 10px solid #f3f5f4
+		position: absolute
+		top: -10px
+		right: 20px
+	ul
+		padding: 8px 0
+		position: relative
+		z-index: 2
+		li
+			a
+				font-size: 15px
+				font-family: "Exo2-SemiBoldCondensed"
+				color: #47566c
+				text-transform: uppercase
+				line-height: 1
+				padding: 8px 21px
+				display: block
+				transition: .3s all ease
+				&:hover
+					text-decoration: none
+					background-color: #e68946
+					color: #fff
+		.current-menu-item
+			a
+				text-decoration: none
+				background-color: #e68946
+				color: #fff

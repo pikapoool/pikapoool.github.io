@@ -5,6 +5,20 @@
 @import "popup.sass"
 @import "animate.sass"
 
+#fancybox-buttons
+	ul
+		li
+			&:before,
+			&:after
+				display: none !important
+
+.none
+	position: absolute
+	// visibility: hidden
+	z-index: -2
+	left: -200px
+	bottom: 0
+
 //////////////////////////////
 //start fistScreen
 //////////////////////////////
@@ -15,6 +29,7 @@
 	background-position: 50% 0
 	background-size: cover
 	position: relative
+	overflow: hidden
 	&_title
 		margin: 302px 0 0 40px
 		&_top
@@ -23,7 +38,9 @@
 			line-height: .83
 			font-family: "Boomboom"
 			text-shadow: 1px 1px 0 #fff
-			span:last-child
+			span:nth-child(2)
+				font-size: 97px
+			span:nth-child(3)
 				text-transform: uppercase
 		&_bottom
 			padding: 50px 0 0 3px
@@ -35,16 +52,63 @@
 			margin: 20px 0 0 -9px
 	&_bottom
 		position: absolute
+		z-index: 15
 		bottom: 0
 		width: 100%
 		height: 150px
 		background-image: url(../images/firstscreen_bottom_bg.png)
 		background-repeat: no-repeat
 		background-position: 50% 0%
+.scene_wrap
+	// position: relative
+#scene
+	padding: 0
+	margin: 0
+	list-style-type: none
+	width: 320px
+	margin: auto
+	position: relative
+	z-index: 1
+	li
+		margin: 0
+		padding: 0
+		// position: absolute !important
+		left: auto !important
+		&:before,
+		&:after
+			display: none
+		&:nth-child(1)
+			// position: absolute !important
+			top: 0px !important
+			left: -410px !important
+			z-index: 16 !important
+		&:nth-child(2)
+			top: 668px !important
+			right: -810px !important
+		&:nth-child(3)
+			top: 51px !important
+			left: -543px !important
+			z-index: 15 !important
+		&:nth-child(4)
+			top: 600px !important
+			right: -610px !important
+			z-index: 11 !important
+		&:nth-child(5)
+			top: 114px !important
+			right: -504px !important
+			z-index: 13 !important
+		&:nth-child(6)
+			top: 0px !important
+			left: -820px !important
+			z-index: 1 !important
+		&:nth-child(7)
+			left: -792px !important
+			z-index: 14 !important
+			top: -35px !important
+
 //////////////////////////////
 //end fistScreen
 //////////////////////////////
-
 
 
 //////////////////////////////
@@ -55,18 +119,19 @@
 	background-repeat: no-repeat
 	background-position: 50% 100%
 	padding-bottom: 73px
+	// background-color: #000
 	&_left
 		&_title
 			line-height: 1.2
-			span:last-child
+			margin-bottom: 30px
+			span:nth-child(2)
 				font-size: 54px
-				font-family: "Exo2-ThinItalic"
+				font-family: "Exo2-LightItalic"
 	&_right
 	&_form
 		margin: auto
-		padding: 58px 8px
+		padding: 56px 0
 		position: relative
-		width: 350px
 		&:before,
 		&:after
 			content: ''
@@ -76,6 +141,7 @@
 			background-image: url(../images/homeabout_form.png)
 			background-repeat: no-repeat
 			background-position: 50% 0
+			background-size: 360px 116px
 			left: 50%
 			top: 0
 			transform: translate(-50%, 0)
@@ -83,27 +149,13 @@
 			background-position: 50% 100%
 			bottom: 0
 			top: auto
-		&_title
-			font-size: 28px
-			padding-bottom: 7px
-			color: #fff
-			font-family: "Exo2-SemiBoldCondensed"
-		&_descr
-			font-size: 16px
-			color: #fff
-			font-family: "Exo2-LightCondensed"
-			line-height: 1.3
-			span:last-child
-				font-family: "Exo2-SemiBoldCondensed"
-				display: block
-				padding: 19px 0 17px
 		form
-			box-shadow: 0 0 0 8px #e68946
-			background-color: #e68946
-			padding: 10px 20px 21px
+			padding: 11px 34px 21px
 			text-align: center
-			border-left: 1px dashed rgba(#fff,.3)
-			border-right: 1px dashed rgba(#fff,.3)
+			background-image: url(../images/form_bg.png)
+			background-repeat: repeat-y
+			background-position: 50% 0
+			display: block
 			input
 				border: none
 				width: 100%
@@ -127,19 +179,47 @@
 				transition: .2s all ease
 				&:hover
 					opacity: .8
-	&_slider
-		margin-top: 60px
-		&_item
-			img
-				// clip-path: ellipse(50% 50% at 50% 50%)
+		&_title
+			font-size: 28px
+			padding-bottom: 8px
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+		&_descr
+			font-size: 16px
+			color: #fff
+			font-family: "Exo2-LightCondensed"
+			line-height: 1.3
+			span:last-child
+				font-family: "Exo2-SemiBoldCondensed"
 				display: block
+				padding: 19px 0 17px
+	&_slider
+		margin-top: 45px
+		&_item
+			&_img
 				width: 263px
 				height: 139px
+				position: relative
 				margin: auto
-				clip-path: url(#clip1)
+				display: block
+				// overflow: hidden
+				img
+					width: 100%
+					display: block
+				&:before
+					content: ''
+					width: 100.6%
+					height: 100.6%
+					position: absolute
+					left: -0.5px
+					top: 0
+					background-image: url(../images/mask.png)
+					background-repeat: no-repeat
+					background-size: 100%
+					z-index: 1
 .owl-nav
 	text-align: right
-	padding: 15px 15px 0 0
+	padding: 15px 20px 0 0
 .owl-prev,
 .owl-next
 	display: inline-block
@@ -153,13 +233,30 @@
 	transition: .3s all ease
 	margin-left: 6px
 	padding: 0 2px 0 0
+	line-height: 26px
 	&:hover
 		opacity: 1
 .owl-next
 	padding: 0 0 0 2px
+.owl-dots
+	position: absolute
+	left: 140px
+	top: 245px
+.owl-dot
+	display: inline-block
+	margin-right: 6px
+	width: 11px
+	height: 11px
+	border-radius: 50%
+	border: 2px solid #ddd
+	&.active
+		border-color: #e68946
+
+
 //////////////////////////////
 //end homeAbout
 //////////////////////////////
+
 
 
 //////////////////////////////
@@ -175,6 +272,7 @@
 	&_item
 		p
 			font-size: 14px
+			line-height: 1.5
 		&:after
 			content: ''
 			display: table
@@ -231,7 +329,7 @@
 //start forAged
 //////////////////////////////
 .forAged
-	padding: 37px 0 95px
+	padding: 37px 0 87px
 	&_title
 		line-height: 1.2
 		margin-bottom: 47px
@@ -242,27 +340,26 @@
 			clear: both
 		&_img
 			position: relative
-			width: 361px
-			height: 238px
+			width: 100%
 			float: left
-			margin-right: 30px
+			overflow: hidden
+			max-height: 238px
 			&:before
 				content: ''
-				width: 100%
-				height: 100%
+				width: 100.6%
+				height: 100.6%
 				position: absolute
 				top: 0
 				left: 0
-				background-image: url(../images/mask.png)
-				background-position: 50% 50%
+				z-index: 1
+				background-image: url(../images/mask_big.png)
 				background-repeat: no-repeat
-				background-size: cover
+				background-size: 100%
 			img
-				width: 360px
-				height: 238px
+				width: 100%
 				display: block
 		&_descr
-			width: 745px
+			// width: 745px
 			float: left
 		&_title
 			font-size: 25px
@@ -274,6 +371,33 @@
 			span
 				background-color: #fff
 				padding-right: 5px
+	.owl-carousel .owl-stage-outer
+		overflow: visible
+	.owl-item.float
+		.col-sm-4
+			float: left
+			animation: fadeIn 0.4s linear
+	.owl-item
+		opacity: .3
+		.col-sm-4
+			float: right
+		.forAged_item_descr
+			display: none
+	.owl-item.active
+		opacity: 1
+		.col-sm-4
+			float: left !important
+		.forAged_item_descr
+			display: block
+		.forAged_item_title
+			animation: fadeInDown 0.6s linear
+		p
+			animation: fadeInUp 0.6s linear
+	.owl-nav
+		position: absolute
+		top: -94px
+		right: 0
+
 //////////////////////////////
 //end forAged
 //////////////////////////////
@@ -316,6 +440,14 @@
 			p
 				font-size: 14px
 				margin-bottom: 8px
+		&_numbers
+			display: block
+			&_wrapper
+				height: 34px
+				overflow: hidden
+				float: left
+			&_wrap
+				// position: absolute
 		&_title
 			font-family: "Exo2-SemiBold"
 			font-size: 34px
@@ -328,7 +460,6 @@
 				color: #9dc130
 			.progress-bar
 				background-color: #9dc130
-				width: 60%
 		&:nth-child(2)
 			.results_item_icon
 				background-position: 50% -38px
@@ -336,7 +467,6 @@
 				color: #d07c3f
 			.progress-bar
 				background-color: #d07c3f
-				width: 25%
 		&:nth-child(3)
 			.results_item_icon
 				background-position: 50% -76px
@@ -344,7 +474,23 @@
 				color: #6d4f31
 			.progress-bar
 				background-color: #6d4f31
-				width: 15%
+		&.on
+			&:nth-child(1)
+				.results_item_numbers_wrap
+					animation: load 2s steps(9, end) forwards
+				.progress-bar
+					width: 60%
+			&:nth-child(2)
+				.results_item_numbers_wrap
+					animation: load 2s steps(9, end) forwards
+				.progress-bar
+					width: 25%
+			&:nth-child(3)
+				.results_item_numbers_wrap
+					animation: load 2s steps(9, end) forwards
+					content: "2"
+				.progress-bar
+					width: 15%
 .progress
 	height: 14px
 	background-color: #fff
@@ -353,6 +499,8 @@
 	&-bar
 		height: 8px
 		border-radius: 10px
+		width: 0
+		transition: 2s all ease
 //////////////////////////////
 //end results
 //////////////////////////////
@@ -394,6 +542,1111 @@
 //////////////////////////////
 //end homeNews
 //////////////////////////////
+
+
+//////////////////////////////
+////start service more page
+//////////////////////////////
+
+//////////////////////////////
+//start serviceMore
+//////////////////////////////
+.pagesTop
+	height: 448px
+	background-image: url(../images/pagestop_bg.jpg)
+	background-repeat: no-repeat
+	background-position: 50% 0
+	position: relative
+	overflow: hidden
+	.header_bg
+		display: block
+	&_airplane
+		position: absolute
+		z-index: 10
+		left: -118px
+		top: 50px
+		&_wrap
+			position: relative
+	&_title
+		margin: 218px 0 0
+		position: relative
+		z-index: 11
+		&_top
+			font-size: 50px
+			color: #d57937
+			line-height: .9
+			font-family: "Boomboom"
+			text-shadow: 1px 1px 0 #fff
+		&_bottom
+			padding: 6px 0 0 4px
+		&_img
+			margin: 20px 0 0 -9px
+	&_wave
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 80px
+		background-image: url(../images/pagestop_wave.png)
+		background-repeat: no-repeat
+		background-position: 50% 0%
+.category-path
+	@extend %ulli
+	ul
+		li
+			display: inline-block
+			font-size: 12px
+			color: #7b7b7b
+			font-family: "Exo2-RegularCondensed"
+			line-height: 1.3
+			position: relative
+			padding-right: 10px
+			margin-right: 0px
+			&:before
+				display: block
+				content: '/'
+				font-size: 12px
+				color: #7b7b7b
+				font-family: "Exo2-RegularCondensed"
+				line-height: 1.3
+				position: absolute
+				right: 0
+				width: auto
+				height: auto
+				border: none
+				left: auto
+				top: auto
+			&:last-child
+				&:before
+					display: none
+			a
+				font-size: 12px
+				color: #7b7b7b
+				font-family: "Exo2-RegularCondensed"
+				line-height: 1.3
+
+.serviceMoreAbout
+	padding-bottom: 62px
+	&_left
+		&_title
+			font-size: 35px
+			line-height: 1.2
+			span:nth-child(2)
+				font-size: 54px
+				font-family: "Exo2-LightItalic"
+		h2
+			font-family: "Exo2-Italic"
+			font-weight: normal
+	&_right
+	&_form
+		margin: auto
+		padding: 56px 0
+		position: relative
+		&:before,
+		&:after
+			content: ''
+			width: 430px
+			height: 58px
+			position: absolute
+			background-image: url(../images/homeabout_form.png)
+			background-repeat: no-repeat
+			background-position: 50% 0
+			background-size: 360px 116px
+			left: 50%
+			top: 0
+			transform: translate(-50%, 0)
+		&:after
+			background-position: 50% 100%
+			bottom: 0
+			top: auto
+		form
+			padding: 11px 34px 21px
+			text-align: center
+			background-image: url(../images/form_bg.png)
+			background-repeat: repeat-y
+			background-position: 50% 0
+			display: block
+			input
+				border: none
+				width: 100%
+				display: block
+				height: 30px
+				margin-bottom: 15px
+				padding: 0 14px
+				border-radius: 3px
+			input[type=submit]
+				font-size: 13px
+				width: auto
+				height: 36px
+				text-transform: uppercase
+				margin: 0 auto
+				padding: 0 52px
+				color: #fff
+				font-family: "Exo2-SemiBoldCondensed"
+				background-color: #6e4f32
+				border-bottom: 2px solid #4d331b
+				border-radius: 3px
+				transition: .2s all ease
+				&:hover
+					opacity: .8
+		&_title
+			font-size: 28px
+			padding-bottom: 7px
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+		&_descr
+			font-size: 16px
+			color: #fff
+			font-family: "Exo2-LightCondensed"
+			line-height: 1.3
+			span:last-child
+				font-family: "Exo2-SemiBoldCondensed"
+				display: block
+				padding: 19px 0 17px
+	&_slider
+		margin-top: 34px
+		&_item
+			&_img
+				width: 263px
+				height: 139px
+				position: relative
+				margin: auto
+				display: block
+				// overflow: hidden
+				img
+					width: 100%
+					display: block
+				&:before
+					content: ''
+					width: 100.6%
+					height: 100.6%
+					position: absolute
+					left: -0.5px
+					top: 0
+					background-image: url(../images/mask.png)
+					background-repeat: no-repeat
+					background-size: 100%
+					z-index: 1
+	&_textblock
+		padding: 0px 0 40px
+		&_title
+			margin: 12px 0 18px
+			font-family: "Exo2-Italic"
+			font-weight: normal
+	&_info
+		text-align: center
+		border: 5px solid #ef9a48
+		padding: 16px 0 29px
+		h2,
+		h4
+			margin: 0
+			line-height: 1.45
+		&_title
+			font-size: 33px
+		.txt_color
+			color: #ef9a48
+		h2
+			color: #444
+			font-family: "Exo2-Regular"
+			font-weight: normal
+
+
+//////////////////////////////
+//end serviceMore
+//////////////////////////////
+
+//////////////////////////////
+////end service more page
+//////////////////////////////
+
+
+
+//////////////////////////////
+////start services page
+//////////////////////////////
+
+//////////////////////////////
+//start services
+//////////////////////////////
+.services
+	&_title
+		font-size: 35px
+		margin: 28px 0 15px
+	&_item
+		min-height: 340px
+		&_wrap
+			padding: 40px 0
+		&_img
+			position: relative
+			width: 100%
+			display: block
+			overflow: hidden
+			&:before
+				content: ''
+				width: 100.7%
+				height: 100.7%
+				position: absolute
+				top: -1px
+				left: -1px
+				z-index: 1
+				background-image: url(../images/mask_big.png)
+				background-repeat: no-repeat
+				background-size: 100%
+			img
+				width: 100%
+				display: block
+		&_title
+			display: block
+			text-transform: uppercase
+			color: #d57937
+			font-family: "Exo2-Medium"
+			font-weight: normal
+			text-align: center
+			margin: 0
+			padding: 22px 13px 0
+			line-height: 1.4
+
+//////////////////////////////
+//end services
+//////////////////////////////
+
+//////////////////////////////
+////end services page
+//////////////////////////////
+
+
+//////////////////////////////
+////start conditions page
+//////////////////////////////
+
+//////////////////////////////
+//start conditionsAbout
+//////////////////////////////
+.conditionsAbout
+	&_left
+		&_title
+			line-height: 1.2
+			font-size: 35px
+			margin: 16px 0 25px
+	&_right
+	&_form
+		margin: auto
+		padding: 56px 0px
+		position: relative
+		&:before,
+		&:after
+			content: ''
+			width: 430px
+			height: 58px
+			position: absolute
+			background-image: url(../images/homeabout_form.png)
+			background-repeat: no-repeat
+			background-position: 50% 0
+			background-size: 360px 116px
+			left: 50%
+			top: 0
+			transform: translate(-50%, 0)
+		&:after
+			background-position: 50% 100%
+			bottom: 0
+			top: auto
+		&_title
+			font-size: 28px
+			padding-bottom: 7px
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+		&_descr
+			font-size: 16px
+			color: #fff
+			font-family: "Exo2-LightCondensed"
+			line-height: 1.3
+			span:last-child
+				font-family: "Exo2-SemiBoldCondensed"
+				display: block
+				padding: 19px 0 17px
+		form
+			padding: 11px 34px 21px
+			text-align: center
+			background-image: url(../images/form_bg.png)
+			background-repeat: repeat-y
+			background-position: 50% 0
+			display: block
+			input
+				border: none
+				width: 100%
+				display: block
+				height: 30px
+				margin-bottom: 15px
+				padding: 0 14px
+				border-radius: 3px
+			input[type=submit]
+				font-size: 13px
+				width: auto
+				height: 36px
+				text-transform: uppercase
+				margin: 0 auto
+				padding: 0 52px
+				color: #fff
+				font-family: "Exo2-SemiBoldCondensed"
+				background-color: #6e4f32
+				border-bottom: 2px solid #4d331b
+				border-radius: 3px
+				transition: .2s all ease
+				&:hover
+					opacity: .8
+	&_slider
+		margin: 60px 0 24px
+		&_item
+			&_img
+				width: 263px
+				height: 139px
+				position: relative
+				margin: auto
+				display: block
+				// overflow: hidden
+				img
+					width: 100%
+					display: block
+				&:before
+					content: ''
+					width: 100.6%
+					height: 100.6%
+					position: absolute
+					left: -0.5px
+					top: 0
+					background-image: url(../images/mask.png)
+					background-repeat: no-repeat
+					background-size: 100%
+					z-index: 1
+//////////////////////////////
+//end conditionsAbout
+//////////////////////////////
+
+
+//////////////////////////////
+//start conditionsForAged
+//////////////////////////////
+.conditionsForAged
+	background-image: url(../images/conditionsforaged_bg.png)
+	background-repeat: no-repeat
+	background-position: 50% 0
+	padding: 67px 0 0
+	margin-top: 25px
+	min-height: 1292px
+	&_item
+		text-align: center
+		margin-bottom: 35px
+		min-height: 294px
+		position: relative
+		z-index: 3
+		&_img
+			position: relative
+			width: 100%
+			overflow: hidden
+			max-height: 238px
+			&:before
+				content: ''
+				width: 100.6%
+				height: 100.6%
+				position: absolute
+				top: 0
+				left: 0
+				z-index: 1
+				background-image: url(../images/mask_big_gray.png)
+				background-repeat: no-repeat
+				background-size: 100%
+			img
+				width: 100%
+				display: block
+		&_title
+			font-family: "Exo2-Regular"
+			font-weight: normal
+			font-size: 18px
+			line-height: 21px
+	.col-md-4
+		&:nth-child(3n+2)
+			.conditionsForAged_item
+				animation-delay: 0.5s
+				z-index: 2
+		&:nth-child(3n+3)
+			.conditionsForAged_item
+				animation-delay: 1s
+				z-index: 1
+//////////////////////////////
+//end conditionsForAged
+//////////////////////////////
+
+//////////////////////////////
+//start conditionsFaq
+//////////////////////////////
+.conditionsFaq
+	margin-top: 4px
+	&_item
+		margin-bottom: 20px
+	&_question
+		margin: 0
+		padding: 19px 0 9px
+	&_answer
+		font-size: 14px
+		padding-left: 17px
+		p
+			margin: 0
+			padding: 0
+	&_btn
+		text-align: center
+		margin: 23px 0 89px
+		a
+			font-size: 17.39px
+			line-height: 1
+			letter-spacing: 1px
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+			display: inline-block
+			text-transform: uppercase
+			padding: 16px 47px 13px
+			background-color: #e68946
+			border-radius: 3px
+			border-bottom: 2px solid #b35b1c
+			transition: .2s all ease
+			&:hover
+				text-decoration: none
+				opacity: .8
+
+//////////////////////////////
+////end conditions page
+//////////////////////////////
+
+
+//////////////////////////////
+////start 404 page
+//////////////////////////////
+.pageNotFound
+	text-align: center
+	&_title
+		font-family: "Exo2-Italic"
+		font-weight: normal
+		font-size: 35px
+		color: #d57937
+		margin: 25px 0 14px
+	&_btn
+		text-align: center
+		a
+			font-size: 13px
+			margin-bottom: 120px
+			line-height: 1
+			letter-spacing: 1px
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+			display: inline-block
+			text-transform: uppercase
+			padding: 12px 17px 9px
+			background-color: #e68946
+			border-radius: 3px
+			border-bottom: 2px solid #b35b1c
+			transition: .2s all ease
+			&:hover
+				text-decoration: none
+				opacity: .8
+//////////////////////////////
+////end 404 page
+//////////////////////////////
+
+//////////////////////////////
+////start gallery page
+//////////////////////////////
+.galleryPage
+	&_title
+		font-size: 35px
+		margin: 9px 0 23px
+	&_item
+		min-height: 380px
+		margin-bottom: 20px
+		&_img
+			position: relative
+			margin-bottom: 12px
+			display: block
+			img
+				width: 100%
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				border: 5px solid #fff
+				opacity: .5
+			&_play
+				width: 76px
+				height: 76px
+				display: block
+				border-radius: 50%
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				background-color: rgba(#fff,.9)
+				text-align: center
+				box-shadow: 0 0 15px rgba(#000,.5)
+				padding-top: 19px
+				i
+					font-size: 38px
+					color: #6d4f31
+					line-height: 1
+			&_overlay
+				transition: .5s all ease
+				opacity: 0
+				position: absolute
+				left: 0
+				top: 0
+				width: 0
+				height: 0
+				background-color: #fff
+			&:hover
+				.galleryPage_item_img_overlay
+					opacity: .4
+					width: 100%
+					height: 100%
+			&_icon
+				position: absolute
+				display: block
+				bottom: 5px
+				left: 5px
+				width: 40px
+				height: 40px
+				background-color: #d07c3f
+				text-align: center
+				padding: 10px 0 0
+				i
+					font-size: 18px
+					line-height: 1
+					color: #fff
+		&_title
+			font-family: "Exo2-SemiBold"
+			font-size: 16px
+		&_date
+			color: #e68946
+			font-size: 11px
+			font-family: "Exo2-Regular"
+			font-weight: normal
+			padding-left: 20px
+			position: relative
+			margin-bottom: 6px
+			i
+				position: absolute
+				left: 0
+				top: 0px
+				font-size: 14px
+		&_descr
+			p
+				font-size: 14px
+.fancybox-inner
+	.hidden
+		display: block !important
+.galleryImage
+	.galleryPage_item_img
+		box-shadow: 0 0 2px rgba(#000,.5)
+		&:before
+			opacity: 1
+		&:after
+			content: ''
+			width: 100%
+			height: 9px
+			position: absolute
+			bottom: -10px
+			left: 0
+			background-image: url(../images/galleryimage.png)
+//////////////////////////////
+////end gallery page
+//////////////////////////////
+
+//////////////////////////////
+////start contacts page
+//////////////////////////////
+.contacts
+	&_title
+		font-size: 35px
+		margin: 8px 0 14px
+	&_inner
+		i
+			color: #e7ad01
+			font-size: 19px
+			padding-right: 10px
+		&_adress
+			font-size: 20px
+			&_tel
+				a
+					color: #444
+			&_email
+				margin-bottom: 25px
+				color: #d57937
+		&_txt
+			&_title
+				display: block
+				margin-bottom: 7px
+				font-size: 18px
+				font-family: "Exo2-Medium"
+			p
+				font-size: 14px
+	&_form
+		margin: 67px auto
+		padding: 0 55px
+		position: relative
+		height: 360px
+		width: 1024px
+		&_img
+			position: absolute
+			bottom: 0
+			left: 23px
+		&:before,
+		&:after
+			content: ''
+			width: 55px
+			height: 100%
+			position: absolute
+			background-image: url(../images/contacts_form.png)
+			background-repeat: no-repeat
+			background-position: 0% 50%
+			background-size: 112px 100%
+			top: 50%
+			left: 0
+			transform: translate(0%, -50%)
+		&:after
+			background-position: 100% 50%
+			right: 1px
+			left: auto
+		&_top
+			&:after
+				content: ''
+				display: table
+				clear: both
+			.control-group
+				&:first-child
+					float: left
+					width: 47%
+				&:last-child
+					float: right
+					width: 47%
+				input
+					width: 100%
+		&_bottom
+			&.after
+				content: ''
+				display: table
+				clear: both
+			&_checkbox
+				float: left
+			&_submit
+				float: right
+		form
+			padding: 36px 34px 21px 301px
+			background-image: url(../images/contacts_form_bg.png)
+			background-repeat: repeat-x
+			background-position: 0% 50%
+			background-size: 6px 361px
+			display: block
+			height: 360px
+			input
+				border: none
+				width: 270px
+				display: block
+				height: 30px
+				margin: 0 0px 15px 0
+				padding: 0 14px
+				border-radius: 3px
+			textarea
+				width: 100%
+				resize: none
+				border: none
+				border-radius: 3px
+				height: 120px
+				padding: 5px 14px
+				margin-bottom: 15px
+			.chekbox_label
+				font-size: 13px
+				color: #fff
+				font-family: "Exo2-SemiBoldCondensed"
+				text-transform: uppercase
+				position: relative
+				padding-left: 24px
+				cursor: pointer
+				i
+					position: absolute
+					left: 0
+					top: 0
+					font-size: 18px
+					line-height: 1
+					&.ion-android-checkbox-outline
+						display: block
+					&.ion-android-checkbox-outline-blank
+						display: none
+			input[type=checkbox]
+				display: none
+			input[type=checkbox]:checked + label i.ion-android-checkbox-outline
+				display: none
+			input[type=checkbox]:checked + label i.ion-android-checkbox-outline-blank
+				display: block
+			input[type=submit]
+				font-size: 13px
+				width: auto
+				height: 36px
+				text-transform: uppercase
+				margin: -5px auto 0
+				padding: 0 52px
+				color: #fff
+				font-family: "Exo2-SemiBoldCondensed"
+				background-color: #6e4f32
+				border-bottom: 2px solid #4d331b
+				border-radius: 3px
+				transition: .2s all ease
+				&:hover
+					opacity: .8
+		&_title
+			font-size: 28px
+			padding-bottom: 11px
+			text-transform: uppercase
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+		&_descr
+			font-size: 16px
+			color: #fff
+			font-family: "Exo2-LightCondensed"
+			line-height: 1.3
+			span:last-child
+				font-family: "Exo2-SemiBoldCondensed"
+				display: block
+				padding: 19px 0 17px
+.map_wrap
+	width: 100%
+	box-shadow: 0 0px 2px 0px rgba(#000,.2)
+.map
+	width: 100%
+	height: 451px
+	border: 5px solid #fff
+
+.control-group
+	position: relative
+	display: block
+	padding-left: 0
+	.ion-android-close
+		display: none
+		position: absolute
+		right: 8px
+		top: -17px
+		z-index: 1
+		font-weight: bold
+		color: #fff
+	&.error
+		input,
+		textarea
+			box-shadow: inset 0 0 0 2px #e34413
+			&::-webkit-input-placeholder
+				color: #e34413
+				opacity: 1
+			&::-moz-placeholder
+				color: #e34413
+				opacity: 1
+			&:-moz-placeholder
+				color: #e34413
+			&:-ms-input-placeholder
+				color: #e34413
+		.ion-android-close
+			display: block
+
+.text-danger
+	position: absolute
+	top: -14px
+	left: 0
+	width: 100%
+	@extend %ulli
+	ul
+		list-style-type: none
+		text-align: left
+		li
+			font-family: "Exo2-SemiBoldCondensed"
+			font-size: 12px
+			padding-left: 10px
+			text-transform: uppercase
+			color: #fff
+			background-color: #e34413
+			border-radius: 3px 3px 0 0
+
+
+
+
+//////////////////////////////
+////end contacts page
+//////////////////////////////
+
+
+//////////////////////////////
+////start reviews page
+//////////////////////////////
+.reviews
+	&_title
+		font-size: 35px
+		line-height: 1.2
+		margin: 14px 0 11px
+	&_item
+		padding: 41px 0
+		border-bottom: 1px solid #e5e5e5
+		&:last-child
+			border: none
+		&_img
+			position: relative
+			width: 151px
+			height: 134px
+			img
+				width: 100%
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				background-image: url(../images/mask_review.png)
+				background-repeat: no-repeat
+				background-position: 0% 0%
+				// background-size: cover
+		&_name
+			font-size: 18px
+			font-family: "Exo2-Medium"
+			color: #d57937
+			text-transform: uppercase
+		&_role
+			font-size: 12px
+			font-family: "Exo2-Regular"
+			font-weight: normal
+			color: #888
+	&_form
+		margin-bottom: 80px
+		padding: 0 55px
+		position: relative
+		height: 360px
+		&_img
+			position: absolute
+			bottom: 0
+			left: 23px
+		&:before,
+		&:after
+			content: ''
+			width: 55px
+			height: 100%
+			position: absolute
+			background-image: url(../images/contacts_form.png)
+			background-repeat: no-repeat
+			background-position: 0% 50%
+			background-size: 112px 100%
+			top: 50%
+			left: 0
+			transform: translate(0%, -50%)
+		&:after
+			background-position: 100% 50%
+			right: 1px
+			left: auto
+		&_top
+			&.after
+				content: ''
+				display: table
+				clear: both
+			.control-group
+				&:first-child
+					float: left
+				&:last-child
+					float: right
+				input
+					width: 100%
+		&_bottom
+			text-align: right
+			&.after
+				content: ''
+				display: table
+				clear: both
+			&_checkbox
+				display: inline-block
+				vertical-align: middle
+				margin-right: 18px
+				// float: right
+			&_addfile
+				float: left
+		form
+			padding: 36px 30px 21px 30px
+			background-image: url(../images/contacts_form_bg.png)
+			background-repeat: repeat-x
+			background-position: 0% 50%
+			background-size: 6px 361px
+			display: block
+			height: 360px
+			input
+				border: none
+				width: 270px
+				display: block
+				height: 30px
+				margin: 0 0px 15px 0
+				padding: 0 14px
+				border-radius: 3px
+			textarea
+				width: 100%
+				resize: none
+				border: none
+				border-radius: 3px
+				height: 120px
+				padding: 5px 14px
+				margin-bottom: 9px
+			.reviews_checkbox
+				font-size: 13px
+				color: #fff
+				font-family: "Exo2-SemiBoldCondensed"
+				text-transform: uppercase
+				position: relative
+				padding-left: 24px
+				cursor: pointer
+				i
+					position: absolute
+					left: 0
+					top: 0
+					font-size: 18px
+					line-height: 1
+					&.ion-android-checkbox-outline
+						display: block
+					&.ion-android-checkbox-outline-blank
+						display: none
+			input[type=checkbox]
+				display: none
+			input[type=checkbox]:checked + label i.ion-android-checkbox-outline
+				display: none
+			input[type=checkbox]:checked + label i.ion-android-checkbox-outline-blank
+				display: block
+			input[type=submit]
+				font-size: 13px
+				display: inline-block
+				vertical-align: middle
+				width: auto
+				height: 36px
+				text-transform: uppercase
+				margin: 0 auto 0
+				padding: 0 52px
+				color: #fff
+				font-family: "Exo2-SemiBoldCondensed"
+				background-color: #6e4f32
+				border-bottom: 2px solid #4d331b
+				border-radius: 3px
+				transition: .2s all ease
+				&:hover
+					opacity: .8
+		&_title
+			font-size: 28px
+			padding-bottom: 11px
+			text-transform: uppercase
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+		&_descr
+			font-size: 16px
+			color: #fff
+			font-family: "Exo2-LightCondensed"
+			line-height: 1.3
+			span:last-child
+				font-family: "Exo2-SemiBoldCondensed"
+				display: block
+				padding: 19px 0 17px
+form
+	.reviews_form_bottom_addfile
+		input
+			display: none
+		label
+			font-size: 13px
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+			text-transform: uppercase
+			position: relative
+			padding-left: 24px
+			cursor: pointer
+			padding: 6px 17px 5px
+			background-color: #fff
+			border-radius: 3px
+			color: #6e4f32
+			display: block
+			text-transform: uppercase
+.quotes
+	position: absolute
+	right: 15px
+	bottom: 40px
+	transform: rotate(180deg)
+	font-family: "MoulinRouge"
+	font-size: 103.36px
+	line-height: 1
+	color: #d57937
+//////////////////////////////
+////end reviews page
+//////////////////////////////
+
+
+//////////////////////////////
+////start articles page
+//////////////////////////////
+.articles
+	&_title
+		font-size: 35px
+		margin: 9px 0 25px
+	&_item_wrap
+		padding-bottom: 45px
+	&_item
+		padding: 44px 0
+		border-bottom: 1px solid #e5e5e5
+		&:first-child
+			padding-top: 0
+		&_img
+			position: relative
+			width: 100%
+			overflow: hidden
+			max-height: 238px
+			img
+				width: 100%
+				display: block
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				background-image: url(../images/mask_big.png)
+				background-repeat: no-repeat
+				background-size: 100%
+		&_title
+			font-size: 25px
+			margin: 6px 0 20px
+			font-family: "Exo2-Regular"
+			line-height: 1.3
+		&_descr
+	&_btn
+		text-align: center
+		margin-bottom: 60px
+		a
+			font-size: 13px
+			line-height: 1
+			letter-spacing: 1px
+			color: #fff
+			font-family: "Exo2-SemiBoldCondensed"
+			display: inline-block
+			text-transform: uppercase
+			padding: 12px 35px 9px
+			background-color: #e68946
+			border-radius: 3px
+			border-bottom: 2px solid #b35b1c
+			transition: .2s all ease
+			&:hover
+				text-decoration: none
+				opacity: .8
+//////////////////////////////
+////end articles page
+//////////////////////////////
+
+.receptionFaq
+	background-image: url(../images/conditionsforaged_bg.png)
+	background-position: 50% 0
+	background-repeat: no-repeat
+	background-size: cover
+	margin: 40px 0 0
+	padding: 50px 0 100px
+
 
 
 

@@ -1,3 +1,32 @@
+equalheight = function(container){
+	var currentTallest = 0,
+			currentRowStart = 0,
+			rowDivs = new Array(),
+			$el,
+			topPosition = 0;
+	$(container).each(function() {
+		$el = $(this);
+		$($el).height('auto')
+		topPostion = $el.position().top;
+		if (currentRowStart != topPostion) {
+			for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+				rowDivs[currentDiv].height(currentTallest);
+			}
+			rowDivs.length = 0; // empty the array
+			currentRowStart = topPostion;
+			currentTallest = $el.height();
+			rowDivs.push($el);
+		} else {
+			rowDivs.push($el);
+			currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+		}
+		for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+			rowDivs[currentDiv].height(currentTallest);
+		}
+	});
+}
+
+
 /*!
 Waypoints - 4.0.0
 Copyright © 2011-2015 Caleb Troughton
@@ -33,46 +62,117 @@ setBodyHeight = function(container){
 }
 
 
-
 $(window).load(function() {
+	equalheight('.conditionsForAged_item, .services_item, .galleryPage_item');
 	setBodyHeight("body");
-	$(window).resize(function(){
-		setBodyHeight("body");
-	});
+});
+$(window).resize(function(){
+	equalheight('.conditionsForAged_item, .services_item, .galleryPage_item');
+	setBodyHeight("body");
 });
 
+
 $(function() {
-	// $(".mobMenu_toggle").click(function(){
-	// 	$(this).toggleClass("active").next().slideToggle();
-	// });
-  $(".homeAbout_slider").owlCarousel({
-      // autoPlay: 3000, //Set AutoPlay to 3 seconds
-      loop: true,
-      nav: true,
-      navText: ['<i class="ion-chevron-left"></i>','<i class="ion-chevron-right"></i>'],
-      items : 4,
-      // itemsDesktop : [1199,3],
-      // itemsDesktopSmall : [979,3]
-  });
+	$(".headerMenu_toggle").click(function(){
+		$(this).toggleClass("active").parent().next().slideToggle();
+	});
+	//parallax
+	$('#scene').parallax({
+		limitY: 0,
+	});
+	//homeAbout carousel
+	$(".homeAbout_slider, .serviceMoreAbout_slider, .conditionsAbout_slider").owlCarousel({
+			// autoPlay: 3000, //Set AutoPlay to 3 seconds
+			loop: true,
+			nav: true,
+			dots: false,
+			navText: ['<i class="ion-chevron-left"></i>','<i class="ion-chevron-right"></i>'],
+			items : 4,
+			responsive: {
+				1200:{items:4,},
+				992:{items:3,},
+				768:{items:2,},
+				0:{items:1,},
+			},
+	});
+	$(".fancybox").fancybox({
+		helpers		: {
+			title	: { type : 'inside' },
+			buttons	: {}
+		}
+	});
 
-
+	$(".fancybox-media").fancybox({
+		helpers		: {
+			title	: { type : 'inside' },
+			media : {}
+		}
+	});
+	//forAged carousel
+	$(".forAged_slider").owlCarousel({
+			// autoPlay: 3000, //Set AutoPlay to 3 seconds
+			loop: true,
+			nav: true,
+			navText: ['<i class="ion-chevron-left"></i>','<i class="ion-chevron-right"></i>'],
+			dots: true,
+			items : 1,
+			responsive: {
+				768:{dots: true,},
+				0:{dots: false,},
+			},
+	});
+	$(".forAged, .homeAdvantages").mousemove(function() {
+		$(".forAged .owl-item").removeClass("float");
+		$(".forAged .owl-item.active").next().addClass("float");
+	});
 
 	//scroll animation
-	$(".classes_item").animated("rotateInUpLeft");
+	$(".homeAdvantages_title, .forAged_title").animated("fadeInUp");
+	$(".homeAdvantages_left .homeAdvantages_item").animated("fadeInLeft");
+	$(".homeAdvantages_right .homeAdvantages_item").animated("fadeInRight");
+	$(".conditionsForAged_item").animated("fadeInLeft");
+
+
+
 	$(".contact_form").animated("zoomIn");
-	$(".welcome_item").waypoint(function() {
-		$(".welcome_item").each(function(index) {
+	$(".results").waypoint(function() {
+		$(".results_item").each(function(index) {
 			var ths = $(this);
 			setInterval(function() {
 				ths.addClass("on");
 			}, 300*index);
 		});
 	}, {
-		offset : "60%"
+		offset : "50%"
 	});
 
 
-
+	var popup = {
+		close: function(){
+			$(".popup-wrapper").fadeOut();
+			$("html").removeClass("popupLock");
+		},
+		open: function(){
+			$("html").addClass("popupLock");
+		}
+	}
+	window.onload = function(){
+		$(".popup .close").on("click", function(){
+			popup.close();
+		});
+		$(".popup-wrapper").on("click", function(event) {
+			if ($(this).is(":visible")){
+				if ($(event.target).closest(".popup").length) return;
+				popup.close();
+				event.stopPropagation();
+			}
+		});
+		$(".headerCallback_btn a").on("click", function(e){
+			e.preventDefault();
+			popup.open();
+			$("#popup_callback").fadeIn(200);
+		});
+	};
 
 
 	//Chrome Smooth Scroll
@@ -86,5 +186,7 @@ $(function() {
 	};
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
+
+	$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 
 });

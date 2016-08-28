@@ -36,6 +36,7 @@
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css" />
 	<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css" />
 	<link rel="stylesheet" href="libs/owl/assets/owl.carousel.css" />
+	<link rel="stylesheet" href="libs/fancybox/source/jquery.fancybox.css" />
 	<link rel="stylesheet" href="css/main.min.css" />
 	<!-- Load CSS End -->
 
@@ -44,17 +45,18 @@
 <body>
 
 	<header class="header">
+		<div class="header_bg"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-sm-3 col-md-2">
+				<div class="col-xs-4 col-sm-3 col-md-2">
 					<div class="headerLogo">
 						<a href="index.html">
-							<img class="headerLogo_img" src="images/logo.png" alt="">
+							<img class="headerLogo_img" src="images/logo.png" alt="Casa di Cura">
 							<span class="headerLogo_title">Casa di Cura</span>
 						</a>
 					</div>
 				</div>
-				<div class="col-md-10 headerRight">
+				<div class="col-xs-8 col-sm-9 col-md-10 headerRight">
 					<div class="headerCallback">
 						<div class="headerCallback_questions">
 							<i class="headerCallback_icon ion-chatbox-working"></i>
@@ -85,6 +87,22 @@
 							<li class="menu-item"><a href="#">Статьи</a></li>
 							<li class="menu-item"><a href="#">Контакты</a></li>
 						</ul>
+						<div class="headerMenu_toggle">
+							<span>Меню&nbsp;</span>
+							<i class="ion-android-menu"></i>
+						</div>
+					</div>
+					<div class="headerMenu_mob">
+						<ul>
+							<li class="menu-item current-menu-item"><a href="#">Главная</a></li>
+							<li class="menu-item"><a href="#">Условия</a></li>
+							<li class="menu-item"><a href="#">Приём и оформление</a></li>
+							<li class="menu-item"><a href="#">Галерея</a></li>
+							<li class="menu-item"><a href="#">Услуги</a></li>
+							<li class="menu-item"><a href="#">Отзывы</a></li>
+							<li class="menu-item"><a href="#">Статьи</a></li>
+							<li class="menu-item"><a href="#">Контакты</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -93,30 +111,53 @@
 
 	<!-- start content -->
 	<section class="firstScreen">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-7">
-					<div class="firstScreen_title">
-						<div class="firstScreen_title_top">
-							<span>На пенсии – </span>
-							<span style="font-size: 97px;">жизнь только</span>
-							<span> начинается!</span>
-						</div>
-						<div class="firstScreen_title_bottom">Мы очень хотим, чтобы каждый пожилой человек чувствовал себя нужным!</div>
-						<div class="firstScreen_title_img">
-							<img class="firstScreen_label" src="images/label.png" alt="">
+		<ul id="scene" class="scene">
+			<li class="layer" data-depth="1.50">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-8 col-md-7">
+							<div class="firstScreen_title">
+								<div class="firstScreen_title_top">
+									<span>На пенсии – </span>
+									<span>жизнь только</span>
+									<span> начинается!</span>
+								</div>
+								<div class="firstScreen_title_bottom">Мы очень хотим, чтобы каждый пожилой человек чувствовал себя нужным!</div>
+								<div class="firstScreen_title_img">
+									<img class="firstScreen_label" src="images/label.png"  alt="">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</li>
+			<li class="layer" data-depth="0.40">
+				<img src="images/parallax_bush.png" alt="">
+			</li>
+			<li class="layer" data-depth="2.00">
+				<img src="images/parallax_airplane.png" alt="">
+			</li>
+			<li class="layer" data-depth="1.20">
+				<img src="images/parallax_butterfly.png"  alt="">
+			</li>
+			<li class="layer" data-depth="0.80">
+				<img src="images/parallax_peoples.png"  alt="">
+			</li>
+			<li class="layer" data-depth="0.80">
+				<img src="images/parallax_tree.png"  alt="">
+			</li>
+			<li class="layer" data-depth="0.00">
+				<img src="images/header_bg.png"  alt="">
+			</li>
+		</ul>
+
 		<div class="firstScreen_bottom"></div>
 	</section>
 
 	<section class="homeAbout">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-xs-12 col-sm-8">
 					<div class="homeAbout_left">
 						<h1 class="homeAbout_left_title">
 							<span>Частный дом престарелых в Москве </span>
@@ -126,17 +167,25 @@
 						<p>Основываясь на многолетней практике работы, можно с уверенностью утверждать, что качество жизни наших пожилых родственников напрямую зависит от качества ухода, который им предоставляется. Ведь часто они уже не в состоянии сами позаботиться о себе, а дети или внуки не могут оказывать круглосуточный уход, как это может предложить квалифицированный персонал частного дома престарелых <strong>«Casa di Cura»</strong> в городе Москва. <a href="">Подробнее...</a></p>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-12 col-sm-4">
 					<div class="homeAbout_right">
 						<div class="homeAbout_form">
-							<form>
+							<form novalidate>
 								<div class="homeAbout_form_title">ЗАЯВКА НА ПРОЖИВАНИЕ</div>
 								<div class="homeAbout_form_descr">
 									<span>Заполните форму ниже, и наш менеджер свяжется с Вами для уточнения деталей.</span>
 									<span>Мы уверены, Вам и Вашим близким у нас понравится!</span>
 								</div>
-								<input type="text" placeholder="Имя" required/>
-								<input type="tel" placeholder="Телефон" required/>
+								<label class="control-group">
+									<i class="ion-android-close"></i>
+									<span class="help-block text-danger"></span>
+									<input type="text" placeholder="Имя" required data-validation-required-message="Данное поле обязательно"/>
+								</label>
+								<label class="control-group">
+									<i class="ion-android-close"></i>
+									<span class="help-block text-danger"></span>
+									<input type="tel" placeholder="Телефон" required data-validation-required-message="Данное поле обязательно"/>
+								</label>
 								<input type="submit" value="Отправить" />
 							</form>
 						</div>
@@ -144,22 +193,31 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="container">
 			<div class="row">
 
 				<div class="homeAbout_slider">
 
 					<div class="homeAbout_slider_item">
-						<img src="images/homeabout_slider_item1.jpg" alt="">
+						<a class="fancybox homeAbout_slider_item_img" rel="group" href="images/homeabout_slider_item1.jpg">
+							<img src="images/homeabout_slider_item1.jpg" alt="">
+						</a>
 					</div>
 					<div class="homeAbout_slider_item">
-						<img src="images/homeabout_slider_item2.jpg" alt="">
+						<a class="fancybox homeAbout_slider_item_img" rel="group" href="images/homeabout_slider_item2.jpg">
+							<img src="images/homeabout_slider_item2.jpg" alt="">
+						</a>
 					</div>
 					<div class="homeAbout_slider_item">
-						<img src="images/homeabout_slider_item3.jpg" alt="">
+						<a class="fancybox homeAbout_slider_item_img" rel="group" href="images/homeabout_slider_item3.jpg">
+							<img src="images/homeabout_slider_item3.jpg" alt="">
+						</a>
 					</div>
 					<div class="homeAbout_slider_item">
-						<img src="images/homeabout_slider_item4.jpg" alt="">
+						<a class="fancybox homeAbout_slider_item_img" rel="group" href="images/homeabout_slider_item4.jpg">
+							<img src="images/homeabout_slider_item4.jpg" alt="">
+						</a>
 					</div>
 
 				</div>
@@ -178,7 +236,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-xs-12 col-sm-6">
 					<div class="homeAdvantages_left">
 						<div class="homeAdvantages_item">
 							<div class="homeAdvantages_item_img">
@@ -218,7 +276,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-xs-12 col-sm-6">
 					<div class="homeAdvantages_right">
 						<div class="homeAdvantages_item">
 							<div class="homeAdvantages_item_img">
@@ -274,13 +332,39 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="forAged_slider">
+				<div class="forAged_slider owl-carousel">
 
 					<div class="forAged_item">
-						<div class="forAged_item_img">
-							<img src="images/foraged_item1.jpg" alt="">
+						<div class="col-sm-4">
+							<div class="forAged_item_img">
+								<img src="images/foraged_item1.jpg" alt="">
+							</div>
 						</div>
-						<div class="forAged_item_descr">
+						<div class="col-xs-12 col-sm-8 forAged_item_descr">
+							<div class="forAged_item_title"><span>Общение</span></div>
+							<p>Особая роль в пансионате уделяется общению. При работе с пожилыми людьми не стоит выделять только здоровье. Это вовсе не означает, что оно не важно. Нет, совсем не так! Просто людям преклонного возраста хочется чувствовать свою нужность, стабильность, надежду.</p>
+							<p>Необходимо сделать все возможное, чтобы у них всегда сохранялось только прекрасное настроение. Именно оптимистичный настрой является залогом успешного лечения. Для этого необходимо грамотно организовать их досуг, создать интересные специальные мероприятия.</p>
+						</div>
+					</div>
+					<div class="forAged_item">
+						<div class="col-sm-4">
+							<div class="forAged_item_img">
+								<img src="images/foraged_item3.jpg" alt="">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-8 forAged_item_descr">
+							<div class="forAged_item_title"><span>Общение</span></div>
+							<p>Особая роль в пансионате уделяется общению. При работе с пожилыми людьми не стоит выделять только здоровье. Это вовсе не означает, что оно не важно. Нет, совсем не так! Просто людям преклонного возраста хочется чувствовать свою нужность, стабильность, надежду.</p>
+							<p>Необходимо сделать все возможное, чтобы у них всегда сохранялось только прекрасное настроение. Именно оптимистичный настрой является залогом успешного лечения. Для этого необходимо грамотно организовать их досуг, создать интересные специальные мероприятия.</p>
+						</div>
+					</div>
+					<div class="forAged_item">
+						<div class="col-sm-4">
+							<div class="forAged_item_img">
+								<img src="images/foraged_item2.jpg" alt="">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-8 forAged_item_descr">
 							<div class="forAged_item_title"><span>Общение</span></div>
 							<p>Особая роль в пансионате уделяется общению. При работе с пожилыми людьми не стоит выделять только здоровье. Это вовсе не означает, что оно не важно. Нет, совсем не так! Просто людям преклонного возраста хочется чувствовать свою нужность, стабильность, надежду.</p>
 							<p>Необходимо сделать все возможное, чтобы у них всегда сохранялось только прекрасное настроение. Именно оптимистичный настрой является залогом успешного лечения. Для этого необходимо грамотно организовать их досуг, создать интересные специальные мероприятия.</p>
@@ -297,7 +381,7 @@
 	<section class="results">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-xs-12 col-sm-8 col-md-6">
 					<div class="results_wrap">
 						<div class="results_item">
 							<div class="results_item_top">
@@ -305,7 +389,23 @@
 									<i class="results_item_icon"></i>
 								</div>
 								<div class="results_item_descr">
-									<div class="results_item_title">60% постояльцев*</div>
+									<div class="results_item_title">
+										<div class="results_item_numbers_wrapper">
+											<div class="results_item_numbers_wrap">
+												<span class="results_item_numbers">00%&nbsp;</span>
+												<span class="results_item_numbers">01%&nbsp;</span>
+												<span class="results_item_numbers">12%&nbsp;</span>
+												<span class="results_item_numbers">24%&nbsp;</span>
+												<span class="results_item_numbers">35%&nbsp;</span>
+												<span class="results_item_numbers">46%&nbsp;</span>
+												<span class="results_item_numbers">57%&nbsp;</span>
+												<span class="results_item_numbers">58%&nbsp;</span>
+												<span class="results_item_numbers">59%&nbsp;</span>
+												<span class="results_item_numbers">60%&nbsp;</span>
+											</div>
+										</div>
+										<span>постояльцев*</span>
+									</div>
 									<p>Положительная динамика состояния здоровья</p>
 								</div>
 							</div>
@@ -319,7 +419,23 @@
 									<i class="results_item_icon"></i>
 								</div>
 								<div class="results_item_descr">
-									<div class="results_item_title">25% постояльцев*</div>
+									<div class="results_item_title">
+										<div class="results_item_numbers_wrapper">
+											<div class="results_item_numbers_wrap">
+												<span class="results_item_numbers">00%&nbsp;</span>
+												<span class="results_item_numbers">01%&nbsp;</span>
+												<span class="results_item_numbers">09%&nbsp;</span>
+												<span class="results_item_numbers">12%&nbsp;</span>
+												<span class="results_item_numbers">14%&nbsp;</span>
+												<span class="results_item_numbers">16%&nbsp;</span>
+												<span class="results_item_numbers">19%&nbsp;</span>
+												<span class="results_item_numbers">21%&nbsp;</span>
+												<span class="results_item_numbers">24%&nbsp;</span>
+												<span class="results_item_numbers">25%&nbsp;</span>
+											</div>
+										</div>
+										<span>постояльцев*</span>
+									</div>
 									<p>Стабилизация состояния здоровья</p>
 								</div>
 							</div>
@@ -333,7 +449,23 @@
 									<i class="results_item_icon"></i>
 								</div>
 								<div class="results_item_descr">
-									<div class="results_item_title">15% постояльцев*</div>
+									<div class="results_item_title">
+										<div class="results_item_numbers_wrapper">
+											<div class="results_item_numbers_wrap">
+												<span class="results_item_numbers">00%&nbsp;</span>
+												<span class="results_item_numbers">01%&nbsp;</span>
+												<span class="results_item_numbers">02%&nbsp;</span>
+												<span class="results_item_numbers">09%&nbsp;</span>
+												<span class="results_item_numbers">10%&nbsp;</span>
+												<span class="results_item_numbers">11%&nbsp;</span>
+												<span class="results_item_numbers">12%&nbsp;</span>
+												<span class="results_item_numbers">13%&nbsp;</span>
+												<span class="results_item_numbers">14%&nbsp;</span>
+												<span class="results_item_numbers">15%&nbsp;</span>
+											</div>
+										</div>
+										<span>постояльцев*</span>
+									</div>
 									<p>Замедление отрицательной динамики здоровья</p>
 								</div>
 							</div>
@@ -351,7 +483,7 @@
 	<section class="homeNews">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-xs-12 col-sm-4">
 					<div class="homeNews_item">
 						<a href="" class="homeNews_item_title">Изолированная систолическая гипертензия</a>
 						<div class="homeNews_item_date">
@@ -360,7 +492,7 @@
 						<div class="homeNews_item_descr">Несмотря на широкое использование комбинированного антигипертензивного лечения, в большинстве контролируемых исследований...</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-xs-12 col-sm-4">
 					<div class="homeNews_item">
 						<a href="" class="homeNews_item_title">Как ухаживать за пожилыми родителями?</a>
 						<div class="homeNews_item_date">
@@ -369,7 +501,7 @@
 						<div class="homeNews_item_descr">Несмотря на широкое использование комбинированного антигипертензивного лечения, в большинстве контролируемых исследований...</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-xs-12 col-sm-4">
 					<div class="homeNews_item">
 						<a href="" class="homeNews_item_title">Болезнь Альцгеймера – старческая деменция</a>
 						<div class="homeNews_item_date">
@@ -393,40 +525,38 @@
 	<!-- end content -->
 
 
-
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 footer_left">
-					<span itemprop="copyrightYear"  itemtype="http://schema.org/Article">© 2016 </span>
-					<span class="adress" itemtype="http://schema.org/Organization">
+				<div class="col-xs-12 col-sm-9 col-md-10 footer_left">
+					<span itemscope itemtype="http://schema.org/Article">
+						<span>© </span>
+						<span itemprop="copyrightYear">2016 </span>
+					</span>
+					<span class="adress" itemscope itemtype="http://schema.org/Organization">
 						<span itemprop="name">Casa di Cure. </span>
 						<span itemprop="addressLocality">Москва</span>,
 						<span itemprop="adressRegion">Люберецкий район Малаховка</span>
-						<span itemprop="streetAddress">улица Тургенева 21.. </span>
-						<span> | </span>
+						<span itemprop="streetAddress">улица Тургенева 21... </span>
+						<span class="stline"> | </span>
 						<a class="map_link" href="">Карта проезда</a>
-						<span> | </span>
+						<span class="stline"> | </span>
 						<span class="email">info@pansion-mo.ru</span>
-					</div>
-					<div class="col-md-2 footer_right">
-						<a href="tel:+7 495 877 65 32" itemprop="telephone">+7 495 877 65 32</a>
-					</div>
+					</span>
+				</div>
+				<div class="col-xs-12 col-sm-3 col-md-2 footer_right" itemscope itemtype="http://schema.org/Organization">
+					<a href="tel:+7 495 877 65 32" itemprop="telephone">
+						<i class="footer_icon ion-android-call"></i>
+						<span>+7 495 </span>
+						<span>877 65 32</span>
+					</a>
 				</div>
 			</div>
-		</footer>
-
-		<div class="hidden">
-
 		</div>
+	</footer>
 
-		<svg width="0" height="0">
-			<defs>
-				<clipPath id="clip1">
-					<ellipse ry="139" rx="131.2" cy="69.5" cx="131.5"/>
-				</clipPath>
-			</defs>
-		</svg>
+
+
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
@@ -440,6 +570,13 @@
 	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
 	<script src="libs/plugins-scroll/plugins-scroll.js"></script>
 	<script src="libs/owl/owl.carousel.min.js"></script>
+	<script src="libs/parallax/deploy/jquery.parallax.min.js"></script>
+	<script src="libs/fancybox/source/jquery.fancybox.pack.js"></script>
+	<script src="libs/fancybox/source/helpers/jquery.fancybox-buttons.js"></script>
+	<script src="libs/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+		<script src="libs/jqBootstrapValidation/jqBootstrapValidation.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script src="js/map.js"></script>
 
 	<script src="js/common.js"></script>
 	<!-- Load Scripts End -->
