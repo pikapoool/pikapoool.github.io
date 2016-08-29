@@ -119,7 +119,7 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-md-5">
+					<div class="col-xs-12 col-sm-8 col-md-6">
 						<div class="pagesTop_title">
 							<div class="pagesTop_title_top">
 								<span>Галерея московского дома престарелых</span>
@@ -395,8 +395,67 @@
 			</div>
 		</footer>
 
+	<!-- start popup -->
+	<div class="popup-wrapper" id="popup_callback" >
+		<div class="popup popup_callback">
+			<div class="close"></div>
+			<div class="popup_inner">
+				<div class="popup_img">
+					<img src="images/popup_img.png" alt="">
+				</div>
+				<div class="popup_callback_form">
+					<form novalidate>
+						<div class="popup_callback_form_title">Обратный звонок</div>
+						<div class="popup_callback_form_descr">
+							<span>Заполните форму ниже, и наш менеджер свяжется с Вами для уточнения деталей.</span>
+							<span>Мы уверены, Вам и Вашим близким у нас понравится!</span>
+						</div>
+						<label class="control-group">
+							<i class="ion-android-close"></i>
+							<span class="help-block text-danger"></span>
+							<input type="text" placeholder="Имя" required data-validation-required-message="Данное поле обязательно"/>
+						</label>
+						<label class="control-group">
+							<i class="ion-android-close"></i>
+							<span class="help-block text-danger"></span>
+							<input type="tel" placeholder="Телефон" required data-validation-required-message="Данное поле обязательно"/>
+						</label>
+						<input type="submit" value="Отправить" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end popup -->
 
-
+		<!--[if (gte IE 6) & (IE 7)]>
+		<style>
+			header, section, footer, div {
+				display: none;
+			}
+			body{
+				background: #f1f1f2;
+			}
+		</style>
+		<span style="display: block; background: #f1f1f2 url(&#39;/img/browsers/outdate-bg.jpg&#39;) no-repeat center top;color: #404041;
+			font: 0.813em/1.6 Tahoma, Geneva, sans-serif; text-align: center;">
+			<p style="font-size: 30px; width: 760px; margin: 70px auto 0; line-height: 40px;">
+				Ваш браузер устарел, для корректной и приятной работы с сайтом советуем Вам использовать новые версии популярных браузеров.
+			</p>
+			<br>
+			<br>
+			<a rel="nofollow" href="http://www.google.com/chrome/browser/desktop/index.html" style="border:none;"><img style="border:none;" src="http://i.piccy.info/i9/e21ef87abc6cf1fb9cf610f9b712a8b2/1464789917/13865/1039683/chrome.png" width="128" height="128"></a>&nbsp;&nbsp;&nbsp;
+			<a rel="nofollow" href="http://www.mozilla.org/firefox/new/" style="border:none;"><img style="border:none;" src="http://i.piccy.info/i9/561bba5ae2587802b037804cfa77294d/1464789944/25866/1039683/ff.png" width="128" height="128"></a>&nbsp;&nbsp;&nbsp;
+			<a rel="nofollow" href="http://opera.com/" style="border:none;"><img style="border:none;" src="http://i.piccy.info/i9/794b489ea372416a3275465378852401/1464789972/9729/1039683/opera.png" width="128" height="128"></a>&nbsp;&nbsp;&nbsp;
+			<a rel="nofollow" href="http://www.apple.com/safari/" style="border:none;"><img style="border:none;" src="http://i.piccy.info/i9/cd54029226e9c5ff3679f0111834d8fa/1464790004/24507/1039683/safari.png" width="128" height="128"></a>&nbsp;&nbsp;&nbsp;
+			<a rel="nofollow" href="http://windows.microsoft.com/ru-RU/internet-explorer/products/ie/home" style="border:none;"><img style="border:none;" src="http://i.piccy.info/i9/e1e60fb8cafb7dfb781e42ae240b62fc/1464789959/18674/1039683/ie.png" width="128" height="128"></a>&nbsp;&nbsp;&nbsp;
+			<p  style="font-size: 30px; width: 760px; margin: 50px auto 0; line-height: 40px;">
+				или установить Google Frame, с возможностью всё-таки просмотреть сайт
+			</p>
+			<br>
+			<a rel="nofollow" href="https://google-chrome-frame.ru.uptodown.com/windows" style="border:none;"><img style="border:none;" src="http://i.piccy.info/i9/b8bf0ff5a19660fe62b01f2aaade85e5/1472489788/12037/1065112/Google_Chrome_Frame.jpg" width="270" height="135"></a>&nbsp;&nbsp;&nbsp;
+		</span>
+		<![endif]-->
 
 		<!--[if lt IE 9]>
 		<script src="libs/html5shiv/es5-shim.min.js"></script>
@@ -414,6 +473,7 @@
 		<script src="libs/fancybox/source/jquery.fancybox.pack.js"></script>
 		<script src="libs/fancybox/source/helpers/jquery.fancybox-buttons.js"></script>
 		<script src="libs/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+	<script src="libs/TouchSwipe/jquery.touchSwipe.min.js"></script>
 		<script src="libs/jqBootstrapValidation/jqBootstrapValidation.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		<script src="js/map.js"></script>

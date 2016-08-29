@@ -1,9 +1,9 @@
 equalheight = function(container){
 	var currentTallest = 0,
-			currentRowStart = 0,
-			rowDivs = new Array(),
-			$el,
-			topPosition = 0;
+	currentRowStart = 0,
+	rowDivs = new Array(),
+	$el,
+	topPosition = 0;
 	$(container).each(function() {
 		$el = $(this);
 		$($el).height('auto')
@@ -91,11 +91,35 @@ $(function() {
 			responsive: {
 				1200:{items:4,},
 				992:{items:3,},
-				768:{items:2,},
+				750:{items:2,},
 				0:{items:1,},
 			},
-	});
+		});
+
+	///fancybox
 	$(".fancybox").fancybox({
+		afterShow: function() {
+			$('.fancybox-wrap').swipe({
+				swipe : function(event, direction) {
+					if (direction === 'left' || direction === 'up') {
+						$.fancybox.prev( direction );
+					} else {
+						$.fancybox.next( direction );
+					}
+				}
+			});
+		},
+		afterLoad : function() {
+						$('.fancybox-wrap').swipe({
+				swipe : function(event, direction) {
+					if (direction === 'left' || direction === 'up') {
+						$.fancybox.prev( direction );
+					} else {
+						$.fancybox.next( direction );
+					}
+				}
+			});
+		},
 		helpers		: {
 			title	: { type : 'inside' },
 			buttons	: {}
@@ -116,11 +140,12 @@ $(function() {
 			navText: ['<i class="ion-chevron-left"></i>','<i class="ion-chevron-right"></i>'],
 			dots: true,
 			items : 1,
+			smartSpeed: 700,
 			responsive: {
-				768:{dots: true,},
+				750:{dots: true,},
 				0:{dots: false,},
 			},
-	});
+		});
 	$(".forAged, .homeAdvantages").mousemove(function() {
 		$(".forAged .owl-item").removeClass("float");
 		$(".forAged .owl-item.active").next().addClass("float");
@@ -190,3 +215,46 @@ $(function() {
 	$("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 
 });
+
+
+// $(document).ready(function() {
+
+//     $('.js-fancybox').fancybox({
+//         width: "100%",
+//         margin: [0, 0, 0, 0],
+//         padding: [0, 0, 0, 0],
+//         openEffect  : 'none',
+//         closeEffect : 'none',
+//         prevEffect : 'fade',
+//         nextEffect : 'fade',
+//         closeBtn  : false,
+//         arrows: false,
+//         helpers : {
+//             title : null,
+//             overlay : {
+//                 css : {
+//                     'background' : 'rgba(0, 0, 0, 0.95)'
+//                 }
+//             },
+//             buttons : {
+//             }
+
+//         },
+//         afterShow: function() {
+//             $('.fancybox-wrap').swipe({
+//                 swipe : function(event, direction) {
+//                     if (direction === 'left' || direction === 'up') {
+//                         $.fancybox.prev( direction );
+//                     } else {
+//                         $.fancybox.next( direction );
+//                     }
+//                 }
+//             });
+
+//         },
+
+//         afterLoad : function() {
+//         }
+//     });
+
+// });

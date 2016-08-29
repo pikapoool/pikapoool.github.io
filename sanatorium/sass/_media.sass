@@ -193,7 +193,17 @@
 			transform: translate(0, 10px)
 
 
-@media only screen and (max-width : 768px)
+@media only screen and (max-width : 767px)
+	.headerMenu ul li
+		margin: 0 11px
+		a
+			letter-spacing: 0px
+
+@media only screen and (max-width : 754px)
+	.headerMenu ul li
+		margin: 0 10px
+
+@media only screen and (max-width : 750px)
 	.header
 		&Right
 			padding-left: 0
@@ -327,7 +337,8 @@
 		width: 320px !important
 		height: 240px !important
 		margin: auto !important
-
+	.footer_left
+		margin-bottom: 10px
 
 @media only screen and (max-width : 750px)
 	#scene
@@ -340,10 +351,6 @@
 	.headerMenu
 		margin-right: 0
 		padding-top: 12px
-	.homeAbout_form,
-	.conditionsAbout_form,
-	.serviceMoreAbout_form
-		width: 75%
 	.firstScreen
 		background-position: 94% 109px
 	.firstScreen_title_bottom
@@ -362,6 +369,11 @@
 	.pagesTop_title
 		display: none
 
+@media only screen and (max-width : 749px)
+	.homeAbout_form,
+	.conditionsAbout_form,
+	.serviceMoreAbout_form
+		width: 65%
 
 
 @media only screen and (max-width : 510px)
