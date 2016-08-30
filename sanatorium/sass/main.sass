@@ -374,18 +374,27 @@
 	.owl-carousel .owl-stage-outer
 		overflow: visible
 	.owl-item.float
+		transition: .3s all ease
 		.col-sm-4
+			transition: .3s all ease
 			float: left
 			animation: fadeIn 0.4s linear
+			transform: translate(0%, 0)
 	.owl-item
 		opacity: .3
+		transition: .3s all ease
 		.col-sm-4
-			float: right
+			// float: right
+			transform: translate(200%, 0)
+			transition: 0.7s all ease
 		.forAged_item_descr
 			display: none
 	.owl-item.active
+		transition: .3s all ease
 		opacity: 1
 		.col-sm-4
+			transition: .3s all ease
+			transform: translate(0%, 0)
 			float: left !important
 		.forAged_item_descr
 			display: block

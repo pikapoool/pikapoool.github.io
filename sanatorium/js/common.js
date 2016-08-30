@@ -146,11 +146,18 @@ $(function() {
 				0:{dots: false,},
 			},
 		});
-	$(".forAged, .homeAdvantages").mousemove(function() {
+	setFloat = function(){
 		$(".forAged .owl-item").removeClass("float");
 		$(".forAged .owl-item.active").next().addClass("float");
-	});
+		return;
+	}
 
+	$(".forAged, .homeAdvantages").mousemove(function() {
+		setFloat();
+	});
+	$(".forAged .owl-nav, .forAged .owl-dots").click(function() {
+		setFloat();
+	});
 	//scroll animation
 	$(".homeAdvantages_title, .forAged_title").animated("fadeInUp");
 	$(".homeAdvantages_left .homeAdvantages_item").animated("fadeInLeft");
