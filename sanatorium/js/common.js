@@ -197,6 +197,11 @@ $(function() {
 			popup.open();
 			$("#popup_callback").fadeIn(200);
 		});
+		$(".headerCallback_link").first().on("click", function(e){
+			e.preventDefault();
+			popup.open();
+			$("#popup_writeback").fadeIn(200);
+		});
 	};
 
 
