@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'ElektraLightPro';
+  src: url('ElektraLightPro.eot?#iefix') format('embedded-opentype'),  url('ElektraLightPro.otf')  format('opentype'),
+	     url('ElektraLightPro.woff') format('woff'), url('ElektraLightPro.ttf')  format('truetype'), url('ElektraLightPro.svg#ElektraLightPro') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
