@@ -1,0 +1,392 @@
+@import "vars.sass"
+@import "default.sass"
+@import "header.sass"
+@import "footer.sass"
+
+
+@import "../fonts/font-awesome/css/font-awesome.min.css"
+@import "../libs/fancybox/source/jquery.fancybox.min.css"
+@import "../libs/fancybox/source/helpers/jquery.fancybox-buttons.css"
+
+
+//Load Libs SASS
+@import "../libs/animate/animate.sass"
+
+body
+	padding-bottom: 100px
+
+.element__img
+	display: block
+	margin: auto
+	max-height: 260px
+	max-width: 260px
+
+.container.content
+	width: 1000px
+
+a img
+	border: none
+
+img
+	font-size: 1em
+	color: #434343
+	-ms-interpolation-mode: bicubic
+	opacity: 1
+
+.portfolio_item a
+	opacity: 1
+
+.element__overlay
+	text-align: center
+	&__bg
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: 1
+		background: #fff
+		opacity: 0
+		transition: all linear 0.2s
+	&__teaser
+		font-size: .9em
+	&__btn
+		padding: 0 1em
+		line-height: 2em
+		height: 2em
+		text-align: center
+		display: inline-block
+		vertical-align: top
+		font-size: .9em
+		border-top: 1px solid
+	&__inner
+		position: absolute
+		z-index: 2
+		opacity: 1
+
+.hover_overlay_rotate .element__inner
+	transition: all linear 0.5s
+	display: block
+	cursor: pointer
+
+
+.element_hover .element__img
+	display: block
+	position: static
+
+.hover_overlay_rotate
+	position: relative
+	padding: 20px
+	width: 100%
+	height: 100%
+	// border: 1px solid #fff
+	&_inner
+		overflow: hidden
+		position: relative
+	svg
+		position: absolute
+		top: 0
+		left: 0
+		line
+			stroke-width: 3
+			stroke: #ecf0f1
+			fill: none
+			transition: all .5s ease
+			&.top,
+			&.bottom
+				stroke-dasharray: 330 240
+			&.left,
+			&.right
+				stroke-dasharray: 330 240
+	&:hover
+		svg
+			line
+				stroke-width: 10
+				transition-delay: 0s
+				&.top
+					transform: translateX(-300px)
+				&.bottom
+					transform: translateX(300px)
+				&.left
+					transform: translateY(300px)
+				&.right
+					transform: translateY(-300px)
+
+.hover_overlay_rotate .element__img
+	transition:all ease-in-out 0.5s 0.3s
+.hover_overlay_rotate .element__overlay__bg
+	background: rgba(#4b5a78,0.9)
+	background: rgba(#fff,1)
+	top: 0
+	height: 130%
+	width: 100%
+	opacity: 1
+	transition: all ease-in-out 0.3s 0.3s
+.hover_overlay_rotate .element__overlay__bg_1
+	left: 0
+	transform: rotate(45deg) translateX(-160%)
+.hover_overlay_rotate .element__overlay__bg_2
+	right: 0
+	transform: rotate(45deg) translateX(160%)
+.hover_overlay_rotate
+	transition: 0.5s ease all
+	.element__overlay__inner
+		// background: rgba(#bf2b80,0.9)
+		height: 0
+		padding: 0 3%
+		overflow: hidden
+		opacity: 0.5
+		width: 100%
+		left: 50%
+		top: 52%
+		transform: translate(-50%,-50%) rotate(-45deg)
+		transform-origin: 50% 50%
+		transition: all ease-in-out 0.4s 0s
+	&:hover
+		background-color: rgba(#fff,0.4)
+		background-color: rgba(0,0,0,0.4)
+		.element__overlay__inner
+			height: 150px
+			opacity: 0.9
+			transform: translate(-50%,-50%) rotate(0)
+			transition-delay: .5s
+.hover_overlay_rotate:hover .element__img
+	transform: rotate(720deg) scale(0)
+.hover_overlay_rotate:hover .element__overlay__bg
+	transition-delay: 0
+.hover_overlay_rotate:hover .element__overlay__bg_1
+	transform: rotate(45deg) translateX(-11.2em)
+.hover_overlay_rotate:hover .element__overlay__bg_2
+	transform: rotate(45deg) translateX(7.3em)
+.hover_overlay_rotate_2
+	position: relative
+	overflow: hidden
+	background: #525252
+	box-shadow: 0 0 40px black inset
+.hover_overlay_rotate_2 .element__inner
+	color: #fff !important
+.hover_overlay_rotate_2 .element__img
+	transition: all ease-in-out 0.5s 0.1s
+.hover_overlay_rotate_2 .element__overlay__btn
+	background: #000
+	color: #fff
+	border: none
+.hover_overlay_rotate_2 .element__overlay__inner
+	top: 0
+	background: #222
+	transform: rotate(-180deg) scale(0)
+	transform-origin: 50% 50%
+	transition: all ease-in-out 0.4s 0.3s
+.hover_overlay_rotate_2 .element__overlay__content
+	padding-top: 45px
+	opacity: 0
+	transition: all ease-in-out 0.4s 0.6s
+.hover_overlay_rotate_2:hover .element__img
+	transform: scale(0)
+.hover_overlay_rotate_2:hover .element__overlay__inner
+	transform: rotate(0) scale(1)
+.hover_overlay_rotate_2:hover .element__overlay__content
+	opacity: 1
+.hover_overlay_slide-horiz
+	position: relative
+	overflow: hidden
+.hover_overlay_slide-horiz .element__overlay__inner
+	width: 60%
+	padding: 0
+	overflow: hidden
+.hover_overlay_slide-horiz .element__img
+	transition: all ease-in-out 0.5s 0.1s
+	transform: translateX(0)
+.hover_overlay_slide-horiz .element__overlay__inner
+	transition: all ease-in-out 0.5s 0.1s
+	transform: translateX(-100%)
+.hover_overlay_slide-horiz:hover .element__img
+	transform: translateX(70%)
+.hover_overlay_slide-horiz:hover .element__overlay__inner
+	transform: translateX(0)
+.hover_overlay_rotate .element__img
+	transition: all ease-in-out 0.5s 0.1s
+
+
+.portfolio
+	&_title
+		text-align: center
+	&_usingList
+		padding-bottom: 40px
+		a
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+				color: #3498DB
+	&_items
+		text-align: center
+	&_item
+		display: inline-block
+		vertical-align: top
+		width: 330px
+		height: 300px
+		padding: 0 15px
+		margin-bottom: 60px
+		&_link
+			text-decoration: underline
+			color: #000
+			font-weight: bold
+			&:hover
+				text-decoration: none
+		&-top
+			position: absolute
+			z-index: 10
+			top: 0px
+			left: 50%
+			width: 100%
+			text-align: center
+			transition: 0.5s all ease
+			transform: translate(-50%, 0)
+			&:before
+				content: ''
+				width: 100%
+				height: 20px
+				position: absolute
+				top: 98%
+				left: 0
+				opacity: 0
+		&-websiteLinks
+			display: inline-block
+			margin-right: 10px
+			opacity: 0 !important
+			transition: 0.5s all ease
+			transition-timing-function: cubic-bezier(.22,.61,.6,1.43)
+			transform: scale3d(0.1, 0.1, 0.1) translate3d(0%, -150px, 0)
+			table-layout: fixed
+			&:hover
+				color: #ffd200
+			&-cell
+				position: relative
+				padding: 2px 2px 2px 2px
+				overflow: hidden
+				color: inherit
+				display: block
+				display: table-cell
+				&:before,
+				&:after
+					transform: translate3d(0,0,0)
+					position: absolute
+					height: 35px
+					width: 35px
+					display: block
+					content: ''
+					background: #ffd200
+					z-index: 1
+					opacity: 0
+				&:before
+					right: -35px
+					top: -35px
+				&:after
+					left: -35px
+					bottom: -35px
+				&:hover
+					&:before
+						animation: animateLinkBefore 0.8s ease-out 0.15s forwards
+						opacity: 1
+					&:after
+						animation: animateLinkAfter 0.8s ease-out 0.15s forwards
+						opacity: 1
+			&-text
+				// background: #2c3e50
+				box-sizing: border-box
+				display: block
+				height: 31px
+				line-height: 0.875rem
+				padding: 10px 15px
+				position: relative
+				z-index: 2
+				transition: 1.5s all ease
+		&-bottom
+			position: absolute
+			left: 50%
+			transform: translate(-50%, 0)
+			bottom: -42px
+			z-index: 2
+			opacity: 0
+			transition: .5s ease all
+			&:before
+				content: ''
+				width: 100%
+				height: 20px
+				position: absolute
+				bottom: 98%
+				left: 0
+				opacity: 0
+		&-galleryLinks
+			display: none
+			width: 184px
+			opacity: 0
+			transition: 0.5s all ease
+			// transition-timing-function: cubic-bezier(.22,.61,.6,1.43)
+			// transform: scale3d(0.1, 0.1, 0.1) translate3d(0%, -150px, 0)
+			table-layout: fixed
+			&:hover
+				color: #ffd200
+			&-cell
+				position: relative
+				padding: 2px 2px 2px 2px
+				overflow: hidden
+				color: inherit
+				display: block
+				display: table-cell
+				&:before,
+				&:after
+					transform: translate3d(0,0,0)
+					position: absolute
+					height: 35px
+					width: 35px
+					display: block
+					content: ''
+					background: #ffd200
+					z-index: 1
+					opacity: 0
+				&:before
+					right: -35px
+					top: -35px
+				&:after
+					left: -35px
+					bottom: -35px
+				&:hover
+					&:before
+						animation: animateLinkBefore 0.8s ease-out 0.15s forwards
+						opacity: 1
+					&:after
+						animation: animateLinkAfter 0.8s ease-out 0.15s forwards
+						opacity: 1
+			&-text
+				// background: #2c3e50
+				box-sizing: border-box
+				display: block
+				height: 31px
+				line-height: 0.875rem
+				padding: 10px 15px
+				position: relative
+				z-index: 2
+				transition: 1.5s all ease
+
+.hover_overlay_rotate
+	&:hover
+		.portfolio_item-top
+			top: -37px
+		.portfolio_item-websiteLinks
+			opacity: 1 !important
+			transform: scale3d(1, 1, 1) translate3d(0%, 0, 0)
+		.portfolio_item-websiteLinks-text
+			background: #2c3e50
+		.portfolio_item-bottom
+			opacity: 1
+		.portfolio_item-galleryLinks
+			opacity: 1
+			animation: flip 1s linear
+			display: block
+		.portfolio_item-galleryLinks-text
+			background: #2c3e50
+
+
+
+
+//ALWAYS END
+@import "media"
