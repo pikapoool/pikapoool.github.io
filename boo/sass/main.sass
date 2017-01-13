@@ -1,0 +1,71 @@
+@import "bourbon"
+@import "default"
+
+body
+	background-color: #fff
+
+span
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	font-size: 20px
+.first
+	background-color: #d8d8d8
+	min-height: 500px
+
+.col-xs-1
+	background-color: #000
+	min-height: 20px
+	border-left: 1px solid #d8d8d8
+	position: relative
+	&:before,
+	&:after
+		content: ''
+		height: 100%
+		width: 15px
+		position: absolute
+		left: 0
+		top: 0
+		background-color: #f6f6f6
+	&:after
+		left: auto
+		right: 0
+.row
+	border-top: 1px solid #d8d8d8
+
+.TURQUOISE
+	height: 200px
+	background-color: #1ABC9C
+	border: 1px solid #d8d8d8
+.river
+	background-color: #3498DB
+	height: 200px
+	border: 1px solid #d8d8d8
+	span
+		font-size: 30px
+		font-weight: bold
+
+.WISTERIA
+	height: 200px
+	background-color: #8E44AD
+	border: 1px solid #d8d8d8
+.ORANGE
+	height: 200px
+	background-color: #F39C12
+	border: 1px solid #d8d8d8
+.PUMPKIN
+	background-color: #D35400
+	height: 200px
+	border: 1px solid #d8d8d8
+
+
+@media only screen and (max-width : 375px)
+	.row.colum
+		// display: none
+		.col-xs-1
+			padding-left: 10px
+			padding-right: 10px
+
+//ALWAYS END
+@import "media"
