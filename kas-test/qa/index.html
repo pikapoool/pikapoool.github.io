@@ -1,0 +1,461 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="robots" content="index, follow" />
+        <title>Вопрос-ответ - консультации</title>
+        <meta name="description" content="Ответы на наиболее распространенные вопросы на тему получения Каско для автомобиля." />
+        <meta name="keywords" content="ответы на вопросы" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />     
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        
+        <link href="/css/reset.css" type="text/css"  rel="stylesheet" />
+        <link href="/css/style.css" type="text/css"  rel="stylesheet" />
+        <link href="/js/jqueryUI/jquery-ui.css" type="text/css"  rel="stylesheet" />
+        <link href="/js/likely/likely.css" type="text/css"  rel="stylesheet" />
+        <link href="/js/scrollyaeh/scrollyeah.css" type="text/css"  rel="stylesheet" />
+        <link href="/js/range_slider/rangeslider.css" type="text/css"  rel="stylesheet" />
+            <link href="/css/qa.css" type="text/css"  rel="stylesheet" />
+
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/jqueryUI/jquery-ui.js"></script>
+        <script type="text/javascript" src="/js/likely/likely.js"></script>
+        <script type="text/javascript" src="/js/jquery.mobile.custom.js"></script>
+        <script type="text/javascript" src="/js/device.js"></script>
+        <script type="text/javascript" src="/js/scrollyaeh/scrollyeah.js"></script>
+        <script type="text/javascript" src="/js/range_slider/rangeslider.js"></script>
+        <script type="text/javascript" src="/js/lib.js"></script>
+        
+    </head>
+
+    <body>
+
+        <div class="popup_wrap" id="confidential_popup">
+            <div class="with_max_width">
+                <div class="with_padding_2col">
+                    <div class="close_btn"></div>
+                    <div class="conf_ttl">Конфинденциальность</div>
+                    <div class="conf_descr">Я&nbsp;даю согласие ООО &laquo;Независимость&nbsp;&mdash; Финсервис&raquo; (далее&nbsp;&mdash; Компания, адрес местонахождения: 129278, г. Москва, Ярославское шоссе, д.&nbsp;27) на&nbsp;обработку, а&nbsp;также передачу третьим лицам персональных данных и&nbsp;информации, указанных в&nbsp;нем (в&nbsp;том числе сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование, обезличивание, блокирование, уничтожение) любым, не&nbsp;противоречащим российскому законодательству способом ,(в том числе без использования средств автоматизации) в&nbsp;целях определения и&nbsp;условий заключения со&nbsp;мной договора страхования, проведения маркетинговых исследований, оказания услуг, предусмотренных договором. При этом такое согласие даётся на&nbsp;неограниченный срок и&nbsp;может быть отозвано мной в&nbsp;любое время путем передачи Компании соответствующего уведомления,</div>
+                </div>
+            </div>
+        </div>
+<div class="popup_wrap grey_popup" id="partner_popup">
+    <div class="with_max_width">
+        <div class="with_padding_2col">
+            <div class="close_btn"></div>
+            <div class="partner_logo"><img src="" alt=""/></div>
+            <div class="partner_name title">Страховая компания «АО „СГ МСК”»</div>
+            <div class="partner_descr">Страховая компания «АО «СГ МСК»» с 1993 года предлагает своим клиентам более 90 различных страховых продуктов. Так, за 20 лет компания застраховала 8,7 млн автомобилей, а 2,6 млн. человек приобрели полисы добровольного медицинского страхования. У компании более 730 офисов в 79 субъектах Федерации. Агентство «Эксперт РА» высоко оценивает действия компании, присвоив ей рейтинг А++.</div>
+            <div class="partner_sub_ttl">Раскрытие информации</div>
+            <div class="info_block">
+                <div class="info_ttl">Аффилированные лица</div>
+                <ul id="affiliated">
+                    <li><a href="#">Участники (акционеры) 1</a></li>
+                    <li><a href="#">Участники (акционеры) 1</a></li>
+                    <li><a href="#">Участники (акционеры) 1</a></li>
+                </ul>
+            </div>
+            <div class="info_block">
+                <div class="info_ttl">Правила страхования</div>
+                <ul id="rules">
+                    <li><a href="#">Участники (акционеры) 1</a></li>
+                </ul>
+            </div>
+            <div class="info_block">
+                <div class="info_ttl">Руководство компании</div>
+                <ul id="management">
+                    <li><a href="#">Участники (акционеры) 1</a></li>
+                    <li><a href="#">Длинное если в 2 строки<br/>Отчет о движении деежных средств страховщика за 2013 год</a></li>
+                    <li><a href="#">Участники (акционеры) 1</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var companyInfo = {
+    alfa_msk: {
+        name: '«ОАО "АльфаСтрахование"»',
+        description: '«Группа АльфаСтрахование» – одна из крупнейших российских страховых компаний с универсальным портфелем услуг, предлагающая более 100 продуктов. «Группа «АльфаСтрахование» имеет репутацию надежной и устойчивой компании. Сегодня по своим обязательствам Группа «АльфаСтрахование» отвечает собственными средствами нескольких компаний с консолидированным уставным капиталом в размере более 8,5 млрд. рублей. В апреле 2015 года ведущее российское рейтинговое агентство «Эксперт РА» подтвердило присвоенный Группе «АльфаСтрахование» в 2003 году наивысший рейтинг надежности А++ («Исключительно высокий уровень надежности», прогноз по рейтингу «Стабильный»). ',
+        files: {
+            affiliated: [
+                {name: '1.pdf', title: 'Участники (акционеры) на 31.03.2015'}
+            ],
+            rules: [
+                {name: '2.doc', title: 'Правила 046 от 20.01.2014'}
+            ],
+            management: [
+                {name: '3.pdf', title: 'Руководство компании'}
+            ]
+        }
+    },
+    rensins: {
+        name: '«ООО "Группа Ренессанс Страхование"»',
+        description: 'Группа Ренессанс Страхование — рыночная компания, единственным участником которой является "ООО Холдинг Ренессанс страхование". Деятельность группы контролируется международной инвестиционной компанией Группа Спутник, созданной в 1998 году Борисом Йорданом. Ренессанс Страхование владеет лицензиями на большинство видов страхования. При этом ключевыми являются КАСКО - с 1997 года, добровольное медицинское страхование (ДМС), страхование путешественников, а с 2033 года ОСАГО и с 2006 года страхование имущества юридических лиц. РА «Эксперт РА» уже 5 лет подтверждает рейтинг Группы Ренессанс Страхование на уровне А++ (исключительно высокий рейтинг надежности).',
+        files: {
+            affiliated: [
+                {name: '4.pdf', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '5.pdf', title: 'Лицензия ОСАГО'},
+                {name: '6.pdf', title: 'Лицензия КАСКО'},
+                {name: '7.pdf', title: 'Правила автострахования 2014 брошюра'}
+            ],
+            management: [
+                {name: '8.pdf', title: 'Руководство компании'}
+            ]
+        }
+    },
+    rgs: {
+        name: '«ПАО СК "Росгосстрах"»',
+        description: '«Росгосстрах» — крупнейшая в России страховая компания, предоставляющая широкий спектр страховых услуг частным лицам и компаниям для защиты от самых разнообразных рисков в 3500 офисов компании по всей стране. На сегодняшний день «Росгосстрах» предлагает 55 страховых продуктов — от популярных программ автострахования до специального страхования космической отрасли. Страховые продукты доступны любому жителю или компании в любом населенном пункте и городе России. В 2013 году Рейтинговое агентство «Эксперт РА» в очередной раз подтвердило рейтинг надежности ГК «Росгосстрах» на уровне А++ «Исключительно высокий уровень надежности». ',
+        files: {
+            affiliated: [
+                {name: '9.pdf', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '10.pdf', title: 'Правила страхования и тарифы'}
+            ],
+            management: [
+                {name: '11.pdf', title: 'Руководство компании'}
+            ]
+        }
+    },
+    ingos: {
+        name: '«СПАО "Ингосстрах"»',
+        description: 'Страховое Публичное Акционерное Общество «Ингосстрах» работает на международном и внутреннем рынках с 1947 года. Является одной из наиболее известных и универсальных страховых компаний федерального уровня. «Ингосстрах» предоставляет полный спектр классических страховых услуг. Компания имеет право осуществлять все виды страхования, установленные ст.32.9 Закона РФ «Об организации страхового дела в Российской Федерации», а также перестраховочную деятельность. Высокие финансово-экономические показатели и большая степень прозрачности СПАО «Ингосстрах» подтверждены международным и российским рейтинговыми агентствами. Ответственность перед клиентами по полной сумме возможных убытков «Ингосстрах» несет благодаря высокой финансовой устойчивости, значительным объемам собственных средств и надежным перестраховочным программам. ',
+        files: {
+            affiliated: [
+                {name: '12.pdf', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '13.pdf', title: 'Правила страхования ТС 2014.10.09'}
+            ],
+            management: [
+                {name: '14.pdf', title: 'Руководство компании'}
+            ]
+        }
+    },
+    reso_garantija: {
+        name: '«СПАО "РЕСО-Гарантия"»',
+        description: 'РЕСО-Гарантия – универсальная страховая компания, созданная в 1991 году. Компания имеет лицензию на более 100 видов страховых услуг. Приоритетными направлениями деятельности являются автострахование (КАСКО и ОСАГО, а также ДГО), страхование имущества, ипотечное страхование и так далее. РЕСО-Гарантия - агентская компания, в ней работают свыше  20 тысячи  агентов. Филиальная сеть - одна из крупнейших в России - включает в себя 793 филиала и офисов продаж во всех регионах России. Продуктами и услугами РЕСО-Гарантия пользуются более 10 млн клиентов - организаций и частных лиц. Начиная с 2009 рейтинговое агентство «Эксперт РА» ежегодно подтверждает РЕСО-Гарантия "Исключительно высокий уровень надежности" А ++ - максимально возможный на сегодня в России.',
+        files: {
+            affiliated: [
+                {name: '16.doc', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '15.pdf', title: 'Правила страхования и тарифы'}
+            ],
+            management: [
+                {name: '17.pdf', title: 'Руководство компании'}
+            ]
+        }
+    },
+    vsk: {
+        name: '«САО "ВСК"»',
+        description: 'Страховой Дом ВСК (САО «ВСК») осуществляет страховую деятельность с 11 февраля 1992 года и в настоящее время занимает ведущие позиции на рынке страхования России. ВСК является крупнейшей общероссийской универсальной страховой компанией, реализует более 100 видов современных страховых услуг, обеспечивает страховую защиту свыше 125 000 предприятий и организаций, а также 10 миллионов российских граждан. В 2001 году рейтинговым агентством «Эксперт РА» Компании был присвоен высший национальный рейтинг надежности А++ «Исключительно высокий уровень надежности», который подтвержден в 2002—2013 гг.',
+        files: {
+            affiliated: [
+                {name: '18.pdf', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '19.pdf', title: 'Правила страхования'}
+            ],
+            management: [
+                {name: '20.docx', title: 'Руководство компании'}
+            ]
+        }
+    },
+    maks: {
+        name: '«ЗАО "МАКС"»',
+        description: 'Страховая группа «МАКС» создана в 1992 году. Компания осуществляет деятельность по всем основным видам добровольного и обязательного страхования. Приоритетными направлениями являются автострахование (КАСКО и ОСАГО), добровольное медицинское страхование, а также страхование имущества физических и юридических лиц. Компания предоставляет услуги по сельскохозяйственному, авиационному страхованию, страхованию от несчастных случаев, ипотечному, туристическому и другим видам страхования. В 2014 году объем страховых сборов СГ «МАКС»  и составил 184 млрд  694  млн рублей. В январе 2014 года рейтинговое агентство «Эксперт РА» в десятый раз подряд подтвердило максимально высокий рейтинг надежности СК «МАКС» - А++ «Исключительно высокий уровень надежности».',
+        files: {
+            affiliated: [
+                {name: '21.pdf', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '22.pdf', title: 'Тарифы автокаско'},
+                {name: '23.pdf', title: 'Правила страхования'},
+                {name: '24.pdf', title: 'Перечень осуществляемых видов страхования'}
+            ],
+            management: [
+                {name: '25.pdf', title: 'Руководство компании'}
+            ]
+        }
+    },
+    uralsib_77: {
+        name: '«АО «СГ «УралСиб»»',
+        description: 'Страховая группа УРАЛСИБ — универсальный страховщик федерального масштаба, один из лидеров национального страхового рынка. Компания оказывает розничным и корпоративным клиентам широкий спектр страховых услуг, включая добровольное медицинское страхование, автострахование (КАСКО, ОСАГО). Одно из основных преимуществ Страховой группы УРАЛСИБ — развитая филиальная сеть. Региональная сеть компании насчитывает свыше 400 точек продаж: подразделения компании ведут работу в 250 городах 72 регионов России. РА «Эксперт РА» присвоило компании рейтинг надежности A++.',
+        files: {
+            affiliated: [
+                {name: '26.pdf', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '27.doc', title: 'Правила КАСКО с 30.09.2014'}
+            ],
+            management: [
+                {name: '28.pdf', title: 'Руководство компании'}
+            ]
+        }
+    },
+    soglasie_msk: {
+        name: '«ООО “СК “Согласие”»',
+        description: 'ООО «Страховая Компания «Согласие» успешно ведет свою деятельность на страховом рынке уже более 20 лет. Внутренняя политика Компании позволяет нам уверенно удерживать высокие позиции на страховом рынке и ежегодно увеличивать число страхователей. Наличие разветвленной сети продаж, насчитывающей более 400 офисов во всех регионах России позволяет Компании осуществлять страховую защиту имущественных интересов клиентов практически на всей территории страны. В 2015 году рейтинговое агентство «Эксперт РА» подтвердило рейтинг надежности Компании на уровне А++ («Исключительно высокий уровень надежности», прогноз по рейтингу «стабильный»).',
+        files: {
+            affiliated: [
+                {name: '29.pdf', title: 'Руководство компании, Участники (акционеры)'}
+            ],
+            rules: [
+            ],
+            management: [
+                {name: '29.pdf', title: 'Руководство компании, Участники (акционеры)'}
+            ]
+        }
+    },
+    zurich: {
+        name: '«ООО "Зетта Страхование"»',
+        description: 'ООО «Зетта Страхование– универсальная страховая компания, которая ранее называлась ООО СК «Цюрих», существует на российском рынке с 1993 года. С февраля 2015 года компания продолжила свою работу в России под брендом «Зетта Страхование». Ребрендинг стал шагом на пути расширения и развития бизнеса компании в России. Сегодня у компании более 100 точек продаж, около 3500 агентов в более чем 150 населенных пунктах России, а также партнерские отношения с 350 автодилерами и 30 коммерческими банками. Клиентами ООО «Зетта Страхование» являются свыше 650 000 россиян, а также компании малого и среднего бизнеса. Надежность и финансовая устойчивость компании ООО «Зетта Страхование» подтверждена рейтинговым агентством «Эксперт РА». Присвоен рейтинг надежности А+ «Очень высокий уровень надежности». ',
+        files: {
+            affiliated: [
+                {name: '30.docx', title: 'Участники (акционеры)'}
+            ],
+            rules: [
+                {name: '31.pdf', title: 'ZETTA Правила КАСКО'}
+            ],
+            management: [
+                {name: '32.docx', title: 'Руководство компании'}
+            ]
+        }
+    }
+}
+</script>        <div class="popup_wrap" id="success_offer">
+            <div class="ttl">Заявка отправлена</div>
+            
+                            <div class="descr" style="margin-bottom:30px;">Позвоним в&nbsp;течение часа и&nbsp;уточним детали заказа, оплаты и&nbsp;доставки</div>
+                        <div class="descr" style="margin-bottom:5px;">Номер заказа:</div>
+            <div class="order_number">???</div>
+            <!--div class="descr" style="margin-bottom:5px;">Номер есть в&nbsp;письме на&nbsp;эл.почте на&nbsp;случай,если у&nbsp;вас возникли вопросы.</div-->
+            <div class="descr" style="margin-bottom:40px;">Телефон: 8 800 7000 383</div>
+            <a href="/" class="white_round_button">Завершить оформление</a>
+            <!--div class="descr">и&nbsp;перейти в&nbsp;личный кабинет</div-->
+        </div>        <div class="popup_wrap" id="order_to_mail_popup">
+            <div class="with_max_width">
+                <div class="">
+                    <div class="close_btn"></div>
+                    <div class="order_form_wrap with_padding">
+                        <form class="order_form" id="order_to_mail_form">
+                            <input type="hidden" name="params">
+                            <div class="order_form_inputs_wrap">
+                                <div class="input_n_ttl_block">
+                                    <div class="ttl" style="display:block;">Эл. почта</div><!--
+                                    --><div class="input_wrap">
+                                        <input type="email" pattern="" name="email">
+                                    </div>
+                                </div>
+                                <div class="button_block">
+                                    <div class="submit blue_round_button disabled">Отправить</div>
+                                    <input type="submit" class="blue_round_button" disabled="" value="Отправить">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page_wrap">
+            <div class="site_header">
+                <a href="/"><img class="header_logo float_left" src="/img/logo.png" width="114" alt=""/></a>
+                <div class="header_menu_wrap float_left">
+                    <ul class="header_menu inline_list">
+                        <li><a class="active" href="/about/">О сервисе</a></li>
+                        <li><a  href="/delivery/">Оплата и доставка</a></li>
+                    </ul>
+                    <ul class="header_menu inline_list">
+                        <li><a  href="/partners/">Страховые компании</a></li>
+                        <li><a  href="/insurance/">О страховании</a></li>
+                    </ul>
+                </div>
+                <div class="menu_sandwich_icon float_right"></div>
+                <div class="menu_sandwich_icon undock"></div>
+                <!--a href="login.html" class="my_calcs float_right">Мои расчеты</a-->
+                <div class="polices_issued_block float_right">
+                    <div class="polices_count">25 700</div>
+                    <div class="polices_descr">оформленных полисов<br/>в Московском регионе</div>
+                </div>
+                <div class="popup_menu">
+                    <div class="back_arrow"></div>
+                    <div class="popup_menu_content">
+                        <a href="/"><img src="/img/logo_white.png" class="logo"/></a>
+                        <ul class="menu">
+                            <li><a href="/about/">О сервисе</a></li>
+                            <li><a href="/delivery/">Оплата и доставка</a></li>
+                            <li><a href="/partners/">Страховые компании</a></li>
+                            <li><a href="/insurance/">О страховании</a></li>
+                        </ul>
+                        <a href="/calculator/" class="insurance_calc white_round_button">Рассчитать страховку</a>
+                        <div class="phone_wrap">
+                            <a href="tel:88001305668" class="phone">8-800-700-03-83</a>
+                            <div class="descr">звонок по&nbsp;России бесплатный</div>
+                        </div>
+                        <div class="bottom_links">
+                            <a class="contacts_link" href="/contacts/">Контакты</a>
+                            <a class="my_calcs_link" href="/personal/">Мои расчеты</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+
+        <div class="site_content">
+            <div class="grey_bg">
+                <div class="qa_page max_width_limit">
+                    <div class="two_columns">
+                        <div class="main_col">
+                            <div class="title">Вопрос-ответ</div>
+                            <div class="qa_descr">Отвечаем на вопросы о работе сервиса, услугах и условиях. Разбираем частные случаи.</div>
+                            <div class="accordeon_block">
+                                <ul class="accordeon">
+                                    <li>
+                                        <div class="blue_line"></div>
+                                        <span>Что такое каско?</span><div class="txt">Это полис добровольного страхования, который предусматривает выплаты в случае хищения, угона или повреждения транспортного средства. Страховщики сами определяют страховые коэффициенты, оптимизируют их для каждого автомобиля, поэтому выбор полисов большой.</div>
+                                    </li>
+                                    <li>
+                                        <div class="blue_line"></div>
+                                        <span>От чего страхует каско?</span><div class="txt">От хищения, угона или повреждения транспортного средства. Полис гарантирует возмещение ущерба  нанесенного при ДТП. При этом не важно, кто являлся виновником — выплата будет в любом случае. От ущерба в результате вандальных действий, от порчи при стихийных бедствиях, а также падении кирпичей и пианино.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                                                <div class="menu_col">
+                            <ul class="side_menu">
+                                <li><a href="/program/" >Программа преимуществ</a></li>
+                                <li><a href="/delivery/" >Оплата и доставка</a></li>
+                                <li><a href="/feedbacks/" >Отзывы</a></li>
+                                <li><a href="/news/" >Новости</a></li>
+                                <li><a href="/qa/" class="cur">Вопрос-ответ</a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="horizontal_line under_about_kasko" style="margin-top:65px;"></div>
+                                <div class="about_insuranse_calc_block">
+                    <a href="/calculator/" class="blue_round_button insuranse_calc_button">Рассчитать и оформить страховку</a>
+                    <div class="calc_info">Расчёт не требует регистрации</div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+        <div class="site_footer">
+            <div class="max_width_limit_n4">
+                <div class="footer_top">
+                    <ul class="benefits_list">
+                        <li>
+                            <img src="/img/svg/icon_card.svg" alt="" class="icon">
+                            <div class="content">
+                                <div class="txt">Скоро. Оплата и оформление онлайн картами Visa и MasterCard. Время рассмотрения — 2 часа.</div>
+                                <div class="images_block">
+                                    <img src="/img/svg/icon_visa.svg" width="50" alt="">
+                                    <img src="/img/svg/icon_mastercard.svg" width="50" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="/img/svg/icon_deliv.svg" alt="" class="icon">
+                            <div class="content">
+                                <div class="txt" style="margin-bottom:0;">Скоро. Бесплатная доставка по Москве курьером.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="/img/svg/icon_pin_2.svg" alt="" class="icon">
+                            <div class="content">
+                                <div class="txt">Оформляйте полис по телефону и забирайте в офисе.</div>
+                                <a href="/contacts/" class="round_button">Смотреть на карте</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="insuranse_calc_block"><a href="/calculator/" class="blue_round_button insuranse_calc_button">Рассчитать и оформить страховку</a><div class="calc_info">Расчёт не требует регистрации</div></div>
+                </div>
+                                <div class="footer_bottom">
+                    <div class="menu_n_copyright_block">
+                        <div class="menu_block">
+                            <ul class="menu">
+                                <li><a href="/about/">О&nbsp;сервисе</a></li>
+                                <li><a href="/program/">Программа преимуществ</a></li>
+                                <li><a href="/partners/">Страховые компании-партнеры</a></li>
+                            </ul>
+                            <ul class="menu">
+                                <li><a href="/delivery/">Оплата и&nbsp;доставка</a></li>
+                                <li><a href="/feedbacks/">Отзывы</a></li>
+                                <li><a href="/news/">Новости</a></li>
+                            </ul>
+                            <ul class="menu">
+                                <li><a href="/qa/">Вопрос-ответ</a></li>
+                                <li><a href="/insurance/">О&nbsp;страховании</a></li>
+                                <li><a id="confidential_popup_show" href="javascript:void(0);">Конфиденциальность</a></li>
+                            </ul>
+                        </div>
+                        <div class="copyright_block">
+                            <div class="copy">© 2017 kasko.ru</div>
+                            <a href="/map/" class="site_map">Карта сайта</a>
+                        </div>
+                    </div>
+                    <div class="city_n_phone_block">
+                        <div class="inner">
+                            <div class="city"></div>
+                            <div class="phone_wrap">
+                                <a href="tel:88001305668" class="phone">8 800 130-56-68</a>
+                                <div class="descr">звонок по&nbsp;России бесплатный</div>
+                            </div>
+                        </div><a href="/about/#callback_form_ancor" class="link callback">Обратная связь</a><a href="/contacts/" class="link contacts">Контакты</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter38573685 = new Ya.Metrika({
+                            id:38573685,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/38573685" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-81021531-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>
