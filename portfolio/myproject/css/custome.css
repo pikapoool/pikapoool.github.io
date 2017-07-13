@@ -1,0 +1,8 @@
+.headerUser__avatar,
+.cardBox__imgWrap{
+	background-image: url(../img/avatar_bg.png);
+}
+
+.pageLoader{
+	background-image: url(../img/google_loading.gif);
+}
