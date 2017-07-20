@@ -1,0 +1,10 @@
+.header-user__avatar{
+	background-image: url(../img/avatar_bg.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.project-inner__autor-avatar{
+	background-image: url(../img/avatar_bg.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
