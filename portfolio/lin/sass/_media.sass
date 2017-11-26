@@ -1,0 +1,905 @@
+@import "bourbon"
+
+
+@media only screen and (max-width: 1100px)
+	.pages_productCard_slider
+		.owl-nav
+			width: 100%
+			left: 0
+			.owl-next,
+			.owl-prev
+				background-color: #585858
+				span
+					border-color: #fff
+				&:hover
+					span
+						border-color: #fff
+@media only screen and (max-width: 1020px)
+	.homeCategories_slider .owl-nav
+		width: 100%
+		left: 0
+	.homeCategories_slider .owl-nav .owl-next span, .homeCategories_slider .owl-nav .owl-prev span
+		border-color: #fff
+
+@media only screen and (max-width: 1000px)
+	.btn_back
+		transform: translate(0, 0)
+	.mainHeader-wrap
+		padding-bottom: 60
+	.mainHeader_bottom
+		top: 0
+	h1
+		font-size: 26px
+	.homeTopBlock
+		padding-top: 41px
+	.homeTopBlock_items
+		padding: 0 20px
+	.homeTopBlock_item-left
+		width: 100%
+		height: 280px
+		margin-bottom: 15px
+		padding: 20px
+	.homeTopBlock_item-center
+		width: 100%
+		margin-right: 0
+		margin-bottom: 15px
+	.homeTopBlock_item-centerTop
+		width: 100%
+		height: 280px
+		padding: 20px
+	.homeTopBlock_item-centerBottom
+		width: 100%
+		height: 283px
+		padding: 20px
+	.homeTopBlock_item-right
+		width: 100%
+		height: 280px
+		padding: 20px
+	.homeCategories_slider-wrap
+		padding: 0 20px
+	.homeCategories_slider
+		.owl-nav
+			left: 0
+			width: 100%
+			.owl-prev,
+			.owl-next
+				float: left
+				background-color: $mc
+			 	display: block
+				width: 50px
+				height: 50px
+				transition: $trans3
+				position: relative
+				&:hover
+					background-color: #4c4c4c
+					span
+						border-color: #fff
+			.owl-next
+				float: right
+			.pages_slider-prev,
+			.pages_slider-next
+				position: absolute
+				width: 12px
+				height: 12px
+				top: 50%
+				left: 50%
+				transition: $trans3
+			.pages_slider-prev
+				border-bottom: 2px solid #fff
+				border-left: 2px solid #fff
+				transform-origin: 50% 70%
+				transform: translate(-50%, -50%) rotate(45deg)
+			.pages_slider-next
+				border-bottom: 2px solid #fff
+				border-right: 2px solid #fff
+				transform-origin: 50% 70%
+				transform: translate(-50%, -50%) rotate(-45deg)
+	.homeCategories_items
+		padding: 0 20px
+	.homeCategories_item
+		animation-delay: 0s !important
+		animation: none !important
+		opacity: 1 !important
+		height: 325px
+		width: 49%
+		margin-right: 0
+		&:nth-child(4n+1),
+		&:nth-child(4n+2)
+			width: 49%
+			margin-right: 0
+		&:nth-child(2n+1)
+			margin-right: 15px
+		&:hover
+			.homeCategories_itemInner
+				background-color: transparent
+				top: 123px
+			.homeCategories_item-icon
+				opacity: 1
+				transform: translate(0, 0)
+			.homeCategories_item-title
+				color: #373737
+				&:before,
+				&:after
+					background-color: #373737
+			.homeCategories_item-descr
+				color: #373737
+	.homeCategories_itemInner
+		height: 175px
+	.homeCategories_slider-img
+		img
+			width: 100% !important
+			height: auto
+	.homeProductCard_left
+		display: none
+	.homeProductCard-wrap
+		padding: 0 20px
+	.home_productCard_slider
+		width: 100%
+		float: none !important
+		.owl-nav
+			opacity: 1 !important
+			z-index: 2
+	.home_productCard_slider-btn
+		// display: block
+		display: none
+		padding-top: 60px
+		text-align: center
+		a
+			font-family: "Circe-ExtraBold"
+			font-size: 20px
+			color: #fff
+			background-color: $mc
+			border: none
+			padding: 13px 39px
+			line-height: 22px
+			letter-spacing: 0.03em
+			border: 1px solid $mc
+			text-decoration: none
+			display: inline-block
+			transition: $trans3
+			&:hover
+				background-color: #fff
+				color: $mc
+	.productCard_item
+		width: 100%
+		height: auto
+		&-img
+			img
+				width: 100% !important
+				height: auto
+		&Inner
+			height: auto
+			padding-bottom: 50px
+	.footer_item
+		&:nth-child(1)
+			width: 20%
+		&:nth-child(2)
+			width: 30%
+	.home_productCard_slider,
+	.homeCategories_slider
+		animation: none !important
+		opacity: 1 !important
+	.mm-panels
+		top: 296px
+	.mainHeader_top_lang-wrapper
+		height: 60px
+		background-color: $mc
+		padding: 20px
+		&:after
+			content: ''
+			clear: both
+			display: table
+		.mainHeader_top_enter
+			padding-left: 0
+			i
+				color: #fff
+			a
+				color: #fff
+				text-transform: uppercase
+				text-decoration: none
+				font-size: 12px
+				line-height: 2
+		.mainHeader_top_lang
+			float: right
+			ul
+				li
+					color: #ffbaba
+					font-size: 12px
+					line-height: 2
+					a
+						color: #fff
+						text-decoration: none
+						text-transform: uppercase
+						font-size: 12px
+						line-height: 2
+					&.active
+						a
+							color: #ffbaba
+	.mainHeader_mobileSearch
+		height: 69px
+		position: relative
+		padding: 20px
+		background-color: #585858
+		&-input
+			width: 100%
+			height: 25px
+			border: 1px solid #fff
+			padding: 5px 10px
+			box-sizing: border-box
+		&-submit
+			position: absolute
+			right: 20px
+			top: 47%
+			transform: translate(0, -50%)
+			color: $mc
+			border: none
+			background-color: transparent
+			font-size: 16px
+	.mainHeader_top_menu-wrapper
+		height: 168px
+		-webkit-overflow-scrolling: touch
+		overflow-scrolling: touch
+		overflow: scroll
+		overflow-x: hidden
+		overflow-y: scroll
+		.jspVerticalBar
+			display: none !important
+		.jspPane
+			width: 100% !important
+			margin-left: 0 !important
+			>ul
+				padding: 0
+				margin: 0
+				list-style-type: none
+				-webkit-overflow-scrolling: touch
+				overflow-scrolling: touch
+				>li
+					margin: 0
+					padding: 0
+					&:before
+						display: none
+					>a
+						padding: 14px 20px 13px
+						font-family: "Circe-Regular"
+						font-size: 12px
+						line-height: 14px
+						background-color: #585858
+						color: #fff
+						text-transform: uppercase
+						text-decoration: none
+						display: block
+						border-bottom: 1px solid #767676
+					>ul
+						padding: 0
+						margin: 0
+						list-style-type: none
+						display: none
+						>li
+							margin: 0
+							padding: 0
+							&:before
+								display: none
+							>a
+								padding: 11px 20px 8px 40px
+								font-family: "Circe-Regular"
+								font-size: 12px
+								line-height: 14px
+								background-color: #585858
+								color: #fff
+								text-transform: uppercase
+								text-decoration: none
+								display: block
+								border-bottom: 1px solid #767676
+					&.menu-item-has-children
+						&:after
+							content: ''
+							display: block
+							width: 10px
+							height: 10px
+							border-bottom: 1px solid #fff
+							border-right: 1px solid #fff
+							position: absolute
+							transform: rotate(45deg)
+							right: 20px
+							top: 12px
+							transition: $trans5
+						&.active
+							&:after
+								transform: rotate(-135deg)
+								top: 17px
+	.mainHeader_top_enter-desktop
+		display: none
+	.mainHeader_top_enter-mobile
+		display: inline
+	.news-wrap
+		width: 656px
+		margin: auto
+	.news_item:nth-child(3n+3)
+		margin-right: 32px
+	.news_item:nth-child(2n+2)
+		margin-right: 0
+	.textBlock_left
+		width: 48%
+	.searchPage_top
+		padding: 20px
+	.searchPage_top-submit
+		right: 30px
+	.searchPageInner
+		padding: 0 20px 20px
+	.searchPage_left
+		float: none
+		padding: 0  0 17px
+	.searchPage_right
+		float: none
+	.searchPage_right-txt
+		display: block
+		padding-bottom: 3px
+	.searchPage_right-select
+		width: 100%
+		display: block
+	.searchPage_results
+		padding: 0 20px
+		.productCard_item
+			float: left
+			width: 48.7%
+			&:nth-child(4n+4)
+				margin-right: 17px
+			&:nth-child(2n+2)
+				margin-right: 0
+	.brandPageInner
+		padding: 0 20px
+		.productCard_item
+			float: left
+			width: 48.7%
+			&:nth-child(4n+4)
+				margin-right: 17px
+			&:nth-child(2n+2)
+				margin-right: 0
+	.busketPage-wrap
+		.pageContent
+			width: 700px
+			margin: auto
+	.busketPage
+		padding: 30px 20px
+	.busketPage_item
+		height: auto
+		margin-bottom: 31px
+	.busketPage_item-remove
+		top: 10px
+		transform: translate(0, 0)
+	.busketPage_itemInner
+		display: block
+		width: 100% !important
+		padding-left: 0 !important
+		float: none
+		height: auto
+		border: none
+	.busketPage_itemInner-img
+		padding-top: 0
+		padding-bottom: 16px
+	.busketPage_itemInner-sticker
+		top: 0
+	.busketPage_itemInner:nth-child(3)
+		padding-top: 4px
+		.busketPage_itemInner-txt
+			display: inline-block
+			vertical-align: middle
+			margin-right: 5px
+			padding: 0
+		.busketPage_itemInner-price
+			display: inline-block
+			vertical-align: middle
+	.busketPage_itemInner:nth-child(4)
+		padding-top: 8px
+		.busketPage_itemInner-txt
+			display: inline-block
+			vertical-align: middle
+			margin-right: 10px
+			padding: 0
+		.busketPage_itemInner-input-wrap
+			display: inline-block
+			vertical-align: middle
+	.busketPage_itemInner:nth-child(5)
+		padding-top: 12px
+		padding-bottom: 20px
+		border-bottom: 1px solid #eee
+		.busketPage_itemInner-txt
+			display: inline-block
+			vertical-align: middle
+			margin-right: 8px
+			padding: 0
+		.busketPage_itemInner-price
+			display: inline-block
+			vertical-align: middle
+	.busketPage_summaInner
+		float: none
+	.busketPage_summa-txt
+		display: block
+		padding-bottom: 6px
+	.busketPage_summa-price
+		display: block
+	.cabinetPageTabs-wrapper-desktop
+		display: none
+	.cabinetPageTabs-wrapper-mobile
+		display: block
+	.cabinetPage
+		padding: 22px 20px
+	.cabinetPageTab-mobile
+		margin-bottom: 5px
+		span:before
+			bottom: -4px
+	.cabinetPageHistory_item
+		height: auto
+		margin-bottom: 31px
+	.cabinetPageHistory_item-remove
+		top: 10px
+		transform: translate(0, 0)
+	.cabinetPageHistory_itemInner
+		display: block
+		width: 100% !important
+		padding-left: 0 !important
+		float: none
+		height: auto
+		border: none
+	.cabinetPageHistory_itemInner-img
+		padding-top: 0
+		padding-bottom: 16px
+	.cabinetPageHistory_itemInner-sticker
+		top: 0
+	.cabinetPageHistory_itemInner:nth-child(3)
+		padding-top: 4px
+		.cabinetPageHistory_itemInner-txt
+			display: inline-block
+			vertical-align: middle
+			margin-right: 5px
+			padding: 0
+		.cabinetPageHistory_itemInner-price
+			display: inline-block
+			vertical-align: middle
+	.cabinetPageHistory_itemInner:nth-child(4)
+		padding-top: 8px
+		.cabinetPageHistory_itemInner-txt
+			display: inline-block
+			vertical-align: middle
+			margin-right: 10px
+			padding: 0
+		.cabinetPageHistory_itemInner-input-wrap
+			display: inline-block
+			vertical-align: middle
+	.cabinetPageHistory_itemInner:nth-child(5)
+		padding-top: 12px
+		padding-bottom: 20px
+		border-bottom: 1px solid #eee
+		text-align: left
+		.cabinetPageHistory_itemInner-txt
+			display: inline-block
+			vertical-align: middle
+			margin-right: 8px
+			padding: 0
+		.cabinetPageHistory_itemInner-price
+			display: inline-block
+			vertical-align: middle
+	.cabinetPageHistory_summaInner
+		float: none
+	.cabinetPageHistory_summa-txt
+		display: block
+		padding-bottom: 6px
+		margin-right: 0
+		line-height: 1
+	.cabinetPageHistory_summa-price
+		display: block
+		font-size: 28px
+	.cabinetPageHistory-wrap
+		// display: none
+		&:first-child
+			padding-top: 20px
+	.cabinetPageHistory-wrap-btn
+		display: block
+		padding-top: 8px
+	.cabinetPageTabs-mobile
+		padding-bottom: 0
+		margin-bottom: 0
+	.catalogPage .searchPageInner
+		display: none
+	.catalogPage .searchPageInner-mobile
+		display: block
+		padding-top: 30px
+	.catalogPage_sidebar
+		margin-top: 0
+	.catalogPage_sidebar-toggle
+		display: block
+		height: 70px
+		background-color: $mc
+		padding: 20px 20px
+		&Hide
+			display: none
+		&Show
+			display: inline-block
+		a
+			color: #fff
+			text-decoration: none
+			font-family: "Circe-ExtraBold"
+			font-size: 14px
+			line-height: 1.1
+			text-transform: uppercase
+			position: relative
+			display: block
+			i
+				font-size: 23px
+				margin-right: 10px
+			&.active
+				.catalogPage_sidebar-toggleHide
+					display: inline-block
+				.catalogPage_sidebar-toggleShow
+					display: none
+			&:before
+				content: ''
+				width: 8px
+				height: 8px
+				position: absolute
+				right: 0px
+				top: 60%
+				transition: $trans5
+				border-top: 2px solid #fff
+				border-left: 2px solid #fff
+				transform-origin: 50% 50%
+				transform: translate(0, -50%) rotate(45deg)
+			&.active
+				&:before
+					transform: translate(0, -50%) rotate(-135deg)
+					top: 40%
+	.catalogPage_sidebar
+		width: 100%
+		float: none
+		margin: 0
+	#jqslider
+		width: 98%
+	.catalogPage_sidebar_item-btn
+		width: auto
+		padding: 16px 45px
+		&Price
+			width: auto
+			padding: 16px 45px
+	.catalogPage_results
+		float: none
+		width: 700px
+		margin: auto
+		.productCard_item
+			width: 100%
+			margin-right: 0 !important
+	.productCardTabs-wrapper-desktop
+		display: none
+	.productCardTabs-wrapper-mobile
+		display: block
+	.productCardTab_item-mobile
+		padding: 15px 20px
+	.productCardTab-mobile
+		display: block
+		width: 100%
+		float: none
+		text-align: left
+		border: none !important
+		position: relative
+		&:before
+			content: ''
+			width: 10px
+			height: 10px
+			border-bottom: 2px solid #fff
+			border-right: 2px solid #fff
+			position: absolute
+			top: 45%
+			right: 20px
+			transform: translate(0, -50%) rotate(45deg)
+			transition: $trans5
+		&.active
+			&:before
+				top: 55%
+				transform: translate(0, -50%) rotate(-135deg)
+	.productCard_left
+		width: 420px
+		padding-right: 0
+		padding-bottom: 12px
+		float: none
+		margin: auto
+	.productCard_right
+		width: 100%
+		float: none
+	.productCard_rightInner_item
+		padding-bottom: 0px
+		.jq-number
+			margin: 24px 0
+	.productCard_right-price
+		padding-bottom: 13px
+	.productCard_right-title
+		display: none
+	.productCard_right-title-mobile
+		display: block
+		padding-bottom: 20px
+	.productCard_right-sticker
+		display: none
+	.productCard_right-sticker-mobile
+		display: block
+		position: absolute
+		left: 0
+		right: auto
+		top: 0
+		z-index: 2
+		float: none
+	.catalogPageCat-wrap
+		padding: 0 20px
+	.catalogPageCat_results
+		width: 489px
+	.catalogPageCat_results_item
+		&:nth-child(3n+3)
+			margin-right: 15px
+		&:nth-child(2n+2)
+			margin-right: 0
+
+
+
+@media only screen and (max-width: 820px)
+	.textBlock
+		iframe
+			width: 280px
+			height: 170px
+
+
+@media only screen and (max-width: 793px)
+	.homeCategories_item
+		width: 48.6%
+		&:nth-child(4n+1),
+		&:nth-child(4n+2)
+			width: 48.6%
+	.contactPage_left
+		width: 100%
+		padding-right: 0
+	.contactPage_right
+		display: none
+	.contactPage_left-btn
+		display: block
+	.catalogPageCat_results
+		width: 237px
+	.catalogPageCat_results_item
+		margin-right: 0 !important
+
+@media only screen and (max-width: 760px)
+	.footer_top
+		height: auto
+		padding-top: 27px
+		padding-bottom: 33px
+		.footer_item-title
+			padding-bottom: 10px
+	.footer_item-adress
+		padding-bottom: 15px
+	.footer_item-email
+		padding-bottom: 15px
+	.footer_top .footer_item:nth-child(3) i
+		left: 23px
+	.footer_item-tel
+		padding-left: 25px
+	.footer_item
+		width: 100% !important
+		padding-left: 20px !important
+	.footer_bottomInner
+		height: auto
+		ul
+			display: none
+			padding-left: 20px
+		.footer_item
+			margin-bottom: 24px
+			&:nth-child(4)
+				.footer_item-title:before
+					display: none
+		.footer_item-title
+			padding-left: 20px
+			position: relative
+			cursor: pointer
+			&:before
+				content: ''
+				display: block
+				background-color: transparent
+				width: 8px
+				height: 8px
+				position: absolute
+				top: 30%
+				left: 0px
+				border-bottom: 2px solid #fff
+				border-right: 2px solid #fff
+				transform-origin: 50% 70%
+				transform: translate(0%, -50%) rotate(45deg)
+				transition: $trans5
+			&.active
+				&:before
+					transform: translate(0%, -50%) rotate(-135deg)
+	.footer_bottom
+		padding-bottom: 0
+		.footer_item
+			float: none
+			width: 100%
+	.footer_item-copyright-wrap
+		position: static
+		padding: 31px 20px 25px
+	.footer_item-copyright
+		float: none
+	.footer-dev
+		float: none
+
+
+@media only screen and (max-width: 700px)
+	.homeCategories_itemInner:before
+		top: 175px
+	.news-wrap
+		width: 100%
+		padding: 0 20px
+	.news_item
+		margin-right: 0 !important
+		width: 100%
+	.news_item-img
+		img
+			height: auto
+	.news_itemInner
+		height: auto
+		overflow: visible
+	.textBlock_left
+		width: 100%
+		float: none
+	.textBlock_right
+		float: none
+		width: 100%
+		margin: 0
+		img
+			width: 100%
+			height: auto
+			margin-bottom: 20px
+	.alignright,
+	.alignleft
+		width: 100%
+		margin: 0
+		float: none
+	.contactPage
+		padding: 20px 20px 35px 20px
+		margin-bottom: 40px
+	.errorPageInner
+		margin-bottom: 40px
+	.aboutPage
+		padding: 20px 20px 35px 20px
+		margin-bottom: 0
+	.searchPage_results
+		padding: 0 20px
+		.productCard_item
+			float: none
+			width: 100%
+			min-height: 14px
+			margin-right: 0 !important
+	.jq-selectbox__select
+		width: 100%
+	.jq-selectbox
+		width: 100%
+	.searchPage .pagination
+		padding-top: 35px
+		padding-bottom: 50px
+	.brandPage
+		padding: 20px
+	.brandPageInner
+		padding: 0 20px
+		padding-bottom: 15px
+		.productCard_item
+			float: none
+			width: 100%
+			min-height: 14px
+			margin-right: 0 !important
+	.busketPage
+		margin-bottom: 0
+		padding-bottom: 60px
+	.busketPage-wrap .pageContent
+		width: 100%
+	.busketPage-btn
+		padding-top: 14px
+	.busketPage-btnRight
+		float: none
+		padding-bottom: 20px
+	.busketPage-btnLeft
+		float: none
+	.orderPage_left
+		width: 100%
+		float: none
+		padding-right: 0
+	.orderPage_right
+		width: 100%
+		float: right
+	.orderPage_bottom
+		width: 100%
+		padding-right: 0
+	.orderPage
+		padding: 20px 20px 50px
+	.orderPage_top
+		margin-bottom: 15px
+	.orderPage_left
+		padding-bottom: 10px
+	.orderPage_center
+		padding-bottom: 20px
+		margin-bottom: 15px
+	.orderPage_top-first
+		// display: block
+	.bredcrumbs
+		ul
+			li
+				margin: 5px 0
+	.catalogPage_results
+		float: none
+		width: 100%
+		padding: 0 20px
+	.productCard
+		padding: 20px
+	.catalogPageCat_text
+		padding: 20px
+		margin-bottom: 40px
+
+@media only screen and (max-width: 600px)
+	.homeCategories_item
+		height: 325px
+		width: 100% !important
+		margin-right: 0 !important
+	.errorPage-number
+		font-size: 165px
+	.errorPage-title
+		margin-top: -60px
+	.errorPageInner
+		padding: 0 20px 40px 20px
+
+@media only screen and (max-width: 534px)
+	.catalogPageCat-wrap
+		padding: 0
+	.catalogPageCat_sidebar
+		width: 100%
+		float: none
+	.catalogPageCat_results
+		padding: 15px 15px 0 15px
+		float: none
+		width: 100%
+	.catalogPageCat_results_item
+		float: none
+		width: 100%
+
+@media only screen and (max-width: 530px)
+	.popup
+		width: 300px !important
+		padding: 20px !important
+	.popup_title
+		padding-bottom: 20px
+	.popup .close
+		top: 15px
+		right: 15px
+	#jqslider_handle
+		margin: 40px 0 50px
+		width: 100%
+	.jqslider_handle-max
+		// transform: translate(0, 0)
+	.jqslider_handle-min
+		transform: translate(-50%, 0)
+	.mobPadding
+		padding-left: 20px
+		padding-right: 20px
+
+
+@media only screen and (max-width: 470px)
+	.productCard_left
+		width: 100%
+	#slider ul li img
+		width: 100%
+		height: auto
+
+
+@media only screen and (max-width: 350px)
+	.contactPage_left-captcha
+		transform: scale(0.93)
+		transform-origin: 0 0
+	.errorPage-btn
+		a
+			display: block
+			margin: 0 auto
+
+@media only screen and (min-width: 761px)
+	.footer_bottomInner
+		ul
+			display: block !important

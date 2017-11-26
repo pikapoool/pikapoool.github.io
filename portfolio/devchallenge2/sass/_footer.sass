@@ -1,0 +1,28 @@
+.footer
+	position: absolute
+	width: 100%
+	left: 50%
+	bottom: 65px
+	transform: translate(-50%, 0)
+	&Logo
+		text-align: center
+		padding-bottom: 37px
+		img
+			opacity: .2
+			width: 87px
+	&Menu
+		text-align: center
+		padding-bottom: 17px
+		@extend %ulli
+		ul
+			li
+				display: inline-block
+				vertical-align: top
+				margin-right: 22px
+				&:last-child
+					margin-right: 0
+				a
+					text-decoration: underline
+	&Copyright
+		text-align: center
+		letter-spacing: 0.035em

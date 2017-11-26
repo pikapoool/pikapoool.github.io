@@ -1,0 +1,656 @@
+@import "vars.sass"
+@import "default.sass"
+
+.mainHeader_mobileSearch
+	display: none
+
+.firstScreen
+	&_bg
+		&.preload
+			top: 0
+
+.pagesHeader
+	padding-bottom: 110px
+	.firstScreen_bg
+		height: 220px
+	.mainHeader-wrap.preload
+		transform: translate(0, 0)
+
+.mainHeader-wrap
+	transition: $trans5
+	&.preload
+		transform: translate(0, -150%)
+.firstScreen_title
+	transition: $trans5
+	&.preload
+		transform: translate(150%, 0%)
+		opacity: 0
+.firstScreen_scrollToBottom
+	transition: $trans5
+	&.preload
+		opacity: 0
+		transform: translate(-150%, 0%)
+.homeTopBlock_item-left
+	transition: $trans5
+	opacity: 0
+	&.preload
+		transform: translate(-150%, 0%)
+		opacity: 0
+.homeTopBlock_item-centerTop
+	transition: $trans5
+	position: relative
+	transition-delay: 0.5s
+	z-index: 1
+	opacity: 0
+	&.preload
+		transform: translate(0%, 109%)
+		opacity: 0
+.homeTopBlock_item-centerBottom
+	position: relative
+	z-index: 2
+	transition-delay: 0.5s
+	transition: $trans5
+	opacity: 0
+	&.preload
+		transform: translate(0%, 150%)
+		opacity: 0
+.homeTopBlock_item-right
+	transition: $trans5
+	opacity: 0
+	&.preload
+		transform: translate(150%, 0%)
+		opacity: 0
+p,ul
+	opacity: 0
+
+.hidden
+	display: none
+
+body
+	background-color: #eee
+	font-size: 14px
+	position: relative
+	line-height: 1.7
+	letter-spacing: 0.035em
+	overflow-x: hidden
+	color: rgba(#020202,0.7)
+	font-family: Arial
+
+.pageContent
+	width: 1000px
+	margin: 0 auto
+
+
+.mainHeader
+	position: relative
+	// z-index: 3 !important
+	&_bg
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		height: 100%
+		width: 100%
+		&:before
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+			background-color: rgba(#050505,0.3)
+	&_top
+		position: relative
+		z-index: 11
+		height: 40px
+		&:after
+			content: ''
+			clear: both
+			display: table
+		&_menu
+			float: left
+			>ul
+				margin: 0
+				padding: 7px 0 0 0
+				&:after
+					content: ''
+					clear: both
+					display: table
+				>li
+					margin: 0 8px
+					padding: 0
+					padding-bottom: 10px
+					float: left
+					position: relative
+					&:before
+						display: none
+					&:first-child
+						margin-left: 0
+					>a
+						font-family: "Circe-Regular"
+						font-size: 12px
+						color: #fff
+						text-decoration: none
+						text-transform: uppercase
+						padding-bottom: 12px
+						&:hover
+							color: $mc
+							// text-decoration: underline
+					>ul
+						position: absolute
+						left: 0
+						top: 100%
+						display: none
+						margin: 0
+						padding: 0
+						>li
+							margin: 0
+							padding: 0
+							&:before
+								display: none
+							>a
+								font-family: "Circe-Regular"
+								font-size: 12px
+								line-height: 14px
+								background-color: #373737
+								text-decoration: none
+								color: #fff
+								margin: 0
+								padding: 20px 18px 18px
+								min-width: 260px
+								display: block
+								border-bottom: 1px solid #fff
+								transition: $trans3
+								&:hover
+									background-color: $mc
+					&:hover
+						>a
+							position: relative
+							&:after
+								content: ''
+								display: block
+								width: 100%
+								height: 4px
+								background-color: $mc
+								position: absolute
+								bottom: 0
+								left: 0
+								z-index: 2
+						>ul
+							display: block
+		&-right
+			float: right
+			padding-top: 8px
+			i
+				color: #fff
+				font-size: 15px
+			a
+				font-size: 12px
+				color: #fff
+				text-decoration: none
+				text-transform: uppercase
+				&:hover
+					color: $mc
+					text-decoration: underline
+		&_search
+			float: left
+		&_enter
+			float: left
+			padding-left: 29px
+		&_basket
+			float: left
+			padding-left: 23px
+		&_lang
+			float: left
+			padding-left: 20px
+			ul
+				margin: 0
+				padding: 0
+				list-style-type: none
+				&:after
+					content: ''
+					display: table
+					clear: both
+				li
+					float: left
+					padding: 0
+					margin: 0 0 0 10px
+					text-transform: uppercase
+					color: $mc
+					&:before
+						display: none
+					&.active
+						a
+							color: $mc
+	&_bottom
+		background-color: #fff
+		position: relative
+		z-index: 10
+		height: 70px
+		&:after
+			content: ''
+			clear: both
+			display: table
+		&_logo
+			float: left
+			padding: 20px 0 0px
+			img
+				width: 104px
+				height: 25px
+				display: block
+		&_menu
+			float: left
+			padding-left: 159px
+			position: relative
+			z-index: 10
+			>ul
+				margin: 0
+				left: 0
+				list-style-type: none
+				&:after
+					content: ''
+					display: table
+					clear: both
+				>li
+					float: left
+					padding: 0
+					margin: 0 15px
+					position: relative
+					&:before
+						display: none
+					>a
+						color: rgba(#000000, 0.8)
+						text-decoration: none
+						font-size: 14px
+						line-height: 16px
+						text-transform: uppercase
+						font-family: "Circe-ExtraBold"
+						letter-spacing: 0.05em
+						padding: 25px 0
+						display: block
+						position: relative
+						&:before
+							content: ''
+							width: 100%
+							height: 5px
+							position: absolute
+							bottom: 1px
+							left: 0
+							background-color: $mc
+							transform: translate(0, 100%)
+							opacity: 0
+							transition: $trans3
+					&:first-child
+						margin-left: 0
+					&.current
+						a:before
+							opacity: 1
+					&:hover
+						a:before
+							opacity: 1
+					&.menu-item-has-children
+						&:hover
+							>ul
+								display: block
+					>ul
+						display: none
+						margin: 0
+						padding: 0
+						position: absolute
+						left: 0
+						top: 70px
+						z-index: 3
+						>li
+							margin: 0
+							padding: 0
+							width: 260px
+							&:before
+								display: none
+							>a
+								text-decoration: none
+								text-transform: uppercase
+								color: #373737
+								padding: 21px 21px 16px
+								background-color: #fff
+								line-height: 1
+								display: block
+								font-family: "Circe-Regular"
+								font-size: 12px
+								border-bottom: 1px solid #eee
+								transition: $trans3
+								&:hover
+									background-color: $mc
+									color: #fff
+							&.current
+								>a
+									background-color: $mc
+									color: #fff
+							ul
+								display: none
+								margin: 0
+								padding: 0
+								position: absolute
+								top: -1px
+								// right: 0%
+								left: 100%
+								// transform: translate(100%, 0)
+								li
+									padding: 0
+									margin: 0
+									width: 259px
+									position: relative
+									&:before
+										display: none
+									a
+										line-height: 1
+										display: block
+										font-family: "Circe-Regular"
+										font-size: 12px
+										background: #eee
+										border-bottom: 1px solid #fff
+										text-transform: uppercase
+										color: #373737
+										text-decoration: none
+										padding: 20px 20px 18px
+										transition: $trans3
+										// width: 259px
+										&:hover
+											background-color: $mc
+											color: #fff
+									&.current
+										a
+											background-color: $mc
+											color: #fff
+									&.menu-item-has-children
+										&:hover
+											ul
+												display: block
+												top: 0
+							&.menu-item-has-children
+								&:hover
+									>ul
+										display: block
+		&Inner
+			float: right
+			background-color: $mc
+			height: 70px
+			position: relative
+			padding: 12px 2px 0 32px
+			&:before
+				content: ''
+				width: 500px
+				height: 100%
+				position: absolute
+				right: 0
+				transform: translate(100%, 0)
+				top: 0
+				background-color: $mc
+		&-tel
+			a
+				font-family: "Circe-ExtraBold"
+				color: #fff
+				text-decoration: none
+				font-size: 16px
+				letter-spacing: 0.05em
+				line-height: 1.2
+		&-email
+			a
+				font-weight: bold
+				font-size: 14px
+				color: #fff
+				text-decoration: none
+
+.mainHeader_bottom_menu
+	ul.sub-menu
+		li.menu-item-has-children
+			position: relative
+			&:before
+				content: ''
+				display: block
+				background-color: transparent
+				width: 8px
+				height: 8px
+				position: absolute
+				top: 50%
+				right: 20px
+				left: auto
+				border-bottom: 2px solid #000
+				border-right: 2px solid #000
+				transform-origin: 50% 70%
+				transform: translate(0%, -50%) rotate(-45deg)
+
+.mainHeader_top_enter-mobile
+	display: none
+
+
+.firstScreen
+	&_bg
+		height: 705px
+		width: 100%
+		background-size: cover
+		background-repeat: no-repeat
+		position: absolute
+		left: 0
+		right: 0
+		// top: -260px
+		top: 0
+		width: 100%
+		&:before
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+			background-color: rgba(#050505,0.3)
+	&_title
+		width: 700px
+		margin: 150px auto 0
+		line-height: 1.2
+		position: relative
+		z-index: 2
+		text-align: center
+		color: #fff
+	&_scrollToBottom
+		&-txt
+			font-family: "Circe-Regular"
+			font-size: 12px
+			color: #fff
+			position: relative
+			z-index: 2
+			text-transform: uppercase
+			text-align: center
+			line-height: 1.1
+			width: 80px
+			margin: 45px auto 0
+		&-arrow
+			margin-top: 22px
+			span
+				display: block
+				position: relative
+				width: 18px
+				height: 6px
+				margin: 0px auto 0
+				&:last-child
+					margin-top: 1px
+				&:before,
+				&:after
+					content: ''
+					width: 11px
+					height: 2px
+					background-color: #fff
+					position: absolute
+					top: 0
+				&:before
+					transform: rotate(45deg)
+					left: 0
+				&:after
+					transform: rotate(-45deg)
+					right: 0
+
+.mobileHeader
+	display: none
+
+
+.pagesHeader
+	padding-bottom: 110px
+	.firstScreen_bg
+		height: 220px
+
+
+.bredcrumbs
+	position: relative
+	padding: 10px 60px 20px 0
+	&-wrap
+	ul
+		margin: 0
+		padding: 0
+		&:after
+			content: ''
+			clear: both
+			display: table
+		li
+			margin: 0
+			padding: 0 16px
+			float: left
+			&:before
+				top: 50%
+				transform: translate(-50%, -50%)
+			&:first-child
+				padding-left: 0
+				&:before
+					display: none
+			a
+				color: rgba(#000,0.8)
+				text-transform: uppercase
+				font-family: "Circe-Regular"
+				font-size: 11px
+				line-height: 12px
+.btn_back
+	position: absolute
+	right: 0
+	top: 10px
+	a
+		color: rgba(#000,0.8)
+		text-transform: uppercase
+		text-decoration: none
+		font-family: "Circe-Regular"
+		font-size: 11px
+		line-height: 12px
+		position: relative
+		padding-left: 16px
+		&:hover
+			text-decoration: underline
+		&:before
+			content: ''
+			border-left: 2px solid #000
+			border-top: 2px solid #000
+			opacity: 0.8
+			width: 6px
+			height: 6px
+			position: absolute
+			left: 0
+			top: 4px
+			transform: rotate(-45deg)
+
+.pagesTitle
+	color: #fff
+	position: absolute
+	left: 0
+	top: -73px
+
+
+
+@media only screen and (max-width: 1000px)
+	.mainHeader_mobile
+		height: 60px
+		background-color: #fff
+	.pageContent
+		width: 100%
+	.mainHeader_top
+		display: none
+	.mainHeader_bottom
+		height: 60px
+		background-color: #fff
+	.mainHeader_bottom_logo
+		padding-left: 20px
+		padding-top: 17px
+	.mainHeader_bottom_menu
+		display: none
+	.mainHeader_bottomInner
+		display: none
+	.firstScreen_title
+		width: 100%
+		margin: 0
+		padding-top: 46px
+	.firstScreen_scrollToBottom
+		display: none
+	.firstScreen_bg
+		height: 291px
+		top: 0
+	.mobileHeader
+		display: block
+		float: right
+		position: relative
+		&:after
+			content: ''
+			clear: both
+			display: table
+		a
+			text-decoration: none
+	.mainHeader_mobilePhone,
+	.mainHeader_mobileBusket,
+	.mainHeader_mobileToggle
+		height: 60px
+		width: 60px
+		position: relative
+		float: left
+		display: block
+		i
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			font-size: 26px
+	.mainHeader_mobilePhone
+		i
+			color: $mc
+	.mainHeader_mobileBusket
+		background-color: #585858
+		color: #fff
+	.mainHeader_mobileToggle
+		background-color: $mc
+		padding: 21px 20px
+		transition: $trans5
+		span
+			height: 3px
+			width: 20px
+			display: block
+			background-color: #fff
+			position: relative
+			&:after,
+			&:before
+				height: 100%
+				width: 100%
+				content: ''
+				background-color: #fff
+				position: absolute
+				top: 7px
+				left: 0
+			&:before
+				top: 14px
+	.pagesHeader
+		padding-bottom: 0 !important
+	.pagesHeader .firstScreen_bg
+		display: none
+	.bredcrumbs
+		padding: 20px
+		ul
+			padding-bottom: 17px
+	.pagesTitle
+		position: relative
+		top: 0
+		color: #585858
+	.btn_back
+		padding-top: 18px
+		position: static

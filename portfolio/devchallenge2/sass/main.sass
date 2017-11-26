@@ -1,0 +1,324 @@
+@import "vars.sass"
+@import "default.sass"
+@import "footer.sass"
+
+
+
+
+//Load Libs SASS
+@import "../libs/animate/animate.sass"
+
+///////////////////////
+//styles after load
+.headerLogo
+	opacity: 1
+	animation: flip 1s linear
+.headerMenu-afterLoad
+	visibility: visible
+	animation: bounceInDown 0.8s linear
+	// opacity: 1
+.header-title-afterLoad
+	opacity: 1
+	animation: bounceInLeft 1.2s linear
+.header-title.active
+	opacity: 1
+//
+///////////////////////
+.section
+	&-title
+		position: relative
+		&Number
+			font-size: 286px
+			opacity: 0.05
+			font-family: "Yantramanav-Black"
+			letter-spacing: -0.06em
+		&Txt
+			font-size: 34.23px
+			transform-origin: 0 0
+			transform: rotate(-90deg)
+			position: absolute
+			left: 47%
+			bottom: 91px
+	&_bigLetter
+		font-family: "Raleway-Black"
+		font-size: 1296px
+		height: 1296px
+		line-height: 1
+		color: $bgc
+		opacity: 0.61
+		letter-spacing: -0.2em
+		position: absolute
+		top: 0
+		left: 0
+		text-shadow: 0px 178px 152px rgba(0,0,0,0.45)
+
+
+////////////////////
+//start mission
+////////////////////
+.mission
+	height: 850px
+	.section-title
+		margin: 164px 0 0 -94px
+	&-img
+		margin-left: -47px
+		position: relative
+		// position: fixed
+		left: 0 !important
+		img
+			width: 660px
+			height: 660px
+			display: block
+			box-shadow: 0px 178px 152px rgba(0,0,0,0.5)
+	&-descr
+		margin-top: 272px
+		font-size: 19px
+		width: 475px
+////////////////////
+//end mission
+////////////////////
+
+
+////////////////////
+//start projects
+////////////////////
+.projects
+	padding-top: 314px
+	background-image: url(../img/project-bg.png)
+	background-repeat: no-repeat
+	// background-size: 100%
+	background-position: 50% 0%
+	height: 1140px
+	height: 1324px
+	position: relative
+	// &:before
+	// 	content: ''
+	// 	width: 100%
+	// 	height: 100%
+	// 	background-color: $bgc
+	// 	position: absolute
+	// 	left: 0
+	// 	top: 0
+	.section_bigLetter
+		left: -18% !important
+		top: -461px
+	.section
+		&-title
+			top: -233px
+			margin-left: 37px
+	&_item
+		margin-bottom: 105px
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(4),
+		&:nth-child(5)
+			.projects_item-img
+				margin-left: 16px
+		&:nth-child(3),
+		&:nth-child(6)
+			.projects_item-img
+				margin-left: 45px
+		&:nth-child(1)
+			.projects_item-img
+				animation-delay: 0
+				img
+					width: 207px
+		&:nth-child(2)
+			.projects_item-img
+				animation-delay: 0.2s
+				img
+					width: 254px
+		&:nth-child(3)
+			.projects_item-img
+				animation-delay: 0.4s
+				img
+					width: 221px
+		&:nth-child(4)
+			.projects_item-img
+				animation-delay: 0.6s
+				img
+					width: 177px
+		&:nth-child(5)
+			.projects_item-img
+				animation-delay: 0.8s
+				img
+					width: 239px
+		&:nth-child(6)
+			.projects_item-img
+				animation-delay: 1s
+				img
+					width: 224px
+////////////////////
+//end projects
+////////////////////
+
+
+////////////////////
+//start team
+////////////////////
+.team
+	padding-top: 80px
+	position: relative
+	.section_bigLetter
+		left: 15.5% !important
+		margin-top: 330px
+		// z-index: 1
+	.section-title
+		margin: -100px 0 0 -59px
+		&Txt
+			padding-left: 14px
+			padding-top: 7px
+	&_itemTop
+		position: relative
+		padding: 0 0 0px 108px
+		margin-bottom: 150px
+		float: left
+		&_txt
+			position: absolute
+			z-index: 2
+			bottom: 31px
+			left: -61px
+			width: 350px
+			&-name
+				font-size: 38px
+				padding-bottom: 10px
+				position: relative
+				&:before
+					content: ''
+					width: 55px
+					height: 5px
+					position: absolute
+					left: 0
+					top: -28px
+					background-color: #fff
+			&-position
+				font-size: 19px
+				opacity: 0.5
+				padding-bottom: 40px
+			&-descr
+				p
+					letter-spacing: 0.03em
+					line-height: 1.35
+		&-img
+			position: relative
+			left: 0 !important
+			display: block !important
+			box-shadow: 0px 178px 152px rgba(0,0,0,0.45)
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				background-color: $bgc
+			img
+				display: block
+				width: 660px
+				opacity: 0.2
+	&_item
+		position: relative
+		&_txt
+			position: absolute
+			z-index: 3
+			width: 400px
+			&-name
+				font-size: 38px
+				padding-bottom: 10px
+				position: relative
+				&:before
+					content: ''
+					width: 58px
+					height: 5px
+					position: absolute
+					left: 0
+					top: -28px
+					background-color: #fff
+			&-position
+				font-size: 19px
+				opacity: 0.5
+				padding-bottom: 40px
+		&-img
+			display: inline-block
+			position: relative
+			z-index: 2
+			box-shadow: 0px 178px 152px rgba(0,0,0,0.45)
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+				background-color: $bgc
+			img
+				opacity: 0.2
+				width: 405px
+				display: block
+		&:nth-child(1)
+			float: left
+			.team_item_txt
+				left: 335px
+				bottom: 45px
+		&:nth-child(2)
+			padding-top: 132px
+			float: right
+			.team_item_txt
+				left: -98px
+				bottom: 8px
+		&:nth-child(3)
+			float: left
+			margin-top: 160px
+			padding-left: 120px
+			.team_item_txt
+				left: 21px
+				bottom: 7px
+		&:nth-child(4)
+			margin-top: 258px
+			padding-right: 81px
+			float: right
+			.team_item_txt
+				left: 229px
+				bottom: 8px
+////////////////////
+//end team
+////////////////////
+
+
+////////////////////
+//start event
+////////////////////
+.section-title-wrap
+	text-align: center
+	.section-title
+		display: inline-block
+		padding-right: 30px
+		&Txt
+			padding-left: 15px
+.event
+	padding-top: 150px
+	background-image: url(../img/event-bg.png)
+	background-repeat: no-repeat
+	background-position: 50% 100%
+	// background-size: 100%
+	height: 1539px
+	position: relative
+	overflow: hidden
+	.section_bigLetter
+		left: 45.5% !important
+		margin-top: -100px
+	&_item
+		padding-top: 100px
+		padding-left: 79px
+		&-title
+			letter-spacing: -0.02em
+			font-size: 72.16px
+			padding-bottom: 36px
+		&-descr
+			font-size: 19px
+////////////////////
+//end event
+////////////////////
+
+//ALWAYS END
+@import "media"

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>linear</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#f64545">
+
+
+	<!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
+	<style>
+		body,input{margin:0}button,select{text-transform:none}img,legend{border:0}legend,td,th{padding:0}a:active,a:focus,a:hover,input:focus,textarea:focus{outline:0}h3,mark{color:#000}h3,p{letter-spacing:0}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}*{-webkit-box-sizing:border-box;box-sizing:border-box}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}mark{background:#ff0}small{font-size:80%}sub,sup{font-size:75%;line-height:0;vertical-align:baseline;position:relative}sub{bottom:-.25em}sup{top:-.5em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{height:0;-webkit-box-sizing:content-box;box-sizing:content-box}pre,textarea{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,optgroup,select,textarea{margin:0;font:inherit;color:inherit}input{line-height:normal}button{overflow:visible}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner{padding:0;border:0}input::-moz-focus-inner{padding:0;border:0}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:textfield}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{padding:.35em .625em .75em;margin:0 2px;border:1px solid silver}table{border-spacing:0;border-collapse:collapse}.clearfix:after,.clearfix:before{display:table;content:" "}.clearfix:after{clear:both}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}a[href^="#"]:after,a[href^="javascript:"]:after{content:""}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}select{background:#fff!important}.navbar{display:none}.btn>.caret,.dropup>.btn>.caret{border-top-color:#000!important}.label{border:1px solid #000}.table{border-collapse:collapse!important}.table td,.table th{background-color:#fff!important}.table-bordered td,.table-bordered th{border:1px solid #ddd!important}}.alignnone{margin:5px 20px 15px 0}.aligncenter,div.aligncenter{display:block;margin:5px auto}.alignright{float:right;margin:5px 0 15px 20px}.alignleft{float:left;margin:5px 20px 15px 0}a img.alignright{float:right;margin:5px 0 15px 20px}.mainHeader_top_menu,a img.alignleft{float:left}a img.alignleft,a img.alignnone{margin:5px 20px 15px 0}a img.aligncenter{display:block;margin-left:auto;margin-right:auto}.hidden,.mainHeader_mobileSearch{display:none}.wp-caption{background:#fff;border:1px solid #f0f0f0;max-width:96%;padding:5px 3px 10px;text-align:center}.wp-caption.alignleft,.wp-caption.alignnone{margin:5px 20px 15px 0}.wp-caption.alignright{margin:5px 0 20px 15px}.wp-caption img{border:0;height:auto;margin:0;max-width:98.5%;padding:0;width:auto}.wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px}h2,h3{line-height:1.2}h1,h4{line-height:1;letter-spacing:.05em}ol,ul{padding-left:0}ol ol,ol ul{padding-top:15px}em{font-style:italic}b{font-weight:700}h1,h2,h3,h4{font-weight:400;margin:0}@-webkit-keyframes rotationIn{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotationIn{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes rotationOut{0%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}100%{-webkit-transform:rotate(0);transform:rotate(0)}}@keyframes rotationOut{0%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}100%{-webkit-transform:rotate(0);transform:rotate(0)}}@-webkit-keyframes bounceIt{0%,100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}50%{-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}}@keyframes bounceIt{0%,100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}50%{-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}}@-webkit-keyframes bounceRotate{0%,100%{-webkit-transform:rotate(0);transform:rotate(0)}50%{-webkit-transform-origin:50% 60%;transform-origin:50% 60%;-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes bounceRotate{0%,100%{-webkit-transform:rotate(0);transform:rotate(0)}50%{-webkit-transform-origin:50% 60%;transform-origin:50% 60%;-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes exhaust{0%{background:-webkit-gradient(linear,left top,left bottom,color-stop(10%,transparent),to(#fff));background:-webkit-linear-gradient(top,transparent 10%,#fff 100%);background:linear-gradient(to bottom,transparent 10%,#fff 100%)}50%{background:-webkit-gradient(linear,left top,left bottom,color-stop(8%,transparent),to(#fff));background:-webkit-linear-gradient(top,transparent 8%,#fff 100%);background:linear-gradient(to bottom,transparent 8%,#fff 100%)}75%{background:-webkit-gradient(linear,left top,left bottom,color-stop(12%,transparent),to(#fff));background:-webkit-linear-gradient(top,transparent 12%,#fff 100%);background:linear-gradient(to bottom,transparent 12%,#fff 100%)}}@keyframes exhaust{0%{background:-webkit-gradient(linear,left top,left bottom,color-stop(10%,transparent),to(#fff));background:-webkit-linear-gradient(top,transparent 10%,#fff 100%);background:linear-gradient(to bottom,transparent 10%,#fff 100%)}50%{background:-webkit-gradient(linear,left top,left bottom,color-stop(8%,transparent),to(#fff));background:-webkit-linear-gradient(top,transparent 8%,#fff 100%);background:linear-gradient(to bottom,transparent 8%,#fff 100%)}75%{background:-webkit-gradient(linear,left top,left bottom,color-stop(12%,transparent),to(#fff));background:-webkit-linear-gradient(top,transparent 12%,#fff 100%);background:linear-gradient(to bottom,transparent 12%,#fff 100%)}}@-webkit-keyframes fumes{50%{-webkit-transform:scale(1.1);transform:scale(1.1);background-color:transparent}51%{-webkit-transform:scale(.8);transform:scale(.8)}100%{background-color:#fff;-webkit-transform:scale(1);transform:scale(1)}}@keyframes fumes{50%{-webkit-transform:scale(1.1);transform:scale(1.1);background-color:transparent}51%{-webkit-transform:scale(.8);transform:scale(.8)}100%{background-color:#fff;-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes fumesOut{50%{-webkit-transform:scale(.1);transform:scale(.1);background-color:transparent}51%{-webkit-transform:scale(1);transform:scale(1)}100%{background-color:#fff;-webkit-transform:scale(.1);transform:scale(.1)}}@keyframes fumesOut{50%{-webkit-transform:scale(.1);transform:scale(.1);background-color:transparent}51%{-webkit-transform:scale(1);transform:scale(1)}100%{background-color:#fff;-webkit-transform:scale(.1);transform:scale(.1)}}@-webkit-keyframes fumes2{50%{-webkit-transform:scale(1.1);transform:scale(1.1);background-color:transparent}51%{-webkit-transform:scale(.8);transform:scale(.8)}100%{background-color:#fff;-webkit-transform:scale(1);transform:scale(1)}}@keyframes fumes2{50%{-webkit-transform:scale(1.1);transform:scale(1.1);background-color:transparent}51%{-webkit-transform:scale(.8);transform:scale(.8)}100%{background-color:#fff;-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes twinkle{80%{-webkit-transform:scale(1.1);transform:scale(1.1);opacity:.7}}@keyframes twinkle{80%{-webkit-transform:scale(1.1);transform:scale(1.1);opacity:.7}}@-webkit-keyframes flame{0%{opacity:.7}50%{height:75px;opacity:1}75%{opacity:.85}}@keyframes flame{0%{opacity:.7}50%{height:75px;opacity:1}75%{opacity:.85}}@-webkit-keyframes triangles{0%,100%{opacity:.5}50%{opacity:1}}@keyframes triangles{0%,100%{opacity:.5}50%{opacity:1}}a,div{tap-highlight-color:transparent;-webkit-tap-highlight-color:transparent}:-moz-placeholder,:-ms-input-placeholder,::-moz-placeholder,::-webkit-input-placeholder{color:#000;opacity:.7}input:-moz-placeholder,input:-ms-input-placeholder,input::-moz-placeholder,input::-webkit-input-placeholder,textarea:-moz-placeholder,textarea:-ms-input-placeholder,textarea::-moz-placeholder,textarea::-webkit-input-placeholder{color:#000;opacity:.7}input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder{opacity:0}input:focus:-moz-placeholder,textarea:focus:-moz-placeholder{opacity:0}input:focus::-moz-placeholder,textarea:focus::-moz-placeholder{opacity:0}input:focus:-ms-input-placeholder,textarea:focus:-ms-input-placeholder{opacity:0}input{-webkit-border-radius:0;border-radius:0;-webkit-box-sizing:border-box!important;box-sizing:border-box!important}h1{font-family:Circe-Bold;font-size:36px;text-transform:uppercase;color:rgba(55,55,55,.97)}h2{font-size:24px;font-family:Circe-ExtraBold;color:#f64545;letter-spacing:.05em}h3{font-size:18px;font-family:Circe-Regular}h4{font-family:Circe-ExtraBold;font-size:14px;color:#fff}@media only screen and (max-width:380px){h1{font-size:30px}}p{margin:0;padding-bottom:16px}ul{list-style-type:none}ul li{margin:17px 0;padding-left:25px;position:relative}ul li:before{content:'';width:6px;height:6px;position:absolute;left:0;top:10px;background-color:#f64545}ol{counter-reset:li;margin-left:0;margin-bottom:15px}ol>li{position:relative;counter-increment:li;margin-bottom:18px;list-style:none;padding-left:32px;line-height:1.2}ol>li:before{content:c ".";position:absolute;font-family:Arial;font-weight:700;top:2px;left:2px;width:15px;height:16px;font-size:16px;line-height:16px;color:#333;text-align:left}.homeTopBlock_item-centerTop,.mainHeader,body{position:relative}ol ol{margin-bottom:6px;margin-left:22px}ol ol>li:before{font-size:14px;color:#838383;font-family:Arial}ol ul{margin-bottom:10px}ol ul li:before{content:""}ol ul li:last-child{margin-bottom:0}a{color:#f64545}a:hover{text-decoration:none}table{width:100%}table td{height:30px;padding:0 15px;border-bottom:1px solid #c9c9c9}table tr:first-child td{color:#fff;font-family:RobotoCondensed-Light;font-size:15px;border-bottom:5px solid #f64545}.firstScreen_bg.preload{top:0}.pagesHeader .mainHeader-wrap.preload{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}.mainHeader-wrap{-webkit-transition:.5s all ease;transition:.5s all ease}.mainHeader-wrap.preload{-webkit-transform:translate(0,-150%);-ms-transform:translate(0,-150%);transform:translate(0,-150%)}.firstScreen_title{-webkit-transition:.5s all ease;transition:.5s all ease}.firstScreen_title.preload{-webkit-transform:translate(150%,0);-ms-transform:translate(150%,0);transform:translate(150%,0);opacity:0}.firstScreen_scrollToBottom{-webkit-transition:.5s all ease;transition:.5s all ease}.firstScreen_scrollToBottom.preload{opacity:0;-webkit-transform:translate(-150%,0);-ms-transform:translate(-150%,0);transform:translate(-150%,0)}.homeTopBlock_item-left{-webkit-transition:.5s all ease;transition:.5s all ease;opacity:0}.homeTopBlock_item-left.preload{-webkit-transform:translate(-150%,0);-ms-transform:translate(-150%,0);transform:translate(-150%,0);opacity:0}.homeTopBlock_item-centerTop{-webkit-transition:.5s all ease;transition:.5s all ease;-webkit-transition-delay:.5s;transition-delay:.5s;z-index:1;opacity:0}.homeTopBlock_item-centerTop.preload{-webkit-transform:translate(0,109%);-ms-transform:translate(0,109%);transform:translate(0,109%);opacity:0}.homeTopBlock_item-centerBottom{position:relative;z-index:2;-webkit-transition:.5s all ease;transition:.5s all ease;opacity:0}.homeTopBlock_item-centerBottom.preload{-webkit-transform:translate(0,150%);-ms-transform:translate(0,150%);transform:translate(0,150%);opacity:0}.homeTopBlock_item-right{-webkit-transition:.5s all ease;transition:.5s all ease;opacity:0}.homeTopBlock_item-right.preload{-webkit-transform:translate(150%,0);-ms-transform:translate(150%,0);transform:translate(150%,0);opacity:0}p,ul{opacity:0}.mainHeader_top:after,.mainHeader_top_menu>ul:after{display:table;clear:both;content:''}body{background-color:#eee;font-size:14px;line-height:1.7;letter-spacing:.035em;overflow-x:hidden;color:rgba(2,2,2,.7);font-family:Arial}.mainHeader_top_menu>ul>li>a,.mainHeader_top_menu>ul>li>ul>li>a{font-family:Circe-Regular;font-size:12px;text-decoration:none}.pageContent{width:1000px;margin:0 auto}.mainHeader_bg,.mainHeader_bg:before{height:100%;position:absolute;top:0;width:100%;left:0}.mainHeader_bg{right:0}.mainHeader_bg:before{content:'';background-color:rgba(5,5,5,.3)}.mainHeader_top{position:relative;z-index:11;height:40px}.mainHeader_top_menu>ul{margin:0;padding:7px 0 0}.mainHeader_top_menu>ul>li:before,.mainHeader_top_menu>ul>li>ul>li:before{display:none}.mainHeader_top_menu>ul>li{margin:0 8px;padding:0 0 10px;float:left;position:relative}.mainHeader_top_menu>ul>li:first-child{margin-left:0}.mainHeader_top_menu>ul>li>a{color:#fff;text-transform:uppercase;padding-bottom:12px}.mainHeader_top_menu>ul>li>a:hover{color:#f64545}.mainHeader_top_menu>ul>li>ul{position:absolute;left:0;top:100%;display:none;margin:0;padding:0}.mainHeader_top_menu>ul>li>ul>li{margin:0;padding:0}.mainHeader_top_menu>ul>li>ul>li>a{line-height:14px;background-color:#373737;color:#fff;margin:0;padding:20px 18px 18px;min-width:260px;display:block;border-bottom:1px solid #fff;-webkit-transition:.3s all ease;transition:.3s all ease}.mainHeader_top_menu>ul>li>ul>li>a:hover{background-color:#f64545}.mainHeader_top_menu>ul>li:hover>a{position:relative}.mainHeader_top_menu>ul>li:hover>a:after{content:'';display:block;width:100%;height:4px;background-color:#f64545;position:absolute;bottom:0;left:0;z-index:2}.mainHeader_top_menu>ul>li:hover>ul{display:block}.mainHeader_top-right{float:right;padding-top:8px}.mainHeader_top-right i{color:#fff;font-size:15px}.mainHeader_top-right a{font-size:12px;color:#fff;text-decoration:none;text-transform:uppercase}.mainHeader_top-right a:hover{color:#f64545;text-decoration:underline}.mainHeader_top_search{float:left}.mainHeader_top_enter{float:left;padding-left:29px}.mainHeader_top_basket{float:left;padding-left:23px}.mainHeader_top_lang{float:left;padding-left:20px}.mainHeader_top_lang ul{margin:0;padding:0;list-style-type:none}.mainHeader_top_lang ul:after{content:'';display:table;clear:both}.mainHeader_top_lang ul li{float:left;padding:0;margin:0 0 0 10px;text-transform:uppercase;color:#f64545}.mainHeader_top_lang ul li:before{display:none}.mainHeader_top_lang ul li.active a{color:#f64545}.mainHeader_bottom{background-color:#fff;position:relative;z-index:10;height:70px}.mainHeader_bottom:after{content:'';clear:both;display:table}.mainHeader_bottom_logo{float:left;padding:20px 0 0}.mainHeader_bottom_logo img{width:104px;height:25px;display:block}.mainHeader_bottom_menu{float:left;padding-left:159px;position:relative;z-index:10}.mainHeader_bottom_menu>ul{margin:0;left:0;list-style-type:none}.mainHeader_bottom_menu>ul:after{content:'';display:table;clear:both}.mainHeader_bottom_menu>ul>li{float:left;padding:0;margin:0 15px;position:relative}.mainHeader_bottom_menu>ul>li:before{display:none}.mainHeader_bottom_menu>ul>li>a{color:rgba(0,0,0,.8);text-decoration:none;font-size:14px;line-height:16px;text-transform:uppercase;font-family:Circe-ExtraBold;letter-spacing:.05em;padding:25px 0;display:block;position:relative}.firstScreen_scrollToBottom-txt,.mainHeader_bottom_menu>ul>li>ul>li ul li a,.mainHeader_bottom_menu>ul>li>ul>li>a{font-family:Circe-Regular;text-transform:uppercase}.mainHeader_bottom_menu>ul>li>a:before{content:'';width:100%;height:5px;position:absolute;bottom:1px;left:0;background-color:#f64545;-webkit-transform:translate(0,100%);-ms-transform:translate(0,100%);transform:translate(0,100%);opacity:0;-webkit-transition:.3s all ease;transition:.3s all ease}.mainHeader_bottom_menu>ul>li:first-child{margin-left:0}.mainHeader_bottom_menu>ul>li.current a:before,.mainHeader_bottom_menu>ul>li:hover a:before{opacity:1}.mainHeader_bottom_menu>ul>li.menu-item-has-children:hover>ul{display:block}.mainHeader_bottom_menu>ul>li>ul{display:none;margin:0;padding:0;position:absolute;left:0;top:70px;z-index:3}.mainHeader_bottom_menu>ul>li>ul>li{margin:0;padding:0;width:260px}.mainHeader_bottom_menu>ul>li>ul>li:before{display:none}.mainHeader_bottom_menu>ul>li>ul>li>a{text-decoration:none;color:#373737;padding:21px 21px 16px;background-color:#fff;line-height:1;display:block;font-size:12px;border-bottom:1px solid #eee;-webkit-transition:.3s all ease;transition:.3s all ease}.mainHeader_bottom_menu>ul>li>ul>li.current>a,.mainHeader_bottom_menu>ul>li>ul>li>a:hover{background-color:#f64545;color:#fff}.mainHeader_bottom_menu>ul>li>ul>li ul{display:none;margin:0;padding:0;position:absolute;top:-1px;left:100%}.mainHeader_bottom_menu>ul>li>ul>li ul li{padding:0;margin:0;width:259px;position:relative}.mainHeader_bottom_menu>ul>li>ul>li ul li:before{display:none}.mainHeader_bottom_menu>ul>li>ul>li ul li a{line-height:1;display:block;font-size:12px;background:#eee;border-bottom:1px solid #fff;color:#373737;text-decoration:none;padding:20px 20px 18px;-webkit-transition:.3s all ease;transition:.3s all ease}.mainHeader_bottom_menu>ul>li>ul>li ul li a:hover,.mainHeader_bottom_menu>ul>li>ul>li ul li.current a{background-color:#f64545;color:#fff}.mainHeader_bottom_menu>ul>li>ul>li ul li.menu-item-has-children:hover ul{display:block;top:0}.mainHeader_bottom_menu>ul>li>ul>li.menu-item-has-children:hover>ul{display:block}.mainHeader_bottomInner{float:right;background-color:#f64545;height:70px;position:relative;padding:12px 2px 0 32px}.mainHeader_bottomInner:before{content:'';width:500px;height:100%;position:absolute;right:0;-webkit-transform:translate(100%,0);-ms-transform:translate(100%,0);transform:translate(100%,0);top:0;background-color:#f64545}.mainHeader_bottom-tel a{font-family:Circe-ExtraBold;color:#fff;text-decoration:none;font-size:16px;letter-spacing:.05em;line-height:1.2}.mainHeader_bottom-email a{font-weight:700;font-size:14px;color:#fff;text-decoration:none}.mainHeader_bottom_menu ul.sub-menu li.menu-item-has-children{position:relative}.mainHeader_bottom_menu ul.sub-menu li.menu-item-has-children:before{content:'';display:block;background-color:transparent;width:8px;height:8px;position:absolute;top:50%;right:20px;left:auto;border-bottom:2px solid #000;border-right:2px solid #000;-webkit-transform-origin:50% 70%;-ms-transform-origin:50% 70%;transform-origin:50% 70%;-webkit-transform:translate(0,-50%) rotate(-45deg);-ms-transform:translate(0,-50%) rotate(-45deg);transform:translate(0,-50%) rotate(-45deg)}.mainHeader_top_enter-mobile{display:none}.firstScreen_bg{height:705px;background-size:cover;background-repeat:no-repeat;position:absolute;left:0;right:0;top:0;width:100%}.firstScreen_bg:before{content:'';width:100%;height:100%;position:absolute;left:0;top:0;background-color:rgba(5,5,5,.3)}.firstScreen_title{width:700px;margin:150px auto 0;line-height:1.2;position:relative;z-index:2;text-align:center;color:#fff}.firstScreen_scrollToBottom-txt{font-size:12px;color:#fff;position:relative;z-index:2;text-align:center;line-height:1.1;width:80px;margin:45px auto 0}.bredcrumbs ul li a,.btn_back a{color:rgba(0,0,0,.8);text-transform:uppercase;font-family:Circe-Regular;font-size:11px;line-height:12px}.firstScreen_scrollToBottom-arrow{margin-top:22px}.firstScreen_scrollToBottom-arrow span{display:block;position:relative;width:18px;height:6px;margin:0 auto}.firstScreen_scrollToBottom-arrow span:last-child{margin-top:1px}.firstScreen_scrollToBottom-arrow span:after,.firstScreen_scrollToBottom-arrow span:before{content:'';width:11px;height:2px;background-color:#fff;position:absolute;top:0}.firstScreen_scrollToBottom-arrow span:before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);left:0}.firstScreen_scrollToBottom-arrow span:after{-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);right:0}.mobileHeader{display:none}.pagesHeader{padding-bottom:110px}.pagesHeader .firstScreen_bg{height:220px}.bredcrumbs{position:relative;padding:10px 60px 20px 0}.bredcrumbs ul{margin:0;padding:0}.bredcrumbs ul:after{content:'';clear:both;display:table}.bredcrumbs ul li{margin:0;padding:0 16px;float:left}.bredcrumbs ul li:before{top:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.bredcrumbs ul li:first-child{padding-left:0}.bredcrumbs ul li:first-child:before{display:none}.btn_back{position:absolute;right:0;top:10px}.btn_back a{text-decoration:none;position:relative;padding-left:16px}.btn_back a:hover{text-decoration:underline}.btn_back a:before{content:'';border-left:2px solid #000;border-top:2px solid #000;opacity:.8;width:6px;height:6px;position:absolute;left:0;top:4px;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}.pagesTitle{color:#fff;position:absolute;left:0;top:-73px}@media only screen and (max-width:1000px){.mainHeader_bottom,.mainHeader_mobile{height:60px;background-color:#fff}.firstScreen_scrollToBottom,.mainHeader_bottomInner,.mainHeader_bottom_menu,.mainHeader_top{display:none}.pageContent{width:100%}.mainHeader_bottom_logo{padding-left:20px;padding-top:17px}.firstScreen_title{width:100%;margin:0;padding-top:46px}.firstScreen_bg{height:291px;top:0}.mobileHeader{display:block;float:right;position:relative}.mobileHeader:after{content:'';clear:both;display:table}.mobileHeader a{text-decoration:none}.mainHeader_mobileBusket,.mainHeader_mobilePhone,.mainHeader_mobileToggle{height:60px;width:60px;position:relative;float:left;display:block}.mainHeader_mobileBusket i,.mainHeader_mobilePhone i,.mainHeader_mobileToggle i{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);font-size:26px}.mainHeader_mobilePhone i{color:#f64545}.mainHeader_mobileBusket{background-color:#585858;color:#fff}.mainHeader_mobileToggle{background-color:#f64545;padding:21px 20px;-webkit-transition:.5s all ease;transition:.5s all ease}.mainHeader_mobileToggle span{height:3px;width:20px;display:block;background-color:#fff;position:relative}.mainHeader_mobileToggle span:after,.mainHeader_mobileToggle span:before{height:100%;width:100%;content:'';background-color:#fff;position:absolute;top:7px;left:0}.mainHeader_mobileToggle span:before{top:14px}.pagesHeader{padding-bottom:0!important}.pagesHeader .firstScreen_bg{display:none}.bredcrumbs{padding:20px}.bredcrumbs ul{padding-bottom:17px}.pagesTitle{position:relative;top:0;color:#585858}.btn_back{padding-top:18px;position:static}}
+		@media only screen and (min-width: 1000px){
+			.mainHeader_top_menu-wrapper{
+				display: none;
+			}
+		}
+	</style>
+
+
+	<!-- Load CSS Start -->
+	<link rel="stylesheet" href="css/fonts.min.css">
+	<!-- <link rel="stylesheet" href="css/header.min.css"> -->
+	<link rel="stylesheet" href="css/main.min.css">
+	<!-- Load CSS End -->
+
+
+
+</head>
+
+<body>
+
+	<div id="page">
+
+		<header class="mainHeader">
+
+			<div class="firstScreen_bg" style="background-image: url(./images/header_bg.jpg);"></div>
+
+			<div class="mainHeader-wrap preload">
+				<div class="mainHeader_top">
+					<div class="pageContent">
+						<div class="mainHeader_top_menu">
+							<ul>
+								<li><a href="">о компании</a></li>
+								<li><a href="">НОВОСТИ</a></li>
+								<li class="menu-item-has-children"><a href="">Наши партнеры</a>
+									<ul class="sub-menu">
+										<li><a href="">HIWIN</a></li>
+										<li><a href="">THK</a></li>
+										<li><a href="">SCHNEEBERGER</a></li>
+									</ul>
+								</li>
+								<li><a href="">контакты</a></li>
+							</ul>
+						</div>
+						<div class="mainHeader_top-right">
+							<div class="mainHeader_top_search">
+								<div class="mainHeader_top_search-wrap">
+									<form action="">
+										<button class="mainHeader_top_search-submit" type="submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+										<input type="search" class="mainHeader_top_search-input" required />
+									</form>
+								</div>
+								<a href="">Поиск</a>
+							</div>
+							<div class="mainHeader_top_enter">
+
+								<span class="mainHeader_top_enter-desktop">
+									<a class="mainHeader_top_enter-desktopFirst" href="" ><i class="fa fa-user" aria-hidden="true"></i>Войти</a>
+									<a class="mainHeader_top_enter-desktopSec" href="" style="display:none;"><i class="fa fa-user" aria-hidden="true"></i>Кабинет</a>
+								</span>
+								<span class="mainHeader_top_enter-mobile">
+									<a class="mainHeader_top_enter-mobileFirst" href="mobEnter.html"><i class="fa fa-user" aria-hidden="true"></i>Войти</a>
+									<a class="mainHeader_top_enter-mobileSec active" style="display:none;" href="lk.html"><i class="fa fa-user" aria-hidden="true"></i>Кабинет</a>
+								</span>
+							</div>
+							<div class="mainHeader_top_basket">
+
+								<a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>корзина <span>(25)</span></a>
+							</div>
+							<div class="mainHeader_top_lang">
+								<ul>
+									<li class="active">Ru</li>
+									<li><a href="">Uk</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mainHeader_bottom">
+					<div class="pageContent">
+						<div class="mainHeader_bottom_logo">
+							<a href="index.html">
+								<img src="images/logo.png" alt="">
+							</a>
+						</div>
+						<div class="mainHeader_bottom_menu">
+							<ul>
+								<li class="current menu-item-has-children"><a href="">Комплектующие для станков</a>
+									<ul class="sub-menu">
+										<li class="menu-item-has-children"><a href="">Механика</a>
+											<ul class="sub-menu">
+												<li class="menu-item-has-children"><a href="">Линейное перемещение</a>
+													<ul class="sub-menu">
+														<li><a href="">Hiwin</a></li>
+														<li><a href="">SKF</a></li>
+														<li><a href="">THK</a></li>
+														<li><a href="">KSK</a></li>
+													</ul>
+												</li>
+												<li class="menu-item-has-children"><a href="">Редуктора</a>
+													<ul class="sub-menu">
+														<li><a href="">Wittenstein ALPHA</a></li>
+													</ul>
+												</li>
+												<li class="menu-item-has-children"><a href="">Поворотные системы</a>
+													<ul class="sub-menu">
+														<li><a href="">IMO</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="menu-item-has-children"><a href="">электроника</a>
+											<ul class="sub-menu">
+												<li><a href="">Шаговые двигатели</a></li>
+												<li><a href="">Серводвигатели</a></li>
+												<li><a href="">Драйвера для шаговых двигателей</a></li>
+												<li><a href="">Драйвера для серводвигателей</a></li>
+												<li class="menu-item-has-children"><a href="">Шпиндели</a>
+													<ul class="sub-menu">
+														<li><a href="">Teknomotor</a></li>
+														<li><a href="">Fisher</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="current menu-item-has-children"><a href="">Hypertherm</a>
+											<ul class="sub-menu">
+												<li><a href="">Источники</a></li>
+												<li class="current"><a href="">Расходники</a></li>
+											</ul>
+										</li>
+										<li class="menu-item-has-children"><a href="">Защиты</a>
+											<ul class="sub-menu">
+												<li><a href="">Hestego</a></li>
+											</ul>
+										</li>
+										<li class="menu-item-has-children"><a href="">Конвейеры для сбора стружки</a>
+											<ul class="sub-menu">
+												<li><a href="">AME</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children"><a href="">Станки</a>
+									<ul class="sub-menu">
+										<li><a href="">Станки плазменной резки</a></li>
+										<li><a href="">Фрезерные станки</a></li>
+										<li><a href="">Пресса для фасадов и ваймы</a></li>
+									</ul>
+								</li>
+								<li><a href="">Роботы</a></li>
+							</ul>
+						</div>
+						<div class="mainHeader_bottomInner">
+							<div class="mainHeader_bottom-tel">
+								<a href="">+38 (044) 221 98 89</a>
+							</div>
+							<div class="mainHeader_bottom-email">
+								<a href="">sales@linear.com.ua</a>
+							</div>
+						</div>
+						<div class="mobileHeader">
+							<a href="" class="mainHeader_mobilePhone">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+							</a>
+							<a href="" class="mainHeader_mobileBusket">
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							</a>
+							<div class="mainHeader_mobileToggle">
+								<span></span>
+							</div>
+							<div class="mainHeader_mobileSearch">
+								<form>
+									<input class="mainHeader_mobileSearch-input" type="search">
+									<button type="submit" class="mainHeader_mobileSearch-submit">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+		<!-- start content -->
+
+		<div class="firstScreen">
+			<h1 class="firstScreen_title preload">Комплектующие для станков и производства</h1>
+			<div class="firstScreen_scrollToBottom preload">
+				<div class="firstScreen_scrollToBottom-wrap">
+					<div class="firstScreen_scrollToBottom-txt">Скроль вниз</div>
+					<div class="firstScreen_scrollToBottom-arrow">
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="homeTopBlock">
+			<div class="pageContent">
+				<div class="homeTopBlock_items">
+					<a href="" class="homeTopBlock_item-left preload" style="background-image: url(./images/hometopbllock_item1.jpg);">
+						<div class="homeTopBlock_item-title">Комплектующие для станков</div>
+						<span class="homeTopBlock_item-btn"></span>
+					</a>
+					<div class="homeTopBlock_item-center">
+						<a href="" class="homeTopBlock_item-centerTop preload">
+							<div class="homeTopBlock_item-title">Превышая ожидания</div>
+							<div class="homeTopBlock_item-descr">Наша компания занимается поставкой высокоточных линейных систем и компонентов от мировых лидеров, таких</div>
+							<span class="homeTopBlock_item-btn"></span>
+						</a>
+						<a href="" class="homeTopBlock_item-centerBottom preload" style="background-image: url(./images/hometopbllock_item2.jpg);">
+							<div class="homeTopBlock_item-title">Роботы</div>
+							<span class="homeTopBlock_item-btn"></span>
+						</a>
+					</div>
+					<a href="" class="homeTopBlock_item-right preload"  style="background-image: url(./images/hometopbllock_item3.jpg);">
+						<div class="homeTopBlock_item-title">Cтанки</div>
+						<span class="homeTopBlock_item-btn"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+<div class="mainHeader_top_menu-wrapper"><ul>
+								<li><a href="">о компании</a></li>
+								<li><a href="">НОВОСТИ</a></li>
+								<li class="menu-item-has-children active"><a href="">Наши партнеры</a>
+									<ul class="sub-menu" style="display: block;">
+										<li><a href="">HIWIN</a></li>
+										<li><a href="">THK</a></li>
+										<li><a href="">SCHNEEBERGER</a></li>
+									</ul>
+								</li>
+								<li><a href="">контакты</a></li>
+							</ul></div>
+		<div class="homeCategories">
+			<div class="pageContent">
+				<div class="homeCategories_items">
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon1.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Механика</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon2.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Электроника</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon3.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Hypertherm</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon4.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Защиты</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon5.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Конвейеры для сбора стружки</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon6.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Станки плазменной резки</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon7.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Фрезерные станки</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+					<a href="" class="homeCategories_item">
+						<span class="homeCategories_item-icon">
+							<img src="images/homecategories_icon8.png" alt="">
+						</span>
+						<span class="homeCategories_itemInner">
+							<span class="homeCategories_item-title">Механика</span>
+							<span class="homeCategories_item-descr">Краткое описание данного раздела состоящее из двух предложений, краткое описание данного раздела состоящее из двух предложений краткое описание данного раздела состоящее из двух предложений</span>
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="homeCategories_slider-wrap">
+			<div class="pageContent">
+				<div class="homeCategories_slider owl-carousel">
+					<div class="homeCategories_slider-img">
+						<a href="">
+							<img src="images/homecategories_slider-img1.jpg" alt="">
+						</a>
+					</div>
+					<div class="homeCategories_slider-img">
+						<a href="">
+							<img src="images/homecategories_slider-img2.jpg" alt="">
+						</a>
+					</div>
+					<div class="homeCategories_slider-img">
+						<a href="">
+							<img src="images/homecategories_slider-img3.jpg" alt="">
+						</a>
+					</div>
+					<div class="homeCategories_slider-img">
+						<a href="">
+							<img src="images/homecategories_slider-img4.jpg" alt="">
+						</a>
+					</div>
+					<div class="homeCategories_slider-img">
+						<a href="">
+							<img src="images/homecategories_slider-img1.jpg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="homeProductCard-wrap">
+			<div class="pageContent">
+				<div class="homeProductCard_left">
+					<a class="homeProductCard_left-inner" href=""></a>
+					<div class="homeProductCard_left-img">
+						<img src="images/homeproductcard.jpg" alt="">
+					</div>
+					<div class="homeProductCard_left-title">Рекомендуемые товары</div>
+					<div class="homeProductCard_left-link">
+						<a href="">Смотреть все</a>
+					</div>
+					<div class="homeProductCard_left-btn"></div>
+				</div>
+
+				<div class="productCard_slider home_productCard_slider owl-carousel">
+					<div class="productCard_item">
+						<div class="productCard_item-img">
+							<a href=""><img src="images/productcard_item1.jpg" alt=""></a>
+						</div>
+						<div class="productCard_itemInner">
+							<h4 class="productCard_item-title">
+								<a href="">Шарико-винтовые передачи Hiwin</a>
+							</h4>
+							<div class="productCard_item-descr">
+								<span>Класс точности ШВП</span>
+								<span>Базовая динамическая нагрузка М13-М14</span>
+							</div>
+							<div class="productCard_item-price">30 000 грн.</div>
+							<a href="" class="productCard_item-busket">
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+					<div class="productCard_item">
+						<div class="productCard_item-img">
+							<a href=""><img src="images/productcard_item2.jpg" alt=""></a>
+						</div>
+						<div class="productCard_itemInner">
+							<h4 class="productCard_item-title">
+								<a href="">Шарико-винтовые передачи Hiwin</a>
+							</h4>
+							<div class="productCard_item-descr">
+								<span>Класс точности ШВП</span>
+								<span>Базовая динамическая нагрузка М13-М14</span>
+							</div>
+							<div class="productCard_item-price">30 000 грн.</div>
+							<a href="" class="productCard_item-busket">
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+					<div class="productCard_item">
+						<div class="productCard_item-img">
+							<a href=""><img src="images/productcard_item3.jpg" alt=""></a>
+						</div>
+						<div class="productCard_itemInner">
+							<h4 class="productCard_item-title">
+								<a href="">Шарико-винтовые передачи Hiwin</a>
+							</h4>
+							<div class="productCard_item-descr">
+								<span>Класс точности ШВП</span>
+								<span>Базовая динамическая нагрузка М13-М14</span>
+							</div>
+							<div class="productCard_item-price">30 000 грн.</div>
+							<a href="" class="productCard_item-busket">
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+					<div class="productCard_item">
+						<div class="productCard_item-img">
+							<a href=""><img src="images/productcard_item1.jpg" alt=""></a>
+						</div>
+						<div class="productCard_itemInner">
+							<h4 class="productCard_item-title">
+								<a href="">Шарико-винтовые передачи Hiwin</a>
+							</h4>
+							<div class="productCard_item-descr">
+								<span>Класс точности ШВП</span>
+								<span>Базовая динамическая нагрузка М13-М14</span>
+							</div>
+							<div class="productCard_item-price">30 000 грн.</div>
+							<a href="" class="productCard_item-busket">
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="home_productCard_slider-btn">
+					<a href="">Смотреть все товары</a>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- end content -->
+
+		<footer class="footer">
+			<div class="footer_top-wrap">
+				<div class="pageContent">
+					<div class="footer_top">
+						<div class="footer_item">
+							<div class="footer_item-title">Контакты</div>
+						</div>
+						<div class="footer_item">
+							<div class="footer_item-adress">02093 Киев, ул. Полесская 5</div>
+							<div class="footer_item-email">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<a href="">sales@linear.com.ua</a>
+							</div>
+						</div>
+						<div class="footer_item">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+							<div class="footer_item-tel">+38 (044) 221 98 89</div>
+							<div class="footer_item-tel">+38 (097) 417 64 75</div>
+						</div>
+						<div class="footer_item">
+							<div class="footer_item-tel">+38 (095) 289 55 59</div>
+							<div class="footer_item-tel">+38 (044) 567 74 20</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer_bottom-wrap" style="background-image: url(./images/footer_bg.jpg);">
+				<div class="footer_bottom">
+					<div class="pageContent">
+						<div class="footer_bottomInner">
+							<div class="footer_item">
+								<div class="footer_item-title">Linear</div>
+								<ul>
+									<li><a href="">О компании</a></li>
+									<li><a href="">Новости</a></li>
+									<li><a href="">Наши партнеры</a></li>
+									<li><a href="">Контакты</a></li>
+								</ul>
+							</div>
+							<div class="footer_item">
+								<div class="footer_item-title">Комплектующие для станков</div>
+								<ul>
+									<li><a href="">Механика</a></li>
+									<li><a href="">Электроника</a></li>
+									<li><a href="">Hypertherm</a></li>
+									<li><a href="">Защиты</a></li>
+									<li><a href="">Конвейеры для сбора стружки</a></li>
+								</ul>
+							</div>
+							<div class="footer_item">
+								<div class="footer_item-title">Станки</div>
+								<ul>
+									<li><a href="">Станки плазменной резки</a></li>
+									<li><a href="">Фрезерные станки</a></li>
+									<li><a href="">Пресса для фасадов и ваймы</a></li>
+								</ul>
+							</div>
+							<div class="footer_item">
+								<div class="footer_item-title">Роботы</div>
+							</div>
+							<div class="footer_item-copyright-wrap">
+								<div class="footer_item-copyright">© 2016 linear. Все права защищены.</div>
+								<div class="footer-dev">
+									<span></span><a href="http://www.whiteweb.ua/services/web-development/" target="_blank">Разработка сайта</a> - <a href="http://www.whiteweb.ua/" target="_blank"><span class="ww_logo"></span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<div class="popup-wrapper" id="popup_enter">
+		<div class="popup popup_enter">
+			<div class="close"></div>
+			<div class="popup_inner">
+				<div class="popup_title">Авторизация</div>
+				<form action="">
+					<div class="popup_inner_items">
+						<div class="popup_inner_item">
+							<div class="popup_inner_item-input">
+								<input class="inputText" type="email" placeholder="e-mail" required/>
+								<span class="popup_inner_item-txt">обязательное поле</span>
+							</div>
+						</div>
+						<div class="popup_inner_item">
+							<div class="popup_inner_item-input">
+								<input class="inputText" type="passwordword" placeholder="Пароль" required/>
+								<span class="popup_inner_item-txt">обязательное поле</span>
+							</div>
+						</div>
+					</div>
+					<div class="popup_btn_fogetPass">
+						<a href="">Забыли пароль?</a>
+					</div>
+					<div class="popup_inner_item">
+						<input class="inputSubmit" type="submit" value="Войти в кабинет" />
+						<div class="popup_btn_reg">
+							<a href="">Зарегистрироваться</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper" id="popup-reg">
+		<div class="popup popup-reg">
+			<div class="close"></div>
+			<div class="popup_inner">
+				<div class="popup_title">Регистрация</div>
+				<form action="">
+					<div class="popup_inner_items">
+						<div class="popup_inner_item">
+							<div class="popup_inner_item-input">
+								<input class="inputText" type="text" placeholder="ФИО" required/>
+								<span class="popup_inner_item-txt">обязательное поле</span>
+							</div>
+						</div>
+						<div class="popup_inner_item">
+							<div class="popup_inner_item-input">
+								<input class="inputText" type="tel" placeholder="Телефон" required/>
+								<span class="popup_inner_item-txt">обязательное поле</span>
+							</div>
+						</div>
+						<div class="popup_inner_item">
+							<div class="popup_inner_item-input">
+								<input class="inputText" type="email" placeholder="e-mail" required/>
+								<span class="popup_inner_item-txt">обязательное поле</span>
+							</div>
+						</div>
+						<div class="popup_inner_item">
+							<div class="popup_inner_item-input">
+								<input class="inputText" type="passwordword" placeholder="Пароль" required/>
+								<span class="popup_inner_item-txt">обязательное поле</span>
+							</div>
+						</div>
+						<div class="popup_inner_item">
+							<div class="popup_inner_item-input">
+								<input class="inputText" type="passwordword" placeholder="Повторите пароль" required/>
+								<span class="popup_inner_item-txt">обязательное поле</span>
+							</div>
+						</div>
+					</div>
+					<div class="popup_inner_item">
+						<input class="inputSubmit" type="submit" value="Зарегистрироваться" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper" id="popup-fogetPass">
+		<div class="popup popup-fogetPass">
+			<div class="close"></div>
+			<div class="popup_inner">
+				<div class="popup_title">Забыли пароль</div>
+				<form action="">
+					<div class="popup_inner_item">
+						<div class="popup_inner_item-input">
+							<input class="inputText" type="email" placeholder="e-mail" required/>
+							<span class="popup_inner_item-txt">обязательное поле</span>
+						</div>
+					</div>
+					<div class="popup_inner_item">
+						<input class="inputSubmit" type="submit" value="Отправить" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper" id="popup-thx">
+		<div class="popup popup-thx">
+			<div class="close"></div>
+			<div class="popup_inner">
+				<div class="popup_title">Спасибо за заказ!</div>
+				<div class="popup-thx-descrTop">В ближайшее время с вами свяжется наш менеджер, для подтверждения вашего заказа.</div>
+				<div class="popup-thx-descr scroll">
+					<p>На все товары, реализуемые в нашем магазине, предоставляется гарантия от 2х недель до 120 месяцев в зависимости от сервисной политики производителя. Срок гарантии указан в описании каждого товара на нашем сайте. Подтверждением гарантийных обязательств служит гарантийный талон производителя.</p>
+					<p>На все товары, реализуемые в нашем магазине, предоставляется гарантия от 2х недель до 120 месяцев в зависимости от сервисной политики производителя. Срок гарантии указан в описании каждого товара на нашем сайте. Подтверждением гарантийных обязательств служит гарантийный талон производителя.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Load Scripts Start -->
+	<script>var scr = {"scripts":[
+		{"src" : "js/libs.min.js", "async" : false},
+		{"src" : "libs/fancybox/source/jquery.fancybox.pack.js", "async" : false},
+		{"src" : "libs/fancybox/source/helpers/jquery.fancybox-buttons.js", "async" : false},
+		{"src" : "libs/fancybox/source/helpers/jquery.fancybox-media.js", "async" : false},
+		{"src" : "js/common.js", "async" : false}
+		]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAA7xBc0VMepmo-EcSR1WK9ByIE80YICHo"></script>
+	<script src="./js/map.js"></script>
+	<!-- Load Scripts End -->
+
+</body>
+</html>
+

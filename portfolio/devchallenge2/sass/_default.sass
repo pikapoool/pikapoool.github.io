@@ -1,0 +1,199 @@
+// @import "bootstrapNormalization.sass"
+@import "myAnimation.sass"
+
+$placeholderColor: #919191
+
+*::-webkit-input-placeholder
+	color: $placeholderColor
+	opacity: 1
+
+*:-moz-placeholder
+	color: $placeholderColor
+	opacity: 1
+
+*::-moz-placeholder
+	color: $placeholderColor
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: $placeholderColor
+	opacity: 1
+
+textarea,
+input
+	box-shadow: none
+	text-shadow: none
+	-webkit-appearance: none
+	&::-webkit-input-placeholder
+		color: $placeholderColor
+		opacity: 1
+	&::-moz-placeholder
+		color: $placeholderColor
+		opacity: 1
+	&:-moz-placeholder
+		color: $placeholderColor
+		opacity: 1
+	&:-ms-input-placeholder
+		color: $placeholderColor
+		opacity: 1
+
+button
+	outline: none
+	-webkit-appearance: none
+
+textarea:focus,
+input:focus
+	outline: none
+	&::-webkit-input-placeholder
+		opacity: 0
+	&::-moz-placeholder
+		opacity: 0
+	&:-moz-placeholder
+		opacity: 0
+	&:-ms-input-placeholder
+		opacity: 0
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.3
+	font-family: "Raleway-Thin"
+	overflow-x: hidden
+	color: #fff
+	background-color: #191e3f
+	-webkit-tap-highlight-color: transparent
+
+.hidden
+	display: none
+
+
+h1
+	font-family: "Raleway-Thin"
+	font-size: 45px
+	text-transform: uppercase
+	line-height: 1
+	color: #000
+h2
+	font-size: 25px
+	text-transform: uppercase
+	font-family: "Raleway-Thin"
+	line-height: 1
+	color: #000
+h3
+	font-size: 22px
+	text-transform: uppercase
+	font-family: "Raleway-Thin"
+	line-height: 1
+	color: #282b30
+h4
+	font-size: 20px
+	text-transform: uppercase
+	font-family: "Raleway-Thin"
+	line-height: 1
+	color: #282b30
+h5
+	font-size: 18px
+	text-transform: uppercase
+	font-family: "Raleway-Thin"
+	line-height: 1
+	color: #282b30
+p
+	margin: 0
+	font-family: "Raleway-Thin"
+	padding-bottom: 20px
+	line-height: 1.25
+	color: #fff
+
+ul
+	list-style-type: none
+	padding-left: 13px
+	li
+		margin: 5px 0
+		padding-left: 17px
+		position: relative
+		&:before
+			content: ''
+			width: 8px
+			height: 8px
+			position: absolute
+			border-radius: 50%
+			left: 0
+			top: 5px
+			background-color: #fff
+
+ol
+	counter-reset: li
+	margin-left: 0
+	padding-left: 0
+	margin-bottom: 15px
+	padding-left: 0
+	> li
+		position: relative
+		list-style: decimal
+		counter-increment: li
+		margin-bottom: 12px
+		list-style: none
+		padding-left: 25px
+		&:before
+			content: counter(li)
+			position: absolute
+			top: 3px
+			left: 2px
+			width: 23px
+			height: 21px
+			font-size: 18px
+			background: #fff
+			line-height: 1
+			color: #FE7B15
+			font-family: Arial
+			text-align: left
+	ol
+		padding-top: 15px
+		margin-bottom: 6px
+		margin-left: 22px
+		> li:before
+			font-size: 14px
+			color: #838383
+			font-family: Arial
+	ul
+		padding-top: 15px
+		margin-bottom: 10px
+		li
+			&:before
+				content: ""
+			&:last-child
+				margin-bottom: 0
+
+a
+	color: #fff
+	&:hover
+		// text-decoration: none
+		color: #fff
+	&:active
+	&:focus
+		outline: none
+
+
+//quiet placeholders
+%ulli
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		li
+			margin: 0
+			padding: 0
+			&:before,
+			&:after
+				display: none
+%pgmd
+	top: 50%
+	transform: translate(0, -50%)
+%pgct
+	left: 50%
+	transform: translate(-50%, 0)
+
+//for iOs
+input
+	border-radius: 0

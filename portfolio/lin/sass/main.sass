@@ -1,0 +1,3131 @@
+@import "vars.sass"
+@import "footer.sass"
+@import "popup.sass"
+@import "animate.sass"
+
+@import "../libs/mmenu/dist/css/jquery.mmenu.all.css"
+@import "../fonts/font-awesome/css/font-awesome.css"
+@import "../libs/fancybox/source/jquery.fancybox.min.css"
+@import "../libs/fancybox/source/helpers/jquery.fancybox-buttons.css"
+@import "../libs/owlcarousel/assets/owl.carousel.css"
+@import "../libs/jscrollpane/jquery.jscrollpane.css"
+@import "../libs/jQueryFormStyler/jquery.formstyler.css"
+@import "../libs/jquery.ui-slider.css"
+@import "../libs/flexslider/flexslider.css"
+
+
+
+
+.mainHeader_top_enter
+	padding-left: 41px
+	i
+		margin-right: 3px
+.mainHeader_top_enter-desktopFirst,
+.mainHeader_top_enter-desktopSec
+	position: relative
+	i
+		position: absolute
+		left: -18px
+		top: -2px
+	&:hover
+		i
+			color: $mc
+	&.menuactive
+		i
+			color: $mc
+.mainHeader_top_basket
+	padding-left: 41px
+	a
+		position: relative
+		i
+			position: absolute
+			left: -18px
+			top: -2px
+		&:hover
+			i
+				color: $mc
+
+
+
+textarea,
+input
+	&::-webkit-input-placeholder
+		color: #000
+		opacity: 0.7
+		font-size: 14px
+		line-height: 16px
+	&::-moz-placeholder
+		color: #000
+		opacity: 0.7
+		font-size: 14px
+		line-height: 16px
+	&:-moz-placeholder
+		color: #000
+		opacity: 0.7
+		font-size: 14px
+		line-height: 16px
+	&:-ms-input-placeholder
+		color: #000
+		opacity: 0.7
+		font-size: 14px
+		line-height: 16px
+
+textarea,
+input,
+button,
+a
+	outline: none !important
+
+.scroll
+	outline: none
+
+.bredcrumbs
+	padding-top: 20px
+	ul
+		li
+			color: rgba(0,0,0,.8)
+			text-transform: uppercase
+			font-family: Circe-Regular
+			font-size: 11px
+			line-height: 12px
+
+.mainHeader_top_enter-desktopSec.active
+	text-decoration: none !important
+	color: $mc
+
+.mainHeader_top_search-wrap
+	display: inline-block
+	position: relative
+	&:before
+		content: ''
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+.mainHeader_top_search
+	a.active
+		color: $mc
+		text-decoration: underline
+.mainHeader_top_search-submit
+	background: none
+	border: none
+	transition: $trans3
+	padding: 0
+	i
+		transition: $trans3
+.mainHeader_top_search-input
+	height: 23px
+	border: 1px solid #fff
+	transition: $trans3
+	width: 0
+	padding: 0
+	opacity: 0
+.mainHeader_top_search-wrap.active
+	&:before
+		display: none
+	.mainHeader_top_search-input
+		width: 190px
+		padding: 0px 10px
+		opacity: 1
+	.mainHeader_top_search-submit
+		i
+			color: $mc
+
+
+
+.mainHeader-wrap
+	padding-bottom: 70px
+.mainHeader_bottom
+	position: absolute
+	left: 0
+	top: 40px
+	width: 100%
+	&.fixed
+		position: fixed
+		top: 0
+		z-index: 20
+
+
+.firstScreen_scrollToBottom-wrap
+	width: 80px
+	margin: auto
+	cursor: pointer
+
+
+.btn_back
+	top: 15px
+	top: 50%
+	transform: translate(0, -50%)
+
+.jspVerticalBar
+	width: 4px
+.jspDrag
+	background: $mc
+.jspTrack
+	background: #eee
+
+.jq-selectbox__select
+	background-color: #fff
+	border-color: #585858
+	border-radius: 0
+	height: 39px
+	width: 238px
+	padding-left: 23px
+	padding-top: 7px
+	&:hover
+		background: none
+		background-color: #fff
+		border-color: #585858
+
+.jq-selectbox__select-text
+	letter-spacing: 0
+	font-variant: small-caps
+.jq-selectbox__trigger-arrow
+	transform: translate(-50%, -50%) rotate(45deg)
+	border-color: #fff
+	width: 10px
+	height: 10px
+	top: 47%
+	left: 50%
+	right: auto
+	border: none
+	border-right: 2px solid #fff
+	border-bottom: 2px solid #fff
+	transform-origin: 50% 70%
+.jq-selectbox__trigger
+	background-color: #585858
+	width: 41px
+.jq-selectbox__dropdown
+	border-radius: 0
+	margin: 0
+	background-color: #fff
+	border-color: #585858
+	ul
+		margin: 0
+		padding: 0
+		li
+			margin: 0
+			padding: 5px 23px
+			&:before
+				display: none
+			&:hover
+				background-color: $mc
+.jq-selectbox.jqselect
+	z-index: 1 !important
+.jq-number__field
+	width: 59px
+	border-radius: 0
+	border: none !important
+.jq-number__field input
+	width: 100%
+	height: 30px
+	border: 1px solid #000
+	color: #727272
+	text-align: center
+	padding: 5px
+	display: inline-block
+	vertical-align: middle
+	margin-right: 5px
+.jq-number__spin
+	background: none
+	border: none
+	border-radius: 0
+	background-color: $mc
+	height: 15px
+	right: 4px
+	box-shadow: 0
+	&:hover
+		background: none
+		background-color: #373737
+	&.minus
+		&:after
+			border-top-color: #fff !important
+	&.plus
+		border-bottom: 1px solid #fff
+		&:after
+			border-bottom-color: #fff !important
+
+
+
+
+.mm-opening .mainHeader_mobileToggle
+	background-color: #000
+
+#mm-blocker
+	z-index: 50
+
+
+.mm-listview
+	li
+		&:before
+			display: none
+.mm-panels, .mm-panels>.mm-panel
+	background-color: #fff
+.mm-menu .mm-listview>li a:not(.mm-next)
+	text-transform: uppercase
+	font-family: "Circe-ExtraBold"
+	color: rgba(#000, 0.8)
+	padding: 15px 10px 15px 20px
+.mm-listview>li>a
+	white-space: normal
+.mm-listview>li:not(.mm-divider):after
+	left: 0
+.mm-listview>li:last-child:not(.mm-divider):after
+	display: none
+.mm-menu .mainHeader_mobileSearch
+	display: block
+.mm-menu .mm-navbar a, .mm-menu .mm-navbar>*, .mm-menu em.mm-counter
+	color: rgba(0,0,0,.6)
+.mm-arrow:after, .mm-next:after
+	border-color: #000 !important
+.mm-listview .mm-next:before
+	display: none
+////////////////////////////////////////
+//after load start
+p,ul
+	opacity: 1
+
+//after load end
+////////////////////////////////////////
+
+
+h2
+	font-size: 24px
+	color: $mc
+	line-height: 1.2
+
+
+.mainHeader_top_menu
+	ul
+		li.active
+			a
+				color: $mc
+				&:hover
+					text-decoration: none
+
+.mainHeader_mobile
+	display: none
+
+.owl-nav
+	position: absolute
+	top: 50%
+	left: 0
+	width: 100%
+.owl-prev,
+.owl-next
+	position: absolute !important
+	top: 0
+	left: 0
+	background-color: #4c4c4c
+ 	display: block
+	width: 50px
+	height: 50px
+	transition: $trans3
+	position: relative
+	transform: translate(0,-50%)
+	&:hover
+		background-color: $mc
+.owl-next
+	left: auto
+	right: 0
+.pages_slider-prev,
+.pages_slider-next
+	position: absolute
+	width: 12px
+	height: 12px
+	top: 50%
+	left: 50%
+	transition: $trans3
+.pages_slider-prev
+	border-bottom: 2px solid #fff
+	border-left: 2px solid #fff
+	transform-origin: 50% 70%
+	transform: translate(-50%, -50%) rotate(45deg)
+.pages_slider-next
+	border-bottom: 2px solid #fff
+	border-right: 2px solid #fff
+	transform-origin: 50% 70%
+	transform: translate(-50%, -50%) rotate(-45deg)
+
+
+//////////////////////
+//start home page
+//////////////////////
+.homeTopBlock
+	position: relative
+	z-index: 2
+	padding-top: 65px
+	margin-bottom: 15px
+	&_items
+		&:after
+			content: ''
+			clear: both
+			display: table
+	&_item
+		&-title
+			font-size: 24px
+			font-family: "Circe-ExtraBold"
+			line-height: 1.2
+			font-variant: small-caps
+			color: #fff
+			letter-spacing: 0.05em
+			transition: $trans3
+		&-left
+			background-repeat: no-repeat
+			background-size: cover
+			opacity: 1
+			width: 490px
+			height: 490px
+			text-decoration: none
+			display: block
+			float: left
+			padding: 30px 28px
+			position: relative
+			margin-right: 15px
+			.homeTopBlock_item-title
+				color: $mc
+				width: 215px
+			&:hover
+				.homeTopBlock_item-btn
+					background-color: #4c4c4c
+				.homeTopBlock_item-title
+					color: #4c4c4c
+		&-center
+			margin-right: 15px
+			width: 240px
+			float: left
+			&:after
+				content: ''
+				clear: both
+				display: table
+			&Bottom,
+			&Top
+				height: 237px
+				width: 240px
+				opacity: 1
+				background-color: $mc
+				background-repeat: no-repeat
+				background-size: cover
+				display: block
+				text-decoration: none
+				position: relative
+				padding: 30px 20px 30px 37px
+				float: left
+				.homeTopBlock_item-btn
+					background-color: #4c4c4c
+			&Top
+				margin-bottom: 17px
+				color: #fff
+				line-height: 1.22
+				.homeTopBlock_item-title
+					padding-bottom: 7px
+				&:hover
+					.homeTopBlock_item-title
+						color: #4c4c4c
+					.homeTopBlock_item-btn
+						background-color: #fff
+						&:before,
+						&:after
+							background-color: #4c4c4c
+			&Bottom
+				background-color: transparent
+				background-repeat: no-repeat
+				background-size: cover
+				padding-top: 15px
+				.homeTopBlock_item-title
+					color: $mc
+				&:hover
+					.homeTopBlock_item-title
+						color: #4c4c4c
+					.homeTopBlock_item-btn
+						background-color: $mc
+		&-descr
+			color: #fff
+			font-variant: small-caps
+			font-size: 13px
+		&-right
+			text-decoration: none
+			width: 240px
+			height: 490px
+			opacity: 1
+			display: block
+			float: left
+			position: relative
+			background-repeat: no-repeat
+			padding: 30px 28px
+			background-size: cover
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				background-color: rgba(#050505,0.6)
+				position: absolute
+				top: 0
+				right: 0
+			.homeTopBlock_item-title
+				position: relative
+				z-index: 2
+			&:hover
+				.homeTopBlock_item-title
+					color: $mc
+				.homeTopBlock_item-btn
+					background-color: #4c4c4c
+		&-btn
+			background-color: $mc
+			position: relative
+			display: block
+			width: 50px
+			height: 50px
+			position: absolute
+			right: 0
+			bottom: 0
+			transition: $trans3
+			&:after,
+			&:before
+				content: ''
+				width: 12px
+				height: 2px
+				position: absolute
+				background-color: #fff
+				top: 50%
+				left: 50%
+				transition: $trans3
+			&:after
+				transform-origin: 100% 100%
+				transform: translate(-50%, -50%) rotate(45deg)
+			&:before
+				transform-origin: 100% 0%
+				transform: translate(-50%, -50%) rotate(-45deg)
+
+
+.homeCategories
+	&_items
+		&:after
+			content: ''
+			clear: both
+			display: table
+	&_item
+		text-decoration: none
+		position: relative
+		height: 275px
+		width: 240px
+		margin: 0 15px 15px 0
+		padding: 28px 28px
+		background-color: #fff
+		display: block
+		float: left
+		transition: $trans4
+		overflow: hidden
+		opacity: 0
+		&:nth-child(4n+1)
+			width: 237px
+			margin-right: 16px
+			animation-delay: 0.1s
+		&:nth-child(4n+2)
+			width: 237px
+			animation-delay: 0.3s
+		&:nth-child(4n+3)
+			animation-delay: 0.6s
+		&:nth-child(4n+4)
+			margin-right: 0
+			animation-delay: 0.9s
+		&-icon
+			display: block
+			transition: $trans5
+			height: 68px
+			position: relative
+			img
+				position: absolute
+				bottom: 0
+				display: block
+		&Inner
+			position: absolute
+			padding: 25px 20px 25px 28px
+			top: 123px
+			left: 0
+			transition: $trans5
+			height: 113px
+			width: 100%
+			overflow: hidden
+			&:before
+				content: ''
+				display: block
+				width: 100%
+				height: 30px
+				position: absolute
+				left: 0
+				bottom: auto
+				top: 113px
+				background-image: url(../images/txtmask.png)
+				background-repeat: repeat-x
+				transition: $trans5
+				transform: translate(0, -100%)
+				transition-delay: 0.2s
+		&-title
+			display: block
+			font-size: 24px
+			line-height: 1
+			font-family: "Circe-ExtraBold"
+			color: #373737
+			transition: $trans5
+			margin-bottom: 12px
+			position: relative
+			letter-spacing: 0.0em
+			padding-right: 28px
+			&:after,
+			&:before
+				content: ''
+				width: 12px
+				height: 2px
+				position: absolute
+				background-color: #373737
+				top: 50%
+				right: 13px
+				transition: $trans5
+			&:after
+				transform-origin: 100% 100%
+				transform: translate(0%, -50%) rotate(45deg)
+			&:before
+				transform-origin: 100% 0%
+				transform: translate(0%, -50%) rotate(-45deg)
+		&-descr
+			display: block
+			line-height: 1.3
+			font-size: 13px
+			font-variant: small-caps
+			transition: $trans5
+			color: rgba(#373737,0.7)
+			letter-spacing: 0
+		&:hover
+			.homeCategories_item-icon
+				transform: translate(-100%, 0)
+				opacity: 0
+			.homeCategories_itemInner
+				top: 0px
+				height: 100%
+				background-color: $mc
+				&:before
+					opacity: 0
+					top: auto
+					bottom: 0
+					background-repeat: no-repeat
+					transform: translate(0, 0)
+					transition: $trans5
+			.homeCategories_item-title
+				color: #fff
+				&:before,
+				&:after
+					background-color: #fff
+			.homeCategories_item-descr
+				color: #fff
+.homeCategories_slider
+	&-wrap
+		margin-bottom: 15px
+	&-img
+		img
+			width: 237px !important
+			height: 128px
+			transition: $trans4
+		&:hover
+			img
+				opacity: 0.6
+	.owl-nav
+		top: 48%
+		left: -30px
+		width: 106%
+		.owl-prev,
+		.owl-next
+			background-color: transparent
+			width: 20px
+			height: 20px
+			// background-color: transparent
+			span
+				border-color: #4c4c4c
+			&:hover
+				span
+					border-color: $mc
+
+.homeProductCard
+	&-wrap
+		margin-bottom: 60px
+		&:after
+			content: ''
+			display: table
+			clear: both
+	&_left
+		float: left
+		width: 240px
+		height: 332px
+		position: relative
+		padding: 38px 23px
+		margin-right: 14px
+		&-inner
+			position: absolute
+			display: block
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			z-index: 3
+		&-img
+			position: absolute
+			left: 0
+			top: 0
+			z-index: 1
+			width: 100%
+			img
+				width: 240px
+				height: 332px
+				display: block
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				background-color: rgba(#050505,0.6)
+				position: absolute
+				top: 0
+				right: 0
+		&-title
+			display: block
+			font-size: 24px
+			font-variant: small-caps
+			line-height: 1
+			font-family: "Circe-ExtraBold"
+			position: relative
+			z-index: 2
+			color: #fff
+			transition: $trans3
+			letter-spacing: 0.04em
+		&-link
+			z-index: 3
+			position: absolute
+			bottom: 13px
+			left: 25px
+			a
+				color: #fff
+				font-size: 15px
+				&:hover
+					text-decoration: none
+		&-btn
+			background-color: $mc
+			display: block
+			width: 50px
+			height: 50px
+			position: absolute
+			z-index: 2
+			right: 0
+			bottom: 0
+			transition: $trans3
+			&:after,
+			&:before
+				content: ''
+				width: 12px
+				height: 2px
+				position: absolute
+				background-color: #fff
+				top: 50%
+				left: 50%
+				transition: $trans3
+			&:after
+				transform-origin: 100% 100%
+				transform: translate(-50%, -50%) rotate(45deg)
+			&:before
+				transform-origin: 100% 0%
+				transform: translate(-50%, -50%) rotate(-45deg)
+		&:hover
+			.homeProductCard_left-title
+				color: $mc
+			.homeProductCard_left-btn
+				background-color: #4c4c4c
+
+.home_productCard_slider
+	width: 746px
+	&-btn
+		display: none
+	.owl-nav
+		opacity: 0
+		transition: $trans3
+	&:hover
+		.owl-nav
+			opacity: 1
+.productCard
+	&_slider
+		float: left
+		.owl-nav
+			top: 48%
+	&_item
+		width: 237px
+		height: 332px
+		background-color: #fff
+		position: relative
+		&-img
+			padding-bottom: 18px
+			transition: $trans3
+			&:hover
+				opacity: 0.6
+			img
+				width: 237px !important
+				height: 167px
+				display: block
+		&Inner
+			padding: 0 24px 0px
+			height: 103px
+			overflow: hidden
+		a
+			text-decoration: none
+		&-title
+			text-transform: uppercase
+			padding-bottom: 9px
+			a
+				color: rgba(#373737,0.8)
+				transition: $trans3
+				&:hover
+					color: $mc
+		&-descr
+			line-height: 1.25
+			letter-spacing: 0em
+			font-variant: small-caps
+			span
+				display: block
+		&-price
+			font-size: 18px
+			color: $mc
+			font-family: "Circe-ExtraBold"
+			position: absolute
+			bottom: 12px
+			left: 25px
+		&-busket
+			background-color: $mc
+			position: relative
+			display: block
+			width: 50px
+			height: 50px
+			position: absolute
+			right: 0
+			bottom: 0
+			transition: $trans3
+			i
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				color: #fff
+				font-size: 18px
+				transition: $trans3
+			&:hover
+				background-color: #4c4c4c
+//////////////////////
+//end home page
+//////////////////////
+
+
+
+//////////////////////
+//start productCard page
+//////////////////////
+.productCard
+	padding: 28px 40px
+	background-color: #fff
+	min-height: 470px
+	margin-bottom: 40px
+	&:after
+		clear: both
+		display: table
+		content: ''
+	&_left
+		width: 50%
+		min-height: 150px
+		float: left
+		padding-right: 40px
+		position: relative
+	&_right
+		width: 50%
+		float: left
+		&-title
+			font-family: "Circe-ExtraBold"
+			font-size: 24px
+			font-variant: small-caps
+			line-height: 1
+			letter-spacing: 0.04em
+			color: $mc
+			padding-bottom: 10px
+		&-sticker
+			background-color: #585858
+			padding: 7px 36px
+			letter-spacing: 0.0em
+			// position: absolute
+			// top: 33px
+			position: relative
+			right: -40px
+			float: right
+			color: #fff
+		&Inner,
+		&-price
+			&-title
+				font-size: 18px
+				font-variant: small-caps
+				display: inline-block
+				vertical-align: middle
+				font-family: "Circe-Regular"
+				color: rgba(#000,0.8)
+				letter-spacing: 0
+				margin-right: 18px
+			&-txt
+				font-size: 14px
+				display: inline-block
+				vertical-align: middle
+				letter-spacing: 0
+				a
+					color: #727272
+					text-decoration: none
+					user-select: none
+		&Inner
+			&_item
+				padding-bottom: 11px
+				.jq-number
+					padding-right: 54px
+				.jq-number__spin
+					width: 50px
+					height: 25px
+					&:after
+						top: 40%
+						left: 50%
+						border: none
+						width: 10px
+						height: 10px
+						transform-origin: 50% 50%
+						transform: translate(-50%, 0%) rotate(45deg)
+					&.plus
+						&:after
+							border-top: 1px solid #fff
+							border-left: 1px solid #fff
+					&.minus
+						&:after
+							top: 20%
+							border-bottom: 1px solid #fff
+							border-right: 1px solid #fff
+				.jq-number__field
+					width: 120px
+					input
+						height: 50px
+		&-price
+			padding-bottom: 22px
+			&-title
+				margin-right: 6px
+			&-txt
+				font-family: "Circe-ExtraBold"
+				font-size: 20px
+				letter-spacing: 0.06em
+				color: $mc
+		&-btn
+			a
+				font-family: "Circe-ExtraBold"
+				font-size: 20px
+				color: #fff
+				background-color: $mc
+				border: none
+				padding: 13px 60px
+				line-height: 22px
+				letter-spacing: 0.03em
+				border: 1px solid $mc
+				margin-right: 24px
+				text-decoration: none
+				display: inline-block
+				transition: $trans3
+				&:hover
+					background-color: #fff
+					color: $mc
+	&Tabs
+		&:after
+			content: ''
+			display: table
+			clear: both
+		&-wrap
+			padding-bottom: 50px
+		&-wrapper
+	&Tab
+		cursor: pointer
+		padding: 15px 20px
+		background-color: #585858
+		display: block
+		color: #fff
+		float: left
+		width: 33.33%
+		text-align: center
+		font-family: "Circe-ExtraBold"
+		font-size: 20px
+		line-height: 22px
+		transition: $trans4
+		border-left: 5px solid #eee
+		&:first-child
+			border: none
+		&.active
+			background-color: $mc
+		&_item
+			background-color: #fff
+			padding: 23px 40px
+		// &_content
+
+.productCard_rightInner_item-inputNumber-wrap
+	padding-right: 50px
+	position: relative
+	height: 50px
+	display: inline-block
+	.productCard_rightInner_item-inputNumber
+		height: 50px
+		appearance: none !important
+		text-indent: 0.01px
+		text-overflow: ''
+		width: 120px
+		border: 1px solid #000
+		color: #727272
+		text-align: center
+		padding: 5px
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button
+			-webkit-appearance: none
+			margin: 0
+	&:before
+		content: ''
+		height: 90%
+		width: 30px
+		position: absolute
+		right: 52px
+		top: 3px
+		background-color: #fff
+		z-index: 2
+	span
+		position: absolute
+		right: 0
+		top: 0
+		height: 24px
+		width: 50px
+		background-color: $mc
+		cursor: pointer
+		&:hover
+			background-color: #585858
+		&:after
+			content: ''
+			position: absolute
+			top: 40%
+			left: 50%
+			border: none
+			width: 10px
+			height: 10px
+			transform-origin: 50% 50%
+			transform: translate(-50%, 0%) rotate(45deg)
+		&.plus
+			&:after
+				border-top: 1px solid #fff
+				border-left: 1px solid #fff
+		&.minus
+			top: auto
+			bottom: 0
+			&:after
+				top: 20%
+				border-bottom: 1px solid #fff
+				border-right: 1px solid #fff
+
+
+
+.productCardTabs-wrapper-mobile
+	display: none
+
+.productCard_right-sticker-mobile
+	display: none
+
+.pages_productCard_slider
+	.owl-nav
+		width: 1100px
+		left: -50px
+		.owl-next,
+		.owl-prev
+			background-color: transparent
+			span
+				border-color: #585858
+			&:hover
+				span
+					border-color: $mc
+
+.productCard_right-title-mobile
+	display: none
+
+
+#slider,
+#carousel
+	ul
+		li
+			&:before
+				display: none
+#slider
+	margin-bottom: 15px
+	ul
+		li
+			img
+				width: 420px
+				height: 293px
+	.flex-direction-nav
+		display: none
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translate(0, -50%)
+
+#carousel
+	ul
+		li
+			cursor: pointer
+			img
+				transition: $trans3
+			&:hover
+				img
+					// opacity: 0.6
+
+.carousel-img-wrap
+	position: relative
+	width: 131px
+	height: 92px
+	&:before
+		content: ''
+		width: 100%
+		height: 100%
+		background-color: #000
+		position: absolute
+		left: 0
+		top: 0
+		opacity: 0.2
+		transition: $trans3
+	img
+		width: 131px !important
+		height: 92px !important
+	&:hover
+		&:before
+			opacity: 0
+
+.flexslider
+	margin: 0
+	padding: 0
+	background-color: #fff
+	border: none
+	border-radius: 0
+	box-shadow: none
+
+.flex-direction-nav
+	position: absolute
+	top: 50%
+	width: 100%
+	left: 0
+.flex-nav-prev
+	position: absolute
+	left: 0
+	right: auto
+	top: 0
+	transform: translate(0, -50%)
+	// width: 50px
+	// height: 50px
+	margin: 0
+	padding: 0
+	a
+		opacity: 1 !important
+		left: 0 !important
+		top: 0
+		margin: 0
+		padding: 0
+		width: 50px
+		height: 50px
+		background-color: $mc
+		font-size: 1px
+		color: $mc
+		transition: $trans3
+		transform: translate(0, -50%)
+		&:hover
+			background-color: #585858
+		&:before
+			content: ''
+			width: 10px
+			height: 10px
+			border-bottom: 2px solid #fff
+			border-left: 2px solid #fff
+			position: absolute
+			left: 55%
+			top: 52%
+			transform-origin: 50% 50%
+			transform: translate(-50%,-50%) rotate(45deg)
+.flex-nav-next
+	position: absolute
+	left: auto
+	right: 0 !important
+	top: 0
+	transform: translate(0, -50%)
+	// width: 50px
+	// height: 50px
+	margin: 0
+	padding: 0
+	a
+		opacity: 1 !important
+		right: 0 !important
+		top: 0
+		margin: 0
+		padding: 0
+		width: 50px
+		height: 50px
+		background-color: $mc
+		font-size: 1px
+		color: $mc
+		transition: $trans3
+		transform: translate(0, -50%)
+		&:hover
+			background-color: #585858
+		&:before
+			content: '' !important
+			width: 10px
+			height: 10px
+			border: 2px
+			position: absolute
+			border-top: 2px solid #fff
+			border-right: 2px solid #fff
+			left: 45%
+			top: 52%
+			transform-origin: 50% 50%
+			transform: translate(-50%,-50%) rotate(45deg)
+
+
+.flex-prev.flex-disabled
+	left: -25px !important
+	width: 25px
+
+.flex-next.flex-disabled
+	right: -25px !important
+	width: 25px
+
+
+
+a.fancybox
+	position: relative
+	text-decoration: none
+	display: block
+	&:before
+		content: "\f002"
+		font: normal normal normal 16px/1 FontAwesome
+		text-align: center
+		padding: 17px
+		box-sizing: border-box
+		color: #fff
+		width: 50px
+		height: 50px
+		background-color: rgba(#000,0.5)
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		z-index: 5
+		transition: $trans3
+a.fancybox-media
+	&:before
+		content: ""
+		background-color: rgba(#000,0)
+		background-image: url(../images/play.png)
+		background-size: cover
+#fancybox-buttons
+	ul
+		li:before
+			display: none
+
+#jqslider_handle
+	width: 330px
+	position: relative
+	margin-top: 20px
+	margin-bottom: 30px
+.ui-slider-handle
+	// position: relative
+	.ui-slider-handle-wrap
+		position: absolute
+		top: -25px
+		left: 50%
+		transform: translate(-50%, 0)
+.jqslider_handle
+	&-wrap
+	&_item
+		position: absolute
+		width: 1px
+		height: 30px
+		background-color: #eee
+		top: 50%
+		transform: translate(0, -50%)
+		&:nth-child(1)
+			left: 20%
+		&:nth-child(2)
+			left: 40%
+		&:nth-child(3)
+			left: 60%
+		&:nth-child(4)
+			left: 80%
+	&-min,
+	&-max
+		font-size: 14px
+		color: #727272
+		line-height: 1
+		position: absolute
+		top: 20px
+	&-min
+		left: 0
+	&-max
+		transform: translate(50%, 0)
+		right: 0
+
+//////////////////////
+//end productCard page
+//////////////////////
+
+
+
+
+
+//////////////////////
+//start news page
+//////////////////////
+.newsPage
+.news
+	&-wrap
+		&:after
+			content: ''
+			display: table
+			clear: both
+	&_item
+		float: left
+		width: 312px
+		padding-bottom: 27px
+		min-height: 100px
+		background-color: #fff
+		margin: 0 32px 31px 0
+		&:nth-child(3n+3)
+			margin-right: 0
+		&-img
+			display: block
+			position: relative
+			transition: $trans4
+			&:hover
+				opacity: 0.6
+			img
+				width: 100%
+				height: 208px
+				display: block
+		&Inner
+			padding: 24px 28px 0 28px
+			height: 303px
+			overflow: hidden
+			position: relative
+			&:before
+				content: ''
+				display: block
+				width: 100%
+				height: 30px
+				position: absolute
+				left: 0
+				bottom: auto
+				top: 100%
+				transform: translate(0, -100%)
+				background-image: url(../images/txtmask.png)
+				background-repeat: repeat-x
+		&-date
+			color: #727272
+			padding-bottom: 10px
+			font-size: 12px
+		&-title
+			margin-bottom: 12px
+			a
+				font-family: "Circe-Regular"
+				font-size: 18px
+				text-decoration: none
+				color: rgba(#000,0.8)
+				line-height: 1.2
+				font-variant: small-caps
+				&:hover
+					text-decoration: underline
+		&-descr
+			line-height: 1.25
+			letter-spacing: 0
+
+//////////////////////
+//end news page
+//////////////////////
+
+.aboutPage
+	background-color: #fff
+	padding: 21px 40px
+	margin-bottom: 60px
+
+p
+	line-height: 1.6
+
+.textBlock
+	h2
+		line-height: 40px
+		font-variant: small-caps
+	h3
+		padding-bottom: 6px
+		font-variant: small-caps
+	h4
+		color: rgba(#373737, 0.8)
+		padding-bottom: 6px
+		font-variant: small-caps
+		font-size: 14px
+		text-transform: uppercase
+	&:after
+		content: ''
+		clear: both
+		display: table
+	ul
+		padding-left: 0px
+		margin: 15px 0
+		li
+			margin: 0px 0
+			line-height: 1.5
+			padding-left: 25px
+			&:before
+				top: 7px
+			&:first-child
+				margin-top: 0
+	iframe
+		width: 730px
+		height: 410px
+	&_left
+		float: left
+		width: 540px
+	&_right
+		float: right
+		width: 312px
+		margin-top: 87px
+		img
+			width: 312px
+			height: 312px
+			margin: 0
+	ol
+		counter-reset: li
+		margin: 15px 0
+		padding-left: 0
+		> li
+			position: relative
+			list-style: none
+			counter-increment: li
+			list-style: none
+			margin-bottom: 0
+			padding-left: 25px
+			letter-spacing: 0.058em
+			line-height: 1.5
+			&:before
+				content: counter(li)'.'
+				position: absolute
+				font-family: Arial
+				font-weight: bold
+				font-size: 16px
+				line-height: 16px
+				top: 2px
+				left: 2px
+				width: 15px
+				height: 16px
+				color: #333
+				text-align: left
+		ol
+			margin-left: 22px
+			> li:before
+				font-size: 14px
+				color: #838383
+				font-family: Arial
+		ul
+			li
+				&:before
+					content: ""
+				&:last-child
+					margin-bottom: 0
+table
+	width: 100%
+	td
+		height: 30px
+		padding: 0 15px
+		border: 1px solid #eeeeee
+		font-family: Arial
+		font-size: 14px
+		color: rgba(#020202,0.7)
+	tr:first-child
+		background-color: #373737
+		td
+			border-bottom: 1px solid #eeeeee
+			font-family: Arial
+			font-size: 15px
+			color: #fff
+
+//////////////////////
+//start contactPage page
+//////////////////////
+.contactPage
+	background-color: #fff
+	padding: 27px 40px
+	margin-bottom: 60px
+	h2
+		color: #585858
+	&-title
+		padding-bottom: 10px
+	&Inner
+		&:after
+			clear: both
+			display: table
+			content: ''
+	&_left
+		width: 50%
+		float: left
+		padding-right: 40px
+		.contactPage-title
+			padding-bottom: 22px
+		&-wrap
+			padding-bottom: 13px
+		&_item
+			padding-left: 22px
+			padding-bottom: 21px
+			position: relative
+			i
+				position: absolute
+				color: #585858
+				font-size: 18px
+				top: 0
+				left: 0
+			&:last-child
+				i
+					color: $mc
+			&-txt
+				letter-spacing: 0
+		&-btn
+			padding-bottom: 15px
+			display: none
+			a
+				font-family: "Circe-ExtraBold"
+				font-size: 20px
+				color: $mc
+				text-decoration: none
+				background-color: #fff
+				border: none
+				padding: 14px 14px
+				line-height: 22px
+				letter-spacing: 0.04em
+				border: 1px solid $mc
+				margin-right: 24px
+				transition: $trans3
+				display: inline-block
+				&:hover
+					background-color: $mc
+					color: #fff
+		&-input
+			width: 100%
+			height: 50px
+			background-color: #eeeeee
+			border: 1px solid #eeeeee
+			padding: 0 20px
+			&Item
+				position: relative
+				margin-bottom: 15px
+			&-txt
+				position: absolute
+				right: 10px
+				top: 2px
+				display: block
+				color: #000
+				opacity: 0.5
+				font-size: 10px
+		&-textarea
+			width: 100%
+			height: 140px
+			background-color: #eeeeee
+			border: 1px solid #eeeeee
+			padding: 20px 20px
+			resize: none
+		&-submit
+			font-family: "Circe-ExtraBold"
+			font-size: 20px
+			color: #fff
+			background-color: $mc
+			border: none
+			padding: 14px 44px
+			line-height: 22px
+			letter-spacing: 0.04em
+			border: 1px solid $mc
+			transition: $trans3
+			&:hover
+				background-color: #fff
+				color: $mc
+		&-captcha
+			margin-bottom: 15px
+	&_right
+		width: 50%
+		float: right
+		.map
+			width: 100%
+			height: 760px
+			background-color: #eee
+
+textarea:focus
+	border-color: #585858
+	background-color: #fff
+//////////////////////
+//end contactPage page
+//////////////////////
+
+
+
+
+//////////////////////
+//start error page
+//////////////////////
+.errorPage
+	&Inner
+		background-color: #fff
+		padding-bottom: 130px
+		margin-bottom: 60px
+	&-number
+		color: rgba(#373737,0.9)
+		font-family: "Circe-Bold"
+		font-size: 250px
+		text-align: center
+		padding-top: 44px
+		letter-spacing: 0.04em
+	&-title
+		text-align: center
+		color: rgba(#373737,0.8)
+		line-height: 1
+		font-family: "Circe-ExtraBold"
+		font-size: 14px
+		text-transform: uppercase
+		margin-top: -105px
+		line-height: 1.8
+		padding-bottom: 22px
+		span
+			display: block
+	&-btn
+		text-align: center
+		a
+			font-family: "Circe-ExtraBold"
+			font-size: 20px
+			color: #fff
+			text-decoration: none
+			background-color: $mc
+			border: none
+			padding: 13px 37px
+			line-height: 22px
+			letter-spacing: 0.045em
+			border: 1px solid $mc
+			transition: $trans3
+			display: inline-block
+			&:hover
+				background-color: #fff
+				color: $mc
+//////////////////////
+//end error page
+//////////////////////
+
+
+
+//////////////////////
+//start search page
+//////////////////////
+.searchPage
+	.pagination
+		padding-bottom: 40px
+	&_top
+		padding: 30px 40px
+		background-color: #585858
+		position: relative
+		margin-bottom: 16px
+		&-input
+			width: 100%
+			background-color: #fff
+			border: 1px solid #fff
+			height: 50px
+			padding: 15px 30px 15px 15px
+			font-size: 14px
+			&::-webkit-input-placeholder
+				font-size: 14px
+				line-height: 16px
+				color: #000
+				opacity: 0.8
+			&::-moz-placeholder
+				font-size: 14px
+				line-height: 16px
+				color: #000
+				opacity: 0.8
+			&:-moz-placeholder
+				font-size: 14px
+				line-height: 16px
+				color: #000
+				opacity: 0.8
+			&:-ms-input-placeholder
+				font-size: 14px
+				line-height: 16px
+				color: #000
+				opacity: 0.8
+		&-submit
+			position: absolute
+			top: 50%
+			transform: translate(0, -50%)
+			right: 50px
+			border: none
+			background-color: transparent
+			color: $mc
+			font-size: 15px
+	&Inner
+		padding-bottom: 15px
+		&:after
+			content: ''
+			clear: both
+			display: table
+	&_left
+		float: left
+		padding-top: 8px
+		&-txt
+			margin-right: 5px
+			letter-spacing: 0
+		&-res
+			text-decoration: none
+			letter-spacing: 0
+			color: $mc
+	&_right
+		float: right
+		&-txt
+			display: inline-block
+			vertical-align: middle
+			margin-right: 10px
+		&-select
+			display: inline-block
+			vertical-align: middle
+			select
+				width: 238px
+				height: 39px
+				padding-left: 23px
+	&_results
+		padding-bottom: 28px
+		&:after
+			clear: both
+			content: ''
+			display: table
+		.productCard_item
+			float: left
+			margin: 0 17px 15px 0
+			&:nth-child(4n+4)
+				margin-right: 0
+//////////////////////
+//end search page
+//////////////////////
+
+
+//////////////////////
+//start brand page
+//////////////////////
+.brandPage
+	background-color: #fff
+	padding: 27px 40px
+	margin-bottom: 17px
+	.pagination
+		padding-bottom: 40px
+	.textBlock
+		height: 1110px
+		overflow: hidden
+		transition: $trans5
+		position: relative
+		&:before
+			content: ''
+			display: block
+			width: 100%
+			height: 25px
+			position: absolute
+			left: 0
+			bottom: 0
+			background-image: url(../images/txtmask.png)
+			background-repeat: repeat-x
+			transition: $trans5
+		&.showAll
+			height: auto
+			&:before
+				display: none
+	&-btn
+		text-align: center
+		padding-top: 20px
+		a
+			font-family: "Circe-ExtraBold"
+			font-size: 14px
+			color: #fff
+			background-color: $mc
+			border: none
+			padding: 16px 30px
+			line-height: 16px
+			letter-spacing: 0.03em
+			border: 1px solid $mc
+			text-decoration: none
+			text-transform: uppercase
+			display: inline-block
+			transition: $trans3
+			&:hover
+				background-color: #fff
+				color: $mc
+		&Bottom
+			display: none !important
+		&.active
+			.brandPage-btnTop
+				display: none !important
+			.brandPage-btnBottom
+				display: inline-block !important
+	&Inner
+		padding-bottom: 23px
+		&:after
+			display: table
+			content: ''
+			clear: both
+		.productCard_item
+			float: left
+			margin: 0 17px 15px 0
+			&:nth-child(4n+4)
+				margin-right: 0
+
+//////////////////////
+//end brand page
+//////////////////////
+
+
+
+
+//////////////////////
+//start busket page
+//////////////////////
+.busketPage
+	background-color: #fff
+	padding: 38px 40px
+	margin-bottom: 60px
+	&_items
+	&_item
+		height: 106px
+		position: relative
+		margin-bottom: 40px
+		&:after
+			content: ''
+			clear: both
+			display: table
+		&Inner
+			float: left
+			position: relative
+			border-bottom: 1px solid #eee
+			height: 111px
+			padding-top: 0px
+			&:first-child
+				border: none
+				padding-right: 22px
+				padding-top: 0
+			&-sticker
+				position: absolute
+				background-color: #585858
+				padding: 5px 10px
+				letter-spacing: -0.03em
+				line-height: 16px
+				position: absolute
+				top: 5px
+				left: 0
+				color: #fff
+				z-index: 2
+			&-img
+				padding-top: 5px
+				&:hover
+					img
+						opacity: 0.6
+				img
+					width: 153px
+					height: 106px
+					transition: $trans3
+					display: block
+					z-index: 1
+					position: relative
+			&-title
+				font-family: "Circe-ExtraBold"
+				color: rgba(#373737,0.8)
+				font-size: 14px
+				text-decoration: none
+				text-transform: uppercase
+				line-height: 1
+				margin-bottom: 10px
+				display: inline-block
+				letter-spacing: 0.05em
+				transition: $trans3
+				&:hover
+					color: $mc
+			&-txt
+				color: #727272
+			&-price
+				font-family: "Circe-ExtraBold"
+				font-size: 18px
+				color: #707070
+			&-input
+				width: 90px
+				height: 30px
+				border: 1px solid #000
+				color: #727272
+				text-align: center
+				padding: 5px
+				display: inline-block
+				vertical-align: middle
+				margin-right: 5px
+				&Number
+					width: 92px
+					height: 30px
+					border: 1px solid #000
+					color: #727272
+					text-align: center
+					padding: 5px
+					display: inline-block
+					vertical-align: middle
+					margin-right: 5px
+			&-input-wrap
+				.busketPage_itemInner-txt
+					display: inline-block
+					vertical-align: middle
+					padding-bottom: 0 !important
+			&:nth-child(1)
+			&:nth-child(2)
+				width: 280px
+			&:nth-child(3)
+				padding-left: 13px
+				width: 150px
+				.busketPage_itemInner-txt
+					padding-bottom: 15px
+			&:nth-child(4)
+				padding-left: 16px
+				width: 190px
+				.busketPage_itemInner-txt
+					padding-bottom: 11px
+			&:nth-child(5)
+				width: 125px
+				.busketPage_itemInner-txt
+					padding-bottom: 14px
+				.busketPage_itemInner-price
+					color: $mc
+		&-remove
+			width: 30px
+			height: 30px
+			right: 0
+			top: 50%
+			transform: translate(0, -50%)
+			position: absolute
+			background-color: #585858
+			cursor: pointer
+			transition: $trans3
+			&:hover
+				background-color: $mc
+			&:after,
+			&:before
+				content: ''
+				width: 12px
+				height: 1px
+				background-color: #fff
+				transform-origin: 50% 50%
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%) rotate(0)
+			&:after
+				transform: translate(-50%, -50%) rotate(45deg)
+			&:before
+				transform: translate(-50%, -50%) rotate(-45deg)
+	&-btn
+		&:after
+			clear: both
+			content: ''
+			display: table
+		&Left
+			float: left
+			a
+				font-family: "Circe-ExtraBold"
+				font-size: 20px
+				color: $mc
+				background-color: #fff
+				border: none
+				padding: 13px 21px
+				line-height: 22px
+				letter-spacing: 0.03em
+				border: 1px solid $mc
+				text-decoration: none
+				display: inline-block
+				transition: $trans3
+				&:hover
+					background-color: $mc
+					color: #fff
+		&Right
+			float: right
+			a
+				font-family: "Circe-ExtraBold"
+				font-size: 20px
+				color: #fff
+				background-color: $mc
+				border: none
+				padding: 13px 46px
+				line-height: 22px
+				letter-spacing: 0.03em
+				border: 1px solid $mc
+				text-decoration: none
+				display: inline-block
+				transition: $trans3
+				&:hover
+					background-color: #fff
+					color: $mc
+
+
+.busketPage_itemInner-inputNumber-wrap
+	padding-right: 25px
+	position: relative
+	height: 30px
+	margin-right: 6px
+	display: inline-block
+	.busketPage_itemInner-inputNumber
+		height: 30px
+		appearance: none !important
+		text-indent: 0.01px
+		text-overflow: ''
+		width: 60px !important
+		border: 1px solid #000
+		color: #727272
+		text-align: center
+		padding: 5px
+		display: inline-block
+		vertical-align: middle
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button
+			-webkit-appearance: none
+			margin: 0
+	&:before
+		content: ''
+		height: 85%
+		width: 22px
+		position: absolute
+		right: 32px
+		top: 50%
+		transform: translate(0, -50%)
+		background-color: #fff
+		z-index: 2
+	span
+		position: absolute
+		right: 0
+		top: 0
+		height: 14px
+		width: 30px
+		background-color: $mc
+		cursor: pointer
+		&:hover
+			background-color: #585858
+		&:after
+			content: ''
+			position: absolute
+			top: 40%
+			left: 50%
+			border: none
+			width: 6px
+			height: 6px
+			transform-origin: 50% 50%
+			transform: translate(-50%, 0%) rotate(45deg)
+		&.plus
+			&:after
+				border-top: 1px solid #fff
+				border-left: 1px solid #fff
+		&.minus
+			top: auto
+			bottom: 0
+			&:after
+				top: 20%
+				border-bottom: 1px solid #fff
+				border-right: 1px solid #fff
+
+
+
+
+.busketPage_summa
+	padding-bottom: 20px
+	margin-top: -5px
+	&:after
+		content: ''
+		clear: both
+		display: table
+	&Inner
+		float: right
+	&-txt
+		display: inline-block
+		vertical-align: bottom
+		margin-right: 5px
+		color: rgba(#000,0.8)
+		font-family: "Circe-Regular"
+		font-size: 20px
+		font-variant: small-caps
+		line-height: 1.4
+	&-price
+		display: inline-block
+		vertical-align: bottom
+		font-family: "Circe-Bold"
+		font-size: 36px
+		color: $mc
+		line-height: 1
+		letter-spacing: 0.04em
+
+//////////////////////
+//end busket page
+//////////////////////
+
+
+//////////////////////
+//start order page
+//////////////////////
+.orderPage
+	background-color: #fff
+	padding: 33px 40px
+	margin-bottom: 60px
+	&_center
+		border-bottom: 1px solid #eee
+		padding-bottom: 15px
+		margin-bottom: 25px
+		&:after
+			content: ''
+			clear: both
+			display: table
+	&_top
+		letter-spacing: 0
+		padding-bottom: 18px
+		margin-bottom: 26px
+		border-bottom: 1px solid #eee
+		&-first
+			font-family: "Circe-Regular"
+			font-size: 20px
+			color: rgba(#000,0.8)
+			font-variant: small-caps
+		&-number
+			font-family: "Circe-ExtraBold"
+			font-size: 18px
+			color: $mc
+		&-price
+			font-family: "Circe-ExtraBold"
+			font-size: 18px
+			color: $mc
+			padding-right: 15px
+	&_bottom
+		width: 50%
+		padding-right: 41px
+		.jq-selectbox__select
+			height: 50px
+			width: 100%
+			padding-top: 12px
+			padding-left: 19px
+			background-color: #eee
+			border: 1px solid #eee
+		.jq-selectbox__dropdown ul li
+			padding-left: 19px
+		.jq-selectbox__select-text
+			width: 100% !important
+			color: rgba(#000,0.7)
+			font-variant: normal
+		.jq-selectbox__trigger-arrow
+			left: 47%
+		.jq-selectbox.jqselect
+			width: 100%
+		.orderPage_item-select select
+			width: 100%
+			height: 50px
+			padding-left: 19px
+		.orderPage_item-select
+			width: 100%
+			height: 50px
+		.jq-selectbox__trigger
+			width: 42px
+			right: 4px
+			top: 4px
+			height: 40px
+			background-color: $mc
+	&-title
+		color: #585858
+		padding-bottom: 22px
+	&_left
+		float: left
+		width: 50%
+		padding-right: 41px
+	&_right
+		float: left
+		width: 50%
+		&-descr
+			height: 175px
+			overflow: hidden
+			margin-top: -5px
+	&_item
+		margin-bottom: 13px
+		&-input
+			position: relative
+			padding-bottom: 15px
+		&-txt
+			position: absolute
+			right: 10px
+			top: 2px
+			display: block
+			color: #000
+			opacity: 0.5
+			font-size: 10px
+.orderPage-submit
+	font-family: "Circe-ExtraBold"
+	font-size: 20px
+	color: #fff
+	background-color: $mc
+	border: none
+	padding: 14px 55px
+	line-height: 22px
+	letter-spacing: 0.03em
+	border: 1px solid $mc
+	text-decoration: none
+	display: inline-block
+	transition: $trans3
+	&:hover
+		background-color: #fff
+		color: $mc
+
+//////////////////////
+//end order page
+//////////////////////
+
+
+//////////////////////
+//start cabinet page
+//////////////////////
+.cabinetPage
+	background-color: #fff
+	padding: 29px 40px 11px
+	margin-bottom: 60px
+	&-title
+		font-family: "Circe-Regular"
+		font-size: 20px
+		color: rgba(#000,0.8)
+		padding-bottom: 12px
+		letter-spacing: 0
+		font-variant: small-caps
+	&Tabs
+		padding-bottom: 16px
+		margin-bottom: 10px
+		border-bottom: 1px solid #eee
+	&Tab
+		font-family: "Circe-ExtraBold"
+		font-size: 23px
+		letter-spacing: 0.08em
+		margin-right: 37px
+		color: #585858
+		cursor: pointer
+		display: inline-block
+		transition: $trans5
+		position: relative
+		span
+			position: relative
+			transition: $trans5
+			display: inline-block
+			font-variant: small-caps
+			letter-spacing: 1px
+			&:before
+				content: ''
+				width: 100%
+				height: 4px
+				background-color: $mc
+				position: absolute
+				bottom: -17px
+				left: 0
+				opacity: 0
+				transition: $trans5
+		&.active
+			color: $mc
+			span
+				&:before
+					opacity: 1
+		&_item
+			&:after
+				content: ''
+				clear: both
+				display: table
+	&_left
+		float: left
+		width: 50%
+		padding-right: 40px
+		margin-bottom: 55px
+	&_right
+		float: right
+		width: 50%
+		padding-left: 40px
+	&_item
+		&-input
+			position: relative
+			margin-bottom: 14px
+			&.hold
+				&:before
+					content: ''
+					width: 100%
+					height: 100%
+					position: absolute
+					left: 0
+					top: 0
+				input
+					color: rgba(#000,0.5)
+		&-txt
+			position: absolute
+			right: 10px
+			top: 2px
+			display: block
+			color: #000
+			opacity: 0.5
+			font-size: 10px
+	&-submit
+		font-family: "Circe-ExtraBold"
+		font-size: 20px
+		color: $mc
+		background-color: #fff
+		border: none
+		padding: 14px 44px
+		line-height: 22px
+		letter-spacing: 0.075em
+		border: 1px solid $mc
+		transition: $trans3
+		&:hover
+			background-color: $mc
+			color: #fff
+	&-submitSave
+		font-family: "Circe-ExtraBold"
+		font-size: 20px
+		color: $mc
+		background-color: #fff
+		border: none
+		padding: 14px 22px
+		line-height: 22px
+		letter-spacing: 0.06em
+		border: 1px solid $mc
+		transition: $trans3
+		&:hover
+			background-color: $mc
+			color: #fff
+
+
+.cabinetPageHistory-wrapper
+	display: none
+	&.afterLoad
+		display: block
+
+
+.cabinetPageHistory
+	background-color: #fff
+	padding: 38px 40px
+	margin-bottom: 60px
+	&-title
+		padding: 2px 0 17px
+		&Number
+			font-family: "Circe-Regular"
+			font-size: 18px
+			color: rgba(#000,0.8)
+			font-variant: small-caps
+	&_items
+	&_item
+		height: 106px
+		position: relative
+		margin-bottom: 40px
+		&:after
+			content: ''
+			clear: both
+			display: table
+		&Inner
+			float: left
+			position: relative
+			border-bottom: 1px solid #eee
+			height: 111px
+			padding-top: 0px
+			&:first-child
+				border: none
+				padding-right: 22px
+				padding-top: 0
+			&-sticker
+				position: absolute
+				background-color: #585858
+				padding: 5px 10px
+				letter-spacing: -0.03em
+				line-height: 16px
+				position: absolute
+				top: 5px
+				left: 0
+				color: #fff
+				z-index: 2
+			&-img
+				padding-top: 5px
+				&:hover
+					img
+						opacity: 0.6
+				img
+					width: 153px
+					height: 106px
+					transition: $trans3
+					display: block
+					z-index: 1
+					position: relative
+			&-title
+				font-family: "Circe-ExtraBold"
+				color: rgba(#373737,0.8)
+				font-size: 14px
+				text-decoration: none
+				text-transform: uppercase
+				line-height: 1
+				margin-bottom: 10px
+				display: inline-block
+				letter-spacing: 0.05em
+				transition: $trans3
+				&:hover
+					color: $mc
+			&-txt
+				color: #727272
+			&-price
+				font-family: "Circe-ExtraBold"
+				font-size: 18px
+				color: #707070
+			&-input
+				width: 92px
+				height: 30px
+				border: 1px solid #000
+				color: #727272
+				text-align: center
+				padding: 5px
+				display: inline-block
+				vertical-align: middle
+				margin-right: 5px
+				&Number
+					width: 92px
+					height: 30px
+					border: 1px solid #000
+					color: #727272
+					text-align: center
+					padding: 5px
+					display: inline-block
+					vertical-align: middle
+					margin-right: 5px
+			&-input-wrap
+				position: relative
+				.cabinetPageHistory_itemInner-txt
+					display: inline-block
+					vertical-align: middle
+					padding-bottom: 0 !important
+				&.hold
+					&:before
+						content: ''
+						width: 100%
+						height: 100%
+						position: absolute
+						left: 0
+						top: 0
+			&:nth-child(1)
+			&:nth-child(2)
+				width: 280px
+			&:nth-child(3)
+				padding-left: 8px
+				width: 150px
+				.cabinetPageHistory_itemInner-txt
+					padding-bottom: 15px
+			&:nth-child(4)
+				padding-left: 27px
+				padding-right: 10px
+				width: 190px
+				.cabinetPageHistory_itemInner-txt
+					padding-bottom: 11px
+			&:nth-child(5)
+				// padding-left: 20px
+				text-align: right
+				width: 125px
+				.cabinetPageHistory_itemInner-txt
+					padding-bottom: 14px
+				.cabinetPageHistory_itemInner-price
+					color: $mc
+
+.cabinetPageHistory_summa
+	padding-bottom: 20px
+	margin-top: -5px
+	&:after
+		content: ''
+		clear: both
+		display: table
+	&Inner
+		float: right
+	&-txt
+		display: inline-block
+		vertical-align: bottom
+		margin-right: 5px
+		color: rgba(#000,0.8)
+		font-family: "Circe-Regular"
+		font-size: 20px
+		font-variant: small-caps
+		line-height: 1.4
+	&-price
+		display: inline-block
+		vertical-align: bottom
+		font-family: "Circe-Bold"
+		font-size: 36px
+		color: #585858
+		line-height: 1
+		letter-spacing: 0.04em
+.cabinetPageHistory-wrap
+	padding-bottom: 10px
+	margin-bottom: 10px
+	border-bottom: 1px solid #eee
+	&:last-child
+		margin-bottom: 0
+		border: none
+.cabinetPageTabs-wrapper-mobile
+	display: none
+.cabinetPageTab-mobile
+	display: block
+	margin-right: 0
+	&:before
+		content: ''
+		width: 10px
+		height: 10px
+		position: absolute
+		right: 0px
+		top: 45%
+		transition: $trans5
+		border-top: 2px solid #585858
+		border-left: 2px solid #585858
+		transform-origin: 50% 50%
+		transform: translate(0, -50%) rotate(-135deg)
+	&.active
+		&:before
+			transform: translate(0, -50%) rotate(45deg)
+			border-color: $mc
+			top: 55%
+.cabinetPageTab_item-mobile
+	.cabinetPage_left
+		padding: 20px 0 0
+		width: 100%
+		margin-bottom: 17px
+	.cabinetPage_right
+		width: 100%
+		padding-left: 0
+		padding-bottom: 39px
+		margin-bottom: 13px
+		border-bottom: 1px solid #eee
+.cabinetPageTabs-mobile
+	border: none
+.cabinetPageHistory-wrap-btn
+	display: none
+	a
+		font-family: "Circe-ExtraBold"
+		font-size: 20px
+		text-decoration: none
+		color: #fff
+		background-color: $mc
+		display: inline-block
+		border: none
+		padding: 12px 30px
+		line-height: 22px
+		letter-spacing: 0.075em
+		border: 1px solid $mc
+		transition: $trans3
+		&:hover
+			background-color: #fff
+			color: $mc
+//////////////////////
+//end cabinet page
+//////////////////////
+
+
+//////////////////////
+//start catalog page
+//////////////////////
+.jq-checkbox
+	width: 20px
+	height: 20px
+	border-radius: 0
+	border-color: $mc !important
+	background: none
+	background-color: #fff
+.jq-checkbox.checked .jq-checkbox__div
+	position: absolute
+	width: 10px
+	height: 10px
+	top: 50%
+	left: 50%
+	right: auto
+	margin: 0
+	transform: translate(-50%, -50%)
+	box-shadow: none
+	border-radius: 0
+	background-color: #585858
+.jq-radio
+	width: 20px
+	height: 20px
+	background: none
+	background-color: #fff
+	border-color: $mc !important
+	position: relative
+.jq-radio.checked .jq-radio__div
+	width: 10px
+	height: 10px
+	position: absolute
+	top: 50%
+	left: 50%
+	right: auto
+	background-color: #585858
+	margin: 0
+	transform: translate(-50%, -50%)
+	box-shadow: none
+#jqslider
+	margin: 21px 0 26px
+.jqslider-input
+	input
+		border: 1px solid #000
+		background-color: #fff
+		display: inline-block
+		vertical-align: middle
+		width: 90px
+		height: 40px
+		font-size: 14px
+		color: rgba(#000,0.7)
+		padding: 10px
+		&::-webkit-input-placeholder
+			font-size: 14px
+			line-height: 16px
+			color: #000
+			opacity: 0.7
+		&::-moz-placeholder
+			font-size: 14px
+			line-height: 16px
+			color: #000
+			opacity: 0.7
+		&:-moz-placeholder
+			font-size: 14px
+			line-height: 16px
+			color: #000
+			opacity: 0.7
+		&:-ms-input-placeholder
+			font-size: 14px
+			line-height: 16px
+			color: #000
+			opacity: 0.7
+		&:first-child
+			margin-right: 10px
+.catalogPage
+	padding-top: 5px
+	.pagination
+		padding-bottom: 40px
+	&_inner
+		padding-bottom: 30px
+		&:after
+			content: ''
+			display: table
+			clear: both
+	&_sidebar
+		float: left
+		width: 240px
+		margin-right: 15px
+		margin-top: -50px
+		padding: 20px
+		min-height: 100px
+		background-color: #fff
+		.jq-selectbox
+			width: 100%
+		.jq-selectbox__select
+			width: 100%
+		.jq-selectbox__trigger
+			background-color: $mc
+		&_item
+			padding: 18px 0
+			border-bottom: 1px solid #eee
+			&-title
+				font-family: "Circe-ExtraBold"
+				font-size: 14px
+				text-transform: uppercase
+				line-height: 1.1
+				cursor: pointer
+				color: rgba(#000,0.8)
+				position: relative
+				&:before
+					content: ''
+					width: 8px
+					height: 8px
+					position: absolute
+					right: 0px
+					top: 45%
+					transition: $trans5
+					border-top: 2px solid #585858
+					border-left: 2px solid #585858
+					transform-origin: 50% 50%
+					transform: translate(0, -50%) rotate(45deg)
+				&.active
+					&:before
+						transform: translate(0, -50%) rotate(-135deg)
+						top: 40%
+			&-select
+				padding-top: 17px
+			&-label
+				font-size: 12px
+				color: rgba(#000,0.7)
+				line-height: 1
+				letter-spacing: 0
+				span
+					cursor: pointer
+				&-wrap
+					padding-top: 11px
+					&:first-child
+						padding-top: 15px
+			&-btn
+				margin-top: 20px
+				font-family: "Circe-ExtraBold"
+				font-size: 14px
+				text-decoration: none
+				text-transform: uppercase
+				color: $mc
+				background-color: #fff
+				display: block
+				border: none
+				padding: 16px 10px
+				width: 100%
+				line-height: 16px
+				letter-spacing: 0.075em
+				border: 1px solid $mc
+				transition: $trans3
+				&:hover
+					background-color: $mc
+					color: #fff
+				&Price
+					margin-top: 20px
+					font-family: "Circe-ExtraBold"
+					font-size: 14px
+					text-decoration: none
+					text-transform: uppercase
+					color: #fff
+					background-color: $mc
+					display: block
+					border: none
+					padding: 16px 10px
+					width: 100%
+					line-height: 16px
+					letter-spacing: 0.075em
+					border: 1px solid $mc
+					transition: $trans3
+					&:hover
+						background-color: #fff
+						color: $mc
+	&_results
+		float: left
+		width: 745px
+		&:after
+			content: ''
+			display: table
+			clear: both
+		.productCard_item
+			float: left
+			margin: 0 17px 15px 0
+			&:nth-child(3n+3)
+				margin-right: 0
+	.searchPageInner-mobile
+		display: none
+
+
+.catalogPage_sidebar-toggle
+	display: none
+
+//////////////////////
+//end catalog page
+//////////////////////
+
+
+
+//////////////////////
+//start catalogPageCat page
+//////////////////////
+.hasSubMenu-arrow
+	display: none
+.catalogPageCat
+	&-wrap
+		&:after
+			content: ''
+			clear: both
+			display: table
+	&_sidebar
+		float: left
+		width: 240px
+		margin-right: 15px
+		padding: 6px 24px 6px 25px
+		min-height: 100px
+		background-color: #fff
+		&-menu
+			ul
+				margin: 0
+				padding: 0
+				li
+					margin: 0
+					padding: 0 0
+					&:before
+						display: none
+					a
+						margin: 13px 13px 13px 0
+						display: inline-block
+					&.hasSubMenu
+						position: relative
+						ul
+							display: none
+						.hasSubMenu-arrow
+							display: block
+							content: ''
+							background-color: transparent
+							border: none
+							width: 10px
+							height: 10px
+							border-top: 2px solid #000
+							border-left: 2px solid #000
+							position: absolute
+							top: 13px
+							right: 0px
+							left: auto
+							transform-origin: 50% 50%
+							transform: rotate(-135deg)
+							cursor: pointer
+							transition: $trans5
+							&:before
+								content: ''
+								width: 200%
+								height: 200%
+								position: absolute
+								left: 50%
+								top: 50%
+								transform-origin: 50% 50%
+								transform: translate(-50%, -50%) rotate(-45deg)
+							&:hover
+								border-color: $mc
+						&.active
+							>.hasSubMenu-arrow
+								top: 17px
+								transform: rotate(45deg)
+			>ul
+				>li
+					border-bottom: 1px solid #eee
+					&:last-child
+						border-bottom: none
+					>a
+						font-family: "Circe-ExtraBold"
+						color: rgba(#000,0.8)
+						text-transform: uppercase
+						text-decoration: none
+						line-height: 1.2
+						font-size: 14px
+					>ul
+						>li
+							border-bottom: 1px solid #eee
+							&:first-child
+								border-top: 1px solid #eee
+							&:last-child
+								border: none
+							>a
+								text-transform: uppercase
+								text-decoration: none
+								font-weight: bold
+								font-size: 14px
+								color: $mc
+								line-height: 1.3
+							&.hasSubMenu
+								.hasSubMenu-arrow
+									border-color: $mc
+							>ul
+								>li
+									padding-left: 14px
+									&:first-child
+										a
+											margin-top: 0
+									&:last-child
+										a
+											margin-bottom: 8px
+									>a
+										text-decoration: none
+										text-transform: uppercase
+										font-family: "Circe-Regular"
+										font-size: 11px
+										color: rgba(#000,0.8)
+										margin: 3px 0
+										margin-right: 0
+										&:hover
+											text-decoration: underline
+	&_results
+		float: left
+		width: 745px
+		min-height: 100px
+		&:after
+			content: ''
+			display: table
+			clear: both
+		&_item
+			float: left
+			width: 237px
+			height: 155px
+			padding: 26px
+			margin: 0 15px 15px 0
+			background-color: #fff
+			text-decoration: none
+			position: relative
+			transition: $trans4
+			overflow: hidden
+			display: block
+			&:after
+				content: ''
+				height: 10px
+				width: 10px
+				border-top: 2px solid #373737
+				border-right: 2px solid #373737
+				position: absolute
+				right: 34px
+				top: 30px
+				transform-origin: 50% 50%
+				transform: rotate(45deg)
+				transition: $trans4
+			&:hover
+				background-color: $mc
+				.catalogPageCat_results_item-title,
+				.catalogPageCat_results_item-descr
+					color: #fff
+				&:before
+					background-color: $mc
+				&:after
+					border-color: #fff
+			&:before
+				content: ''
+				width: 100%
+				height: 29px
+				background-color: #fff
+				position: absolute
+				left: 0
+				bottom: 0
+				transition: $trans4
+			&:nth-child(3n+3)
+				margin-right: 0
+			&-title
+				color: #373737
+				line-height: 1
+				padding-bottom: 6px
+				transition: $trans4
+				padding-right: 20px
+			&-descr
+				color: #373737
+				font-size: 13px
+				font-variant: small-caps
+				// letter-spacing: 0
+				line-height: 1.1
+				transition: $trans4
+
+.catalogPageCat_text
+	margin: 15px 0 60px
+	padding: 20px 40px
+	background-color: #fff
+	.textBlock
+		height: 200px
+		overflow: hidden
+		ul
+			padding-left: 0
+			padding-top: 10px
+			li
+				padding-left: 13px
+				margin: 0px 0
+		&.showAll
+			height: auto
+	&-btn
+		text-align: center
+		padding-top: 20px
+		a
+			font-family: "Circe-ExtraBold"
+			font-size: 14px
+			color: #fff
+			background-color: $mc
+			border: none
+			padding: 16px 30px
+			line-height: 16px
+			letter-spacing: 0.03em
+			border: 1px solid $mc
+			text-decoration: none
+			text-transform: uppercase
+			display: inline-block
+			transition: $trans3
+			&:hover
+				background-color: #fff
+				color: $mc
+		&Bottom
+			display: none !important
+		&.active
+			.catalogPageCat_text-btnTop
+				display: none !important
+			.catalogPageCat_text-btnBottom
+				display: inline-block !important
+//////////////////////
+//end catalogPageCat page
+//////////////////////
+
+
+
+.mobEnter
+	padding: 30px 20px 50px 20px
+	background-color: #fff
+	&_inner
+		&_item
+			margin-bottom: 15px
+			&-input
+				position: relative
+			&-txt
+				position: absolute
+				right: 10px
+				top: 2px
+				display: block
+				color: #000
+				opacity: 0.5
+				font-size: 10px
+	&_enter
+		.popup_title
+			position: relative
+			padding-bottom: 40px
+			&:before
+				content: ''
+				width: 100%
+				height: 1px
+				background-color: #eee
+				position: absolute
+				left: 0
+				bottom: 20px
+		input,
+		label
+			display: inline-block
+			vertical-align: middle
+		label
+			color: $mc
+	&-reg,
+	&-fogetPass
+		.popup_title
+			position: relative
+			padding-bottom: 40px
+			&:before
+				content: ''
+				width: 100%
+				height: 1px
+				background-color: #eee
+				position: absolute
+				left: 0
+				bottom: 20px
+	.inputSubmit
+		margin-bottom: 15px
+	&_btn_fogetPass
+		padding: 0px 0 30px 0
+		display: inline-block
+		vertical-align: top
+		a
+			color: $mc
+	&_btn_reg
+		display: inline-block
+		vertical-align: top
+		a
+			font-family: "Circe-ExtraBold"
+			font-size: 20px
+			color: #fff
+			color: $mc
+			padding: 13px 14px
+			border: 1px solid $mc
+			text-decoration: none
+			display: inline-block
+			line-height: 22px
+			letter-spacing: 0em
+			transition: $trans3
+			&:hover
+				background-color: $mc
+				color: #fff
+
+.pagination
+	text-align: center
+	// margin-top: -5px
+	padding: 0 0 30px
+	ul
+		padding: 0
+		margin: 0 0px
+		display: inline-block
+		li
+			padding: 0
+			margin: 0 2px
+			display: inline-block
+			vertical-align: middle
+			&:before
+				display: none
+			a
+				font-size: 14px
+				color: #222
+				font-family: "Circe-Bold"
+				text-decoration: none
+				&:hover
+					text-decoration: underline
+			&.prev
+				a
+					width: 50px
+					height: 50px
+					background-color: #585858
+					display: block
+					position: relative
+					font-size: 30px
+					color: #fff
+					padding-top: 1px
+					transition: $trans3
+					&:hover
+						background-color: $mc
+			&.next
+				a
+					width: 50px
+					height: 50px
+					background-color: #585858
+					display: block
+					position: relative
+					font-size: 30px
+					color: #fff
+					padding-top: 1px
+					transition: $trans3
+					&:hover
+						background-color: $mc
+			&.active
+				a
+					width: 50px
+					height: 50px
+					font-size: 16px
+					background-color: #fff
+					display: block
+					color: $mc
+					padding: 11px
+					&:hover
+						text-decoration: none
+
+input:focus
+	background-color: #fff
+	border: 1px solid $mc
+
+
+#sync1 .item
+	background: #0c83e7
+	padding: 120px 0px
+	margin: 5px
+	color: #FFF
+	-webkit-border-radius: 3px
+	-moz-border-radius: 3px
+	border-radius: 3px
+	text-align: center
+#sync2 .item
+	background: #C9C9C9
+	padding: 40px 0px
+	margin: 5px
+	color: #FFF
+	-webkit-border-radius: 3px
+	-moz-border-radius: 3px
+	border-radius: 3px
+	text-align: center
+	cursor: pointer
+
+#sync2 .item h1
+	font-size: 18px
+
+#sync2 .synced .item
+	background: #0c83e7
+
+//ALWAYS END
+@import "media"
