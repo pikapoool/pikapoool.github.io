@@ -933,7 +933,7 @@ var PopupComponent = (function () {
 /***/ "../../../../../src/app/components/post/post.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"post\">\n  <article class=\"post-item\">\n    <mat-icon class=\"post-icon__delete\" *ngIf=\"edit\" (click)=\"deletePost(postId)\">delete</mat-icon>\n    <h3 class=\"post-title\" *ngIf=\"!fieldEdit.title\">\n      {{post.title}} \n      <mat-icon class=\"post-icon__edit\" *ngIf=\"edit\" (click)=\"editField('title', post.title)\">mode_edit</mat-icon>\n    </h3>\n    <div class=\"post-form__title\" *ngIf=\"fieldEdit.title\">\n      <form (ngSubmit)=\"saveField('title')\" [formGroup]=\"editFormGroup\" novalidate>\n        <mat-form-field>\n          <input matInput placeholder=\"Post title\" formControlName=\"title\">\n        </mat-form-field>\n        <button mat-raised-button (click)=\"cancel('title')\" type=\"button\" color=\"accent\">Cancel</button>\n        <button mat-raised-button type=\"submit\" color=\"primary\">Save</button>\n      </form>\n    </div>\n    <div class=\"post-author\">\n      <span class=\"post-author-avatar\">\n        <img class=\"post-author-img\" src=\"{{post.author.avatar}}\" alt=\"\">\n      </span>\n      <span class=\"post-author-text\">{{post.author.nickname}}</span>\n    </div>\n    <div class=\"post-text\" *ngIf=\"!fieldEdit.text\">\n      <mat-icon class=\"post-icon__edit post-icon__edit-text\" *ngIf=\"edit\" (click)=\"editField('text', post.text)\">mode_edit</mat-icon>\n      {{post.text}}\n    </div>\n    <div class=\"post-form__text\" *ngIf=\"fieldEdit.text\">  \n      <form (ngSubmit)=\"saveField('text')\" class=\"clearfix\" [formGroup]=\"editFormGroup\" novalidate>          \n        <mat-form-field>\n          <textarea matInput placeholder=\"Post text\" formControlName=\"text\" matTextareaAutosize matAutosizeMinRows=\"5\"></textarea>\n        </mat-form-field>\n        <div class=\"post-buttons\">\n          <button mat-raised-button (click)=\"cancel('text')\" type=\"button\" color=\"accent\">Cancel</button>\n          <button mat-raised-button type=\"submit\" color=\"primary\">Save</button>\n        </div>\n      </form>\n    </div>\n  </article>\n</div>\n  "
+module.exports = "<div class=\"post\">\n  <article class=\"post-item\">\n    <mat-icon class=\"post-icon__delete\" *ngIf=\"edit && canEditPost(post.author.nickname)\" (click)=\"deletePost(postId)\">delete</mat-icon>\n    <h3 class=\"post-title\" *ngIf=\"!fieldEdit.title\">\n      {{post.title}} \n      <mat-icon class=\"post-icon__edit\" *ngIf=\"edit && canEditPost(post.author.nickname)\" (click)=\"editField('title', post.title)\">mode_edit</mat-icon>\n    </h3>\n    <div class=\"post-form__title\" *ngIf=\"fieldEdit.title\">\n      <form (ngSubmit)=\"saveField('title')\" [formGroup]=\"editFormGroup\" novalidate>\n        <mat-form-field>\n          <input matInput placeholder=\"Post title\" formControlName=\"title\">\n        </mat-form-field>\n        <button mat-raised-button (click)=\"cancel('title')\" type=\"button\" color=\"accent\">Cancel</button>\n        <button mat-raised-button type=\"submit\" color=\"primary\">Save</button>\n      </form>\n    </div>\n    <div class=\"post-author\">\n      <span class=\"post-author-avatar\">\n        <img class=\"post-author-img\" src=\"{{post.author.avatar}}\" alt=\"\">\n      </span>\n      <span class=\"post-author-text\">{{post.author.nickname}}</span>\n    </div>\n    <div class=\"post-text\" *ngIf=\"!fieldEdit.text\">\n      <mat-icon class=\"post-icon__edit post-icon__edit-text\" *ngIf=\"edit && canEditPost(post.author.nickname)\" (click)=\"editField('text', post.text)\">mode_edit</mat-icon>\n      {{post.text}}\n    </div>\n    <div class=\"post-form__text\" *ngIf=\"fieldEdit.text\">  \n      <form (ngSubmit)=\"saveField('text')\" class=\"clearfix\" [formGroup]=\"editFormGroup\" novalidate>          \n        <mat-form-field>\n          <textarea matInput placeholder=\"Post text\" formControlName=\"text\" matTextareaAutosize matAutosizeMinRows=\"5\"></textarea>\n        </mat-form-field>\n        <div class=\"post-buttons\">\n          <button mat-raised-button (click)=\"cancel('text')\" type=\"button\" color=\"accent\">Cancel</button>\n          <button mat-raised-button type=\"submit\" color=\"primary\">Save</button>\n        </div>\n      </form>\n    </div>\n  </article>\n</div>\n  "
 
 /***/ }),
 
@@ -964,6 +964,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services__ = __webpack_require__("../../../../../src/app/shared/services/index.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services__ = __webpack_require__("../../../../../src/app/shared/services/index.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -977,10 +978,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var PostComponent = (function () {
-    function PostComponent(activatedRoute, router, firebaseService) {
+    function PostComponent(activatedRoute, router, authService, firebaseService) {
         this.activatedRoute = activatedRoute;
         this.router = router;
+        this.authService = authService;
         this.firebaseService = firebaseService;
         this.post = {
             author: {
@@ -1013,6 +1016,9 @@ var PostComponent = (function () {
         this.firebaseService.deletePost(id);
         this.router.navigate(['admin/posts']);
     };
+    PostComponent.prototype.canEditPost = function (nickname) {
+        return this.authService.isAuthor(nickname);
+    };
     PostComponent.prototype.editField = function (type, field) {
         this.editFormGroup.patchValue((_a = {},
             _a[type] = field,
@@ -1038,6 +1044,7 @@ var PostComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__shared_services__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_1__shared_services__["b" /* FirebaseService */]])
     ], PostComponent);
     return PostComponent;
@@ -1050,7 +1057,7 @@ var PostComponent = (function () {
 /***/ "../../../../../src/app/components/posts/posts-list/posts-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"posts-list\">\r\n  <div class=\"post\" *ngFor=\"let post of posts | async\">\r\n    <article class=\"post-item\">\r\n      <div class=\"post-icons\" *ngIf=\"edit\">\r\n        <a [routerLink]=\"post.key\" class=\"post-edit\">\r\n          <mat-icon>mode_edit</mat-icon>\r\n        </a>\r\n        <mat-icon (click)=\"deletePost(post.key)\">delete</mat-icon>\r\n      </div>\r\n      <h3 class=\"post-title\">{{post.title}}</h3>\r\n      <div class=\"post-author\">\r\n        <span class=\"post-author-avatar\">\r\n          <img class=\"post-author-img\" *ngIf=\"post.author.avatar\" src=\"{{post.author.avatar}}\" alt=\"\">\r\n        </span>\r\n        <span class=\"post-author-text\">{{post.author.nickname}}</span>\r\n      </div>\r\n      <div class=\"post-text\">{{post.text}}</div>\r\n      <a [routerLink]=\"post.key\" *ngIf=\"!edit\" class=\"post-more\">Read more ></a>\r\n    </article>\r\n  </div>\r\n  <div class=\"post\" *ngIf=\"edit\">\r\n    <article class=\"post-item\">\r\n      <div class=\"post-icons post-icons__add\">\r\n        <mat-icon (click)=\"openDialog()\">note_add</mat-icon>\r\n      </div>\r\n    </article>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"posts-list\">\r\n  <div class=\"post\" *ngFor=\"let post of posts | async\">\r\n    <article class=\"post-item\">\r\n      <div class=\"post-icons\" *ngIf=\"edit && canEditPost(post.author.nickname)\">\r\n        <a [routerLink]=\"post.key\" class=\"post-edit\">\r\n          <mat-icon>mode_edit</mat-icon>\r\n        </a>\r\n        <mat-icon (click)=\"deletePost(post.key)\">delete</mat-icon>\r\n      </div>\r\n      <h3 class=\"post-title\">{{post.title}}</h3>\r\n      <div class=\"post-author\">\r\n        <span class=\"post-author-avatar\">\r\n          <img class=\"post-author-img\" *ngIf=\"post.author.avatar\" src=\"{{post.author.avatar}}\" alt=\"\">\r\n        </span>\r\n        <span class=\"post-author-text\">{{post.author.nickname}}</span>\r\n      </div>\r\n      <div class=\"post-text\">{{post.text}}</div>\r\n      <a [routerLink]=\"post.key\" *ngIf=\"!edit\" class=\"post-more\">Read more ></a>\r\n    </article>\r\n  </div>\r\n  <div class=\"post\" *ngIf=\"edit\">\r\n    <article class=\"post-item\">\r\n      <div class=\"post-icons post-icons__add\">\r\n        <mat-icon (click)=\"openDialog()\">note_add</mat-icon>\r\n      </div>\r\n    </article>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1104,10 +1111,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var PostsListComponent = (function () {
-    function PostsListComponent(activatedRoute, dialog, firebaseService) {
+    function PostsListComponent(activatedRoute, dialog, authService, firebaseService) {
         this.activatedRoute = activatedRoute;
         this.dialog = dialog;
+        this.authService = authService;
         this.firebaseService = firebaseService;
         this.edit = false;
         this.itemsRef = firebaseService.getPosts();
@@ -1120,7 +1129,8 @@ var PostsListComponent = (function () {
             this.edit = this.activatedRoute.snapshot.data.edit;
         }
     };
-    PostsListComponent.prototype.editPost = function () {
+    PostsListComponent.prototype.canEditPost = function (nickname) {
+        return this.authService.isAuthor(nickname);
     };
     PostsListComponent.prototype.deletePost = function (key) {
         this.firebaseService.deletePost(key);
@@ -1139,6 +1149,7 @@ var PostsListComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MatDialog */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_services__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_1__shared_services__["b" /* FirebaseService */]])
     ], PostsListComponent);
     return PostsListComponent;
@@ -1554,6 +1565,9 @@ var AuthService = (function () {
         this._isLoggedIn = false;
         localStorage.setItem('role', '');
         localStorage.setItem('user', '');
+    };
+    AuthService.prototype.isAuthor = function (nickname) {
+        return nickname === this.loggedUser.nickname;
     };
     Object.defineProperty(AuthService.prototype, "isLoggedIn", {
         get: function () {
