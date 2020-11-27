@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "recipes/static/css/main.129509e3.chunk.css",
-    "main.js": "recipes/static/js/main.1d2efb2e.chunk.js",
-    "main.js.map": "recipes/static/js/main.1d2efb2e.chunk.js.map",
-    "runtime-main.js": "recipes/static/js/runtime-main.d383a4f0.js",
-    "runtime-main.js.map": "recipes/static/js/runtime-main.d383a4f0.js.map",
-    "static/css/2.49c50b80.chunk.css": "recipes/static/css/2.49c50b80.chunk.css",
-    "static/js/2.06239014.chunk.js": "recipes/static/js/2.06239014.chunk.js",
-    "static/js/2.06239014.chunk.js.map": "recipes/static/js/2.06239014.chunk.js.map",
-    "index.html": "recipes/index.html",
-    "precache-manifest.6c3618c9bca3d1490ff4d0d8674646b0.js": "recipes/precache-manifest.6c3618c9bca3d1490ff4d0d8674646b0.js",
-    "service-worker.js": "recipes/service-worker.js",
-    "static/css/2.49c50b80.chunk.css.map": "recipes/static/css/2.49c50b80.chunk.css.map",
-    "static/css/main.129509e3.chunk.css.map": "recipes/static/css/main.129509e3.chunk.css.map",
-    "static/media/index.css": "recipes/static/media/roboto-latin-900italic.ebf6d164.woff2"
+    "main.css": "/recipes/static/css/main.129509e3.chunk.css",
+    "main.js": "/recipes/static/js/main.1d2efb2e.chunk.js",
+    "main.js.map": "/recipes/static/js/main.1d2efb2e.chunk.js.map",
+    "runtime-main.js": "/recipes/static/js/runtime-main.236882ae.js",
+    "runtime-main.js.map": "/recipes/static/js/runtime-main.236882ae.js.map",
+    "static/css/2.94f8aba8.chunk.css": "/recipes/static/css/2.94f8aba8.chunk.css",
+    "static/js/2.6f7756f5.chunk.js": "/recipes/static/js/2.6f7756f5.chunk.js",
+    "static/js/2.6f7756f5.chunk.js.map": "/recipes/static/js/2.6f7756f5.chunk.js.map",
+    "index.html": "/recipes/index.html",
+    "precache-manifest.75fc73ab8119996e9fc2206ffca344cf.js": "/recipes/precache-manifest.75fc73ab8119996e9fc2206ffca344cf.js",
+    "service-worker.js": "/recipes/service-worker.js",
+    "static/css/2.94f8aba8.chunk.css.map": "/recipes/static/css/2.94f8aba8.chunk.css.map",
+    "static/css/main.129509e3.chunk.css.map": "/recipes/static/css/main.129509e3.chunk.css.map",
+    "static/media/index.css": "/recipes/static/media/roboto-latin-900italic.ebf6d164.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.d383a4f0.js",
-    "static/css/2.49c50b80.chunk.css",
-    "static/js/2.06239014.chunk.js",
+    "static/js/runtime-main.236882ae.js",
+    "static/css/2.94f8aba8.chunk.css",
+    "static/js/2.6f7756f5.chunk.js",
     "static/css/main.129509e3.chunk.css",
     "static/js/main.1d2efb2e.chunk.js"
   ]
