@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/constructor/static/css/main.129509e3.chunk.css",
+    "main.js": "/constructor/static/js/main.3182aa40.chunk.js",
+    "main.js.map": "/constructor/static/js/main.3182aa40.chunk.js.map",
+    "runtime-main.js": "/constructor/static/js/runtime-main.4c642be7.js",
+    "runtime-main.js.map": "/constructor/static/js/runtime-main.4c642be7.js.map",
+    "static/css/2.4776a1ff.chunk.css": "/constructor/static/css/2.4776a1ff.chunk.css",
+    "static/js/2.e852c696.chunk.js": "/constructor/static/js/2.e852c696.chunk.js",
+    "static/js/2.e852c696.chunk.js.map": "/constructor/static/js/2.e852c696.chunk.js.map",
+    "index.html": "/constructor/index.html",
+    "precache-manifest.4ecf375fd3612c53831ff08742467ab7.js": "/constructor/precache-manifest.4ecf375fd3612c53831ff08742467ab7.js",
+    "service-worker.js": "/constructor/service-worker.js",
+    "static/css/2.4776a1ff.chunk.css.map": "/constructor/static/css/2.4776a1ff.chunk.css.map",
+    "static/css/main.129509e3.chunk.css.map": "/constructor/static/css/main.129509e3.chunk.css.map",
+    "static/media/index.css": "/constructor/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4c642be7.js",
+    "static/css/2.4776a1ff.chunk.css",
+    "static/js/2.e852c696.chunk.js",
+    "static/css/main.129509e3.chunk.css",
+    "static/js/main.3182aa40.chunk.js"
+  ]
+}
