@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<link rel="stylesheet" href="css/main.min.css" />
+
+<body>
+
+<h1>Promises</h1>
+<div>
+	<a href="./index.html">Tests</a>
+	<a href="./VirtualDom.html">VirtualDom</a>
+	<a href="https://dou.ua/lenta/articles/interview-questions-javascript-developer/" target="_blank">300+ запитань для Junior, Middle, Senior</a>
+</div>
+
+	<script>
+		var promise0 = new Promise(function (resolve, reject) {
+			resolve("111result");
+			reject('----+--');
+		})
+
+		promise0
+			.then(function (res) {
+				// some code
+				return promise.reject(res);
+				// throw new Error('jj');
+				// return res;
+			})
+			// .then(function (res) {
+			//   console.log('in resolve');
+			//   return res;
+			// }, function (res) {
+			//   console.log('in reject');
+			//   // return promise.reject(res);
+			// })
+			.catch(function (err) {
+				console.log('catch in reject');
+				// return promise.reject(res);
+			})
+			.then(function (res) {
+				console.log(res)
+				console.log('res in then')
+			})
+			.catch(function (err) {
+				console.log('catch2 in reject');
+			})
+
+
+		console.log('');
+		console.log('');
+			var promise1 = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve("setTimeout100");
+				}, 100);
+			});
+			var promise2 = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve("setTimeout200");
+				}, 200);
+			});
+
+
+
+	var p1 = new Promise((resolve, reject) => {
+		setTimeout(resolve, 1000, "one");
+	});
+	var p2 = new Promise((resolve, reject) => {
+		setTimeout(resolve, 2000, "two");
+	});
+	var p3 = new Promise((resolve, reject) => {
+		setTimeout(resolve, 3000, "three");
+	});
+	var p4 = new Promise((resolve, reject) => {
+		setTimeout(resolve, 4000, "four");
+	});
+	// var p5 = new Promise((resolve, reject) => {
+	// 	// Это обещание прервет Promise.all
+	// 	reject("reject");
+	// });
+	
+	p4.then(res => console.log(res));
+	promise2.then(res => console.log(res));
+	promise1.then(res => console.log(res));
+
+	Promise.all([p4, p2, p3, p1, promise1]).then(value => {
+		console.log(value);
+	}, reason => {
+		console.log(reason)
+	});
+
+//Выведет:
+//"reject"
+	</script>
+
+</body>
+
+</html>

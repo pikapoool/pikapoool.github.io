@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<!-- <script src="js/jquery-1.11.2.min.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="js/common.js"></script>
+
+
+<link rel="stylesheet" href="css/main.min.css" />
+
+<body>
+<!-- <div class="circle_wrap">
+	<div class="circle1"></div>
+	<div class="circle2"></div>
+	<div class="circle3"></div>
+</div> -->
+<div>
+  <a href="./promises.html">Promises</a>
+  <a href="./VirtualDom.html">VirtualDom</a>
+	<a href="https://dou.ua/lenta/articles/interview-questions-javascript-developer/" target="_blank">300+ запитань для Junior, Middle, Senior</a>
+</div>
+
+<p class="p"></p>
+<pre>
+	<code>
+Provide delay method in all functions
+
+function someFn() {
+	console.log(arguments);
+}
+
+const someFnWithDelay = someFn.delay(2000);
+
+
+Function.prototype.delay = function(delay) {
+	return function(...args) {
+		setTimeout(() => {
+			this(...args)
+		})
+	}.bind(this)
+}
+	</code>
+</pre>
+
+<p class="p"></p>
+<pre>
+	<code>
+Digital root is the recursive sum of all the digits in a number.
+
+Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a
+single-digit number is produced. The input will be a non-negative integer.
+
+16 --> 1 + 6 = 7
+942 --> 9 + 4 + 2 = 15 --> 1 + 5 = 6
+132189 --> 1 + 3 + 2 + 1 + 8 + 9 = 24 --> 2 + 4 = 6
+493193 --> 4 + 9 + 3 + 1 + 9 + 3 = 29 --> 2 + 9 = 11 --> 1 + 1 = 2
+
+function digitalRoot(n) {
+  return (n - 1) % 9 + 1;
+}
+
+const digitalRoot = (n) => {
+  while (n >= 10) {
+    n = n.toString()
+      .split('')
+      .map(x => parseInt(x))
+      .reduce((a, b) => a + b, 0)
+  }
+  return n
+};
+
+const digitalRoot = (n) => {
+  const str = n.toString();
+  const strLength = str.length;
+  let res = 0;
+  for (let i = 0; i < strLength; i += 1) {
+    res += +str[i]
+  }
+  if(res.toString().length > 1) { 
+    return digitalRoot(res)
+  }
+  return res;
+};
+	</code>
+</pre>
+
+<p class="p"></p>
+<pre>
+	<code>
+var a = [];
+console.log((a == a) + ' ' + (a == !a));
+
+<span class="span">true true</span>
+<span class="spani">Пояснение: В первом выражении все понятно, идет сравнение ссылки с самой собой. А во втором операнд "!a" преобразовывается к boolean и соответственно порождает преобразование к boolean операнда "a". []==false (пустой массив => false), ![]==false (ссылка на объект (в данном случае на массив) с оператором ! => false) т.е. [] == ![]</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+/*
+Exercise:
+
+    We don't want to reimplement all the data-requesting
+    functions. Let's decorate the old callback-based
+    functions with the new Promise-compatible result.
+    The final function should return a Promise which
+    would resolve with the final data directly
+    (i.e. users or admins) or would reject with an error
+    (or type Error).
+
+    The function should be named promisify.
+
+*/
+
+interface User {
+  type: 'user';
+  name: string;
+  age: number;
+  occupation: string;
+}
+
+interface Admin {
+  type: 'admin';
+  name: string;
+  age: number;
+  role: string;
+}
+
+type Person = User | Admin;
+
+const admins: Admin[] = [
+  { type: 'admin', name: 'Jane Doe', age: 32, role: 'Administrator' },
+  { type: 'admin', name: 'Bruce Willis', age: 64, role: 'World saver' }
+];
+
+const users: User[] = [
+  { type: 'user', name: 'Max Mustermann', age: 25, occupation: 'Chimney sweep' },
+  { type: 'user', name: 'Kate Müller', age: 23, occupation: 'Astronaut' }
+];
+
+export type ApiResponseSuccess<T> = {
+  status: 'success';
+  data: T;
+};
+export type ApiResponseError = {
+  status: 'error';
+  error: string;
+};
+
+export type ApiResponse<T> = ApiResponseSuccess<T> | ApiResponseError;
+
+const oldApi = {
+  requestAdmins(callback: (response: ApiResponse<Admin[]>) => void) {
+    callback({
+      status: 'success',
+      data: admins
+    });
+  },
+  requestUsers(callback: (response: ApiResponse<User[]>) => void) {
+    callback({
+      status: 'success',
+      data: users
+    });
+  },
+  requestCurrentServerTime(callback: (response: ApiResponse<number>) => void) {
+    callback({
+      status: 'success',
+      data: Date.now()
+    });
+  },
+  requestCoffeeMachineQueueLength(callback: (response: ApiResponse<number>) => void) {
+    callback({
+      status: 'error',
+      error: 'Numeric value has exceeded Number.MAX_SAFE_INTEGER.'
+    });
+  }
+};
+
+export const api = {
+  requestAdmins: promisify(oldApi.requestAdmins),
+  requestUsers: promisify(oldApi.requestUsers),
+  requestCurrentServerTime: promisify(oldApi.requestCurrentServerTime),
+  requestCoffeeMachineQueueLength: promisify(oldApi.requestCoffeeMachineQueueLength)
+};
+
+function logPerson(person: Person) {
+  console.log(
+    ` - ${person.name}, ${person.age}, ${person.type === 'admin' ? person.role : person.occupation}`
+  );
+}
+
+async function startTheApp() {
+  console.log('Admins:');
+  (await api.requestAdmins() as ApiResponseSuccess<Admin[]>).data.forEach(logPerson);
+  console.log();
+
+  console.log('Users:');
+  (await api.requestUsers() as ApiResponseSuccess<User[]>).data.forEach(logPerson);
+  console.log();
+
+  console.log('Server time:');
+  console.log(`   ${new Date((await api.requestCurrentServerTime() as ApiResponseSuccess<number>).data).toLocaleString()}`);
+  console.log();
+
+  console.log('Coffee machine queue length:');
+  console.log(`   ${await api.requestCoffeeMachineQueueLength()}`);
+}
+
+startTheApp().then(
+  () => {
+    console.log('Success!');
+  },
+  (e: Error) => {
+    console.log(`Error: "${e.message}", but it's fine, sometimes errors are inevitable.`);
+  }
+);
+
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+
+<p class="p"></p>
+<pre>
+	<code>
+var k;
+k = parseInt('08', 8) + parseInt('05', 8);
+
+<span class="span">5</span>
+<span class="spani">Пояснение: Функция parseInt имеет 2 параметра, вторым параметром является система исчисления, к которой нужно привести строку. Строка '08' преобразуется согласно восьмиричной системе исчисления (феномен многих интерпретаторов JS), '0' преобразуется корректно, '8' в восьмиричной системе нет. Вызов parseInt('08',10) вернет 8.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+
+<p class="p"></p>
+<pre>
+	<code>
+var n = 3;
+var b = true;
+n = n.toString(2) + Number(b) + n.toString() - 3 + !Number(b);
+console.log(n);
+
+<span class="span">1110</span>
+<span class="spani">Пояснение: см. Фленаган 6-е издание стр 69 - 70</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+
+<p class="p">test 03</p>
+<pre>
+	<code>
+var a = 1;
+var b = ++a+a;
+alert(b);
+
+<span class="span">4</span>
+<i class="spani">Пояснение: Сначала выполняется инкремент, который увеличивает значение переменной, а дальше всё просто.</i>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+
+<p class="p"></p>
+<pre>
+	<code>
+var a = 3;
+switch (a) {
+    default:
+        a += 4;
+    case 1:
+        a += 2;
+        break;
+    case 2:
+        a += 3;
+        break;
+}
+console.log(a);
+
+<span class="span">9</span>
+<span class="spani">Пояснение: см. Фленаган 6-е издание стр.117</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+console.log(new Number(1) === 1)
+
+<span class="span">false</span>
+<span class="spani">Пояснение: Да, любое число — это объект класса Number. Но можно представить число как цифру — некоторой константой. Она единожды объявлена, и всегда идентична сама себе. Но в то же время объявляя новый объект класса Number — он равен ей по значению, но не идентичен (так как это два совершенно разных объекта класса Number).</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+
+<p class="p"></p>
+<pre>
+	<code>
+function a(value){
+	return true - value;
+}
+
+var b = a('4') + a('-4') + a('-4') + a(4)
+console.log(b);
+
+<span class="span">4</span>
+<span class="spani">Пояснение: В функции a, есть знак '-' происходит численное преобразование true в 1, '4' в 4, '-4' в -4.</span>
+<span class="spani">a('4') = -3; </span>
+<span class="spani">a('-4') = 5; </span>
+<span class="spani">a(-'4') = 5; </span>
+<span class="spani">a(4) =-3 </span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+
+<p class="p"></p>
+<pre>
+	<code>
+var Obj = function() {
+    this.name = "Alex";
+    var that = {};
+    that.name = "David";
+    var name = this.name + " && " + that.name;
+    return name;
+}
+var o = new Obj();
+console.log(o.name);
+
+<span class="span">Alex</span>
+<span class="spani">Пояснение: см. С. Стоянов Шаблоны Javascript стр. 70 : "Попытка вернуть что-либо другое, не являющееся объектом будет проигнорирована и не будет рассматриваться как ошибка. Конструктор вернет объект, на который указывает ссылка this"</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+console.log(checkValue(a));
+var a = 1;
+function checkValue(param) {
+    if (param) {
+        return +!!a;
+    } else {
+        return +!!a;
+    }
+}
+
+<span class="span">0</span>
+<span class="spani">Пояснение: см. всплытие инструкций. Фленаган 6-е издание стр.114 (на момент вызова функции переменная есть, но ей не присвоено значение, знак "!" приводит число к boolean, a "+" приводит boolean к числу)</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = "1";
+a = a + 0;
+a = a - 1;
+a = a + 1;
+alert(a);
+
+<span class="span">10</span>
+<span class="spani">Пояснение: При вычитании строка приводится к числу, после этого ей присваивается числовой тип</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+function sum() {
+    var sum = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+var a = sum(5, -5, false, '-5', 5);
+console.log(a);
+
+<span class="span">"0-55"</span>
+<span class="spani">5 + -5 = 0 </span>
+<span class="spani">0 + false = 0 // true преобразуется в 1, false в 0. </span>
+<span class="spani">0 + '-5' = '0-5' // преобразования в строку </span>
+<span class="spani">'0-5' + '5' = '0-55' </span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Как сгенерировать случайное число от 1 до 10?
+
+<span class="span">Math.floor((Math.random() * 10) + 1);</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Выберите код, который выведет на консоль список всех СВОЙСТВ объекта nyc?
+var nyc = {
+    fullName: "New York City",
+    mayor: "Bill de Blasio",
+    population: 8000000,
+    boroughs: 5
+};
+
+<span class="span">for (var i in nyc){ </span>
+<span class="span">    console.log(i); </span>
+<span class="span">} </span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Выберите код, который выведет на консоль список всех ЗНАЧЕНИЙ объекта nyc?
+var nyc = {
+    fullName: "New York City",
+    mayor: "Bill de Blasio",
+    population: 8000000,
+    boroughs: 5
+};
+
+<span class="span">for (var i in nyc){ </span>
+<span class="span">    console.log(nyc[i]); </span>
+<span class="span">} </span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+'use strict'
+
+console.log(a);
+var a = "a";
+function b(){
+    console.log(a);
+    var a = "a1";
+    console.log(a);
+}
+b();
+
+<span class="span">undefined</span>
+<span class="span">undefined</span>
+<span class="span">a1</span>
+<span class="spani">Пояснение: В javascript все переменные объявленные через "var" поднимаются вначало scope(функции или скрипта) и становятся undefined.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Какие выражения имеют побочные эффекты операторов:
+--x;
+y++;
+delete myObject;
+x = 3 - 4;
+
+<span class="spani">Пояснение: Вычисления простых выражений никак не отразятся на состоянии программы и никак не затронут последующие вычисления. Но все операторы, явно или не явно выполняющие операцию присвоения, имеют побочные эффекты. Так как повлияют на результат любого выражения, в котором используется эта переменная или свойство.
+Девид Флэнаган JavaScript. Подробное руководство 6-е издание. стр.87<br> ISBN 978-5-93286-215-5</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Какими из перечисленных ниже способов можно проверить, определена ли переменная vRast (укажите все подходящие варианты)?
+
+if (typeof vRast == "undefined") {}
+if (typeof vRast == undefined) {}
+if (vRast) {}
+if (vRast.defined) {}
+if (typeof vRast != null) {}
+
+<span class="span">if (typeof vRast == "undefined") {}</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Какие прототипы будут установлены в объекты после выполнения кода:
+var obj1 = new Object(), obj2 = {}, obj3 = Object.create(null);
+
+<span class="span">Object.prototype Object.prototype null</span>
+<span class="spani">Пояснение: Объявление объектов obj1, obj2 по сути ни чем не отличаеться так как {} это литерал создания объекта - в свойстве prototype будет храниться Object.prototype. А вот при создании через Object.create и указав параметром null будет создан полностью пустой объект без каких либо свойств - поэтому obj3.prototype - будет null.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Каким будет результат выполнения следующего кода?
+parseInt(1 / 0, 19);
+
+<span class="span">18</span>
+<span class="spani">Пояснение: При делении на ноль получаем "Infinity" парсер ищет "I" в 19-ти ричной системе счисления, находит и выдет 18. <a href="http://stackoverflow.com/questions/11340673/why-does-parseint1-0-19-return-18">why-does-parseint1-0-19-return-18</a></span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+alert(!+{}[0]);
+
+<span class="span">true</span>
+<span class="spani">Пояснение: {} = object</span>
+<span class="spani">{}[0] = undefined </span>
+<span class="spani">+{}[0] = NaN</span>
+<span class="spani">!+{}[0] = true</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = [], b = [];
+console.log((a == b) + ' ' + (a == !b) + ' ' + (!a == b)+ ' ' + (!a == !b));
+
+<span class="span">false true true true</span>
+<span class="spani">Пояснение: В первом случае a == b будет false, потому что это разные массивы.
+В остальных случаях срабатывают цепочки преобразований:
+!объект -> !true -> false -> 0
+объект -> пустая строка -> 0
+которые приведут к сравнению 0 == 0, что и даёт true.
+
+А вот если бы массивы были не пустыми, а хотя бы [1], то второе и третье сравнения свелись бы к 1 == 0, что дает false.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a  = 44;
+        (function(){
+            var b = 44;
+            a = '55';
+            (function(){
+                var c = 11;
+                alert((a+b)/c);
+            })();
+        })();
+
+<span class="span">504</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Каким будет значение с после выполнения кода:
+a = "5";
+b = 2;
+c = a+++b;
+
+<span class="span">7</span>
+<span class="spani">Пояснение: а+++b эквивалентно записи (a++)+b
+Значение - a равно "5", а значение - a++ равно 5 (так как это постфиксный инкремент)
+Следовательно а+++b = 5 + 2 = 7</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = '' || 0 || 2 || true || false;
+var b = 3 && true && false && null;
+
+console.log (a,b);
+
+<span class="span">2 false</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a1 = "wrong";
+function a() { return "1st"; };
+function a(val) { this.a1 = "right"; return "2nd"; }
+alert(new a().a1);
+
+
+<span class="span">right</span>
+<span class="spani">Пояснение: Вызывается a(val) и в качестве параметра передается undefined. В javascript нет перегрузки - из всех функций с одинаковым именем всегда будет использоваться последняя объявленная</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Что из ниже указанного проверит что элемент arr (var arr = ...) является массивом?
+
+typeof arr;
+if (arr) {...}
++ if (arr.splice) {...}
++ if (arr.constructor === Array) {...}
++ Array.isArray(arr);
++ arr instanceof Array;
+
+<!-- <span class="span">false</span> -->
+<span class="spani">Пояснение: 1) typeof arr = "object" - не доказывает что это массив; </span>
+<span class="spani">2) if (arr) { } - проверка на существование элемента; </span>
+<span class="spani">3) if (arr.splice) { } - проверка, имеет ли элемент метод splice(), так как он есть только у массивов; </span>
+<span class="spani">4) if (arr.constructor === Array) - проверка через конструктор; </span>
+<span class="spani">5) Array.isArray(arr) - проверка через функцию isArray(); </span>
+<span class="spani">6) arr instanceof Array - проверка на экземпляр класса ;</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Нужно добавить в стандартный JavaScript объект String метод compareTo().
+Что должно для этого быть вставлено вместо подчеркивания?
+
+String._________.compareTo = function(otherObject) {
+   // код метода
+};
+
+var i = "abc".compareTo("xyz");
+
+<span class="span">prototype</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var s = new String(''); if (s) alert(true); else alert(false); Что выведет алерт?
+
+<span class="span">true</span>
+<span class="spani">Пояснение: Оператор if (...) вычисляет и преобразует выражение в скобках к логическому типу. В логическом контексте число 0, пустая строка "", null и undefined, а также NaN являются false, остальные значения — true. В даном случае s - обьект, а при преобразование к логическому типу, обьект всегда true.</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var foo = function(){
+   return
+       {
+            a: 1,
+            b: 2,
+            c: 3
+       }
+}
+
+<span class="span">Синтаксическая ошибка SyntaxError</span>
+<span class="spani">Пояснение: Произойдет SyntaxError так как после return стоит символ перевода каретки, то компилятор автоматически добавит там точку с запятой, что призведет к ошибке.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = isNaN("2014");
+alert(a);
+
+<span class="span">false</span>
+<span class="spani">Пояснение: JavaScript автоматически переводит "2014" в число 2014 и возвращает false, так как это число.</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var iLoveJavaScript = true;
+var iLoveLearning = false;
+
+if(iLoveJavaScript && iLoveLearning) {
+  console.log("Awesome! Let's keep learning!");
+} else if(!(iLoveJavaScript || iLoveLearning)) {
+  console.log("Let's see if we can change your mind.");
+} else {
+  console.log("You only like one but not the other? We'll work on it.");
+}
+
+<span class="span">You only like one but not the other? We'll work on it.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Возможны ли такие функции A и B, что соответствующие им объекты a,b равны?
+function A() { ... }
+function B() { ... }
+var a = new A;
+var b = new B;
+console.log( a == b ); // true
+
+<span class="span">function A() { return arr; }</span>
+<span class="span">function B() { return arr; }</span>
+<span class="span">var arr = [];</span>
+<span class="span">var a = new A;</span>
+<span class="span">var b = new B;</span>
+<span class="spani">Пояснение: Да, возможны. Они должны возвращать одинаковый объект. При этом если функция возвращает объект, то this не используется. Например, они могут вернуть один и тот же объект arr, определённый снаружи.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Какое значение вернет фрагмент кода:
+
+console.log( '0xff   ' - '1');
+
+<span class="span">254</span>
+<span class="spani">Пояснение: 0xff = 255, знак "-" преобразует строки в числа</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Каким будет значение с после выполнения кода:
+a = "5";
+b = 2;
+c = a+++b;
+
+<span class="span">7</span>
+<span class="spani">Пояснение: а+++b эквивалентно записи (a++)+b; Значение - a равно "5", а значение - a++ равно 5 (так как это постфиксный инкремент); Следовательно а+++b = 5 + 2 = 7</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Выберите правильные утверждения
++NaN === NaN is false
+NaN === NaN is true
++NaN !== NaN is true
+NaN !== NaN is false
+
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Чему должен быть равен Х в строке 2, чтобы для переменной answer было присвоено значение true
+1. var multiplesOfEight = [8,16,24,32,40,58];
+2. var answer = multiplesOfEight[ X ] % 8 !== 0;
+
+<span class="span">5</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+result = 0;
+function AddValue(x) {
+    result = result + x;
+    return result;
+}
+console.log(AddValue(AddValue(10)));
+
+<span class="span">20</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var n = [4, 6, 19, 34, 32];
+n.sort();
+
+<span class="span">//n is [19, 32, 34, 4, 6]</span>
+<span class="spani">Пояснение: По умолчанию метод sort() сортирует элементы массива в соответствии с их текстовым представлением (по алфавиту). Если требуется другое поведение, то следует использовать собственную функцию-компаратор.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+console.log( 0 / 0 );
+
+<span class="span">NaN</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+for( var i=0; i<9; i+=2 ){
+    if( ++i==5 ) break;
+    else continue;
+}
+console.log( i++ );
+
+<span class="span">9</span>
+<span class="spani">Пояснение: условие if никогда не выполнится, поэтому i дойдёт до 9 и цикл прекратится. Далее, используется оператор пост-инкремента, который, присвоит в i 10, а потом вернёт её старое значение 9.</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = -1;
+var b = 0.25;
+console.log( a == ~b^0 );
+
+<span class="span">1</span>
+<span class="spani">Пояснение: Побитовые операции имеют более низкий приоритет по сравнению с логическими. Поэтому</span>
+<span class="spani">a == ~b^0</span>
+<span class="spani">эквивалентно</span>
+<span class="spani">(a == ~b) ^ 0</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+console.log("1");
+js: {
+ console.log("2");
+ break js;
+ console.log("3");
+}
+console.log("4");
+
+<span class="span">1, 2, 4</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Каков будет результат выполнения функции?
+
+(function(){
+    return console.log(typeof arguments);
+})();
+
+<span class="span">"object"</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Какое сообщение выведет код:
+a = 0.1;
+b = 0.2;
+c = 0.3;
+
+console.log(a + (b + c) === (a + b) + c);
+
+<span class="span">false</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+for (var i = 0; i < 10; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 0);
+}
+
+<span class="span">10-раз выведется число 10</span>
+<span class="spani">Пояснение: 10 раз запустится отложенный console.log(i), который лежит внутри анонимной функции, которая создается каждый раз.</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var s = 'Hello world';
+s[0] = 'W';
+
+<span class="span">'Hello world'</span>
+<span class="spani">Пояснение: В JavaScript строки являются неизменяемыми (immutable).</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = false;
+if (a == '0') {
+    console.log('==');
+}
+if (a === '0') {
+    console.log('===');
+}
+
+<span class="span">==</span>
+<span class="spani">Пояснение: Оператор == не видит разницу между значениями false, '0', 0, '' или null/undefined. Наоборот, оператор === различает любые из них.</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var theArray = ['1', '2', '3'].map(parseInt);
+console.log(theArray);
+
+<span class="span">[1, NaN, NaN]</span>
+<span class="spani">Пояснение: Array.prototype.map передает в функцию-коллбэк 3 аргумента: элемент массива, индекс элемента и сам массив. А у parseInt 2 аргумента: число или подобное ему и система счисления. Следовательно, данный код эквивалентен следующему:</span>
+<span class="spani">parseInt("1", 0, theArray)</span>
+<span class="spani">parseInt("2", 1, theArray)</span>
+<span class="spani">parseInt("3", 2, theArray)</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+window['undefined'] === undefined
+
+<span class="span">true</span>
+<span class="spani">Пояснение: undefined - свойство, определенное в глобальном объекте.</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+console.log(~true);
+
+<span class="span">-2</span>
+<span class="spani">Пояснение: var a = true;</span>
+<span class="spani">~a = - (a + 1)</span>
+<span class="spani">~true == ~1 так как true всегда 1</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var apt = 2;
+apt = apt << 2;
+
+<span class="span">8</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+function f(a,b,c) { }
+var arr = [,,,];
+arr.length;
+f.length;
+
+<span class="span">3 3</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = Array();
+a[a.length] = 0;
+console.log(a.length);
+
+<span class="span">1</span>
+<span class="spani">Пояснение: Создали объект а, так как это массив то у него есть атрибут length проинициализироаный нулем a.length = 0, во 2й строчке элементу массива с индексом 0 присваивают значение 0, в массиве 1 элемент, соответственно a.length = 1.</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+Чему будет равно значение x[0] и x===y после исполнения данного кода?
+
+var x = [];
+var y = x;
+y[0] = 7;
+<span class="span">7, true</span>
+<span class="spani">Пояснение: Объекты имеют ссылочный тип. Это значит, что операция присваивания объекта (или массива) переменной фактически присваивает ссылку: она не создаёт новую копию объекта. </span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = new Array();
+a['key'] = 'value';
+alert(a.length);
+
+<span class="span">0</span>
+<span class="spani">Пояснение: Выражение</span>
+<span class="spani">a['key'] = 'value';</span>
+<span class="spani">не добавляет элемент в массив, а добавляет новый атрибут к объекту Array.</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var x ;
+x = 'x0ff ' - 1;
+if (x != x) {
+    console.log(true);
+} else {
+    console.log(x);
+}
+
+<span class="span">true</span>
+<span class="spani">Пояснение: Выражение x='x0ff ' - 1 равно NaN. Проверка x!=x есть ничто иное как проверка на NaN</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var a = [],
+    b = 1,
+    c = false,
+    d = [];
+console.log(typeof (b == c) + ' ' + (a == d) );
+
+<span class="span">boolean, false</span>
+<span class="spani">Пояснение: 1) b == c -> false, typeof false = boolean; 2) [ ] == [ ], [ ] === [ ] -> false</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var n = 3 ;
+var b = true;
+n = n.toString(2) + Number(b) + n.toString() - 3 + !Number(b);
+console.log(n);
+
+<span class="span">1110</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+var theArray = ['1', '2', '3'].map(parseInt);
+console.log(theArray);
+
+<span class="span">[1, NaN, NaN]</span>
+<span class="spani">Пояснение: Array.prototype.map передает в функцию-коллбэк 3 аргумента: элемент массива, индекс элемента и сам массив. А у parseInt 2 аргумента: число или подобное ему и система счисления. Следовательно, данный код эквивалентен следующему:</span>
+<span class="spani">parseInt("1", 0, theArray)</span>
+<span class="spani">parseInt("2", 1, theArray)</span>
+<span class="spani">parseInt("3", 2, theArray)</span>
+	</code>
+</pre>
+
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+('b' + 'a' + + 'a' + 'a').toLowerCase();
+
+<span class="span">banana</span>
+<span class="spani">Пояснение: 'b'+'a' = 'ba'</span>
+<span class="spani">+'a' = NaN</span>
+<span class="spani">'ba' + NaN = 'baNaN'</span>
+	</code>
+</pre>
+
+<!-- 1111111111111111111111 -->
+<p class="p"></p>
+<pre>
+	<code>
+
+
+<span class="span">vjjfgfhfg</span>
+<span class="spani">hjkkjhkjhkhkh</span>
+	</code>
+</pre>
+
+
+
+
+
+
+
+
+<script>
+	$(".p").each(function(i) {
+		$(this).text("Test "+(i+1));
+	});
+</script>
+<!--
+<pre style=line-height:1><script>d=document;for(i=1;i<4001;i++){d.write(Math.random()<.5?"\u2571":"\u2572");d.write(i%80?"":"\n")}</script>
+-->
+</body>
+</html>
