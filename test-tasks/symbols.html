@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<link rel="stylesheet" href="css/main.min.css" />
+
+<body>
+
+  <h1>How to use Symbol</h1>
+  <nav-element></nav-element>
+
+  <p class="p">Wrapper over primitives</p>
+  <pre>
+  	<code>
+const marker = symbol => e => {
+  const wrapper = new Object(e);
+  wrapper[Symbol.for('wrapper')] = true;
+  wrapper[symbol] = true;
+  return wrapper;
+}
+  	</code>
+  </pre>
+
+  <p class="p">Recursive mixing of symbolic properties into a tree</p>
+  <pre>
+  	<code>
+const numbers = {
+  a: {
+    b: { d: 43, e: 9 },
+    c: { e: 11, f: -3 },
+    d: { f: 7, g: 83 }
+  },
+  b: {
+    c: { d: 31, e: 66 },
+    d: { e: 17, f: 31 },
+    e: { f: -9, g: 112 }
+  }
+};
+const sum = Symbol();
+const setSum = e => {
+  if(typeof e === "number") return e;
+
+  e[sum] = Object.values(e)
+    .map(e => setSum(e))
+    .reduce((sum, k) => sum + k, 0);
+
+  return e[sum];
+}
+  	</code>
+  </pre>
+
+  <p class="p">Proxy</p>
+  <pre>
+  	<code>
+let n = 1;
+
+if(n === 1) {
+  const tree = { a: 1, b: 2, c: 3};
+  {
+    const { a = 0, c = 0, f = 0, z} = tree;
+    console.log('object: ', { a, b, c, f, z });
+  }
+  {
+    const treeProxy = new Proxy(tree, {
+      get(t, name) {
+        return name in t ? t[name] : 0;
+      }
+    });
+    const { a, c , f, z } = treeProxy;
+    console.log('proxy: ', { a, b, c, f, z });
+  }
+}
+
+if(n === 2) {
+  const getObjectWithLog = object => new Proxy(object, {
+    get(target, name) {
+      console.log('get: ', name);
+      return target[name];
+    },
+    set(target, name, value) {
+      if(name === 'invalid') {
+        throw new Error('invalid name')
+      }
+      if(value < 0) {
+        throw new Error('invalid value')
+      }
+      console.log(`set: ${name} = ${value}`);
+      target[name] = value;
+      return true;
+    }
+  });
+  const obj = getObjectWithLog({ a: 1 });
+  const { a, z } = obj;
+  console.log({a, z});
+  obj.a = 2;
+  obj.b = 0;
+  try {
+    obj.invalid = 5;
+  } catch(e) {
+    console.error();(e);
+  }
+  obj.name = -1;
+}
+  	</code>
+  </pre>
+
+<script>
+
+</script>
+
+  <script src="./js/navTemplate.js"></script>
+
+</body>
+
+</html>

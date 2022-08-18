@@ -2,119 +2,215 @@
 <html lang="en">
 
 <head>
-	<title>Virtual DOM</title>
-	<meta charset="utf-8">
+  <title>Virtual DOM</title>
+  <meta charset="utf-8">
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	 crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+   crossorigin="anonymous"></script>
+   
+  <link rel="stylesheet" href="css/main.min.css" />
 
 </head>
 
 <body>
-<h1>VirtualDom</h1>
-<div>
-	<a href="./index.html">Tests</a><span> | </span>
-	<a href="./promises.html">Promises</a><span> | </span>
-	<a href="https://dou.ua/lenta/articles/interview-questions-javascript-developer/" target="_blank">300+ запитань для Junior, Middle, Senior</a>
-</div>
+  <h1>VirtualDom</h1>
+  <nav-element></nav-element>
 
+  <p class="p"></p>
+  <pre>
+      <code>
+class Vdom {
+  createElement(type, props, ...children) {
+    return {
+      type,
+      props,
+      children: normalizeChildren(children)
+    };
+  }
+}
 
-	<script>
+function normalizeChildren(children) {
+  return children.reduce((prev, current) => {
+    if (Array.isArray(current)) {
+      return [
+        ...prev,
+        ...normalizeChildren(current)
+      ];
+    }
+  }, [])
+}
 
-		class Vdom {
-			createElement(type, props, ...children) {
-				return {
-					type,
-					props,
-					children: normalizeChildren(children)
-				};
-			}
-		}
+function updateNode(element, oldJsx, newJsx) {
 
-		function normalizeChildren(children) {
-			return children.reduce((prev, current) => {
-				if (Array.isArray(current)) {
-					return [
-						...prev,
-						...normalizeChildren(current)
-					];
-				}
-			}, [])
-		}
+  if (typeof newJsx !== typeof newJsx) {
+    replaceNode(element, newJsx);
+    return;
+  }
 
-		function updateNode(element, oldJsx, newJsx) {
+  if (typeof newJsx !== 'object') {
+    replaceNode(element, newJsx);
+    return;
+  }
 
-			if (typeof newJsx !== typeof newJsx) {
-				replaceNode(element, newJsx);
-				return;
-			}
+  if (oldJsx.type !== newJsx.tupe) {
+    replaceNode(element, newJsx);
+    return;
+  }
 
-			if (typeof newJsx !== 'object') {
-				replaceNode(element, newJsx);
-				return;
-			}
-	
-			if (oldJsx.type !== newJsx.tupe) {
-				replaceNode(element, newJsx);
-				return;
-			}
+  if (Array.isArray(oldJsx) && Array.isArray(newJsx)) {
+    updateChildren(element, oldJsx, newJsx)
+  }
 
-			if (Array.isArray(oldJsx) && Array.isArray(newJsx)) {
-				updateChildren(element, oldJsx, newJsx)
-			}
+  updateProps(element, oldJsx.props, newJsx.props)
 
-			updateProps(element, oldJsx.props, newJsx.props)
+  updateChildren(element, oldJsx.children, newJsx.children)
+}
 
-			updateChildren(element, oldJsx.children, newJsx.children)
-		}
+function replaceNode(element, jsx) {
+  const newElement = createNode(jsx);
+  element.parentNode.insertBefore(newElement, element);
+  element.parentNode.removeChild(element);
+}
 
-		function replaceNode(element, jsx) {
-			const newElement = createNode(jsx);
-			element.parentNode.insertBefore(newElement, element);
-			element.parentNode.removeChild(element);
-		}
+function updateProps(element, oldProps, newProps) {
+if (!newProps) {
+  return;
+}
 
-	function updateProps(element, oldProps, newProps) {
-		if (!newProps) {
-			return;
-		}
-		
-		Object.keys(newProps).forEach(
-			key => {
-				const oldValue = oldProps[key];
-				const newValue = newProps[key];
+Object.keys(newProps).forEach(
+  key => {
+    const oldValue = oldProps[key];
+    const newValue = newProps[key];
 
-				if (oldValue !== newValue) {
-					element.setAttribute(key, newValue);
-				}
-			}
-		)
-	}
+    if (oldValue !== newValue) {
+      element.setAttribute(key, newValue);
+    }
+  }
+)
+}
 
-	function updateChildren(element, oldChildren, newChildren) {
-		const l = Math.max(oldChildren.length, newChildren.length);
+function updateChildren(element, oldChildren, newChildren) {
+const l = Math.max(oldChildren.length, newChildren.length);
 
-		for (let i = 0; i < l; i++) {
-			const oldJsx = oldChildren[i];
-			const newJsx = newChildren[i];
+for (let i = 0; i < l; i++) {
+  const oldJsx = oldChildren[i];
+  const newJsx = newChildren[i];
 
-			if (!oldJsx) {
-				element.appendChild(createNode(newJsx));
-				continue;
-			}
+  if (!oldJsx) {
+    element.appendChild(createNode(newJsx));
+    continue;
+  }
 
-			const childElement = element.childNodes[i];
+  const childElement = element.childNodes[i];
 
-			if (!newJsx) {
-				element.removeChild(childElement);
-				continue;
-			}
+  if (!newJsx) {
+    element.removeChild(childElement);
+    continue;
+  }
 
-			updateNode(childElement, oldJsx, newJsx);
-		}
-	}
+  updateNode(childElement, oldJsx, newJsx);
+}
+}
+      </code>
+    </pre>
 
-	</script>
+  <script>
+
+    class Vdom {
+      createElement(type, props, ...children) {
+        return {
+          type,
+          props,
+          children: normalizeChildren(children)
+        };
+      }
+    }
+
+    function normalizeChildren(children) {
+      return children.reduce((prev, current) => {
+        if (Array.isArray(current)) {
+          return [
+            ...prev,
+            ...normalizeChildren(current)
+          ];
+        }
+      }, [])
+    }
+
+    function updateNode(element, oldJsx, newJsx) {
+
+      if (typeof newJsx !== typeof newJsx) {
+        replaceNode(element, newJsx);
+        return;
+      }
+
+      if (typeof newJsx !== 'object') {
+        replaceNode(element, newJsx);
+        return;
+      }
+  
+      if (oldJsx.type !== newJsx.tupe) {
+        replaceNode(element, newJsx);
+        return;
+      }
+
+      if (Array.isArray(oldJsx) && Array.isArray(newJsx)) {
+        updateChildren(element, oldJsx, newJsx)
+      }
+
+      updateProps(element, oldJsx.props, newJsx.props)
+
+      updateChildren(element, oldJsx.children, newJsx.children)
+    }
+
+    function replaceNode(element, jsx) {
+      const newElement = createNode(jsx);
+      element.parentNode.insertBefore(newElement, element);
+      element.parentNode.removeChild(element);
+    }
+
+  function updateProps(element, oldProps, newProps) {
+    if (!newProps) {
+      return;
+    }
+    
+    Object.keys(newProps).forEach(
+      key => {
+        const oldValue = oldProps[key];
+        const newValue = newProps[key];
+
+        if (oldValue !== newValue) {
+          element.setAttribute(key, newValue);
+        }
+      }
+    )
+  }
+
+  function updateChildren(element, oldChildren, newChildren) {
+    const l = Math.max(oldChildren.length, newChildren.length);
+
+    for (let i = 0; i < l; i++) {
+      const oldJsx = oldChildren[i];
+      const newJsx = newChildren[i];
+
+      if (!oldJsx) {
+        element.appendChild(createNode(newJsx));
+        continue;
+      }
+
+      const childElement = element.childNodes[i];
+
+      if (!newJsx) {
+        element.removeChild(childElement);
+        continue;
+      }
+
+      updateNode(childElement, oldJsx, newJsx);
+    }
+  }
+
+  </script>
+  <script src="./js/navTemplate.js"></script>
 </body>
 
 </html>

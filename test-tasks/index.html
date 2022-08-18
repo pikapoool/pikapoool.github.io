@@ -18,16 +18,8 @@
 <link rel="stylesheet" href="css/main.min.css" />
 
 <body>
-<!-- <div class="circle_wrap">
-	<div class="circle1"></div>
-	<div class="circle2"></div>
-	<div class="circle3"></div>
-</div> -->
-<div>
-  <a href="./promises.html">Promises</a><span> | </span>
-  <a href="./VirtualDom.html">VirtualDom</a><span> | </span>
-	<a href="https://dou.ua/lenta/articles/interview-questions-javascript-developer/" target="_blank">300+ запитань для Junior, Middle, Senior</a>
-</div>
+	<h1>Tests</h1>
+  <nav-element></nav-element>
 
 <p class="p"></p>
 <pre>
@@ -35,18 +27,17 @@
 Provide delay method in all functions
 
 function someFn() {
-	console.log(arguments);
+  console.log(arguments);
 }
 
 const someFnWithDelay = someFn.delay(2000);
 
-
 Function.prototype.delay = function(delay) {
-	return function(...args) {
-		setTimeout(() => {
-			this(...args)
-		})
-	}.bind(this)
+  return function(...args) {
+    setTimeout(() => {
+      this(...args)
+    })
+  }.bind(this)
 }
 	</code>
 </pre>
@@ -1169,6 +1160,8 @@ console.log(theArray);
 		$(this).text("Test "+(i+1));
 	});
 </script>
+<script src="./js/navTemplate.js"></script>
+
 <!--
 <pre style=line-height:1><script>d=document;for(i=1;i<4001;i++){d.write(Math.random()<.5?"\u2571":"\u2572");d.write(i%80?"":"\n")}</script>
 -->
