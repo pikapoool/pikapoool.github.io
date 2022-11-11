@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<link rel="stylesheet" href="css/main.min.css" />
+
+<body>
+
+  <h1>Angular</h1>
+  <nav-element></nav-element>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Given the following code. Where is the viewchild elementRef available for usage (not undefined)?
+@ViewChild('element', {static: false}) elementRef: ElementRef;
+In ngAfterViewlnit
+In ngAflerContentlnit
+In ngOnlnit
+All of above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Correct statement about the service allows to load new components at the runtime:
+ComponentFactory
+DynamicComponentFactory
+DynamicFactoryLoader
+ComponentFactoryResolver
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+In the case the data model is updated outside the Zone, you need to update the view. How can you do it?
+ApplicationRef.prototype.forceUpdate
+NgZone.prototype.update
+ChangeDetectorRef.prototype.detectChanges
+None
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Expected behaviour
+@Component({
+  selector: 'app-root',
+  template: 'Count: {{ name$ | async }}'
+})
+export class AppComponent {
+  count$ = of(NaN);
+}
+Change detection is triggered and: Expression has changed after it was checked
+App displays Count: NaN
+A compile error is thrown: type number is not assignable to type string
+A compile error is thrown: Can't create Observable out of NaN
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is correct answer about Subject and Behaviour Subject in RxJS?
+Once you unsubscribe, BS can be reused and S can not
+If you subscribe to a S or BS you will be able to get the current value or initial value
+You have to define a default value whenever you declare Behavior Subject or Subject based upon the data type
+In Subject, each next subscriber receives only the upcoming values. In Behavior Subject,each next subscriber receives one previous value and upcoming values.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following wild cards can you use to define "page not found" route?
+**
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You are developing a Web application by Angular.You need to get data from parent component to child component. How can you do it?
+Using @Input
+Using @ViewChild
+Using service
+All of above
+None of above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Consider lhe following code definition of lhe DemoModule
+@NgHodule({
+  imports: [CommonHodule]
+})
+export class DemoModule {
+  static forRoot(): ? {
+    return {
+      "ngModule: DemoModule, providers:(DemoService]"
+    };
+  }
+}
+What is the type of the forRootQ static method?
+
+LazyLoadedModule
+ModuleForRoot
+ModuleWithProviders
+Observable <NgModule>
+None of above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Following the source code:
+@Component ({
+  "selector : 'my-svg' ,"
+  a.,
+  styleUrls: ['./svg.component.css']
+})
+How can you use this SVG template?
+
+templateUrl: ·./svg.component.svg'
+template: ·./svg.component.svg'
+template: 'svg> svgTemplate>path "[d)=""validPath""/>svg>'
+vgTemplate: 'svg>path ld)=""val dPath""/>/svg>'
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which form controlclass name is set to true when value is modified?
+.ng-touched
+.ng-pristine
+.ng-dirty
+.ng-pending
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+When using Reactive forms whichis/are the recommended form(s) of binding data to a controller?
+[(ngModel)]
+[formControl) = 'nameOfControl'
+reactiveControlName = 'nameOfControl'
+All of above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+When you chain mult ple pipes together,what order will they be executed?
+LIFO order
+In parallel
+In the order that you specify them
+None of above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is TRUE about the kinds of directives in Angular?
+Structural and Attribute directives
+Component, Structuraland Attribute directives
+Component, Template, Structural and Attribute directives
+Only one directive .
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Given the following code.
+@ViewChild('element ',{static:false})elementRef: ElementRef;"
+Which of the following is the correct location the viewchild elementRef available for usage in Angular?
+In ngAfterViewlnit
+In ngAflerContentlnit
+In ngOnlnit
+All of above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is correct answer about ReplaySubject and BehaviourSubject in RxJS?
+Both BehaviourSubject and ReplaySubject will return the initialvalue or the current value on Subscription
+ReplaySubject will not take any initial value.
+When initializing, BehaviourSubject is not required initialvalue.
+None of above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which directive can you use if you want to display views for a given router?
+RouterOutlet
+Router link
+Router linkActive
+RouterState
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You are a developer at Turing You are using Angular to develop the Web appl caon.When using FormArray,
+which of the following is correct syntax that replaces the following syntax?
+while(formArray.length) formArray.removeAt(0);
+formArray.clear()
+formArray.invalidate()
+formArray.removeAll()
+formArray.invalid()
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Correct
+  	</code>
+  </pre>
+
+
+  <script src="./js/navTemplate.js"></script>
+
+</body>
+
+</html>

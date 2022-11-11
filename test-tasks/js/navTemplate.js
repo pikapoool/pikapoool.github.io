@@ -15,6 +15,8 @@ const template = createTemplate(`
       <a href="./promises.html">Promises</a><span> | </span>
       <a href="./symbols.html">Symbol</a><span> | </span>
       <a href="./VirtualDom.html">VirtualDom</a><span> | </span>
+      <a href="./angular.html">Angular</a><span> | </span>
+      <a href="./node.html">NodeJs</a><span> | </span>
       <a href="https://dou.ua/lenta/articles/interview-questions-javascript-developer/" target="_blank">300+ questions for Junior, Middle, Senior</a>
     </div>
   </template>

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<link rel="stylesheet" href="css/main.min.css" />
+
+<body>
+
+  <h1>NodeJS</h1>
+  <nav-element></nav-element>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is the correct way to get an extension of a file?
+path.extname('main .js')
+fs.extname('main.js')
+fs.pathinfo('main.js', callback)
+path.pathinfo('main.js', callback)
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which sentence accurately describes the difference between a NodeJS-based web-server and a normal web-server?
+A NodeJS web-server uses a single threaded model and can serve a much higher number of requests than a normal web-server.
+A NodeJS web-server processes requests much faster than a normal web-server.
+There is not much difference between the two.
+All of the above.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which code converts an instance of the Buffer class to a JSON object?
+Buf.covertToJson()
+Buf.json()
+Buf.toJSON()
+Buf.Jsonify()
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You are a NodeJS developer at Turing. Which of the following are methods of the cluster module? (Choose all the correct answers)
+worker.disconnect()
+worker.kill()
+worker.send()
+cluster.fork([env])
+worker.error(callback)
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the followingis the correct approach to solve the Process out of Memory Except on error in NodeJS? (Choose all the correct answers)
+node -d memory_ limit=new-limit> server.js
+node --max-old -space- size= new-limit> server.js
+expo rt NODE_ARGS= ""-XX:PermSize= new limit> -XX:MaxPermSize=new-limmit>"
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Please select the incorrect flag for read/write operations in NodeJS.
+r+
+rs
+wx
+ax
+rs+
+as
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following are true about libuv in NodeJS?
+libuv enforces an asnchronous, event-driven style of programming
+libuv is a C library that is used to abstrac t non-blocking I/O operations to a consistent interface across all supported platforms.
+It provides mechanisms to handle file system,DNS,network,child processes,pipes,signal handling, polling and streaming.
+A default loop is provided by libuv and can be accessed using uv_default_loop().
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You need tolog and store the last login time using SignlnAPI. What is the best approach to do this?
+Use a blocking function to store the last login time into the database.
+Use a non-blocking function to store the last login into the database.
+Use EventEmitter to dispatch other thread to store the last login into the database.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following are not phases in an event loop? (Choose all the correct answers)
+timers
+open callbacks
+pending callbacks
+waiting callbacks
+idle, prepare
+poll
+close callbacks
+None of the above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which stream mode should you use for the following task?
+Read a CSV upload file (account.csv).
+Validate per rowin CSV file.
+Write a CSV account_output.csv file that contains:valid and invalid rows.
+
+Readable
+Writeable
+Transform
+Duplex
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following methods is used to switch between modes in Readable stream mode? (Choose all the correct answers)
+read()
+pause()
+resume()
+pipe()
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is not a macrotask in an eventloop?
+setTimeout
+setlnternal
+setlmmediate
+Promise
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You need to use the underscore variable in a REPL session. What do you use?
+Storing the result.
+Getting the last command used.
+Getting the last result.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the output of this code?
+console.log(l)
+setTimeout(()= > {
+  console.log(2)
+}' 0)
+Promise .resolve(3).then(console.log)
+console.log(4)
+1 2 3 4
+1 3 4 2
+1 4 3 2
+1 4 2 3
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following are correct statements about the cluster module? (Choose all the correct answers)
+A cluster an instance represents the smallest logic al amount of disk space that can be allocated to hold a file.
+Child processes in the cluster can communicate with the parent via IPC.
+The cluster module allows easy creation of child processes that all share server ports.
+The cluster module supports five methods of distributing incoming connections.
+To reduce the overhead of managing on-disk data structures,the filesystem does not
+allocate individual disk sectors by default,but contiguous groups of sectors, called clusters.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the output of the following code?
+var URL = require('url').URL;
+const myURL = new URL('https://example.org:8888');
+console.log(myURL.port);
+myURL.port = '443';
+console.log(myURL.port);
+myURL.port = 1234;
+console.log(myURL.port);
+console.log(myURL.href);
+myURL.port = 'abed';
+console.log(myUR L.port);
+myURL.port = '5678abcd ';
+console.log(myUR L.port);
+myURL.port = 1234.5678;
+console.log(myURL.port);
+console.log(myURL.href);
+
+8888
+443
+1234
+https ://examp le .org :1234/ abc
+5678abcd 1234
+https ://examp le .org :1234/
+
+8888
+443
+1234
+https ://examp le .org :1234/
+1234
+https ://examp le .org :1234/
+
+8888
+443
+1234
+https ://example.org:1234/ 1234
+5678
+1234
+https ://example.org:1234/
+
+8888
+1234
+https ://example.org:1234/ 1234
+5678
+1234
+https ://example.org:1234/
+None of the above.
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following methods resolves an IP address into an array of host names?
+
+dns.reverse(ip, callback )
+dns.resolve(ip[,rrtype], callback )
+dns.resolve4(ip, callback )
+dnslookup(ip[, options ], callback)
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is true about the exec method of child_process module? (Choose all the correct answers)
+
+The exec() the method runs a command in a shell and buffers the output.
+The exec() the method returns a buffer with MAX_SIZE allocatedif the size parameter was not specified.
+Like the exec (3) POSIX system call,child_ process.exec() replaces the existing process.
+The exec() method waits for the process to end and tries to return the last buffered data immediately.
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following are the purposes of Buffer class in NodeJS? (Choose all the correct answers)
+
+The Buffer class was introduc ed as part of the NodeJS API to enable interaction with octet streams in TCP streams,file
+system operations, and other c ontexts.
+The Buffer class implements the TypedArray API in a manner that is more optimized and
+suitable for NodeJS.
+The Buffer class is within the global scope, makingit unlikely that one would need to ever use require('buffer').Buffer.
+The size of the Buffer is established when it is created and can be changed.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Your task gets fileinformat on.Which method should you use to resolve it?
+
+fs.open ( 'file ', '+r ·, (data ) = > {})"
+fs.stat ('file ', (data ) = > {})"
+fs.readfile( 'file ' , (err, data ) = > {})"
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which function in the Timer module prohibits executing code after a set period of time?
+
+setTimeout/cIearTimeout
+setlmmediate/clearlmmediate
+process.previousTick
+setlnterval/clearlnterval
+process.nextTick
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Consider the snippet of code given below. Which statement regarding the time required to run the code in Google Chrome versus Node.js are correct? (Choose allthe correct answers)
+{
+  console.time("loop");
+  for (var i= 0; i < 1860980; i +=1){
+    //Todo
+  }
+  console.log("loop")
+}
+Within a web browser suc h as Chrome, declaring the variable i outside of any func tion's scope makes it a
+global variable and therefore bindsit as a property of the window object. This makes the time required to run this
+code in Google Chrome considerably more than the time required to run it in Node.js.
+Using let instead of var in the for loop declaration can reduce running time on Google Chrome & NodeJS.
+Using let instead of var in the for loop declaration can take more time when running on GoogleChrome and NodeJS.
+The time required to run the above c ode on Google Chorme and Node.js is the same because both use the V8 Javascript Engine.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+In the following source code, what is the correct answer to print "Welcome to Turing"?
+const user = {
+  hello: "welcome to Turing",
+  saywelcome() {
+    console.log(this.hello) ;
+  }
+};
+setTimeout(user.sayWelcome, 1000);
+
+The current source prints the exact result.
+setTimeout (user.saylelcome() , 1000 );
+setTimeout (user.saylelcome.bind(this) , 1000 );
+setTimeout (user.sayWelcome.bind(user) , 1000 );
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following are true about blocking code? (Choose all the correct answers)
+
+A blocking call causes results to be returned synchronously.
+JavaScript that exhibits poor performance due to being CPU intensive rather than waiting on a non-JavaScript operation,such as 1/0,isn't typic ally referred to as blocking."
+Blo king methods execute synchronously.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following statements about the punnycode module in NodeJS is incorret?
+
+The punnycode module 1s an encoding syntax whichis used to convert Unicode (UTF-8) string of characters to ASCII string of characters.
+It is bundled with NodeJS v0.6.2 and later versions.
+If you want to use it with other NodeJS versions, then use npm toinstall the punnycode module first.
+The version of the punnycode module bundled in NodeJS is being deprecated. In a future major version of NodeJS this module will be removed
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Despite the fact that JavaScript 1s single-threaded,what allows you to perform non-blocking 1/0 operations by offloading operations to the system kernel whenever possible?
+
+REPL
+Timers
+Poll
+Process
+Event Loop
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following statement is true about the EventEmitter module?
+
+The EventEmitter is a module that facilitates communication between objects in Node.
+Many of Node's built-in modules inherit from EventEmitter.
+EventEmitter is at the core of Node asynchronous event-driven architecture.
+All of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the output of this code?
+try {
+  const m = 1;
+  const n = m + z;
+  console.log(n)
+}catch(err){
+  console.log(err.name)
+}
+0
+1
+TypeError
+SyntaxError
+None of the above.
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which method of the fs module is used to open a file?
+
+fs.open(path , flags [, mode ], callback)
+fs.openPath(path, flags [, mode ], callback)
+fs.openfile(path, flags [, mode ], callback)
+None of the above.
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+In the system,you need to use Writable mode to export the report. Which of the following
+are NOT events in Writeable stream mode? (Choose all the correct answers)
+
+writeable
+drain
+error
+finish
+end
+data
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following statements about writable streams in NodeJS is true? (Choose all the correct answers)
+
+Output of a readable stream can be the input to a writable stream.
+A writable stream is used for a write operation.
+All writable streams implement the interface defined by the stream.Writable class.
+A writable stream will always emit the close event if it is created with the emitClose option.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You deploy it on a server that has 16 cores. Out of the following,which option supports multiple­ processor platforms? Does it fully utiize all processor resources? (Select all that apply.)
+
+NodeJS is single thread applic ation. It only runs on a single proc essor core. So it doesn't support multiple core resources
+Deploy NodeJS on multiple-core systems.
+Running multiple Node.js servers on one box,one per core and spl t request traffic between them.
+Using cluster module. Node.js can fire up child processes or send messages to additional worker processes.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+For which of the following is NodeJS not recommended?
+
+Single Page Applications
+JSON APls based Applications
+Data Intensive Real-time Applications (DIRT)
+CPU intensive applic ations
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You need to be able to create and consume custom events.What do you use?
+
+Events
+EventManager
+Eventlisterner
+EventHook
+EventEmitter
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following statements about readable streamsin NodeJS is incorrect?
+
+The readable stream API evolved across multiple NodeJS versions and provides multiple methods for consuming stream data.
+A readable stream will always emit the close event if it is created with the emitClose option.
+The readable stream is used for read operations.
+The output of a readable stream can be input into a writable stream.
+A readable stream will not generate data until a mechanism for either consuming or ignoring that data is provided.
+The finish event in Readable,which is emitted when alldata has been flushed to the underlying system.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following methods can be used to delete a filein NodeJS? (Choose allthe correct answers)
+os.remove('file')
+fs.delete('file')
+fs.unlink('file'. (err) => {})
+fs.unlinkSync('file')
+All of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Typically,what is the first argument passed to a callback handler in NodeJS?
+Data
+Next function
+Error
+Response object
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Point out the incorrect statement about child processes in NodeJS.
+
+The fact that NodeJS runs in a single thread does not mean that we can't take advantage of multiple processes and multiple machines as well.
+We can easily spin up a child process using NodeJS's child_process module and those child processes can easily communicate with each other with a messaging system.
+spawn(), fork() and exec () are the different ways to create a child process in NodeJS.
+The child_proc ess module enables us to access Operating System functionalities by running any system command inside a child process.
+The exec File() method will execute the command directly without spawning a shell by default.
+All of the above.
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You need to get the endiannes operating system. Which code do you use?
+console.log ('endianness' + os.getEndionness());
+console.log('endianness' + os.endianness);
+console .log ('endianness' + os.system.endianess());
+console .log ('endian ness' + os.endianness());
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is NOT a type of NodeJS stream?
+ReadableWritable
+Duplex
+Buffer
+Transform
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following are the different types of NodeJS streams? (Choose all the correct answers)
+Readable
+Writable
+Duplex
+Buffer
+Transform
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which module allows us to create and handle custom events?
+eventemitter
+emitter
+events
+event
+None of the above.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Q 1 - Which of the following module is required for DNS specific operations?
+A - dns module
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 2 - Which of the following stands true for dns.lookuphostname[, options], callback method?
+A - Resolves a hostname e. g. ′google. com′ into the first found A IPv4 or AAAA IPv6 record.
+B - If options is not provided, then IP v4 and v6 addresses are both valid. If options is an integer,
+then it must be 4 or 6.
++ C - Both of the above.
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 3 - Which of the following method resolves an ip address to an array of hostnames?
+A - dns.reverse(ip, callback)
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 4 - Which of the following module is required for exception handling in Node?
+C - domain module
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 5 - Which of the following is true about internal binding with respect to domain
+module?
+A - Error emmitter is executing its code within run method of a domain.
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 6 - Which of the following is true about external binding with respect to domain
+module?
+B - Error emmitter is added explicitly to a domain using its add method.
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 7 - Which of the following module is required to create a web server?
+C - http module
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 8 - Which of the following code can create a web server?
+A - http.createServer(callback)
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 9 - Which of the following code can make a request to a web server?
+A - http.request(options, callback)
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 10 - What is Express?
+B - Express is a minimal and flexible Node.js web application framework that provides a robust
+set of features to develop web and mobile applications.
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 11 - Can we create child processes in Node applications.
+A - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 12 - Which of the following module is required to create a child process?
+B - child_process module
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 13 - Which of the following is true about exec methd of child_process module.
+A - The exec method runs a command in a shell and buffers the output.
+B - The exec method returns a buffer with a max size.
+C - The exec method waits for the process to end and tries to return all the buffered data at once.
++ D - All of the above.
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 14 - Which of the following is true about fork methd of child_process module.
+A - The fork method method is a special case of the spawn to create Node processes.
+B - The fork method returns object with a built-in communication channel in addition to having all
+the methods in a normal ChildProcess instance.
++ C - Both of the above.
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 15 - What REST stands for?
+A - REpresentational State Transfer
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 16 - Which of the following is true about RESTful webservices?
+A - Webservices based on REST Architecture are known as RESTful web services.
+B - Webservices uses HTTP methods to implement the concept of REST architecture.
++ C - Both of the above.
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 17 - Which of the following is not a valid HTTP method?
+D - header
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 18 - Transform stream is a type of duplex stream.
+A - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 19 - Each type of Stream is an EventEmitter.
+A - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 20 - Duplex stream can be used for both read and write operation.
+A - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 21 - A stream fires data event when there is data available to read.
+B - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 22 - A stream fires end event when there is no more data to read.
+A - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 23 - A stream fires error event when there is any error receiving or writing data.
+B - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 24 - A stream fires finish event when all data has been flushed to underlying system.
+A - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+    <code>
+Q 25 - Child processes always have three streams child.stdin, child.stdout, and
+child.stderr which may be shared with the stdio streams of the parent process.
+A - true
+    </code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+const
+  	</code>
+  </pre>
+
+
+
+  <script src="./js/navTemplate.js"></script>
+
+</body>
+
+</html>
