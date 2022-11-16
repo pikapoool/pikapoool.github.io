@@ -22,10 +22,9 @@
   	<code>
 Given the following code. Where is the viewchild elementRef available for usage (not undefined)?
 @ViewChild('element', {static: false}) elementRef: ElementRef;
-In ngAfterViewlnit
-In ngAflerContentlnit
-In ngOnlnit
-All of above
+In ngAfterViewInit
++/- In ngOnlnit (Depending on the situation, the template references might already be present on ngOnInit(),
+but we shouldn't count on it)
   	</code>
   </pre>
 
@@ -33,10 +32,7 @@ All of above
   <pre>
   	<code>
 Correct statement about the service allows to load new components at the runtime:
-ComponentFactory
-DynamicComponentFactory
-DynamicFactoryLoader
-ComponentFactoryResolver
+ComponentFactoryResolver (deprecated) use ViewContainerRef.createComponent instead
   	</code>
   </pre>
 
@@ -44,10 +40,13 @@ ComponentFactoryResolver
   <pre>
   	<code>
 In the case the data model is updated outside the Zone, you need to update the view. How can you do it?
-ApplicationRef.prototype.forceUpdate
-NgZone.prototype.update
-ChangeDetectorRef.prototype.detectChanges
-None
+ChangeDetectorRef.prototype.detectChanges method, which will launch change detection on the current component and its
+children.
+
+Using the ApplicationRef.prototype.tick method, which will run change detection on the entire component tree.
+Using NgZone.prototype.run method, which will also run change detection on the entire tree. The run method under the
+hood itself calls tick, and the parameter takes the function you want to perform before tick.
+ngOnChanges, ngAfterViewChecked, ngDoCheck, and ngOnDestroy since they are important.
   	</code>
   </pre>
 
@@ -62,10 +61,7 @@ Expected behaviour
 export class AppComponent {
   count$ = of(NaN);
 }
-Change detection is triggered and: Expression has changed after it was checked
 App displays Count: NaN
-A compile error is thrown: type number is not assignable to type string
-A compile error is thrown: Can't create Observable out of NaN
   	</code>
   </pre>
 
@@ -73,9 +69,6 @@ A compile error is thrown: Can't create Observable out of NaN
   <pre>
   	<code>
 What is correct answer about Subject and Behaviour Subject in RxJS?
-Once you unsubscribe, BS can be reused and S can not
-If you subscribe to a S or BS you will be able to get the current value or initial value
-You have to define a default value whenever you declare Behavior Subject or Subject based upon the data type
 In Subject, each next subscriber receives only the upcoming values. In Behavior Subject,each next subscriber receives one previous value and upcoming values.
   	</code>
   </pre>
@@ -91,36 +84,30 @@ Which of the following wild cards can you use to define "page not found" route?
   <p class="p"></p>
   <pre>
   	<code>
-You are developing a Web application by Angular.You need to get data from parent component to child component. How can you do it?
+You need to get data from parent component to child component. How can you do it?
 Using @Input
-Using @ViewChild
 Using service
-All of above
-None of above
   	</code>
   </pre>
 
   <p class="p"></p>
   <pre>
   	<code>
-Consider lhe following code definition of lhe DemoModule
-@NgHodule({
-  imports: [CommonHodule]
+Consider the following code definition of lhe DemoModule
+@NgModule({
+  imports: [CommonModule]
 })
 export class DemoModule {
   static forRoot(): ? {
     return {
-      "ngModule: DemoModule, providers:(DemoService]"
+      ngModule: DemoModule,
+      providers: [DemoService]
     };
   }
 }
-What is the type of the forRootQ static method?
+What is the type of the forRoot() static method?
 
-LazyLoadedModule
-ModuleForRoot
 ModuleWithProviders
-Observable <NgModule>
-None of above
   	</code>
   </pre>
 
@@ -136,20 +123,14 @@ Following the source code:
 How can you use this SVG template?
 
 templateUrl: ·./svg.component.svg'
-template: ·./svg.component.svg'
-template: 'svg> svgTemplate>path "[d)=""validPath""/>svg>'
-vgTemplate: 'svg>path ld)=""val dPath""/>/svg>'
   	</code>
   </pre>
 
   <p class="p"></p>
   <pre>
   	<code>
-Which form controlclass name is set to true when value is modified?
-.ng-touched
-.ng-pristine
+Which form control class name is set to true when value is modified?
 .ng-dirty
-.ng-pending
   	</code>
   </pre>
 
@@ -158,20 +139,14 @@ Which form controlclass name is set to true when value is modified?
   	<code>
 When using Reactive forms whichis/are the recommended form(s) of binding data to a controller?
 [(ngModel)]
-[formControl) = 'nameOfControl'
-reactiveControlName = 'nameOfControl'
-All of above
   	</code>
   </pre>
 
   <p class="p"></p>
   <pre>
   	<code>
-When you chain mult ple pipes together,what order will they be executed?
-LIFO order
-In parallel
+When you chain multiple pipes together,what order will they be executed?
 In the order that you specify them
-None of above
   	</code>
   </pre>
 
@@ -179,23 +154,7 @@ None of above
   <pre>
   	<code>
 Which of the following is TRUE about the kinds of directives in Angular?
-Structural and Attribute directives
-Component, Structuraland Attribute directives
-Component, Template, Structural and Attribute directives
-Only one directive .
-  	</code>
-  </pre>
-
-  <p class="p"></p>
-  <pre>
-  	<code>
-Given the following code.
-@ViewChild('element ',{static:false})elementRef: ElementRef;"
-Which of the following is the correct location the viewchild elementRef available for usage in Angular?
-In ngAfterViewlnit
-In ngAflerContentlnit
-In ngOnlnit
-All of above
+Component, Structural and Attribute directives
   	</code>
   </pre>
 
@@ -203,10 +162,8 @@ All of above
   <pre>
   	<code>
 What is correct answer about ReplaySubject and BehaviourSubject in RxJS?
-Both BehaviourSubject and ReplaySubject will return the initialvalue or the current value on Subscription
 ReplaySubject will not take any initial value.
 When initializing, BehaviourSubject is not required initialvalue.
-None of above
   	</code>
   </pre>
 
@@ -215,30 +172,891 @@ None of above
   	<code>
 Which directive can you use if you want to display views for a given router?
 RouterOutlet
-Router link
-Router linkActive
-RouterState
   	</code>
   </pre>
 
   <p class="p"></p>
   <pre>
   	<code>
-You are a developer at Turing You are using Angular to develop the Web appl caon.When using FormArray,
-which of the following is correct syntax that replaces the following syntax?
+When using FormArray, which of the following is correct syntax that replaces the following syntax?
 while(formArray.length) formArray.removeAt(0);
-formArray.clear()
-formArray.invalidate()
-formArray.removeAll()
-formArray.invalid()
-
   	</code>
   </pre>
 
   <p class="p"></p>
   <pre>
   	<code>
-Correct
+What is [(ngModel)] used for?
+Two-way data binding. If they say one-way binding they are incorrect.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Describe how you would approach solving (some problem) on a high level?
+In this question, the problem should be directly related to the work the candidate will actually be doing. You aren‘t
+looking for a perfect answer or even necessarily a correct answer. Instead, listen to how they approach solving a
+problem, their ability to break a problem down into parts, and if they can anticipate problems.
+An Angular developer should know how to make effective use of a DOM element. Look for this experience during the
+interview.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are some advantages of using Angular framework for building web applications?
+Angular does lots of things for you under the hood. It saves time for developers by doing a lot of the work for them
+like writing tedious DOM manipulation tasks
+TypeScript and the Angular framework allow you to catch errors much earlier
+In many cases has faster performance than traditional web development techniques
+Can give web apps the feel of a desktop application
+It separates out the code of an application to make it easier for multiple developers to work on an app and easier to
+test
+A more consistent code base that‘s easy to maintain
+Big developer community
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+In Angular, how can you interact between Parent and Child components?
+When passing data from Parent to Child component, you can use the @Input decorator in the Child component. When passing
+data from Child to Parent component, you can use the @Output decorator in the Child component.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Write an example usage of ngFor for displaying all items from an array ’Items‘ in a list with <li>.
+<li *ngFor=”let item of Items”>{{item}}</li>
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+If you provide a service in two components‘ “providers” section of @Component decorator, how many
+instances of service shall get created?
+
+2
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the main difference between constructor and ngOnInit?
+
+The constructor is a feature of the class itself, not Angular. The main difference is that Angular will launch
+ngOnInit after it has finished configuring the component. Meaning, it is a signal through which the @Input() and other
+banding properties and decorated properties are available in ngOnInit, but are not defined within the constructor by
+design.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What modules should you import in Angular to use [(ngModel)] and reactive forms?
+FormsModule and Reactiveforms Module.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How similar is AngularJS to Angular 2?
+Requirement: Middle Angular knowledge
+
+Answer: Both are front-end frameworks maintained by Google, but Angular 2 is not a simple update of AngularJS, it is a
+new framework written from scratch. Updating an app from AngularJS to Angular 2 would require a complete rewrite of the
+code.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What were some features introduced in the different versions of Angular (2, 4, 5 and 6)?
+Requirement: Expert Angular knowledge, Component-based architecture
+
+Answer:
+
+Angular 2:
+
+Complete rewrite of the Angular framework
+Component-based rather than controllers/view/$scope. This allows more code to be reused, easier communication between
+components and easier testing
+Much faster
+Support for mobile devices
+More language choices such as TypeScript
+Angular 4:
+
+An update to Angular 2, not a complete rewrite. Updating from Angular 2 to 4 just requires updating the core libraries
+Improvements to Ahead-of-time (AOT) generated code
+Support for new versions of TypeScript
+Animation packages are removed from the core package
+Else block
+Angular 5:
+
+Focused on making Angular smaller and faster to use
+Http is depreciated and HttpClient API client is now recommended for all apps
+Supports TypeScript 2.3
+Introduction of a build optimizer
+Angular Universal State Transfer API
+Improvements to the Angular Compiler
+Router Lifecycle Events
+Better cross-browser standardization
+Angular 6:
+
+Better service worker support
+Better URL serialization
+Ivy rendering engine
+ng update and ng add
+<template> element completely removed
+  Angular Elements/Custom Elements
+  Form validation changes
+  Schematics
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Transpiling in Angular?
+Requirement: Middle Angular knowledge, TypeScript
+
+Answer: Transpiling means converting the source code of one programming language into another. In Angular, that usually
+means converting TypeScript into JavaScript. You can write the code for your Angular application in TypeScript (or
+another language such as Dart) that is then transpiled to JavaScript for the application. This happens internally and
+automatically.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is AOT Compilation?
+Requirement: Expert Angular knowledge, Optimization
+
+Answer: AOT refers to Ahead-of-time compilation. In Angular, it means that the code you write for your application is
+compiled at build time before the application is run in a browser. It‘s an alternative to Just-in-time compilation,
+where code is compiled just before it is run in the browser. AOT compilation can lead to better application performance.
+
+Note: You should expect knowledge of JIT (Just-in-Time) compilation in Angular too, when you hire Angular developers.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are HTTP Interceptors?
+Requirement: Middle Angular knowledge
+
+Answer: Interceptor is just a fancy word for a function that receives requests/responses before they are processed/sent
+to the server. You should use interceptors if you want to pre-process many types of requests in one way.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How many Change Detectors can there be in the whole application?
+
+Each component has its own ChangeDetector. All Change Detectors are inherited from AbstractChangeDetector.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What change detection strategies do you know?
+
+There are two strategies – Default and OnPush. If all components use the default strategy, Zone checks the
+entire tree regardless of where the change occurred. To inform Angular that we will comply with the performance
+improvement conditions, we need to use the onpush change detection strategy. This will tell Angular that our component
+depends only on the input and any object that is passed to it should be considered immutable. This is all built on the
+Principle of the mile automaton, where the current state depends only on the input values.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Change Detection, how does Change Detection Mechanism work?
+
+Change Detection is the process of synchronizing a model with a view. In Angular, the flow of information is
+unidirectional, even when using the ng Model to implement two-way binding, which is syntactic sugar on top of a
+unidirectional flow.
+
+Change Detection Mechanism-moves only forward and never looks back, starting from the root (root) component to the last.
+This is the meaning of one-way data flow. The architecture of an Angular application is very simple — the tree of
+components. Each component points to a child, but the child does not point to a parent. One-way flow eliminates the need
+for a $digest loop.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Why do we need lazy loading of modules and how is it implemented?
+
+Lazy loading of modules is needed to break the code into pieces. When downloading the app in the browser, it
+doesn’t load all of the application code. During the transition to the route with lazy loading, the module has to load
+the code into a browser.
+Example for using lazy loading modules:
+{ path: ‘example’, loadChildren: ‘./example/example.module#ExampleModule’, component: PublicComponent },
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are Core and Shared modules for?
+
+A Shared module serves as a generic module for all modules, components, directives, pipes, etc., which are not
+required to be in a single copy for the application but need to be imported into many different modules.
+A Core module is a place to store services that you need to have in the form of singleton for the entire application
+(for example, a user authorization service with data storage about it).
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are some points to consider when optimizing an Angular 6 application for performance?
+
+There are many ways, some ideas include:
+AOT compilation, bundling and uglifying the application, tree shaking, lazy loading, separating dependencies and
+devDependencies, Using OnPush and TrackBy, removing unnecessary 3rd party libraries and import statements, avoid
+computing values within the template.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are some important practices to secure an Angular application?
+
+Some basic guidelines include:
+Check that all requests come from within your own web app and not external websites
+Sanitize all input data
+Use Angular template instead of DOM APIs
+Content Security Policies
+Validate all data with server-side code
+Compile using an offline template compiler
+Avoid including external URLs in your application
+Make JSON responses non-executable
+Keep all libraries and frameworks up-to-date
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What‘s the difference between unit testing and end-to-end testing? What are some testing tools you
+would use for an Angular application?
+
+Unit testing is a technique to test whether isolated segments of code are functioning properly. End-to-end
+testing involves checking that entire sets of components to make sure they are working together properly and that the
+application is working as you would expect. End-to-end tests often simulate user interactions to test that an app is
+functioning as it should. Jasmine and Karma are all great testing tools.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are the differences between promises and observables?
+
+The differences are as follows:
+Promises emit a single value. However, observables emit multiple values over time.
+Promises aren’t lazy, however, observables are lazy. Observables are called only when there are subscriptions to them.
+One can’t cancel a promise. However, the “unsubscribe()” method allows you to cancel observables.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are the differences between RouterOutlet and RouterLink?
+
+The differences are as follows:
+RouterOutlets are directives from the router library. RouterOutlets are placeholders. They are the spots in templates
+where the router displays the components for that outlet. RouterOutlets are components.
+RouterLinks are directives on the anchor tags. They give the router control over the tags. Developers can assign string
+values to RouterLink directives.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+List the different router events in the Angular router.
+
+The router events are as follows:
+NavigationStart;
+RouteConfigLoadStart;
+RouteConfigLoadEnd;
+RoutesRecognized;
+GuardsCheckStart;
+ChildActivationStart;
+ActivationStart;
+GuardsCheckEnd;
+ResolveStart;
+ResolveEnd;
+ActivationEnd;
+ChildActivationEnd;
+NavigationEnd;
+NavigationCancel;
+NavigationError.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How will you make an Angular application render on the server side instead of the client side?
+
+You can use Angular Universal to do this. Angular Universal is a tool as a part of Angular. It allows the server
+to pre-render the Angular app when a user visits the web app for the first time.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Why would you “AsyncPipe” in Angular?
+
+You can use “AsyncPipe” to subscribe to an observable or promise. It can then return the latest value emitted by
+the promise or observable. “AsyncPipe” marks an Angular component that has been checked for new values emitted.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Mention the categories of data binding types in Angular.
+
+There are 3 categories of data binding types in Angular. They are as follows:
+From-the-source-to-view: This uses one-way data binding.
+From-view-to-source: It utilizes one-way data binding.
+View-to-source-to-view: This category uses two-way data binding.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+State the different types of Angular filters.
+
+The different types of Angular filters are as follows:
+Currency;
+Filter;
+Date;
+Lowercase;
+Uppercase;
+orderBy;
+JSON;
+Number;
+LimitTo.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Mention a few activities that you can do using the Angular CLI.
+
+You can use the Angular Command Line Interface (Angular CLI) for activities like adding components, deploying
+components, testing, and many more activities.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Briefly explain the digest cycle process in Angular.
+
+The digest cycle process in Angular helps to monitor the watch list. This process tracks changes in the watch
+variable value. You can use it to compare multiple values. The process includes a comparison between the previous and
+present versions of the scope model values.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Describe the steps to create directives using the Angular CLI.
+
+The steps to create directives using the Angular CLI are as follows:
+Use the following command to start a new project:
+‘ng new [application-name]’
+Change the directory into a new directory by using the following command:
+‘cd [application-name]’
+Generate a new directive by issuing the following command:
+‘ng generate directive [path-to-directives/test-directive]’.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What does the PipeTransform interface do in Angular?
+
+The PipeTransform interface receives an input value. It then uses the “transform()” method to transform the
+input value into the desired format.
+Example:
+import { Pipe, PipeTransform} from ‘@angular/core’;
+@Pipe({
+  name: ‘testpipe’
+})
+export class testpipePipe implements Pipe Transform {
+  transform(value: unknown,…args: unknown): unknown {
+    return null;
+  }
+}
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What does “ng-content” does in Angular?
+
+”ng-content” in Angular inserts content dynamically inside components. You can reuse components better.
+“ng-content” passes content inside the component selector.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is “multicasting” in Angular?
+
+Assume that you want to fetch data by communicating with a backend service by using the HttpClient module. You
+want to broadcast the data to multiple subscribers. Assume that you want to do all of these tasks in one execution.
+“Multicasting” refers to responding to multiple subscribers with data.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What will happen if you don’t provide handlers for some notification types?
+
+The Angular observers ignore all notification types that don’t have handlers. The observer instance will publish
+a value only if there’s a subscription.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is RouterState in Angular?
+
+The RouterState in Angular is a tree of activated routes. Nodes in this structure know the “consumed” URL
+segment. These nodes also know about the extracted parameter and resolved data. One can use the router service and
+routerState property to access the current RouterState.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Describe a time you fixed a bug/error in an application. How did you approach the problem? What
+debugging tools did you use? What did you learn from this experience?
+
+Debugging is one of the key skills for any software developer. However, the real skill is in breaking the problem down
+in a practical way rather than finding small errors in code snippets. Given that debugging often takes hours or even
+days, you don‘t have time in an interview setting. Asking these questions will give you an idea of how your candidate
+approaches errors and bugs.
+
+Answer:
+In the candidate‘s response you should look out for things like:
+A measured, scientific approach
+Breaking down the problem into parts
+Finding out how to reproduce the error
+Expressing and then testing assumptions
+Looking at stack traces
+Getting someone else to help/take a look
+Searching the internet for others that have had the same problem
+Writing tests to check if the bug returns
+Checking the rest of the code for similar errors
+Turn problems into learning experiences
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What’s the most important thing to look for or check when reviewing another team member’s code?
+
+Here you‘re checking for analysis skills, knowledge of mistakes that less experienced developers make, keeping
+in mind the larger project and attention to detail.
+A good answer might mention code functionality, readability and style conventions, security flaws that could lead to
+system vulnerabilities, simplicity, regulatory requirements, or resource optimization.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is .subscribe?
+Streams data in asynchronously
+Streams data in synchronously
+Both
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is not a hook application life cycle?
+ngViewStart
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which file is responsible for startup of angular 2 project ?
+main.ts
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is used .angular-cli.json
+Used to configure your angular 2 project
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the decorator used for configuring your module class?
+@NgModule
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which angular decorator allows us to define the pipe name that is globally available for use in any template in the
+across application?
+Pipe
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+RxJS can be used for?
+Browser
+Server Side
+Both
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Router is part of which of the following module?
+@angular/router
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following option is correct about tsconfig.json?
+This file is used to give the options about TypeScript used for the Angular JS project.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+To start working with Angular 2, we need to install the _____________components.
+Npm
+Editor
+GIT
+All of the above
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is not a feature of Angular 2?
+Multithread
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Needs cleanup step before compiling
+Detect error at build time
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following option is using Angular 2 to detect changes.
+zone.js
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following service has Angular 2, that allows us to dynamically load a component in a certain position on
+the page?
+DynamicComponentLoader
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is not a hook in Angular 2 application life cycle.
+ngViewStart
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following filter is used to convert input to all uppercase?
+uppercase ( {{value| uppercase}} )
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Interpolation in angular 2 is done using
+{{}}
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is the correct way to apply a filter?
+Property-value | filter
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What does this syntax do? routerLink="/crisis-center"
+It navigates to the component with a path matching the assigned string
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How would you debug and evaluate the response of the http.get function (using HttpClient) using a debugger?
+Place a breakpoint inside one of the functions inside the pipe call
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following is not built-in pipe in Angular?
+DataPipe
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How would you retrieve a list of items from a server's URL?
+Create a URL transaction
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+The number pipe is location sensitive, which means that the same format argument will produce differently formatted
+results based on the . . . . . . .
+user's locale setting
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+If you chain multiple pipes together, they are executed
+in the order in which you specify them
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How would you display a list of Employees on a webpage along with where they were in the list?
+Loop through and print the index and the employee
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Where would you put it?
+In the Injectable decorator
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Observables help you manage . . . . . . . . data.
+asynchronous
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How does Angular 4 improved error handling, when an error is caused by something in a template?
+By creating flattened versions of Angular modules
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What advantage does AOT give your app with regard to compilation?
+Precompiles at build time, instead of in the browser
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How do you load an NgModule into its own bundle?
+Use lazy loading with the route that leads to the NgModule
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+According to the Angular Style Guide, what type of code should a component delegate to a service?
+Complex logic
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is a routerOutlet?
+A directive defined in the HTML indicating where a route's view should display
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Where would the following code likely be found in an Angular application? routerLink="/crisis-center"
+In the template
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How would you write code to modify the response from an http.get ?
+Using the map function inside of the pipe operator chained to the http.get
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+You apply a style selector in a component's CSS file. Which matching elements will be affected?
+All matching elements in the component, only
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What command will create a new Angular app with a root routing module?
+ng new my-dream-app --routing
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+The purpose of the providers array of an Angular module is to define the set of:
+objects available for dependency injection.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the correct syntax to associate an external template file orders.component.html to an OrdersComponent , when
+both are in the same orders/ folder?
+@Component({
+   templateUrl: './orders.component.html'
+})
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+When using FormBuilder, how are validation rules specified?
+As part of the FormControl configuration: heroName: ['', Validators.required]
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which of the following will map the name of an input parameter "userData" to a field named "users"?
+@Input('userData') users
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which Angular CLI flag will not generate unit tests for a component?
+--spec false
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the purpose of FormBuilder?
+Creates the form data structure from a specified configuration when building reactive forms
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Which is the correct command to create a component named CustomerDetailComponent with the CLI (with this exact casing)?
+ng generate component customer-detail
   	</code>
   </pre>
 
