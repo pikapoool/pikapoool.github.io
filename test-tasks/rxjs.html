@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<link rel="stylesheet" href="css/main.min.css" />
+
+<body>
+
+  <h1>RxJs</h1>
+  <nav-element></nav-element>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is RxJS?
+Ans:
+RxJS is a library for reactive Streams which can be used to deal with asynchronous data streams and events called
+"Reactive Extensions for JavaScript" (RxJS).
+RxJS uses JavaScript reactive programming. RxJS is very popular because it makes writing asynchronous code simple for
+developers.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Reactive Programming?
+Reactive programming is a declarative programming paradigm which deals with asynchronous data streams. Glenn Wadden
+first developed reactive programming in 1986 as a programming language in the Supervisory Control and Data Acquisition
+(SCADA) industry. Event buses or typical click events are called asynchronous event streams, used in reactive
+programming to observe and do some side effects. Reactive programming facilitates us to create data streams of anything,
+not just from click and hover events.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are the biggest advantages of Reactive Programming?
+Advantages of using Reactive Programming
+
+Reactive programming provides a lot of operators that can simplify our work.
+Reactive programming is very simple to compose streams of data.
+It can be used to avoid "callback problems".
+In Reactive programming, it is very simple to do async and threaded task.
+It makes complex threading very easy.
+By using Reactive programming, we can get a more cleaner and readable code base.
+In Reactive programming, it is easy to implement back-pressure.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are the most outstanding features of RxJS?
+Following is the list of some most important features of RxJS that are used to handle the concept of RxJS or reactive
+programming:
+
+Observer
+The Observer is an object with next(), error(), and complete() methods, which are called when we have to interact with
+the observable, i.e., the source interacts for an example button click, Http request, etc.
+
+Observable
+In RxJS, an observable
+function is used to create an observer and attaches it to the source where values are expected. For example, clicks,
+mouse events from a DOM element or an Http request, etc
+
+Subscription
+The role of subscription
+comes in the scene when the observable is created. To execute the observable, we need to subscribe to it. It can also be
+used to cancel the execution.
+
+Operators
+Operators are a very important part of RxJS. An operator is a pure function that takes observable input and emits the
+result in the output form. Input and output both are observable.
+
+Subject
+A subject is observable that can multicast, i.e., talk to many observers. Suppose we have a button with an event listener. The
+function attached to the event using addlistener is called every time the user clicks on the button. Similar
+functionality goes for the subject too.
+
+Schedulers
+A scheduler controls the execution of when the subscription has to start and be notified.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Stream?
+Ans:
+A stream is a key part of reactive programming. In simple terms,
+"A stream refers to values of data overtime"
+The reason for it being called a stream is that you should think of the data as continuous and not really having an end,
+unless you explicitly define an end.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Observable?
+Ans:
+"Observable represents the idea of an invokable collection of future values or events."
+In RxJS, you model asynchronous data streams using observable sequences Or just called observables, too.
+An Observable is an object that over time and asynchronously emits multiple data values (data stream).
+Click here to know more.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the difference between an observable and a promise?
+Ans:
+Promise:
+A Promise emits a single event at the completion or failure of an async operation.
+promise emits a single value
+A promise is Not Lazy A Promise cannot be cancelled
+Observable:
+An observer is like a stream and allows you to pass at least zero or more events where the callback is needed for each
+event.
+Observable is favored over Promise, it can emits multiple values over a time.
+The "Observable" is cold. It's not called until we're registered to it.
+You may cancel an Observable with the unsubscribe() method
+Observable provides a lot of efficient operators like map, foreach, filter, reduce, retry, retryWhen etc.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the difference between Cold and Hot Observables?
+Ans:
+"Cold observables start to run in up and subscription, so observable sequence only starts pushing values to observers
+when subscribe is called.
+You can use cold observable if you don't want to produce data before any observer is subscribed, for example Ajax call.
+"hot observables produce values even before subscriptions made.
+Hot observables such as mousemove events, stock pickers or WebSocket connections, are already produced in values even
+before subscription is active
+if you want to share some resources or data between many subscribers, you have to use hot observables.
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are RxJS Operators?
+Ans:
+A stream is a key part of reactive programming. In simple terms,
+"An operator is simply a method that acts on an Observable and changes the stream in some way. The purpose of operator,
+to modify or filter originally emitted values in the way we need for the project tasks.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Observers and Subscriptions?
+Ans:
+Observers and Subscriptions are related to the concept of Observable.
+Observers:
+Observer is a set of callbacks that know how to listen to the values of the Observable.
+Observers are also referred to as listeners (or consumers)
+Observers may listen or subscribe to the data being observed.
+Subscription:
+Subscription is an observable execution
+Subscriptions are objects returned when an Observable is subscribed.
+Subscription is useful mainly to cancel the execution
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Subject?
+Ans:
+Subjects are special types of Observers, so you can also subscribe to other Observables and listen to published data
+Special thing about subject is they are multicasted. It means - "The values are multicasted to many Observers" while
+default RxJS Observable is unicast
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are different types of Subject?
+Ans:
+There are two types of Subjects : BehaviorSubject and ReplaySubject.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are different between of Subject, BehaviorSubject and ReplaySubject?
+Ans:
+Subject :
+In case of Subject, Observers who are subscribed at a later date will not obtain the data values emitted prior to their
+subscription.
+ReplaySubject :
+In ReplaySubject, Observers who are subscribed at a later point will receive all the old data values issued prior to
+their subscription. As it operates by using a buffer that holds the values emitted and re-emits (replaying) a sequence
+of old values once new Observers are subscribed.
+BehaviorSubject :
+BehaviorSubject functions similar to ReplaySubject but only re-issues the last emitted value (current value). So you're
+interested in the last / current value of the observer, if BehaviorSubject is useful.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Reactive programming and how does it relate to Angular?
+Ans:
+The principle of responsive programming is that you can just build the different streams and operations that take place
+on those flows by specifying the whole program.
+Angular uses RxJS for some aspects of its internal service, such as Http, Router, etc.
+RxJS is a very powerful library that facilitates the design of applications.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are the biggest advantages and disadvantages of using RxJS?
+Advantages of using RxJS
+Following is the list of key advantages of using RxJS:
+
+RxJS can be used with other Javascript libraries and frameworks. It is supported by javascript and also with typescript.
+Few examples are Angular, ReactJS, Vuejs, nodejs etc.
+RxJS is an awesome library when it comes to the handling of async tasks. RxJS uses observables to work with reactive
+programming that deals with asynchronous data calls, callbacks and event-based programs.
+RxJS offers a huge collection of operators in mathematical, transformation, filtering, utility, conditional, error
+handling, join categories that makes life easy when used with reactive programming.
+Disadvantages of using RxJS
+Following is the list of the biggest disadvantages of using RxJS:
+
+Debugging the code with observables is a little difficult.
+As you start to use Observables, you can end up with your full code wrapped under the observables.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What do you understand by RxJS Stream?
+An RxJS stream is a sequence of ongoing events ordered in time. In other words we can say that a stream is a sequence of
+data elements made available over time. A stream can be thought of as items on a conveyor belt being processed one at a
+time rather than in large batches. It is called stream because it acts as a data that is continuous and not really
+having an end, unless you explicitly define an end.
+
+A stream can emit three different things:
+
+a value (of some type)
+an error
+a "completed" signal
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What do you understand by the Reactive Manifesto document?
+A document was introduced to define the core principles of reactive programming. That document is known as the Reactive
+Manifesto. The Reactive Manifesto document was first released in 2013 by a group of developers led by a man called Jonas
+Boner. The Reactive Manifesto underpins the principles of reactive programming.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the difference between Reactive Programming and Imperative Programming?
+In Reactive Programming, observables emit data, and send it to the subscribers. This process can be called as data being
+PUSHed in reactive programming. On the other hand, data is being PULLed in imperative programming, where we explicitly
+request data (iterating over collection, requesting data from the DB, etc).
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is an Observable in RxJS?
+In RxJS, an observable is a function that is used to create an observer and attaches it to the source where values are
+expected from. For example, clicks, mouse events from a DOM element or an Http request, etc. afre the example of RxJS
+observable. Observable gives us the idea of an invokable collection of future values or events. It facilitates us to
+make asynchronous data streams using observable sequences or just called observables, too.
+
+We have to follow the following three steps to complete the RxJS observable:
+Create Observable
+Subscribe Observable
+Execute Observable
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the difference between BehaviorSubject and Observable in RxJS?
+Observable
+In RxJS, observable is stateless.
+Observable creates copy of data.
+Observable is unidirectional in nature.
+Observables are lazy.
+Observables can be canceled.
+Observables provide multiple future values.
+
+BehaviourSubject
+In RxJS, BehaviourSubject is stateful.
+BehaviourSubject shares data.
+BehaviourSubject is bidirectional in nature.
+
+Promises
+Promises are used to run asynchronously, and we get the return value only once.
+Promises are not lazy.
+Promises cannot be canceled.
+Promises provide a single future value.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are the advantages of RXJS Observables over RxJS Promises?
+In RxJS, an Observable has many advantages over Promises. The following list shows some of them:
+
+An observable is like a Stream. It is used to pass zero or more events where the callback is called for each event.
+Observable is always preferred over Promise because it provides all the features of Promise and more.
+By using an observable, we can handle single or multiple events.
+Observables are cancelable, so this is also an advantage over Promises.
+Observable allows lazy initialization.
+Observable allows formatting data.
+Observable provides operators like map, forEach, reduce etc.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What do you understand by the term Non-Blocking in RxJS?
+In RxJS or Reactive programming, an algorithm is called non-blocking if threads competing for a resource do not have
+their execution indefinitely postponed by mutual exclusion protecting that resource.
+
+This concept is used in an API that allows access to the resource if available; otherwise, it immediately returns
+informing the caller that the resource is not currently available or the operation has been initiated and not yet
+completed. A non-blocking API to a resource allows the caller to do other work rather than be blocked waiting on the
+resource to become available. This may be complemented by allowing the client to register for getting notified when the
+resource is available or the operation has been completed.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What does Asynchronous means in the context of RxJS or Reactive programming?
+According to the Oxford Dictionary, the term asynchronous can be defined as "not existing or occurring at the same
+time." In the context of Reactive programming, it means that the processing of a request occurs at an arbitrary point in
+time, sometime after it has been transmitted from client to service. The client cannot directly observe, or synchronize
+with, the execution that occurs within the service. Asynchronous is the antonym of synchronous processing, which implies
+that the client only resumes its execution once the service has processed the request.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the difference between Cold and Hot Observables in RxJS?
+In simple words, the concept of cold and hot Observable can be defined as the following:
+
+When the data is produced by the Observable itself, t is called the cold Observable. When the data is produced outside
+the Observable, it is called hot Observable.
+
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Cold Observables
+We can call an Observable "cold" when the data is produced inside the Observable.
+Cold observables start to run upon subscription.
+The Cold observable sequence only starts pushing values to observers when subscribe is called.
+The cold Observable starts running upon subscription.
+The cold Observable sequence starts pushing values.
+In cold Observable, the data is produced inside the Observable so, we cannot share the data between multiple
+subscribers. Two Observables that subscribe at more or less the same may receive two different values. We call this
+behavior "unicasting."
+
+Hot Observables
+We call the Observable "hot" when the data is produced outside the Observable.
+Hot observables produce values even before a subscription is made.
+Hot observables such as mouse move events, stock pickers or WebSocket connections are already produced in values
+even before the subscription is active.
+The hot Observable produces values before subscriptions.
+In hot Observable, the data producer is outside the Observable.
+As we know that the data is produced outside the Observable in hot Observable, so it can share
+data between multiple subscribers in hot Observable. This behavior is "multicasting."
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What do you understand by the Actor Model in RxJS?
+An actor model can do the following things:
+
+An Actor model specifies that your concurrency primitives are actors.
+It can send messages to any actors they know about.
+It can receive a message and decide what to do next depending on the content of the message.
+It can create new actors and provides certain guarantees, such as any actor will only handle a single message at a time
+and messages sent by actor X to actor Y will arrive in the order they were sent.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What are the differences between Subject, BehaviorSubject and ReplaySubject in RxJS?
+Subject
+In the RxJS Subject, Observers who are subscribed later do not obtain the data values emitted before their subscription.
+
+ReplaySubject
+In RxJS ReplaySubject, Observers who are subscribed at a later point receives data values issued before their
+subscription. It operates by using a buffer that holds the values emitted and re-emits them once new Observers are
+subscribed.
+
+BehaviorSubject
+BehaviorSubject functions similar to ReplaySubject but only re-issues the last emitted values. So, it should be used
+when you are interested in the observer's last/current value.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is RxJS Map, and what do you understand by Higher-Order Observable Mapping?
+RxJS map operator facilitates us to project the payload of the Observable into something else. We can see the powerful
+features of Observables when we start using Rx operators to transform, combine, manipulate, and work with sequences of
+items emitted by Observables.
+
+RxJS Higher-Order Observable Mapping
+We map source observable emitted value into other Observable in higher-order mapping instead of mapping a flat value
+like 1 to another value like 10.! The result is an Observable higher order.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is Back-Pressure in Reactive Programming?
+According to the Wikipedia definition, Back-Pressure is resistance or force opposing the desired flow of fluid through
+pipes. But this definition belongs to fluid dynamics. In the context of software, the definition will be changed to flow
+of data within software instead of fluid through pipes. So, the definition would be-
+
+Back-Pressure is a resistance or force opposing the desired flow of data through software.
+When one component is struggling to keep up, the entire system needs to respond sensibly. It is unacceptable for the
+component under stress to fail or to drop messages in an uncontrolled fashion. Since it is not easy to handle and can't
+fail, it should communicate that it is under stress to upstream components and get them to reduce the load. This
+back-pressure is an important feedback mechanism that facilitates systems to respond to load rather than collapse under
+such a situation gracefully. The back-pressure may cascade up to the user, at which point responsiveness may degrade.
+Still, this mechanism will ensure that the system is resilient under load and will provide information that may allow
+the system to apply other resources to make easy the load by distributing it.
+
+In simple words, we can say that Back-pressure provides the strategies for coping with Observables that produce items
+more rapidly than their observers consume them.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What do you understand by Elasticity in contrast to Scalability?
+In the IT infrastructure, the term "Elasticity" can be defined as the ability to quickly expand or cut back capacity and
+services without obstructing the infrastructure's stability, performance, security, governance or compliance protocols.
+
+It means that the throughput of a system scales up or down automatically to meet varying demand as a resource is
+proportionally added or removed. The system needs to be scalable to allow it to benefit from the dynamic addition or
+removal of resources at runtime. Elasticity, therefore, builds upon Scalability and expands on it by adding the notion
+of automatic resource management.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the difference between Failure and Error?
+Failure
+A failure can be defined as an unexpected event within a service that prevents it from functioning normally. When a
+failure occurs, it can generally prevent responses to the current and possibly all following client requests.
+Failures are unexpected, and they require intervention before the system can resume at the same level of operation as
+earlier.
+It does not mean that failures are always fatal. Rather, some capacity of the system will be reduced following a
+failure.
+Error
+Errors are different from failures. An error is a common condition that can appear during input validation that will be
+communicated to the client as part of the message's normal processing.
+Errors are an expected part of normal operations. We can deal with errors immediately, and the system will continue to
+operate at the same capacity following an error.
+Errors are not fatal. They are part of the programming and can be occurred anytime.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What is the difference between Imperative, Functional and Reactive Programming?
+Let's compare them to see the difference:
+
+Imperative Programming: Imperative programming is a programming paradigm where each line of code is sequentially
+executed to produce the desired result. This programming paradigm forces programmers to write "how" a program will solve
+a certain task.
+
+Functional Programming: Functional programming is a programming paradigm where we can set everything as a result of a
+function that avoids changing states and mutating data.
+
+Reactive Programming: Reactive programming is a programming paradigm with asynchronous data streams or event streams. An
+event stream can be anything like keyboard inputs, button taps, gestures, GPS location updates, accelerometer, iBeacon
+etc. Here, we can listen to a stream and react to it according to the situation.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What do you understand by to be Resilient for a Reactive System?
+To be Resilient for a Reactive System means the system will stay responsive if it gets any chance of failure. Any system
+that is not resilient will be unresponsive after a failure. Resilience is achieved by replication, containment,
+isolation and delegation. Failures are contained within each component, isolating components from each other, thereby
+ensuring that parts of the system can fail and recover without compromising the entire system.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+When should we use the switchMap, mergeMap and concatMap in RxJS?
+There are mainly four types of mapping operators used in RxJS: concatMap(), mergeMap(), switchMap() and exhaustMap().
+All of these operators are mapping or flattening operators used to flatten observables, but they are applicable in very
+different scenarios. The switchMap and mergeMap are the most powerful and frequently used operators. Let's see when we
+use these operators:
+
+
+concatMap() Operators
+Following is the sample code of concatMap() Operators:
+
+this.form.valueChanges  
+.pipe(  
+  concatMap(formValue => this.http.put("/api/book/",formValue))  
+)  
+.subscribe(  
+  response =>  ... handle successful ...,  
+  err => ... handle error ...        
+);  
+The two main benefits of using concatMap() operator are that we no longer have to use nested subscribes with
+higher-order mapping operator, and the second is, all http requests are sent to the backend sequentially.
+
+This is how the concatMap operator ensures that the requests still occur in sequence:
+
+concatMap takes each form value and transforms it into an observer HTTP, known as an inner observer.
+concatMap subscribes to the inner Observable and sends its output to the Observable result
+The second form of value can come more quickly than is needed to request in the backend the previous form value. When
+this occurs, the new form value is not converted to an HTTP request immediately.
+mergeMap() Operator
+Unlike the RxJS concatMap operator, mergeMap() will not wait until the Observable finishes until the next Observable is
+subscribed.
+
+This is how the mergeMap operator works:
+
+In mergeMap operator, every Observable source value is mapped in an internal Observable.
+The inner Observable is then subscribed by mergeMap.
+When the inner observables emit new values, the output Observable immediately reflects them.
+In the mergeMap, unlike the concatMap operator, we do not need to wait until the previous inner observable is completed.
+switchMap() Operator
+Unlike the mergeMap operator, in the switchMap operator, we unsubscribe the previous Observable before subscribing to
+the new Observable if the new Observable begins to emit the values.
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Check RxJs operators.
+pluck
+throttle
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How can you get the previous and current element as an array?
+pairwise
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+If you have 2 endpoints that return same result, but with different response time, how can you make sure your app get
+the response from the fastest one?
+race
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+The empty operator creates an empty observable.
+What is the output of:
+const subscribe = empty().subscribe({
+next: () => console.log('Next'),
+complete: () => console.log('Complete!')
+});
+
+Complete!
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+What type of observable is when the producer is created and activated during subscription?
+Cold
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How can you catch an error?
+catchError
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+How can you take the response from the observable that emit first from a list of observables.
+race
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+Is is possible to convert a cold observable to a hot one?
+yes
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
+text
+  	</code>
+  </pre>
+
+  <script src="./js/navTemplate.js"></script>
+
+</body>
+
+</html>
