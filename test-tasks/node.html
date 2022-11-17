@@ -55,7 +55,7 @@ None of the above.
   <p class="p"></p>
   <pre>
   	<code>
-You are a NodeJS developer at Turing. Which of the following are methods of the cluster module? (Choose all the correct answers)
+You are a NodeJS developer at Turing. Which of the following are methods of the cluster module? (Choose all)
 worker.disconnect()
 worker.kill()
 worker.send()
@@ -67,7 +67,7 @@ worker.error(callback)
   <p class="p"></p>
   <pre>
   	<code>
-Which of the followingis the correct approach to solve the Process out of Memory Except on error in NodeJS? (Choose all the correct answers)
+Which of the followingis the correct approach to solve the Process out of Memory Except on error in NodeJS? (Choose all)
 node -d memory_ limit=new-limit> server.js
 node --max-old -space- size= new-limit> server.js
 expo rt NODE_ARGS= ""-XX:PermSize= new limit> -XX:MaxPermSize=new-limmit>"
@@ -93,7 +93,8 @@ as
   	<code>
 Which of the following are true about libuv in NodeJS?
 libuv enforces an asnchronous, event-driven style of programming
-libuv is a C library that is used to abstrac t non-blocking I/O operations to a consistent interface across all supported platforms.
+libuv is a C library that is used to abstrac t non-blocking I/O operations to a consistent interface across all
+supported platforms.
 It provides mechanisms to handle file system,DNS,network,child processes,pipes,signal handling, polling and streaming.
 A default loop is provided by libuv and can be accessed using uv_default_loop().
 None of the above.
@@ -327,7 +328,8 @@ None of the above.
   <p class="p"></p>
   <pre>
   	<code>
-Consider the snippet of code given below. Which statement regarding the time required to run the code in Google Chrome versus Node.js are correct? (Choose allthe correct answers)
+Consider the snippet of code given below. Which statement regarding the time required to run the code in Google Chrome
+versus Node.js are correct? (Choose allthe correct answers)
 {
   console.time("loop");
   for (var i= 0; i < 1860980; i +=1){
@@ -340,7 +342,8 @@ global variable and therefore bindsit as a property of the window object. This m
 code in Google Chrome considerably more than the time required to run it in Node.js.
 Using let instead of var in the for loop declaration can reduce running time on Google Chrome & NodeJS.
 Using let instead of var in the for loop declaration can take more time when running on GoogleChrome and NodeJS.
-The time required to run the above c ode on Google Chorme and Node.js is the same because both use the V8 Javascript Engine.
+The time required to run the above c ode on Google Chorme and Node.js is the same because both use the V8 Javascript
+Engine.
   	</code>
   </pre>
 
@@ -369,8 +372,9 @@ setTimeout (user.sayWelcome.bind(user) , 1000 );
 Which of the following are true about blocking code? (Choose all the correct answers)
 
 A blocking call causes results to be returned synchronously.
-JavaScript that exhibits poor performance due to being CPU intensive rather than waiting on a non-JavaScript operation,such as 1/0,isn't typic ally referred to as blocking."
-Blo king methods execute synchronously.
+JavaScript that exhibits poor performance due to being CPU intensive rather than waiting on a non-JavaScript
+operation,such as 1/0,isn't typic ally referred to as blocking."
+Bloking methods execute synchronously.
 None of the above.
   	</code>
   </pre>
@@ -380,10 +384,12 @@ None of the above.
   	<code>
 Which of the following statements about the punnycode module in NodeJS is incorret?
 
-The punnycode module 1s an encoding syntax whichis used to convert Unicode (UTF-8) string of characters to ASCII string of characters.
+The punnycode module 1s an encoding syntax whichis used to convert Unicode (UTF-8) string of characters to
+ASCII string of characters.
 It is bundled with NodeJS v0.6.2 and later versions.
 If you want to use it with other NodeJS versions, then use npm toinstall the punnycode module first.
-The version of the punnycode module bundled in NodeJS is being deprecated. In a future major version of NodeJS this module will be removed
+The version of the punnycode module bundled in NodeJS is being deprecated. In a future major version of NodeJS
+this module will be removed
 None of the above.
   	</code>
   </pre>
@@ -391,7 +397,8 @@ None of the above.
   <p class="p"></p>
   <pre>
   	<code>
-Despite the fact that JavaScript 1s single-threaded,what allows you to perform non-blocking 1/0 operations by offloading operations to the system kernel whenever possible?
+Despite the fact that JavaScript 1s single-threaded,what allows you to perform non-blocking 1/0 operations by
+offloading operations to the system kernel whenever possible?
 
 REPL
 Timers
@@ -477,9 +484,11 @@ None of the above.
   <p class="p"></p>
   <pre>
   	<code>
-You deploy it on a server that has 16 cores. Out of the following,which option supports multiple­ processor platforms? Does it fully utiize all processor resources? (Select all that apply.)
+You deploy it on a server that has 16 cores. Out of the following,which option supports multiple­ processor
+platforms? Does it fully utiize all processor resources? (Select all that apply.)
 
-NodeJS is single thread applic ation. It only runs on a single proc essor core. So it doesn't support multiple core resources
+NodeJS is single thread applic ation. It only runs on a single proc essor core. So it doesn't support
+multiple core resources
 Deploy NodeJS on multiple-core systems.
 Running multiple Node.js servers on one box,one per core and spl t request traffic between them.
 Using cluster module. Node.js can fire up child processes or send messages to additional worker processes.
@@ -518,11 +527,13 @@ EventEmitter
   	<code>
 Which of the following statements about readable streamsin NodeJS is incorrect?
 
-The readable stream API evolved across multiple NodeJS versions and provides multiple methods for consuming stream data.
+The readable stream API evolved across multiple NodeJS versions and provides multiple methods for consuming
+stream data.
 A readable stream will always emit the close event if it is created with the emitClose option.
 The readable stream is used for read operations.
 The output of a readable stream can be input into a writable stream.
-A readable stream will not generate data until a mechanism for either consuming or ignoring that data is provided.
+A readable stream will not generate data until a mechanism for either consuming or ignoring that data
+is provided.
 The finish event in Readable,which is emitted when alldata has been flushed to the underlying system.
 None of the above.
   	</code>
@@ -557,10 +568,13 @@ None of the above.
   	<code>
 Point out the incorrect statement about child processes in NodeJS.
 
-The fact that NodeJS runs in a single thread does not mean that we can't take advantage of multiple processes and multiple machines as well.
-We can easily spin up a child process using NodeJS's child_process module and those child processes can easily communicate with each other with a messaging system.
+The fact that NodeJS runs in a single thread does not mean that we can't take advantage of multiple
+processes and multiple machines as well.
+We can easily spin up a child process using NodeJS's child_process module and those child processes
+can easily communicate with each other with a messaging system.
 spawn(), fork() and exec () are the different ways to create a child process in NodeJS.
-The child_proc ess module enables us to access Operating System functionalities by running any system command inside a child process.
+The child_proc ess module enables us to access Operating System functionalities by running any system
+command inside a child process.
 The exec File() method will execute the command directly without spawning a shell by default.
 All of the above.
 None of the above.
