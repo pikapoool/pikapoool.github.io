@@ -1088,320 +1088,276 @@ Two-way binding
   <p class="p"></p>
   <pre>
   	<code>
-5. Open-ended
 Key components of Angular?
+Components.
+Modules.
+Templates.
+Services.
+Metadata and decorators.
+  	</code>
+  </pre>
 
-6. Open-ended
-What are directives?
-
-7. Open-ended
-What are various kinds of directives?
-
-8. Open-ended
-What are the components?
-
-9. Open-ended
-Component vs Directive
-
-10. Open-ended
-purpose of the *ngfor directive
-
-11. Open-ended
-purpose of the *ngIf directive
-
-12. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is a template?
+is a form of HTML that tells Angular how to render the component.
+  	</code>
+  </pre>
 
-13. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is data binding?
+is the synchronization between the model and the view.
+  	</code>
+  </pre>
 
-14. Open-ended
-Types of Data binding?
-
-15. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What are angular elements?
+are Angular components packaged as custom elements (also called Web Components), a web standard for defining new HTML
+elements in a framework-agnostic way.
+  	</code>
+  </pre>
 
-16. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 How can I select an element in a component template?
+@ViewChild('myname') input;
+input #myname>
+ngAfterViewInit() {
+console.log(this.input.nativeElement.value);
+}
+  	</code>
+  </pre>
 
-17. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is a module?
+is a mechanism to group components, directives, pipes and services that are related, in such a way that can be combined
+with other modules to create an application.
+  	</code>
+  </pre>
 
-18. Open-ended
-difference between "declarations","providers" and "import." in NgModule?
+  <p class="p"></p>
+  <pre>
+  	<code>
+Difference between "declarations","providers" and "import." in NgModule?
+"imports" makes the exported declarations of other modules available in the current module
+"declarations" are to make directives (including components and pipes) from the current module available to other
+directives in the current module. Selectors of directives, components or pipes are only matched against the HTML if they
+are declared or imported.
+"providers" are to make services and values known to DI (dependency injection). They are added to the root scope and they
+are injected to other services or directives that have them as dependency.
+  	</code>
+  </pre>
 
-19. Open-ended
-What are lifecycle hooks available?
-
-20. Open-ended
-What is the difference between constructor and ngOnInit?
-
-21. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is metadata?
+Metadata is used to decorate the class so that it can configure the expected behavior of a class.
+  	</code>
+  </pre>
 
-22. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 How to communicate with components?
+parent to child - sharing data via input
+child to parent - sharing data via viewChild with AfterViewInit
+child to parent - sharing data via output and EventEmitter
+  	</code>
+  </pre>
 
-23. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is bootstrapping in an app module?
+The process of loading the index. html page, app-level module, and app-level component
+  	</code>
+  </pre>
 
-24. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is a service?
+objects that get instantiated just once during the lifetime of an application.
+  	</code>
+  </pre>
 
-25. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is HttpClient and its benefits?
+is a lightweight, easy-to-use, and robust HTTP client library. It allows developers to collect external data, post to
+it, and more. It offers the ability to request typed response objects, testability features, streamlined error handling,
+and also provides request and response interception
+  	</code>
+  </pre>
 
-26. Open-ended
-Explain how to use HttpClient with an example?
-
-27. Open-ended
-How to set headers for every request in Angular?
-
-28. Open-ended
-How to create a service?
-
-29. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What happens if you use a script tag inside a template?
+Angular recognizes the value as unsafe and automatically sanitizes it, which removes the script tag but keeps safe
+content such as the text content of the script tag
+  	</code>
+  </pre>
 
-30. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What are pipes?
+are simple functions to use in template expressions to accept an input value and return a transformed value.
+  	</code>
+  </pre>
 
-31. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is the purpose of async pipe?
+is a tool to resolve the value of a subscribable in the template.
+  	</code>
+  </pre>
 
-32. Open-ended
-What is a custom pipe?
-
-33. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is a parameterized pipe?
+we pass any parameters to the pipes:
+{ input data | PipeName : parameter1 : parameter2 ... parameter n }
+  	</code>
+  </pre>
 
-34. Open-ended
-How do you chain pipes?
-
-35. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is the difference between pure and impure pipe?
+A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe. An impure pipe
+is called for every change detection cycle no matter whether the value or parameter(s) changes
+  	</code>
+  </pre>
 
-36. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What are observables?
+an interface to handle a variety of common asynchronous operations
+  	</code>
+  </pre>
 
-37. Open-ended
-What is an observer?
-
-38. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 Handle HttpClient Error
+Using the catchError operator gives you the ability to catch errors that may occur within an observable stream.
+  	</code>
+  </pre>
 
-39. Open-ended
-What is subscribing?
-
-40. Open-ended
-Observable vs Promise
-
-41. Open-ended
-What are observable creation functions?
-
-42. Open-ended
-What is the difference between Subject and Observable?
-
-43. Open-ended
-What is the difference between Behavior Subject vs Subject?
-
-44. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What are custom elements?
+A custom element hosts an Angular component, providing a bridge between the data and logic defined in the component and
+standard DOM APIs
+  	</code>
+  </pre>
 
-45. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 Do I need to bootstrap custom elements?
+Custom elements bootstrap themselves - they start automatically when they are added to the DOM, and are automatically
+destroyed when removed from the DOM.
+  	</code>
+  </pre>
 
-46. Open-ended
-What is Angular Router?
-
-47. Open-ended
-What is lazy loading?
-
-48. Open-ended
-How do you define routes?
-
-49. Open-ended
-What is the router state?
-
-50. Open-ended
-What are Route Guards in Angular?
-
-51. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 How would you protect a component being activated through the router?
+By using authGuard service we can return canActive true or false.
+  	</code>
+  </pre>
 
-52. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 How to detect a route change in Angular?
+Import Router, Event, NavigationStart, NavigationEnd, NavigationError from ‘@angular/router’.
+And inject router in the constructor.
+Subscribe to the NavigationStart, NavigationEnd, NavigationError events of the router.
+Detect the change in URL route in NavigationStart’s subscribe method.
+  	</code>
+  </pre>
 
-53. Open-ended
-How does route work?
-
-54. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 How to use resolve.
+Interface that classes can implement to be a data provider. A data provider class can be used with the router to resolve
+data during navigation. The interface defines a resolve() method that is invoked right after the ResolveStart router
+event. The router waits for the data to be resolved before the route is finally activated.
+@Injectable({ providedIn: 'root' })
+export class HeroResolver implements Resolve<Hero> {
+  constructor(private service: HeroService) {}
 
-55. Open-ended
-How to bundle an Angular app for production?
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable >Hero>|Promise >Hero>|Hero {
+    return this.service.getHero(route.paramMap.get('id'));
+  }
+}
+  	</code>
+  </pre>
 
-56. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is Reactive programming and how to use it with Angular?
+Reactive Programming is programming with asynchronous data streams that can be CREATED,CHANGED or COMBINED on the go.
+  	</code>
+  </pre>
 
-57. Open-ended
-How to test in Angular?
-
-58. Open-ended
-Why would you use a spy in a test?
-
-59. Open-ended
-What is TestBed?
-
-60. Open-ended
-What is a Protractor?
-
-61. Open-ended
-What is AOT?
-
-62. Open-ended
-What is Redux and how does it relate to an Angular App?
-
-63. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 Name some security best practices in Angular?
+Prevent cross-site scripting (XSS)
+Block HTTP-related vulnerabilities.
+Avoid risky Angular APIs.
+Don't customize Angular files.
+Stay updated with the latest Angular library
 
-64. Open-ended
+Use innerHTML with caution
+Never use templates generated by concatenating user input
+Never use native DOM APIs to interact with HTML elements
+Avoid template engines on server-side templates
+Scan your Angular project for components which introduce security vulnerabilities
+  	</code>
+  </pre>
+
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is tree-shaking?
+Tree shaking is a term commonly used within a JavaScript context to describe the removal of dead code.
+It relies on the import and export statements to detect if code modules are exported and imported for use between
+JavaScript files.
+  	</code>
+  </pre>
 
-65. Open-ended
+  <p class="p"></p>
+  <pre>
+  	<code>
 What is Content Projection in Angular?
-
-66. Open-ended
-What is dependency injection in Angular?
-
-67. Open-ended
-What is the difference between authentication and authorization?
-
-68. Open-ended
-How do you do JWT authentication?
-
-69. Open-ended
-How do you do authorization in Angular?
-
-70. Open-ended
-How to build complex forms.
-
-71. Open-ended
-How to validate values in a form.
-
-72. Open-ended
-How to optimize your web application, improve performance.
-
-73. Open-ended
-How to create animation for a route?
-
-74. Open-ended
-What Is Static Code Analysis? - TSlint
-
-75. Open-ended
-What is Angular expression?
-
-76. Open-ended
-What is the difference between forEach and map?
-
-77. Open-ended
-What is coercion in JavaScript?
-
-78. Open-ended
-What is Scope in JavaScript?
-
-79. Open-ended
-Explain equality in JavaScript?
-
-80. Open-ended
-Null / Undefined in JavaScript?
-
-81. Open-ended
-What is “use strict” in JavaScript?
-
-82. Open-ended
-What is a Polyfill?
-
-83. Open-ended
-Var / let / const?
-
-84. Open-ended
-Explain event bubbling and how one may prevent it?
-
-85. Open-ended
-How to empty an array in JavaScript?
-
-86. Open-ended
-How to check if an object is an array?
-
-87. Open-ended
-How to iterate over object properties and array items?
-
-88. Open-ended
-Why we need to avoid touching global scope and how to avoid it?
-
-89. Open-ended
-What is DOMContentLoaded?
-
-90. Open-ended
-Deep Copy in js?
-
-91. Open-ended
-ES5 vs ES6?
-
-92. Open-ended
-Undefined vs not defined?
-
-93. Open-ended
-What is currying in js?
-
-94. Open-ended
-What is high order function?
-
-95. Open-ended
-GraphQL vs. REST
-
-96. Open-ended
-What is closure?
-
-97. Open-ended
-what is primitive data?
-
-98. Open-ended
-what is reference data?
-
-99. Open-ended
-what is encapsulation?
-
-100. Open-ended
-what is prototype ?
-
-101. Open-ended
-what is event loop ?
-
-102. Open-ended
-forEach(), map(), filter(), reduce()
-
-103. Open-ended
-spread operator vs rest operator
-
-104. Open-ended
-what is call back hell ?
-
-105. Open-ended
-what is async / await
-
-106. Open-ended
-what is IIFE ?
-
-107. Open-ended
-what is bind()
-
-108. Open-ended
-what are call() ?
-
-109. Open-ended
-what is apply()
+is a pattern in which you insert, or project, the content you want to use inside another component.
   	</code>
   </pre>
 
